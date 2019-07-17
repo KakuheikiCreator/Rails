@@ -1,0 +1,2 @@
+module Admission::AdmissionHelper
+end

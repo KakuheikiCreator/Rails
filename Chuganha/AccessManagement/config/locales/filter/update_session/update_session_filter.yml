@@ -1,0 +1,44 @@
+###############################################################################
+# 国際化設定:: セッション更新フィルタ
+# Copyright:: Copyright (c) 2011 仲観派
+# 作成日:2012/01/26 Nakanohito  (mailto:)
+# 更新日:
+###############################################################################
+ja:
+  filter:
+    update_session:
+      attributes:
+        controller_path: コントローラーパス
+        function_state_hash: 機能状態ハッシュ
+        function_transition_no: 機能遷移番号
+        previous_state: 遷移元の機能状態
+        restored_transition_no: 復元先の機能遷移番号
+        screen_transition_pattern: 画面遷移パターン
+        session_information: セッション情報
+        synchronous_token: 同期トークン
+
+en:
+  filter:
+    update_session:
+      attributes:
+        controller_path: controller path
+        function_state_hash: function state hash
+        function_transition_no: function transition number
+        previous_state: previous state
+        restored_transition_no: restored transition number
+        screen_transition_pattern: screen　transition　pattern
+        session_information: session information
+        synchronous_token: synchronous token
+
+en-US:
+  filter:
+    update_session:
+      attributes:
+        controller_path: controller path
+        function_state_hash: function state hash
+        function_transition_no: function transition number
+        previous_state: previous state
+        restored_transition_no: restored transition number
+        screen_transition_pattern: screen　transition　pattern
+        session_information: session information
+        synchronous_token: synchronous token

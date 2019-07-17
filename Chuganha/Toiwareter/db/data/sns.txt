@@ -1,0 +1,8 @@
+01,Facebook
+02,Google+
+03,GREE
+04,mixi
+05,MySpace
+06,モバゲータウン
+07,大集合NEO
+08,その他

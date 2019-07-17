@@ -1,0 +1,182 @@
+/**
+ * application.css
+ *
+ * @version   : 1.0.0
+ * @author    : 仲観派
+ * @copyright : 仲観派
+ * @license   : The MIT License
+ * @modified  : 2012-02-25 06:30
+
+
+ */
+
+body {
+	background-color:#b0c4de;
+}
+
+div.info_msg {
+	color: black;
+	background: #7abef4;
+	background-image: url("../assets/icon_info.png");
+}
+
+div.valid_msg {
+	color: black;
+	background: #a9ff52;
+	background-image: url("../assets/icon_valid.png");
+}
+
+div.warning_msg {
+	color: black;
+	background: #faca3c;
+	background-image: url("../assets/icon_warn.png");
+}
+
+div.error_msg {
+	color: black;
+	background: #ff6040;
+	background-image: url("../assets/icon_error.png");
+}
+
+div.info_msg, div.valid_msg, div.warning_msg, div.error_msg {
+	font-family: sans-serif;
+	font-size: small;
+	background-repeat: no-repeat;
+	background-position: 5px center;
+	display: block;
+	padding: 6px 40px;
+	position: relative;
+}
+
+div.menu_button {
+	width: 11em;
+	height: 1.4em;
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	font: normal normal bold 110% 'Ludica Sans Unicode';
+	padding: 0.8em 1em 0.6em;
+	color: black;
+	border: 2px solid #b0c4de;
+	background: #eeeeee;
+	background: -webkit-gradient(linear, top, bottom, from(#ffffff), to(#cae1ff));
+	background: -moz-linear-gradient(top, #ffffff, #cae1ff);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#cae1ff');
+}
+
+form {
+   margin: 0;
+   padding: 0;
+}
+
+img {
+   margin: 0;
+   padding: 0;
+   vertical-align:bottom;
+}
+
+input.small_button {
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	font: normal normal bold 80%/100% 'Ludica Sans Unicode';
+	padding: 0.2em 0.5em 0.22em;
+	color: black;
+	border: 1px solid #202020;
+	background: #b0c4de;
+	background: -webkit-gradient(linear, top, bottom, from(#eeeeee), to(#b0c4de));
+	background: -moz-linear-gradient(top, #eeeeee, #b0c4de);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#b0c4de');
+}
+
+input.medium_button {
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	font: normal normal bold 120% 'Ludica Sans Unicode';
+	padding: 0.25em 1em 0.3em;
+	color: black;
+	border: 1px solid #202020;
+	background: #b0c4de;
+	background: -webkit-gradient(linear, top, bottom, from(#eeeeee), to(#b0c4de));
+	background: -moz-linear-gradient(top, #eeeeee, #b0c4de);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#b0c4de');
+}
+
+input.large_button {
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	font: normal normal bold 150% 'Ludica Sans Unicode';
+	padding: 0.5em 2em 0.55em;
+	color: black;
+	border: 1px solid #202020;
+	background: #b0c4de;
+	background: -webkit-gradient(linear, top, bottom, from(#eeeeee), to(#b0c4de));
+	background: -moz-linear-gradient(top, #eeeeee, #b0c4de);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#b0c4de');
+}
+
+input.tab_button {
+	width: 150px;
+	height: 60px;
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	font: normal normal bold 100% 'Serif';
+	text-shadow: gray 0 1px 1px;
+	color: black;
+	border: 1px solid #6699cc;
+	background: #eeeeee;
+	background: -webkit-gradient(linear, top, bottom, from(#ffffff), to(#6699cc));
+	background: -moz-linear-gradient(top, #ffffff, #6699cc);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#6699cc');
+}
+
+label.validation_error {
+	font-family: sans-serif;
+	font-size: small;
+	color: black;
+	background: #ff6040;
+	display: block;
+	padding: 6px 10px;
+	max-width: 24em;
+	position: relative;
+}
+
+table.form_01 {
+	background-color:#ffffff;
+	border-top-color:#dcdcdc;
+	border-right-color:#dcdcdc;
+	border-bottom-color:#dcdcdc;
+	border-left-color:#dcdcdc;
+}
+
+td.cell_01 {
+	background-color:#b0c4de;
+}
+
+td.cell_02 {
+	background-color:#dcdcdc;
+}
+
+td.cell_03 {
+	background-color:#6699cc;
+}
+
+th.cell_01 {
+	background-color:#aaddff;
+}
+
+th.cell_02 {
+	background-color:#dcdcdc;
+}
+
+th.cell_03 {
+	background-color:#6699cc;
+}

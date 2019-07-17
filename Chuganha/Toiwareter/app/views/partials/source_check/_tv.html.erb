@@ -1,0 +1,34 @@
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_check.tv.item_names.program_name')%></font>
+	</th>
+	<td colspan="3" class="pattern_4">
+		<font size="2"><%=@source_obj.program_name %></font>
+		<%=hidden_tag("program_name", @source_obj.program_name)%>
+	</td>
+</tr>
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_check.tv.item_names.broadcast_date')%></font>
+	</th>
+	<td colspan="3" class="pattern_4">
+		<font size="2"><%=default_time(@source_obj.broadcast_date) %></font>
+		<%=time_hidden_tag("broadcast_date", @source_obj.broadcast_date)%>
+	</td>
+</tr>
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_check.tv.item_names.tv_station')%></font>
+	</th>
+	<td class="pattern_4">
+		<font size="2"><%=@source_obj.tv_station %></font>
+		<%=hidden_tag("tv_station", @source_obj.tv_station)%>
+	</td>
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_check.tv.item_names.production')%></font>
+	</th>
+	<td class="pattern_4">
+		<font size="2"><%=@source_obj.production %></font>
+		<%=hidden_tag("production", @source_obj.production)%>
+	</td>
+</tr>

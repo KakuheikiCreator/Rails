@@ -1,0 +1,103 @@
+###############################################################################
+# 国際化設定:: 会員情報更新フォーム
+# Copyright:: Copyright (c) 2013 仲観派
+# 作成日:2013/01/20 Nakanohito  (mailto:)
+# 更新日:
+###############################################################################
+ja:
+  views:
+    member:
+      update:
+        form:
+          item_names:
+            page_title: 会員情報更新
+            prof_title: "%{nickname}さんのプロフィール"
+            check_btn: 入力値をチェック
+            correct_btn: 入力値を修正
+            current_value: 現在値
+            update_value: 更新値
+            open_id: OpenID
+            member_id: 会員ID
+            nickname: ニックネーム
+            member_state: 会員状態
+            authority: 権限
+            email: メールアドレス
+            join_date: 入会日時
+            last_login_date: 最終ログイン日時
+            ineligibility_date: 資格停止日時
+            login: ログイン
+            quote_cnt: 引用投稿回数
+            quote_failure_cnt: 引用過失回数
+            quote_correct_cnt: 引用訂正回数
+            quote_correct_failure_cnt: 引用訂正過失回数
+            comment_cnt: コメント投稿回数
+            comment_failure_cnt: コメント過失回数
+            comment_report_cnt: コメント通報回数
+            were_reported_cnt: コメント被通報回数
+            support_report_cnt: コメント通報対応回数
+
+en:
+  views:
+    member:
+      update:
+        form:
+          item_names:
+            page_title: Member information update
+            prof_title: "%{nickname}'s profile"
+            check_btn: Check the value
+            correct_btn: Correct the value
+            current_value: Current value
+            update_value: Update value
+            func_title: Function List
+            open_id: OpenID
+            member_id: Member ID
+            nickname: Nickname
+            member_state: Member state
+            authority: Authority
+            email: Email
+            join_date: Join Date
+            last_login_date: Last Login Date
+            ineligibility_date: Ineligibility Date
+            login: Login
+            quote_cnt: Quote Count
+            quote_failure_cnt: Fault quote Count
+            quote_correct_cnt: Correct quote Count
+            quote_correct_failure_cnt: Correct Fault quote Count
+            comment_cnt: Comment Count
+            comment_failure_cnt: Fault comment Count
+            comment_report_cnt: Comment report Count
+            were_reported_cnt: were reported Count
+            support_report_cnt: Support report Count
+
+en-US:
+  views:
+    member:
+      update:
+        form:
+          item_names:
+            page_title: Member information update
+            prof_title: "%{nickname}'s profile"
+            check_btn: Check the value
+            correct_btn: Correct the value
+            current_value: Current value
+            update_value: Update value
+            func_title: Function List
+            open_id: OpenID
+            member_id: Member ID
+            nickname: Nickname
+            member_state: Member state
+            authority: Authority
+            email: Email
+            join_date: Join Date
+            last_login_date: Last Login Date
+            ineligibility_date: Ineligibility Date
+            login: Login
+            quote_cnt: Quote Count
+            quote_failure_cnt: Fault quote Count
+            quote_correct_cnt: Correct quote Count
+            quote_correct_failure_cnt: Correct Fault quote Count
+            comment_cnt: Comment Count
+            comment_failure_cnt: Fault comment Count
+            comment_report_cnt: Comment report Count
+            were_reported_cnt: were reported Count
+            support_report_cnt: Support report Count

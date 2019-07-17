@@ -1,0 +1,30 @@
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_view.movie.item_names.title')%></font>
+	</th>
+	<td colspan="3" class="pattern_4">
+		<font size="2"><%=@source_obj.title %></font>
+	</td>
+</tr>
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_view.movie.item_names.production')%></font>
+	</th>
+	<td class="pattern_4">
+		<font size="2"><%=@source_obj.production %></font>
+	</td>
+	<th width="110" align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_view.movie.item_names.sold_by')%></font>
+	</th>
+	<td class="pattern_4">
+		<font size="2"><%=@source_obj.sold_by %></font>
+	</td>
+</tr>
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_view.movie.item_names.release_date')%></font>
+	</th>
+	<td colspan="3" class="pattern_4">
+		<font size="2"><%=default_date(@source_obj.release_date) %></font>
+	</td>
+</tr>

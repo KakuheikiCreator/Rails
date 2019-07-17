@@ -1,0 +1,830 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Expires" content="Thu, 01 Dec 1994 16:00:00 GMT">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="robots" content="index,follow">
+<link rel="shortcut icon" type="image/png" href="image/favicon.png"> 
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<title>アクセス集計</title>
+<script type="text/javascript" src="./js/jquery-1.5.2.js"></script>
+<script type="text/javascript" src="./js/jquery.tablesorter.min.js"></script>
+<script type="text/javascript" src="./js/ccchart-min.js"></script>
+<script type="text/javascript">
+<!--
+$(document).ready(init);
+
+function init(){
+	$("#report_comment_table").tablesorter();
+}
+//-->
+</script>
+</head>
+<body leftmargin="0" topmargin="0">
+<a name="TOP"></a>
+<table width="1000" border="0" align="center" cellpadding="0" cellspacing="0">
+<thead>
+<tr height="20">
+   	<td>&nbsp;</td>
+</tr>
+<tr>
+	<td class="cell_02">
+		<table width="1050" border="0" cellspacing="0" cellpadding="0">
+		<tbody>
+			<tr>
+				<td bgcolor="white">
+					<img src="image/access_count_title.png" width="750" height="60" alt="title">
+				</td>
+				<td width="150" align="center" background="image/tab_button.png">
+					<div class="vertical_middle">
+					<a href="#TOP" class="cell_link"><font size="2" color="black"><strong>トップページ</strong></font></a>
+					</div>
+				</td>
+				<td width="150" align="center" background="image/tab_button.png">
+					<div class="vertical_middle">
+					<a href="#TOP" class="cell_link"><font size="2" color="black"><strong>ログアウト</strong></font></a>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+		</table>
+	</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>
+		<table width="1272" border="1" cellspacing="0" cellpadding="0" class="base_01">
+		<thead>
+		<tr>
+			<td align="center" class="cell_05">
+				<font size="3" color="#ffffff"><strong>集計結果</strong></font>
+			</td>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td>
+				<canvas id="hoge"></canvas>
+<script type="text/javascript">
+<!--
+var chartdata2 = {
+	"config": {
+		"title": "Line Chart",
+		"width": 1268,
+		"height": 600,
+		"type": "line",
+		"lineWidth": 4,
+		"colorSet": ["#0040ff","#00bfff","#00ffbf","#00ff40","#40ff00","#bfff00","#ffbf00","#ff4000"],
+		"bgGradient": {
+			"direction":"vertical",
+			"from":"#687478",
+			"to":"#222222"
+		}
+	},
+	"data": [
+		["集計単位",1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20],
+		["H",320,130,370,470,640,620,770,850,710,200,320,130,370,470,640,620,770,850,710,200],
+		["G",220,230,500,760,790,830,920,780,840,400,220,230,500,760,790,830,920,780,840,400],
+		["F",480,520,372,470,720,810,900,680,930,430,480,520,372,470,720,810,900,680,930,430],
+		["E",435,332,524,688,774,825,999,800,900,920,435,332,524,688,774,825,999,800,900,920],
+		["D",720,535,584,333,457,788,900,870,830,700,720,535,584,333,457,788,900,870,830,700],
+		["C",60,435,456,352,567,678,1260,750,660,790,60,435,456,352,567,678,1260,750,660,790],
+		["B",200,123,312,200,402,300,512,410,380,330,200,123,312,200,402,300,512,410,380,330],
+		["A",100,233,921,508,205,780,132,260,220,420,100,233,921,508,205,780,132,260,220,420]
+	]
+};
+ccchart.init('hoge', chartdata2)
+//-->
+</script>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<table border="1" cellspacing="0" cellpadding="1">
+				<thead>
+				<tr>
+					<th align="center" colspan="6" class="cell_03">
+						<font size="3">線種別</font>
+					</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<th width="32" align="center" class="cell_01">&nbsp;</th>
+					<th width="242" align="center" class="cell_01">
+						<font size="3">1</font>
+					</th>
+					<th width="242" align="center" class="cell_01">
+						<font size="3">2</font>
+					</th>
+					<th width="242" align="center" class="cell_01">
+						<font size="3">3</font>
+					</th>
+					<th width="242" align="center" class="cell_01">
+						<font size="3">4</font>
+					</th>
+					<th width="242" align="center" class="cell_01">
+						<font size="3">5</font>
+					</th>
+				</tr>
+				<tr>
+					<th align="center" class="class_01">
+						<font size="3">A</font>
+					</th>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<th align="center" class="class_02">
+						<font size="3">B</font>
+					</th>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<th align="center" class="class_03">
+						<font size="3">C</font>
+					</th>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<th align="center" class="class_04">
+						<font size="3">D</font>
+					</th>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<th align="center" class="class_05">
+						<font size="3">E</font>
+					</th>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<th align="center" class="class_06">
+						<font size="3">F</font>
+					</th>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<th align="center" class="class_07">
+						<font size="3">G</font>
+					</th>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<th align="center" class="class_08">
+						<font size="3">H</font>
+					</th>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+				</tr>
+				</tbody>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<table border="1" cellspacing="0" cellpadding="1">
+				<thead>
+				<tr>
+					<th align="center" colspan="14" class="cell_03">
+						<font size="3">集計単位</font>
+					</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<th width="28" align="center" class="cell_01">
+						<font size="2">1</font>
+					</th>
+					<td width="145" align="center">
+						<font size="2">2012/12/12 12:12:12</font>
+					</td>
+					<th width="28" align="center" class="cell_01">
+						<font size="2">2</font>
+					</th>
+					<td width="145" align="center">
+						<font size="2">2012/12/12 12:12:12</font>
+					</td>
+					<th width="28" align="center" class="cell_01">
+						<font size="2">3</font>
+					</th>
+					<td width="145" align="center">
+						<font size="2">2012/12/12 12:12:12</font>
+					</td>
+					<th width="28" align="center" class="cell_01">
+						<font size="2">4</font>
+					</th>
+					<td width="145" align="center">
+						<font size="2">2012/12/12 12:12:12</font>
+					</td>
+					<th width="28" align="center" class="cell_01">
+						<font size="2">5</font>
+					</th>
+					<td width="145" align="center">
+						<font size="2">2012/12/12 12:12:12</font>
+					</td>
+					<th width="28" align="center" class="cell_01">
+						<font size="2">6</font>
+					</th>
+					<td width="145" align="center">
+						<font size="2">2012/12/12 12:12:12</font>
+					</td>
+					<th width="28" align="center" class="cell_01">
+						<font size="2">7</font>
+					</th>
+					<td width="145" align="center">
+						<font size="2">2012/12/12 12:12:12</font>
+					</td>
+				</tr>
+				<tr>
+					<th align="center" class="cell_01">
+						<font size="2">8</font>
+					</th>
+					<td align="center">
+						<font size="2">2012/12/12 12:12:12</font>
+					</td>
+					<th align="center" class="cell_01">
+						<font size="2">9</font>
+					</th>
+					<td align="center">
+						<font size="2">2012/12/12 12:12:12</font>
+					</td>
+					<th align="center" class="cell_01">
+						<font size="2">10</font>
+					</th>
+					<td align="center">
+						<font size="2">2012/12/12 12:12:12</font>
+					</td>
+					<th align="center" class="cell_01">
+						<font size="2">11</font>
+					</th>
+					<td align="center">
+						<font size="2">2012/12/12 12:12:12</font>
+					</td>
+					<th align="center" class="cell_01">
+						<font size="2">12</font>
+					</th>
+					<td align="center">
+						<font size="2">2012/12/12 12:12:12</font>
+					</td>
+					<th align="center" class="cell_01">
+						<font size="2">13</font>
+					</th>
+					<td align="center">
+						<font size="2">2012/12/12 12:12:12</font>
+					</td>
+					<th align="center" class="cell_01">
+						<font size="2">14</font>
+					</th>
+					<td align="center">
+						<font size="2">2012/12/12 12:12:12</font>
+					</td>
+				</tr>
+				<tr>
+					<th align="center" class="cell_01">
+						<font size="2">15</font>
+					</th>
+					<td align="center">
+						<font size="2">2012/12/12 12:12:12</font>
+					</td>
+					<th align="center" class="cell_01">
+						<font size="2">16</font>
+					</th>
+					<td align="center">
+						<font size="2">2012/12/12 12:12:12</font>
+					</td>
+					<th align="center" class="cell_01">
+						<font size="2">17</font>
+					</th>
+					<td align="center">
+						<font size="2">2012/12/12 12:12:12</font>
+					</td>
+					<th align="center" class="cell_01">
+						<font size="2">18</font>
+					</th>
+					<td align="center">
+						<font size="2">2012/12/12 12:12:12</font>
+					</td>
+					<th align="center" class="cell_01">
+						<font size="2">19</font>
+					</th>
+					<td align="center">
+						<font size="2">2012/12/12 12:12:12</font>
+					</td>
+					<th align="center" class="cell_01">
+						<font size="2">20</font>
+					</th>
+					<td align="center">
+						<font size="2">2012/12/12 12:12:12</font>
+					</td>
+					<th align="center" class="cell_01"><font size="2">&nbsp;</font></th>
+					<td align="center"><font size="2">&nbsp;</font></td>
+				</tr>
+				</tbody>
+				</table>
+			</td>
+		</tr>
+		</tbody>
+		</table>
+	</td>
+</tr>
+<tr height="20">
+   	<td>&nbsp;</td>
+</tr>
+<tr>
+	<td>
+		<form method="POST" action="xxx.cgi">
+		<table border="1" cellspacing="0" cellpadding="0" class="form_02">
+		<thead>
+		<tr>
+			<th align="center" class="cell_02">
+				<font size="3">集計対象抽出条件</font>
+			</th>
+		</tr>
+		</thead>
+		<tfoot>
+		<tr>
+			<td align="center" class="cell_03"><input type="submit" value="集計"></td>
+		</tr>
+		</tfoot>
+		<tbody>
+		<tr>
+			<td>
+				<table border="1" cellspacing="0" cellpadding="1">
+				<tbody>
+				<tr>
+					<th colspan="2" align="center" class="cell_01">
+						<font size="2">取得開始日時</font>
+					</th>
+					<th width="168" align="center" class="cell_01">
+						<font size="2">システム</font>
+					</th>
+					<th width="228" align="center" class="cell_01">
+						<font size="2">サブシステム</font>
+					</th>
+					<th colspan="2" align="center" class="cell_01">
+						<font size="2">受信日時</font>
+					</th>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<font size="2">
+							<input type="text" size="4" maxlength="4" name="year">年
+							<input type="text" size="1" maxlength="2" name="month">月
+							<input type="text" size="1" maxlength="2" name="day">日&nbsp;
+							<input type="text" size="1" maxlength="2" name="hour">時
+							<input type="text" size="1" maxlength="2" name="minute">分
+							<input type="text" size="1" maxlength="2" name="minute">秒から<br>
+							<input type="text" size="4" maxlength="4" name="year">年
+							<input type="text" size="1" maxlength="2" name="month">月
+							<input type="text" size="1" maxlength="2" name="day">日&nbsp;
+							<input type="text" size="1" maxlength="2" name="hour">時
+							<input type="text" size="1" maxlength="2" name="minute">分
+							<input type="text" size="1" maxlength="2" name="minute">秒まで
+						</font>
+					</td>
+					<td>
+						<select name="" id="">
+							<option value="0">全て</option>
+							<option value="1">引用寮</option>
+						</select>
+					</td>
+					<td>
+						<select name="" id="">
+							<option value="0">全て</option>
+							<option value="1">Toitter</option>
+							<option value="2">会員管理</option>
+							<option value="3">アクセス解析</option>
+						</select>
+					</td>
+					<td colspan="2">
+						<font size="2">
+							<input type="text" size="4" maxlength="4" name="year">年
+							<input type="text" size="1" maxlength="2" name="month">月
+							<input type="text" size="1" maxlength="2" name="day">日&nbsp;
+							<input type="text" size="1" maxlength="2" name="hour">時
+							<input type="text" size="1" maxlength="2" name="minute">分
+							<input type="text" size="1" maxlength="2" name="minute">秒から<br>
+							<input type="text" size="4" maxlength="4" name="year">年
+							<input type="text" size="1" maxlength="2" name="month">月
+							<input type="text" size="1" maxlength="2" name="day">日&nbsp;
+							<input type="text" size="1" maxlength="2" name="hour">時
+							<input type="text" size="1" maxlength="2" name="minute">分
+							<input type="text" size="1" maxlength="2" name="minute">秒まで
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<th width="234" rowspan="2" align="center" class="cell_01">
+						<font size="2">機能</font>
+					</th>
+					<th width="200" rowspan="2" align="center" class="cell_01">
+						<font size="2">機能遷移番号</font>
+					</th>
+					<th colspan="2" align="center" class="cell_01">
+						<font size="2">ユーザー</font>
+					</th>
+					<th colspan="2" align="center" class="cell_01">
+						<font size="2">ブラウザ</font>
+					</th>
+				</tr>
+				<tr>
+					<th align="center" class="cell_01">
+						<font size="2">ログインID</font>
+					</th>
+					<th align="center" class="cell_01">
+						<font size="2">クライアントID</font>
+					</th>
+					<th width="168" align="center" class="cell_01">
+						<font size="2">名前</font>
+					</th>
+					<th width="244" align="center" class="cell_01">
+						<font size="2">バージョン</font>
+					</th>
+				</tr>
+				<tr>
+					<td>
+						<select name="" id="">
+							<option value="0">全て</option>
+							<option value="1">会員検索</option>
+							<option value="2">会員登録</option>
+							<option value="3">会員情報更新・退会</option>
+							<option value="4">会員認証</option>
+						</select>
+					</td>
+					<td>
+						<input type="text" size="6" maxlength="4">
+						<select name="" id="">
+							<option value="EQ">と一致</option>
+							<option value="NE">と不一致</option>
+							<option value="LT">より小さい</option>
+							<option value="GT">より大きい</option>
+							<option value="LE">以下</option>
+							<option value="GE">以上</option>
+						</select>
+					</td>
+					<td>
+						<input type="text" size="20" maxlength="255">
+					</td>
+					<td>
+						<input type="text" size="30" maxlength="32">
+					</td>
+					<td>
+						<select name="" id="">
+							<option value="0">全て</option>
+							<option value="1">InternetExplorer</option>
+							<option value="2">Mozilla Firefox</option>
+							<option value="3">Google Chrome</option>
+							<option value="4">Safari</option>
+							<option value="5">Opera</option>
+						</select>
+					</td>
+					<td>
+						<select name="" id="">
+							<option value="0">全て</option>
+							<option value="0">4.0</option>
+							<option value="1">4.01</option>
+							<option value="2">4.5</option>
+							<option value="3">5.0</option>
+							<option value="4">5.01</option>
+							<option value="5">5.16</option>
+							<option value="6">5.17</option>
+							<option value="7">5.22</option>
+							<option value="8">5.23</option>
+						</select>
+						<select name="" id="">
+							<option value="EQ">と一致</option>
+							<option value="NE">と不一致</option>
+							<option value="LT">より小さい</option>
+							<option value="GT">より大きい</option>
+							<option value="LE">以下</option>
+							<option value="GE">以上</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<th align="center" class="cell_01">
+						<font size="2">言語</font>
+					</th>
+					<th align="center" colspan="2" class="cell_01">
+						<font size="2">リファラー</font>
+					</th>
+					<th colspan="2" align="center" class="cell_01">
+						<font size="2">プロキシホスト</font>
+					</th>
+					<th align="center" class="cell_01">
+						<font size="2">プロキシIP</font>
+					</th>
+				</tr>
+				<tr>
+					<td>
+						<input type="text" size="32" maxlength="255">
+					</td>
+					<td colspan="2">
+						<input type="text" size="40" maxlength="255">
+						<select name="" id="">
+							<option value="E">と一致</option>
+							<option value="F">で始まる</option>
+							<option value="P">を含む</option>
+							<option value="B">で終わる</option>
+						</select>
+					</td>
+					<td colspan="2">
+						<input type="text" size="44" maxlength="255">
+						<select name="" id="">
+							<option value="E">と一致</option>
+							<option value="F">で始まる</option>
+							<option value="P">を含む</option>
+							<option value="B">で終わる</option>
+						</select>
+					</td>
+					<td>
+						<input type="text" size="26" maxlength="32">
+					</td>
+				</tr>
+				<tr>
+					<th colspan="3" align="center" class="cell_01">
+						<font size="2">ドメイン</font>
+					</th>
+					<th colspan="2" align="center" class="cell_01">
+						<font size="2">クライアントホスト</font>
+					</th>
+					<th align="center" class="cell_01">
+						<font size="2">クライアントIP</font>
+					</th>
+				</tr>
+				<tr>
+					<td colspan="3">
+						<input type="text" size="60" maxlength="255">
+						<select name="" id="">
+							<option value="E">と一致</option>
+							<option value="F">で始まる</option>
+							<option value="P">を含む</option>
+							<option value="B">で終わる</option>
+						</select>
+					</td>
+					<td colspan="2">
+						<input type="text" size="44" maxlength="255">
+						<select name="" id="">
+							<option value="E">と一致</option>
+							<option value="F">で始まる</option>
+							<option value="P">を含む</option>
+							<option value="B">で終わる</option>
+						</select>
+					</td>
+					<td>
+						<input type="text" size="26" maxlength="32">
+					</td>
+				</tr>
+				</tbody>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td valign="middle">
+				<table border="1" cellspacing="0" cellpadding="1" id="">
+				<thead>
+				<tr>
+					<th colspan="14" align="center" class="cell_02">
+						<font size="3">線分類</font>
+					</th>
+					<th align="center" class="cell_02">
+						<font size="3">横軸</font>
+					</th>
+				</tr>
+				<tr>
+					<th width="74" align="center" class="cell_01">
+						<font size="2">システム</font>
+					</th>
+					<th width="86" align="center" class="cell_01">
+						<font size="2">サブシステム</font>
+					</th>
+					<th width="68" align="center" class="cell_01">
+						<font size="2">機能</font>
+					</th>
+					<th width="94" align="center" class="cell_01">
+						<font size="2">機能遷移番号</font>
+					</th>
+					<th colspan="2" align="center" class="cell_01">
+						<font size="2">ユーザー</font>
+					</th>
+					<th colspan="2" align="center" class="cell_01">
+						<font size="2">ブラウザ</font>
+					</th>
+					<th width="68" align="center" class="cell_01">
+						<font size="2">言語</font>
+					</th>
+					<th width="74" align="center" class="cell_01">
+						<font size="2">リファラー</font>
+					</th>
+					<th width="70" align="center" class="cell_01">
+						<font size="2">ドメイン</font>
+					</th>
+					<th width="70" align="center" class="cell_01">
+						<font size="2">プロキシ</font>
+					</th>
+					<th width="70" align="center" class="cell_01">
+						<font size="2">ホスト</font>
+					</th>
+					<th width="70" align="center" class="cell_01">
+						<font size="2">表示件数</font>
+					</th>
+					<th width="150" align="center" class="cell_01">
+						<font size="2">集計単位</font>
+					</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td rowspan="3" align="center">
+						<select name="" id="">
+							<option value="" selected></option>
+							<option value="0">昇順</option>
+							<option value="0">降順</option>
+						</select>
+					</td>
+					<td rowspan="3" align="center">
+						<select name="" id="">
+							<option value="" selected></option>
+							<option value="0">昇順</option>
+							<option value="0">降順</option>
+						</select>
+					</td>
+					<td rowspan="3" align="center">
+						<select name="" id="">
+							<option value="" selected></option>
+							<option value="0">昇順</option>
+							<option value="0">降順</option>
+						</select>
+					</td>
+					<td rowspan="3" align="center">
+						<select name="" id="">
+							<option value="" selected></option>
+							<option value="0">昇順</option>
+							<option value="0">降順</option>
+						</select>
+					</td>
+					<td colspan="2" align="center">
+						<select name="" id="">
+							<option value="" selected></option>
+							<option value="0">昇順</option>
+							<option value="0">降順</option>
+						</select>
+					</td>
+					<td colspan="2" align="center">
+						<select name="" id="">
+							<option value="" selected></option>
+							<option value="0">昇順</option>
+							<option value="0">降順</option>
+						</select>
+					</td>
+					<td rowspan="3" align="center">
+						<select name="" id="">
+							<option value="" selected></option>
+							<option value="0">昇順</option>
+							<option value="0">降順</option>
+						</select>
+					</td>
+					<td rowspan="3" align="center">
+						<select name="" id="">
+							<option value="" selected></option>
+							<option value="0">昇順</option>
+							<option value="0">降順</option>
+						</select>
+					</td>
+					<td rowspan="3" align="center">
+						<select name="" id="">
+							<option value="" selected></option>
+							<option value="0">昇順</option>
+							<option value="0">降順</option>
+						</select>
+					</td>
+					<td rowspan="3" align="center">
+						<select name="" id="">
+							<option value="" selected></option>
+							<option value="0">昇順</option>
+							<option value="0">降順</option>
+						</select>
+					</td>
+					<td rowspan="3" align="center">
+						<select name="" id="">
+							<option value="" selected></option>
+							<option value="0">昇順</option>
+							<option value="0">降順</option>
+						</select>
+					</td>
+					<td rowspan="3" align="center">
+						<select name="" id="">
+							<option value="" selected></option>
+							<option value="0">5件</option>
+							<option value="1">8件</option>
+						</select>
+					</td>
+					<td rowspan="3" align="center">
+						<input type="text" size="3" maxlength="2" name="year">
+						<select name="" id="">
+							<option value="0">年単位</option>
+							<option value="0">月単位</option>
+							<option value="1">日単位</option>
+							<option value="0">時単位</option>
+							<option value="2">分単位</option>
+							<option value="0">秒単位</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<th width="78" align="center" class="cell_01">
+						<font size="2">ログインID</font>
+					</th>
+					<th width="78" align="center" class="cell_01">
+						<font size="2">識別子</font>
+					</th>
+					<th width="78" align="center" class="cell_01">
+						<font size="2">名前</font>
+					</th>
+					<th width="78" align="center" class="cell_01">
+						<font size="2">バージョン</font>
+					</th>
+				</tr>
+				<tr>
+					<td align="center">
+						<input type="checkbox">
+					</td>
+					<td align="center">
+						<input type="checkbox">
+					</td>
+					<td align="center">
+						<input type="checkbox">
+					</td>
+					<td align="center">
+						<input type="checkbox">
+					</td>
+				</tr>
+				</tbody>
+				</table>
+			</td>
+		</tr>
+		</tbody>
+		</table>
+		</form>
+	</td>
+</tr>
+<tr>
+	<td class="cell_02">&nbsp;</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+	<td>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+		<tbody>
+		<tr>
+			<td align="right" class="cell_02">
+				<font color="#ffffff" size="2"><strong>Copyright (C) 2011 仲観派 All Rights Reserved.</strong></font>
+			</td>
+		</tr>
+		</tbody>
+		</table>
+	</td>
+</tr>
+</tfoot>
+</table>
+</body>
+</html>

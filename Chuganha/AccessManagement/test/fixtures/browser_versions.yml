@@ -1,0 +1,217 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+entry_1:
+  id: 1
+  browser_id: 1
+  browser_version: 4
+  lock_version: 0
+  created_at: 2011-08-09 00:00:00
+  updated_at: 2011-08-09 00:00:00
+
+entry_2:
+  id: 2
+  browser_id: 1
+  browser_version: 5
+  lock_version: 0
+  created_at: 2011-08-09 00:00:00
+  updated_at: 2011-08-09 00:00:00
+
+entry_3:
+  id: 3
+  browser_id: 1
+  browser_version: 6
+  lock_version: 0
+  created_at: 2011-08-09 00:00:00
+  updated_at: 2011-08-09 00:00:00
+
+entry_4:
+  id: 4
+  browser_id: 1
+  browser_version: 7
+  lock_version: 0
+  created_at: 2011-08-09 00:00:00
+  updated_at: 2011-08-09 00:00:00
+
+entry_5:
+  id: 5
+  browser_id: 1
+  browser_version: 8
+  lock_version: 0
+  created_at: 2011-08-09 00:00:00
+  updated_at: 2011-08-09 00:00:00
+
+entry_6:
+  id: 6
+  browser_id: 1
+  browser_version: other
+  lock_version: 0
+  created_at: 2011-08-09 00:00:00
+  updated_at: 2011-08-09 00:00:00
+
+entry_7:
+  id: 7
+  browser_id: 2
+  browser_version: 0
+  lock_version: 0
+  created_at: 2011-08-09 00:00:00
+  updated_at: 2011-08-09 00:00:00
+
+entry_8:
+  id: 8
+  browser_id: 2
+  browser_version: 1
+  lock_version: 0
+  created_at: 2011-08-09 00:00:00
+  updated_at: 2011-08-09 00:00:00
+
+entry_9:
+  id: 9
+  browser_id: 2
+  browser_version: 2
+  lock_version: 0
+  created_at: 2011-08-09 00:00:00
+  updated_at: 2011-08-09 00:00:00
+
+entry_10:
+  id: 10
+  browser_id: 2
+  browser_version: 3
+  lock_version: 0
+  created_at: 2011-08-09 00:00:00
+  updated_at: 2011-08-09 00:00:00
+
+entry_11:
+  id: 11
+  browser_id: 3
+  browser_version: 2
+  lock_version: 0
+  created_at: 2011-08-09 00:00:00
+  updated_at: 2011-08-09 00:00:00
+
+entry_12:
+  id: 12
+  browser_id: 3
+  browser_version: 3
+  lock_version: 0
+  created_at: 2011-08-09 00:00:00
+  updated_at: 2011-08-09 00:00:00
+
+entry_13:
+  id: 13
+  browser_id: 3
+  browser_version: 4
+  lock_version: 0
+  created_at: 2011-08-09 00:00:00
+  updated_at: 2011-08-09 00:00:00
+
+entry_14:
+  id: 14
+  browser_id: 3
+  browser_version: 5
+  lock_version: 0
+  created_at: 2011-08-09 00:00:00
+  updated_at: 2011-08-09 00:00:00
+
+entry_15:
+  id: 15
+  browser_id: 4
+  browser_version: 6
+  lock_version: 0
+  created_at: 2011-08-09 00:00:00
+  updated_at: 2011-08-09 00:00:00
+
+entry_16:
+  id: 16
+  browser_id: 4
+  browser_version: 7
+  lock_version: 0
+  created_at: 2011-08-09 00:00:00
+  updated_at: 2011-08-09 00:00:00
+
+entry_17:
+  id: 17
+  browser_id: 4
+  browser_version: 8
+  lock_version: 0
+  created_at: 2011-08-09 00:00:00
+  updated_at: 2011-08-09 00:00:00
+
+entry_18:
+  id: 18
+  browser_id: 4
+  browser_version: 9
+  lock_version: 0
+  created_at: 2011-08-09 00:00:00
+  updated_at: 2011-08-09 00:00:00
+
+entry_19:
+  id: 19
+  browser_id: 4
+  browser_version: 10
+  lock_version: 0
+  created_at: 2011-08-09 00:00:00
+  updated_at: 2011-08-09 00:00:00
+
+entry_20:
+  id: 20
+  browser_id: 5
+  browser_version: 2
+  lock_version: 0
+  created_at: 2011-08-09 00:00:00
+  updated_at: 2011-08-09 00:00:00
+
+entry_21:
+  id: 21
+  browser_id: 5
+  browser_version: 3
+  lock_version: 0
+  created_at: 2011-08-09 00:00:00
+  updated_at: 2011-08-09 00:00:00
+
+entry_22:
+  id: 22
+  browser_id: 5
+  browser_version: 4
+  lock_version: 0
+  created_at: 2011-08-09 00:00:00
+  updated_at: 2011-08-09 00:00:00
+
+entry_23:
+  id: 23
+  browser_id: 5
+  browser_version: 5
+  lock_version: 0
+  created_at: 2011-08-09 00:00:00
+  updated_at: 2011-08-09 00:00:00
+
+entry_24:
+  id: 24
+  browser_id: 6
+  browser_version: 6
+  lock_version: 0
+  created_at: 2011-08-09 00:00:00
+  updated_at: 2011-08-09 00:00:00
+
+entry_25:
+  id: 25
+  browser_id: 6
+  browser_version: 7
+  lock_version: 0
+  created_at: 2011-08-09 00:00:00
+  updated_at: 2011-08-09 00:00:00
+
+entry_26:
+  id: 26
+  browser_id: 6
+  browser_version: 8
+  lock_version: 0
+  created_at: 2011-08-09 00:00:00
+  updated_at: 2011-08-09 00:00:00
+
+entry_27:
+  id: 27
+  browser_id: 6
+  browser_version: 9
+  lock_version: 0
+  created_at: 2011-08-09 00:00:00
+  updated_at: 2011-08-09 00:00:00

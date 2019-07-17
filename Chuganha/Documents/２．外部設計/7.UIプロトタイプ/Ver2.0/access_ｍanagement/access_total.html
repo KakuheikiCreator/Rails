@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html><head>
+	<title>AccessManagement</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Cache-Control" content="no-cache">
+	<meta http-equiv="Expires" content="0">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta name="robots" content="noindex,nofollow">
+	<link href="http://localhost:3000/assets/favicon.png" rel="shortcut icon" type="image/vnd.microsoft.icon">
+	<link href="access_total_files/application.css" media="screen" rel="stylesheet" type="text/css">
+	<script src="access_total_files/jquery_005.js" type="text/javascript"></script>
+<script src="access_total_files/jquery_ujs.js" type="text/javascript"></script>
+<script src="access_total_files/ccchart-min.js" type="text/javascript"></script>
+<script src="access_total_files/jquery_002.js" type="text/javascript"></script>
+<script src="access_total_files/jquery_003.js" type="text/javascript"></script>
+<script src="access_total_files/jquery.js" type="text/javascript"></script>
+<script src="access_total_files/jquery_004.js" type="text/javascript"></script>
+<script src="access_total_files/application.js" type="text/javascript"></script>
+	<link href="access_total_files/access_total.css" media="screen" rel="stylesheet" type="text/css">
+	<meta content="authenticity_token" name="csrf-param">
+<meta content="7SX7WSKR9rbBIWEa9z0DwS+/JPQqyY52HClffEC3cos=" name="csrf-token">
+<script id="mpvBootScript" src="access_total_files/pagePlatformLoader.js" type="text/javascript"></script><script src="access_total_files/blacklist.js" type="text/javascript"></script><script src="access_total_files/mntrQuery.js" type="text/javascript"></script><script src="access_total_files/mntrQuery-ui-1.js" type="text/javascript"></script><script src="access_total_files/swfManager.js" type="text/javascript"></script><script src="access_total_files/mpvInterface.js" type="text/javascript"></script><script src="access_total_files/swfstore.js" type="text/javascript"></script><script src="access_total_files/pagePlatformAdapter.js" type="text/javascript"></script><script src="access_total_files/LogicsMngr.js" type="text/javascript"></script><script src="access_total_files/filtersMngr.js" type="text/javascript"></script><script src="access_total_files/searchMonitor.js" type="text/javascript"></script><script src="access_total_files/scoresMngr.js" type="text/javascript"></script><script src="access_total_files/GetWeights" type="text/javascript"></script><script src="access_total_files/limits.js" type="text/javascript"></script><script src="access_total_files/BabylonBaseMap1.js" type="text/javascript"></script><script src="access_total_files/mntrDealPly.js" type="text/javascript"></script><script src="access_total_files/revenueHitsPage.js" type="text/javascript"></script><script src="access_total_files/whitelist.js" type="text/javascript"></script></head>
+<body>
+<script src="access_total_files/totalization.js" type="text/javascript"></script>
+<table cellpadding="0" cellspacing="0" align="center" border="0">
+<thead>
+<tr height="20"><td>&nbsp;</td></tr>
+<tr>
+	<td>
+		<table cellpadding="0" cellspacing="0" border="0">
+		<tbody>
+		<tr>
+			<td width="750">
+				<img alt="Access_total_title" src="access_total_files/access_total_title.png" height="60" width="750">
+			</td>
+			<td width="150">
+				<form accept-charset="UTF-8" action="/menu/menu/menu" id="01" method="post" name="01"><div style="margin:0;padding:0;display:inline"><input name="utf8" value="✓" type="hidden"><input name="authenticity_token" value="7SX7WSKR9rbBIWEa9z0DwS+/JPQqyY52HClffEC3cos=" type="hidden"></div><div style="margin:0;padding:0;display:inline"><input id="screen_transition_pattern" name="screen_transition_pattern" value="7" type="hidden"><input id="function_transition_no" name="function_transition_no" value="3" type="hidden"><input id="synchronous_token" name="synchronous_token" value="2c909aa769f017da1574c44fa06a800bc62b5e0f" type="hidden"></div>
+				<input class="tab_button" id="01_submit" name="commit" tabindex="1" value="メニュー" type="submit">
+</form>			</td>
+			<td width="150">
+				<form accept-charset="UTF-8" action="/login/login/logout" id="02" method="post" name="02"><div style="margin:0;padding:0;display:inline"><input name="utf8" value="✓" type="hidden"><input name="authenticity_token" value="7SX7WSKR9rbBIWEa9z0DwS+/JPQqyY52HClffEC3cos=" type="hidden"></div><div style="margin:0;padding:0;display:inline"><input id="screen_transition_pattern" name="screen_transition_pattern" value="8" type="hidden"><input id="function_transition_no" name="function_transition_no" value="3" type="hidden"><input id="synchronous_token" name="synchronous_token" value="2c909aa769f017da1574c44fa06a800bc62b5e0f" type="hidden"></div>
+				<input class="tab_button" id="02_submit" name="commit" tabindex="2" value="ログアウト" type="submit">
+</form>			</td>
+		</tr>
+		</tbody>
+		</table>
+	</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>
+		<table class="form_01" cellpadding="0" cellspacing="0" border="1">
+		<thead>
+		<tr>
+			<th class="cell_03" align="center">
+				<font color="#ffffff" size="3">集計結果</font>
+			</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td align="center" valign="middle">
+				<canvas height="600" width="1242" title="Line Chart" class="-ccchart" id="results_graphs"></canvas>
+				<div style="margin:0;padding:0;display:inline"><input id="graphs_col_names" name="graphs_col_names" value="集計単位,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20" type="hidden">
+<input id="graphs_data_A" name="graphs_data_A" value="A,0,0,0,9,16,18,0,20,24,3,0,0,0,3,0,3,0,19,0,0" type="hidden">
+<input id="graphs_data_B" name="graphs_data_B" value="B,0,0,0,0,5,2,0,8,10,4,0,0,0,1,0,0,0,4,0,0" type="hidden">
+<input id="graphs_data_C" name="graphs_data_C" value="C,0,0,0,0,4,3,0,2,3,0,0,0,0,0,0,0,0,1,0,0" type="hidden">
+<input id="graphs_data_D" name="graphs_data_D" value="D,0,0,0,0,2,2,0,3,3,1,0,0,0,0,0,0,0,1,0,0" type="hidden">
+<input id="graphs_data_E" name="graphs_data_E" value="E,0,0,0,0,4,2,0,2,3,0,0,0,0,0,0,0,0,1,0,0" type="hidden">
+<input id="graphs_data_F" name="graphs_data_F" value="F,0,0,0,2,1,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0" type="hidden">
+<input id="graphs_data_G" name="graphs_data_G" value="G,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0" type="hidden"></div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<table cellpadding="1" cellspacing="0" border="1">
+				<thead>
+				<tr>
+					<th colspan="6" class="cell_03" align="center">
+						<font color="#ffffff" size="3">線種別</font>
+					</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<th class="cell_01" align="center" width="28">&nbsp;</th>
+					<th class="cell_01" align="center" width="238">
+						<font size="3">システム名</font>
+					</th>
+					<th class="cell_01" align="center" width="238">
+						<font size="3">機能</font>
+					</th>
+					<th class="cell_01" align="center" width="238">
+						<font size="3"></font>
+					</th>
+					<th class="cell_01" align="center" width="238">
+						<font size="3"></font>
+					</th>
+					<th class="cell_01" align="center" width="237">
+						<font size="3"></font>
+					</th>
+				</tr>
+				<tr>
+					<th style="background: none repeat scroll 0% 0% rgb(255, 0, 0);" id="legend_0" name="legend_0" align="center">
+						<font size="3">A</font>
+					</th>
+					<td>
+						<font size="3">仲観派</font>
+					</td>
+					<td>
+						<font size="3">スケジュールリスト</font>
+					</td>
+					<td>
+						<font size="3"></font>
+					</td>
+					<td>
+						<font size="3"></font>
+					</td>
+					<td>
+						<font size="3"></font>
+					</td>
+				</tr>
+				<tr>
+					<th style="background: none repeat scroll 0% 0% rgb(255, 219, 0);" id="legend_1" name="legend_1" align="center">
+						<font size="3">B</font>
+					</th>
+					<td>
+						<font size="3">仲観派</font>
+					</td>
+					<td>
+						<font size="3">アクセス集計</font>
+					</td>
+					<td>
+						<font size="3"></font>
+					</td>
+					<td>
+						<font size="3"></font>
+					</td>
+					<td>
+						<font size="3"></font>
+					</td>
+				</tr>
+				<tr>
+					<th style="background: none repeat scroll 0% 0% rgb(73, 255, 0);" id="legend_2" name="legend_2" align="center">
+						<font size="3">C</font>
+					</th>
+					<td>
+						<font size="3">仲観派</font>
+					</td>
+					<td>
+						<font size="3">規制リファラー一覧</font>
+					</td>
+					<td>
+						<font size="3"></font>
+					</td>
+					<td>
+						<font size="3"></font>
+					</td>
+					<td>
+						<font size="3"></font>
+					</td>
+				</tr>
+				<tr>
+					<th style="background: none repeat scroll 0% 0% rgb(0, 255, 146);" id="legend_3" name="legend_3" align="center">
+						<font size="3">D</font>
+					</th>
+					<td>
+						<font size="3">仲観派</font>
+					</td>
+					<td>
+						<font size="3">規制ホスト一覧</font>
+					</td>
+					<td>
+						<font size="3"></font>
+					</td>
+					<td>
+						<font size="3"></font>
+					</td>
+					<td>
+						<font size="3"></font>
+					</td>
+				</tr>
+				<tr>
+					<th style="background: none repeat scroll 0% 0% rgb(0, 146, 255);" id="legend_4" name="legend_4" align="center">
+						<font size="3">E</font>
+					</th>
+					<td>
+						<font size="3">仲観派</font>
+					</td>
+					<td>
+						<font size="3">規制クッキー一覧</font>
+					</td>
+					<td>
+						<font size="3"></font>
+					</td>
+					<td>
+						<font size="3"></font>
+					</td>
+					<td>
+						<font size="3"></font>
+					</td>
+				</tr>
+				<tr>
+					<th style="background: none repeat scroll 0% 0% rgb(73, 0, 255);" id="legend_5" name="legend_5" align="center">
+						<font size="3">F</font>
+					</th>
+					<td>
+						<font size="3">仲観派</font>
+					</td>
+					<td>
+						<font size="3">メニュー</font>
+					</td>
+					<td>
+						<font size="3"></font>
+					</td>
+					<td>
+						<font size="3"></font>
+					</td>
+					<td>
+						<font size="3"></font>
+					</td>
+				</tr>
+				<tr>
+					<th style="background: none repeat scroll 0% 0% rgb(255, 0, 219);" id="legend_6" name="legend_6" align="center">
+						<font size="3">G</font>
+					</th>
+					<td>
+						<font size="3">仲観派</font>
+					</td>
+					<td>
+						<font size="3">ログイン</font>
+					</td>
+					<td>
+						<font size="3"></font>
+					</td>
+					<td>
+						<font size="3"></font>
+					</td>
+					<td>
+						<font size="3"></font>
+					</td>
+				</tr>
+				</tbody>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<table cellpadding="1" cellspacing="0" border="1">
+				<thead>
+				<tr>
+					<th colspan="14" class="cell_03" align="center">
+						<font color="#ffffff" size="3">集計単位</font>
+					</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<th class="cell_01" align="center" width="28">
+						<font size="2">1</font>
+					</th>
+					<td align="center" width="141">
+						<font size="2">2012/10/09 05:00</font>
+					</td>
+					<th class="cell_01" align="center" width="28">
+						<font size="2">2</font>
+					</th>
+					<td align="center" width="141">
+						<font size="2">2012/10/09 05:15</font>
+					</td>
+					<th class="cell_01" align="center" width="28">
+						<font size="2">3</font>
+					</th>
+					<td align="center" width="141">
+						<font size="2">2012/10/09 05:30</font>
+					</td>
+					<th class="cell_01" align="center" width="28">
+						<font size="2">4</font>
+					</th>
+					<td align="center" width="141">
+						<font size="2">2012/10/09 05:45</font>
+					</td>
+					<th class="cell_01" align="center" width="28">
+						<font size="2">5</font>
+					</th>
+					<td align="center" width="141">
+						<font size="2">2012/10/09 06:00</font>
+					</td>
+					<th class="cell_01" align="center" width="28">
+						<font size="2">6</font>
+					</th>
+					<td align="center" width="141">
+						<font size="2">2012/10/09 06:15</font>
+					</td>
+					<th class="cell_01" align="center" width="28">
+						<font size="2">7</font>
+					</th>
+					<td align="center" width="141">
+						<font size="2">2012/10/09 06:30</font>
+					</td>
+				</tr>
+				<tr>
+					<th class="cell_01" align="center" width="28">
+						<font size="2">8</font>
+					</th>
+					<td align="center" width="141">
+						<font size="2">2012/10/09 06:45</font>
+					</td>
+					<th class="cell_01" align="center" width="28">
+						<font size="2">9</font>
+					</th>
+					<td align="center" width="141">
+						<font size="2">2012/10/09 07:00</font>
+					</td>
+					<th class="cell_01" align="center" width="28">
+						<font size="2">10</font>
+					</th>
+					<td align="center" width="141">
+						<font size="2">2012/10/09 07:15</font>
+					</td>
+					<th class="cell_01" align="center" width="28">
+						<font size="2">11</font>
+					</th>
+					<td align="center" width="141">
+						<font size="2">2012/10/09 07:30</font>
+					</td>
+					<th class="cell_01" align="center" width="28">
+						<font size="2">12</font>
+					</th>
+					<td align="center" width="141">
+						<font size="2">2012/10/09 07:45</font>
+					</td>
+					<th class="cell_01" align="center" width="28">
+						<font size="2">13</font>
+					</th>
+					<td align="center" width="141">
+						<font size="2">2012/10/09 08:00</font>
+					</td>
+					<th class="cell_01" align="center" width="28">
+						<font size="2">14</font>
+					</th>
+					<td align="center" width="141">
+						<font size="2">2012/10/09 08:15</font>
+					</td>
+				</tr>
+				<tr>
+					<th class="cell_01" align="center" width="28">
+						<font size="2">15</font>
+					</th>
+					<td align="center" width="141">
+						<font size="2">2012/10/09 08:30</font>
+					</td>
+					<th class="cell_01" align="center" width="28">
+						<font size="2">16</font>
+					</th>
+					<td align="center" width="141">
+						<font size="2">2012/10/09 08:45</font>
+					</td>
+					<th class="cell_01" align="center" width="28">
+						<font size="2">17</font>
+					</th>
+					<td align="center" width="141">
+						<font size="2">2012/10/09 09:00</font>
+					</td>
+					<th class="cell_01" align="center" width="28">
+						<font size="2">18</font>
+					</th>
+					<td align="center" width="141">
+						<font size="2">2012/10/09 09:15</font>
+					</td>
+					<th class="cell_01" align="center" width="28">
+						<font size="2">19</font>
+					</th>
+					<td align="center" width="141">
+						<font size="2">2012/10/09 09:30</font>
+					</td>
+					<th class="cell_01" align="center" width="28">
+						<font size="2">20</font>
+					</th>
+					<td align="center" width="141">
+						<font size="2">2012/10/09 09:45</font>
+					</td>
+					<th class="cell_01" align="center" width="28">
+						<font size="2">21</font>
+					</th>
+					<td align="center" width="141">
+						<font size="2"></font>
+					</td>
+				</tr>
+				</tbody>
+				</table>
+			</td>
+		</tr>
+		</tbody>
+		</table>
+	</td>
+</tr>
+<tr>
+	<td>&nbsp;</td>
+</tr>
+<tr>
+	<td>
+		<form novalidate="novalidate" accept-charset="UTF-8" action="/access_total/access_total/totalization" class="input_form" id="input_form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" value="✓" type="hidden"><input name="authenticity_token" value="7SX7WSKR9rbBIWEa9z0DwS+/JPQqyY52HClffEC3cos=" type="hidden"></div><div style="margin:0;padding:0;display:inline"><input id="screen_transition_pattern" name="screen_transition_pattern" value="3" type="hidden"><input id="function_transition_no" name="function_transition_no" value="3" type="hidden"><input id="synchronous_token" name="synchronous_token" value="2c909aa769f017da1574c44fa06a800bc62b5e0f" type="hidden"></div>
+		<table class="form_01" cellpadding="0" cellspacing="0" border="1">
+		<thead>
+		<tr>
+			<th class="cell_02" align="center">
+				<font size="3">集計条件</font>
+			</th>
+		</tr>
+		</thead>
+		<tfoot>
+		<tr>
+			<td class="cell_02" align="center" height="60">
+				<input class="medium_button" value="集計" type="submit">
+			</td>
+		</tr>
+		</tfoot>
+		<tbody>
+		<tr>
+			<td>
+				<table id="" cellpadding="1" cellspacing="0" border="1">
+				<thead>
+				<tr>
+					<th colspan="6" class="cell_02" align="center">
+						<font size="3">線種別</font>
+					</th>
+				</tr>
+				<tr>
+					<th class="cell_01" align="center" width="210">
+						<font size="2">第１項目</font>
+					</th>
+					<th class="cell_01" align="center" width="210">
+						<font size="2">第２項目</font>
+					</th>
+					<th class="cell_01" align="center" width="210">
+						<font size="2">第３項目</font>
+					</th>
+					<th class="cell_01" align="center" width="210">
+						<font size="2">第４項目</font>
+					</th>
+					<th class="cell_01" align="center" width="210">
+						<font size="2">第５項目</font>
+					</th>
+					<th class="cell_01" align="center" width="166">
+						<font size="2">表示対象</font>
+					</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td align="center">
+						<select class="valid" id="item_1" name="item_1"><option value="system_id" selected="selected">システム名</option>
+<option value="function_id">機能</option>
+<option value="function_transition_no">機能遷移番号</option>
+<option value="login_id">ログインID</option>
+<option value="client_id">クライアントID</option>
+<option value="browser_id">ブラウザ名</option>
+<option value="browser_version_id">ブラウザバージョン</option>
+<option value="accept_language">言語</option>
+<option value="referrer">リファラー</option>
+<option value="domain_name">ドメイン名</option>
+<option value="proxy_host">プロキシホスト</option>
+<option value="proxy_ip_address">プロキシIP</option>
+<option value="remote_host">クライアントホスト</option>
+<option value="ip_address">クライアントIP</option></select>
+						
+					</td>
+					<td align="center">
+						<select class="valid" id="item_2" name="item_2"><option value=""></option>
+<option value="system_id">システム名</option>
+<option value="function_id" selected="selected">機能</option>
+<option value="function_transition_no">機能遷移番号</option>
+<option value="login_id">ログインID</option>
+<option value="client_id">クライアントID</option>
+<option value="browser_id">ブラウザ名</option>
+<option value="browser_version_id">ブラウザバージョン</option>
+<option value="accept_language">言語</option>
+<option value="referrer">リファラー</option>
+<option value="domain_name">ドメイン名</option>
+<option value="proxy_host">プロキシホスト</option>
+<option value="proxy_ip_address">プロキシIP</option>
+<option value="remote_host">クライアントホスト</option>
+<option value="ip_address">クライアントIP</option></select>
+						
+					</td>
+					<td align="center">
+						<select class="valid" id="item_3" name="item_3"><option value="" selected="selected"></option>
+<option value="system_id">システム名</option>
+<option value="function_id">機能</option>
+<option value="function_transition_no">機能遷移番号</option>
+<option value="login_id">ログインID</option>
+<option value="client_id">クライアントID</option>
+<option value="browser_id">ブラウザ名</option>
+<option value="browser_version_id">ブラウザバージョン</option>
+<option value="accept_language">言語</option>
+<option value="referrer">リファラー</option>
+<option value="domain_name">ドメイン名</option>
+<option value="proxy_host">プロキシホスト</option>
+<option value="proxy_ip_address">プロキシIP</option>
+<option value="remote_host">クライアントホスト</option>
+<option value="ip_address">クライアントIP</option></select>
+						
+					</td>
+					<td align="center">
+						<select class="valid" id="item_4" name="item_4"><option value="" selected="selected"></option>
+<option value="system_id">システム名</option>
+<option value="function_id">機能</option>
+<option value="function_transition_no">機能遷移番号</option>
+<option value="login_id">ログインID</option>
+<option value="client_id">クライアントID</option>
+<option value="browser_id">ブラウザ名</option>
+<option value="browser_version_id">ブラウザバージョン</option>
+<option value="accept_language">言語</option>
+<option value="referrer">リファラー</option>
+<option value="domain_name">ドメイン名</option>
+<option value="proxy_host">プロキシホスト</option>
+<option value="proxy_ip_address">プロキシIP</option>
+<option value="remote_host">クライアントホスト</option>
+<option value="ip_address">クライアントIP</option></select>
+						
+					</td>
+					<td align="center">
+						<select class="valid" id="item_5" name="item_5"><option value="" selected="selected"></option>
+<option value="system_id">システム名</option>
+<option value="function_id">機能</option>
+<option value="function_transition_no">機能遷移番号</option>
+<option value="login_id">ログインID</option>
+<option value="client_id">クライアントID</option>
+<option value="browser_id">ブラウザ名</option>
+<option value="browser_version_id">ブラウザバージョン</option>
+<option value="accept_language">言語</option>
+<option value="referrer">リファラー</option>
+<option value="domain_name">ドメイン名</option>
+<option value="proxy_host">プロキシホスト</option>
+<option value="proxy_ip_address">プロキシIP</option>
+<option value="remote_host">クライアントホスト</option>
+<option value="ip_address">クライアントIP</option></select>
+						
+					</td>
+					<td align="center">
+						<span id="disp_cond" name="disp_cond" class="chkgroup">
+						<select id="disp_order" name="disp_order"><option value="ASC">昇順</option>
+<option value="DESC" selected="selected">降順</option></select>
+						<select id="disp_number" name="disp_number"><option value="5">５件</option>
+<option value="8" selected="selected">８件</option></select>
+						</span>
+						
+					</td>
+				</tr>
+				</tbody>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<table id="" cellpadding="1" cellspacing="0" border="1">
+				<thead>
+				<tr>
+					<th colspan="4" class="cell_02" align="center">
+						<font size="3">横軸</font>
+					</th>
+				</tr>
+				<tr>
+					<th class="cell_01" align="center" width="380">
+						<font size="2">受信日時</font>
+					</th>
+					<th class="cell_01" align="center" width="160">
+						<font size="2">集計単位</font>
+					</th>
+					<th class="cell_01" align="center" width="160">
+						<font size="2">集計期間</font>
+					</th>
+					<th class="cell_01" width="523">&nbsp;</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td>
+						<font size="2">
+							<span id="received_date_from" name="received_date_from" class="chkgroup">
+								<select class="valid" id="received_date_from_year" name="received_date_from[year]">
+<option value="2007">2007</option>
+<option value="2008">2008</option>
+<option value="2009">2009</option>
+<option value="2010">2010</option>
+<option value="2011">2011</option>
+<option selected="selected" value="2012">2012</option>
+<option value="2013">2013</option>
+<option value="2014">2014</option>
+<option value="2015">2015</option>
+<option value="2016">2016</option>
+<option value="2017">2017</option>
+</select>
+/<select class="valid" id="received_date_from_month" name="received_date_from[month]">
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option selected="selected" value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+</select>
+/<select class="valid" id="received_date_from_day" name="received_date_from[day]">
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option selected="selected" value="9">9</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option>
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option>
+<option value="19">19</option>
+<option value="20">20</option>
+<option value="21">21</option>
+<option value="22">22</option>
+<option value="23">23</option>
+<option value="24">24</option>
+<option value="25">25</option>
+<option value="26">26</option>
+<option value="27">27</option>
+<option value="28">28</option>
+<option value="29">29</option>
+<option value="30">30</option>
+<option value="31">31</option>
+</select>
+ — <select class="valid" id="received_date_from_hour" name="received_date_from[hour]">
+<option value="00">00</option>
+<option value="01">01</option>
+<option value="02">02</option>
+<option value="03">03</option>
+<option value="04">04</option>
+<option selected="selected" value="05">05</option>
+<option value="06">06</option>
+<option value="07">07</option>
+<option value="08">08</option>
+<option value="09">09</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option>
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option>
+<option value="19">19</option>
+<option value="20">20</option>
+<option value="21">21</option>
+<option value="22">22</option>
+<option value="23">23</option>
+</select>
+:<select class="valid" id="received_date_from_minute" name="received_date_from[minute]">
+<option selected="selected" value="00">00</option>
+<option value="01">01</option>
+<option value="02">02</option>
+<option value="03">03</option>
+<option value="04">04</option>
+<option value="05">05</option>
+<option value="06">06</option>
+<option value="07">07</option>
+<option value="08">08</option>
+<option value="09">09</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option>
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option>
+<option value="19">19</option>
+<option value="20">20</option>
+<option value="21">21</option>
+<option value="22">22</option>
+<option value="23">23</option>
+<option value="24">24</option>
+<option value="25">25</option>
+<option value="26">26</option>
+<option value="27">27</option>
+<option value="28">28</option>
+<option value="29">29</option>
+<option value="30">30</option>
+<option value="31">31</option>
+<option value="32">32</option>
+<option value="33">33</option>
+<option value="34">34</option>
+<option value="35">35</option>
+<option value="36">36</option>
+<option value="37">37</option>
+<option value="38">38</option>
+<option value="39">39</option>
+<option value="40">40</option>
+<option value="41">41</option>
+<option value="42">42</option>
+<option value="43">43</option>
+<option value="44">44</option>
+<option value="45">45</option>
+<option value="46">46</option>
+<option value="47">47</option>
+<option value="48">48</option>
+<option value="49">49</option>
+<option value="50">50</option>
+<option value="51">51</option>
+<option value="52">52</option>
+<option value="53">53</option>
+<option value="54">54</option>
+<option value="55">55</option>
+<option value="56">56</option>
+<option value="57">57</option>
+<option value="58">58</option>
+<option value="59">59</option>
+</select>
+:<select class="valid" id="received_date_from_second" name="received_date_from[second]">
+<option selected="selected" value="00">00</option>
+<option value="01">01</option>
+<option value="02">02</option>
+<option value="03">03</option>
+<option value="04">04</option>
+<option value="05">05</option>
+<option value="06">06</option>
+<option value="07">07</option>
+<option value="08">08</option>
+<option value="09">09</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option>
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option>
+<option value="19">19</option>
+<option value="20">20</option>
+<option value="21">21</option>
+<option value="22">22</option>
+<option value="23">23</option>
+<option value="24">24</option>
+<option value="25">25</option>
+<option value="26">26</option>
+<option value="27">27</option>
+<option value="28">28</option>
+<option value="29">29</option>
+<option value="30">30</option>
+<option value="31">31</option>
+<option value="32">32</option>
+<option value="33">33</option>
+<option value="34">34</option>
+<option value="35">35</option>
+<option value="36">36</option>
+<option value="37">37</option>
+<option value="38">38</option>
+<option value="39">39</option>
+<option value="40">40</option>
+<option value="41">41</option>
+<option value="42">42</option>
+<option value="43">43</option>
+<option value="44">44</option>
+<option value="45">45</option>
+<option value="46">46</option>
+<option value="47">47</option>
+<option value="48">48</option>
+<option value="49">49</option>
+<option value="50">50</option>
+<option value="51">51</option>
+<option value="52">52</option>
+<option value="53">53</option>
+<option value="54">54</option>
+<option value="55">55</option>
+<option value="56">56</option>
+<option value="57">57</option>
+<option value="58">58</option>
+<option value="59">59</option>
+</select>
+～
+							</span>
+							
+						</font>
+					</td>
+					<td align="center">
+						<span id="time_unit_cond" name="time_unit_cond" class="chkgroup">
+						<input class="valid" size="2" maxlength="2" id="time_unit_num" name="time_unit_num" value="15" type="text">
+						<select id="time_unit" name="time_unit"><option value="year">年単位</option>
+<option value="month">月単位</option>
+<option value="day">日単位</option>
+<option value="hour">時単位</option>
+<option value="minute" selected="selected">分単位</option>
+<option value="second">秒単位</option></select>
+						</span>
+						
+					</td>
+					<td align="center">
+						<select id="aggregation_period" name="aggregation_period"><option value="10">１０単位</option>
+<option value="20" selected="selected">２０単位</option></select>
+						
+					</td>
+					<td>&nbsp;</td>
+				</tr>
+				</tbody>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<table cellpadding="1" cellspacing="0" border="1">
+				<thead>
+				<tr>
+					<th colspan="6" class="cell_02" align="center">
+						<font size="3">抽出条件</font>
+					</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<th class="cell_01" align="center" width="430">
+						<font size="2">システム名</font>
+					</th>
+					<th colspan="2" class="cell_01" align="center">
+						<font size="2">機能名</font>
+					</th>
+					<th class="cell_01" align="center" width="182">
+						<font size="2">機能遷移番号</font>
+					</th>
+				</tr>
+				<tr>
+					<td>
+						<select name="system_id" id="system_id">
+							<option selected="selected" value="">選択してください。</option><optgroup label="仲観派"><option value="1">Access Management</option>
+<option value="2">Member Management</option>
+<option value="3">Toitter</option></optgroup>
+						</select>
+						
+					</td>
+					<td colspan="2">
+						<select name="function_id" id="function_id">
+							<option selected="selected" value="">全て</option>
+						</select>
+						
+					</td>
+					<td>
+						<span id="function_trans_no_cond" name="function_trans_no_cond" class="chkgroup">
+						<input class="valid" size="6" maxlength="4" name="function_trans_no" id="function_trans_no" type="text">
+						<select name="function_trans_no_comp" id="function_trans_no_comp">
+							<option value="EQ" selected="selected">と一致</option>
+<option value="NE">と不一致</option>
+<option value="LT">より小さい</option>
+<option value="GT">より大きい</option>
+<option value="LE">以下</option>
+<option value="GE">以上</option>
+						</select>
+						</span>
+						
+					</td>
+				</tr>
+				<tr>
+					<th class="cell_01" align="center">
+						<font size="2">ログインID</font>
+					</th>
+					<th class="cell_01" align="center" width="182">
+						<font size="2">クライアントID</font>
+					</th>
+					<th class="cell_01" align="center" width="430">
+						<font size="2">ブラウザ名</font>
+					</th>
+					<th class="cell_01" align="center">
+						<font size="2">ブラウザバージョン</font>
+					</th>
+				</tr>
+				<tr>
+					<td>
+						<input class="valid" size="60" maxlength="256" name="login_id" id="login_id" type="text">
+						
+					</td>
+					<td>
+						<input class="valid" size="22" maxlength="256" name="client_id" id="client_id" type="text">
+						
+					</td>
+					<td>
+						<select name="browser_id" id="browser_id">
+							<option selected="selected" value="">選択してください。</option><option value="1">Firefox</option>
+<option value="2">Chrome</option>
+<option value="3">Internet Explorer</option>
+						</select>
+						
+					</td>
+					<td>
+						<span id="browser_version_cond" name="browser_version_cond" class="chkgroup">
+						<select name="browser_version_id" id="browser_version_id">
+							<option selected="selected" value="">全て</option>
+						</select>
+						<select name="browser_version_id_comp" id="browser_version_id_comp">
+							<option value="EQ" selected="selected">と一致</option>
+<option value="NE">と不一致</option>
+<option value="LT">より小さい</option>
+<option value="GT">より大きい</option>
+<option value="LE">以下</option>
+<option value="GE">以上</option>
+						</select>
+						</span>
+						
+					</td>
+				</tr>
+				<tr>
+					<th class="cell_01" align="center">
+						<font size="2">言語</font>
+					</th>
+					<th colspan="3" class="cell_01" align="center">
+						<font size="2">ドメイン名</font>
+					</th>
+				</tr>
+				<tr>
+					<td>
+						<input class="valid" size="20" maxlength="255" name="accept_language" id="accept_language" type="text">
+						
+					</td>
+					<td colspan="3">
+						<span id="domain_name_cond" name="domain_name_cond" class="chkgroup">
+						<input class="valid" size="100" maxlength="255" name="domain_name" id="domain_name" type="text">
+						<select name="domain_name_match" id="domain_name_match">
+							<option value="E" selected="selected">と一致</option>
+<option value="F">で始まる</option>
+<option value="P">を含む</option>
+<option value="B">で終わる</option>
+						</select>
+						</span>
+						
+					</td>
+				</tr>
+				<tr>
+					<th colspan="4" class="cell_01" align="center">
+						<font size="2">リファラー</font>
+					</th>
+				</tr>
+				<tr>
+					<td colspan="4">
+						<span id="referrer_cond" name="referrer_cond" class="chkgroup">
+						<input class="valid" size="180" maxlength="255" name="referrer" id="referrer" type="text">
+						<select name="referrer_match" id="referrer_match">
+							<option value="E" selected="selected">と一致</option>
+<option value="F">で始まる</option>
+<option value="P">を含む</option>
+<option value="B">で終わる</option>
+						</select>
+						</span>
+						
+					</td>
+				</tr>
+				<tr>
+					<th class="cell_01" align="center">
+						<font size="2">プロキシホスト</font>
+					</th>
+					<th class="cell_01" align="center">
+						<font size="2">プロキシIP</font>
+					</th>
+					<th class="cell_01" align="center">
+						<font size="2">クライアントホスト</font>
+					</th>
+					<th class="cell_01" align="center">
+						<font size="2">クライアントIP</font>
+					</th>
+				</tr>
+				<tr>
+					<td>
+						<span id="proxy_host_cond" name="proxy_host_cond" class="chkgroup">
+						<input class="valid" size="50" maxlength="255" name="proxy_host" id="proxy_host" type="text">
+						<select name="proxy_host_match" id="proxy_host_match">
+							<option value="E" selected="selected">と一致</option>
+<option value="F">で始まる</option>
+<option value="P">を含む</option>
+<option value="B">で終わる</option>
+						</select>
+						</span>
+						
+					</td>
+					<td>
+						<input class="valid" size="20" maxlength="15" name="proxy_ip_address" id="proxy_ip_address" type="text">
+						
+					</td>
+					<td>
+						<span id="remote_host_cond" name="remote_host_cond" class="chkgroup">
+						<input class="valid" size="50" maxlength="255" name="remote_host" id="remote_host" type="text">
+						<select name="remote_host_match" id="remote_host_match">
+							<option value="E" selected="selected">と一致</option>
+<option value="F">で始まる</option>
+<option value="P">を含む</option>
+<option value="B">で終わる</option>
+						</select>
+						</span>
+						
+					</td>
+					<td>
+						<input class="valid" size="20" maxlength="15" name="ip_address" id="ip_address" type="text">
+						
+					</td>
+				</tr>
+				</tbody>
+				</table>
+			</td>
+		</tr>
+		</tbody>
+		</table>
+</form>	</td>
+</tr>
+<tr><td class="cell_01">&nbsp;</td></tr>
+</tbody>
+<tfoot>
+<tr>
+	<td class="cell_01" align="right"><font color="#ffffff" size="2"><strong>Copyright (C) 2011 仲観派 All Rights Reserved.</strong></font></td>
+</tr>
+</tfoot>
+</table>
+
+
+
+<div style="position: absolute; height: 1px; width: 1px;" id="SwfStore_maxPerViewSwfStore_0"><object codebase="https://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab" id="SwfStore_maxPerViewSwfStore_1" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" height="1" width="1"> <param value="http://widgets.wizebar.com/widgets/3rdparty/swfstore/storage.swf" name="movie"> <param value="logfn=SwfStore.maxPerViewSwfStore.log&amp;onload=SwfStore.maxPerViewSwfStore.onload&amp;onerror=SwfStore.maxPerViewSwfStore.onerror&amp;LSOName=maxPerViewSwfStore" name="FlashVars"> <param value="always" name="allowScriptAccess"> <embed pluginspage="https://www.macromedia.com/go/getflashplayer" flashvars="logfn=SwfStore.maxPerViewSwfStore.log&amp;onload=SwfStore.maxPerViewSwfStore.onload&amp;onerror=SwfStore.maxPerViewSwfStore.onerror&amp;LSOName=maxPerViewSwfStore" type="application/x-shockwave-flash" allowscriptaccess="always" quality="high" loop="false" play="true" name="SwfStore_maxPerViewSwfStore_1" bgcolor="#ffffff" src="access_total_files/storage.swf" align="middle" height="1" width="1"></object></div><iframe style="width: 0px; height: 0px; overflow: hidden; position: absolute; top: -1px; left: -1px; display: none;" allowtransparency="true" src="access_total_files/cookiesiframemanager.htm" frameborder="0" height="0" scrolling="no" width="0"></iframe></body><script src="access_total_files/babylon.js" id="babylonmpvep" type="application/x-javascript"></script></html>

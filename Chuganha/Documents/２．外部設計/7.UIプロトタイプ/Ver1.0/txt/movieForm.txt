@@ -1,0 +1,22 @@
+<tr id="dynamic_input_fields">
+	<td class="cell_03"><font size="2">&nbsp;<strong>作品名（必須）</strong></font></td>
+	<td><input type="text" size="30" maxlength="30" name="title"></td>
+</tr>
+<tr id="dynamic_input_fields">
+	<td class="cell_03"><font size="2">&nbsp;<strong>制作（必須）</strong></font></td>
+	<td><input type="text" size="30" maxlength="30" name="production"></td>
+</tr>
+<tr id="dynamic_input_fields">
+	<td class="cell_03"><font size="2">&nbsp;<strong>販売元</strong></font></td>
+	<td><input type="text" size="30" maxlength="30" name="publisher"></td>
+</tr>
+<tr id="dynamic_input_fields">
+	<td class="cell_03"><font size="2">&nbsp;<strong>発売日</strong></font></td>
+	<td>
+		<font size="2">
+		<input type="text" size="4" maxlength="4" name="year">年
+		<input type="text" size="2" maxlength="2" name="month">月
+		<input type="text" size="2" maxlength="2" name="day">日
+		</font>
+	</td>
+</tr>

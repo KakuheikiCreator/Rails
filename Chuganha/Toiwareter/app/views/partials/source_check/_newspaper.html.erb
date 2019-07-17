@@ -1,0 +1,58 @@
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_check.newspaper.item_names.newspaper')%></font>
+	</th>
+	<td colspan="3" class="pattern_4">
+		<font size="2">
+		<%=newspaper_name(@source_obj.newspaper_id) %>&nbsp;
+		<%=@source_obj.newspaper_detail %>
+		</font>
+		<%=hidden_tag("newspaper_id", @source_obj.newspaper_id)%>
+		<%=hidden_tag("newspaper_detail", @source_obj.newspaper_detail)%>
+	</td>
+</tr>
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_check.newspaper.item_names.edition')%></font>
+	</th>
+	<td colspan="3" class="pattern_4">
+		<font size="2">
+		<%=default_date(@source_obj.posted_date) %>&nbsp;
+		<%=code_label(:NEWSPAPER_CLS, @source_obj.newspaper_cls) %>
+		</font>
+		<%=hidden_tag("posted_date_year", @source_obj.posted_date_year)%>
+		<%=date_hidden_tag("posted_date", @source_obj.posted_date)%>
+		<%=hidden_tag("newspaper_cls", @source_obj.newspaper_cls)%>
+	</td>
+</tr>
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_check.newspaper.item_names.headline')%></font>
+	</th>
+	<td colspan="3" class="pattern_4">
+		<font size="2"><%=@source_obj.headline %></font>
+		<%=hidden_tag("headline", @source_obj.headline)%>
+	</td>
+</tr>
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_check.newspaper.item_names.reporter')%></font>
+	</th>
+	<td colspan="3" class="pattern_4">
+		<font size="2"><%=@source_obj.reporter %></font>
+		<%=hidden_tag("reporter", @source_obj.reporter)%>
+	</td>
+</tr>
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_check.newspaper.item_names.job_title')%></font>
+	</th>
+	<td colspan="3" class="pattern_4">
+		<font size="2">
+		<%=job_title_name(@source_obj.job_title_id) %>&nbsp;
+		<%=@source_obj.job_title %>
+		</font>
+		<%=hidden_tag("reporter_job_title_id", @source_obj.job_title_id)%>
+		<%=hidden_tag("reporter_job_title", @source_obj.job_title)%>
+	</td>
+</tr>

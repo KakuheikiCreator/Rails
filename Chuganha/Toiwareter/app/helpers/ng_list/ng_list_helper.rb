@@ -1,0 +1,2 @@
+module NgList::NgListHelper
+end

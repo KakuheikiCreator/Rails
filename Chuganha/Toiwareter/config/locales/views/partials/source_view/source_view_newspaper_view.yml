@@ -1,0 +1,53 @@
+###############################################################################
+# 国際化設定:: コメント投稿（新聞）
+# Copyright:: Copyright (c) 2013 仲観派
+# 作成日:2013/02/11 Nakanohito  (mailto:)
+# 更新日:
+###############################################################################
+ja:
+  views:
+    partials:
+      source_view:
+        newspaper:
+          item_names:
+            newspaper: 新聞名称
+            edition: 日付・刊
+            posted_date: 日付
+            newspaper_cls: 刊
+            headline: 記事見出し
+            reporter: 記者
+            job_title: 記者肩書き
+          messages:
+            description_1: 名称
+
+en:
+  views:
+    partials:
+      source_view:
+        newspaper:
+          item_names:
+            newspaper: Newspaper
+            edition: Edition
+            posted_date: Posted Date
+            newspaper_cls: Edition
+            headline: Headline
+            reporter: Reporter
+            job_title: Job title
+          messages:
+            description_1: Name
+
+en-US:
+  views:
+    partials:
+      source_view:
+        newspaper:
+          item_names:
+            newspaper: Newspaper
+            edition: Edition
+            posted_date: Posted Date
+            newspaper_cls: Edition
+            headline: Headline
+            reporter: Reporter
+            job_title: Job title
+          messages:
+            description_1: Name

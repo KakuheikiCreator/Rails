@@ -1,0 +1,39 @@
+###############################################################################
+# 国際化設定:: ログイン機能
+# Copyright:: Copyright (c) 2011 仲観派
+# 作成日:2012/01/31 Nakanohito  (mailto:)
+# 更新日:
+###############################################################################
+
+ja:
+  views:
+    login:
+      item_names:
+        login: ログイン
+        login_form: ログインフォーム
+        login_id: ログインID
+        password: パスワード
+      messages:
+        invalid_account: 有効なアカウントを入力してください。
+
+en:
+  views:
+    login:
+      item_names:
+        login: Login
+        login_form: Login Form
+        login_id: Login ID
+        password: Password
+      messages:
+        invalid_account: Please enter a valid account.
+
+en-US:
+  views:
+    login:
+      item_names:
+        login: Login
+        login_form: Login Form
+        login_id: Login ID
+        password: Password
+      messages:
+        invalid_account: Please enter a valid account.

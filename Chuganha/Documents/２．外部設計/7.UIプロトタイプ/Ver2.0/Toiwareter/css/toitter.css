@@ -1,0 +1,369 @@
+a.cell_link {
+	display:block;
+	width:100%;
+	height:100%;
+	text-decoration:none;
+}
+
+body.toitter {
+	background:#99b1bd url(../image/cloud_bg.jpg) repeat-x 0 0;
+	font:13px/1.5 Helvetica Neue,Arial,Helvetica,'Liberation Sans',FreeSans,sans-serif;
+	position:relative;
+	overflow-y:scroll;
+	display:block;
+}
+
+body.front {
+	background:#ffffff url(../image/front_background.jpg) repeat-x 0 0;
+	font:13px/1.5 Helvetica Neue,Arial,Helvetica,'Liberation Sans',FreeSans,sans-serif;
+	position:relative;
+	overflow-y:scroll;
+	display:block;
+}
+
+
+div.vertical_middle {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+div.footer {
+	color: #666;
+	font-size: 12px;
+	font-weight: bold;
+	list-style: none;
+	text-transform: capitalize;
+}
+
+div.font_default {
+	font-size:12pt;
+	font-family:serif;
+}
+
+div.font_large {
+	font-size:14pt;
+	font-family:serif;
+}
+
+div.font_said {
+	font-size:18pt;
+	font-family:serif;
+}
+
+div.button_m {
+	width: 11em;
+	height: 1.2em;
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	font: normal normal bold 90% 'Ludica Sans Unicode';
+	padding: 0.5em 1em 0.6em;
+	color: black;
+	border: 1px solid #719aad;
+	background: #c3ddf3;
+	background: -webkit-gradient(linear, top, bottom, from(#ffffff), to(#c3ddf3));
+	background: -moz-linear-gradient(top, #ffffff, #c3ddf3);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#c3ddf3');
+}
+
+div.menu_button {
+	width: 11em;
+	height: 1.6em;
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	font: normal normal bold 110% 'Ludica Sans Unicode';
+	padding: 0.8em 1em 0.6em;
+	border-radius: 8px;
+	color: black;
+	border: 1px solid #719aad;
+	background: #c3ddf3;
+	background: -webkit-gradient(linear, top, bottom, from(#ffffff), to(#c3ddf3));
+	background: -moz-linear-gradient(top, #ffffff, #c3ddf3);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#c3ddf3');
+}
+
+em {
+	font-style: normal;
+	font-weight: 300;
+}
+
+font.confirm {
+	 color:#113366;
+	 font-weight:bold;
+}
+
+font.quote {
+	color: #ffffff;
+}
+
+font.warning {
+	 color:#993300;
+}
+
+form {
+   margin:0;
+}
+
+h1.front {
+	color:#ffffff;
+	font-weight:bold;
+	font-size:36pt
+}
+
+h2.comment {
+	color:#4c4c4c;
+	font-weight:bold;
+	font-size:18pt;
+}
+
+h2.source {
+	color:#4c4c4c;
+	font-weight:bold;
+	font-size:18pt;
+}
+h2.front {
+	color:#6c91a3;
+	font-weight:bold;
+	font-size:28pt;
+	font-family:sans-serif;
+	margin-bottom:12px;
+}
+
+h4.front {
+	color:white;
+	font-weight:bold;
+	text-shadow:0 1px 0 rgba(0, 0, 0, 0.3);
+	margin-bottom:6px;
+	font-size:12pt;
+}
+
+input.openid {
+	background-image: url("../image/login-bg.gif");
+	background-repeat: no-repeat;
+	background-position: left center;
+	padding:4px 8px;
+	color:#303030;
+	font:bold 16px Helvetica Neue,Arial,Sans-serif;
+	cursor:pointer;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	text-indent: 18px;
+}
+
+input.confirmation {
+	padding:4px 8px;
+	color:#303030;
+	font:bold 16px Helvetica Neue,Arial,Sans-serif;
+	cursor:pointer;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+}
+
+input.penetration {
+	color:#ffffff;
+	background:transparent;
+}
+
+input.secretly {
+	color:transparent;
+}
+
+input.membership {
+	background:#ffbf3f;
+	padding:4px 8px;
+	color:#303030;
+	font:bold 16px Helvetica Neue,Arial,Sans-serif;
+	cursor:pointer;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+}
+
+input.search {
+	width:338px;
+	height:36px;
+	text-indent:10px;
+	font-size:12pt;
+	border:none!important;
+	background:rgba(255, 255, 255, 0.7);
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+}
+
+p.message {
+	color: #B9CBD6;
+	font-weight: 300;
+	font-size: 20px;
+	line-height: 26px;
+	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.6);
+}
+
+select.confirmation {
+	padding:4px 8px;
+	color:#303030;
+	font:bold 16px Helvetica Neue,Arial,Sans-serif;
+	cursor:pointer;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+}
+
+table.toitter_base {
+}
+
+table.comment {
+	border-left: 1px solid #505050;
+	border-top: 1px solid #505050;
+}
+
+table.source {
+	border-left: 1px solid #505050;
+	border-top: 1px solid #505050;
+}
+
+table.form_01 {
+	background-color:#ffffff;
+	border-top-color:#3399cc;
+	border-right-color:#3399cc;
+	border-bottom-color:#3399cc;
+	border-left-color:#3399cc;
+}
+
+table.form_02 {
+	background-color:#ffffff;
+	border-top-color:#dcdcdc;
+	border-right-color:#dcdcdc;
+	border-bottom-color:#dcdcdc;
+	border-left-color:#dcdcdc;
+}
+
+table.comment_01 {
+	border-top-color:#dcdcdc;
+	border-right-color:#dcdcdc;
+	border-bottom-color:#dcdcdc;
+	border-left-color:#dcdcdc;
+}
+
+td.base {
+	background-color:#62b1d9;
+}
+
+td.comment_base {
+	background-color:#daf2e7;
+}
+
+td.comment {
+	background-color:#f2f2f2;
+	border-right: 1px solid #505050;
+	border-bottom: 1px solid #505050;
+	padding:5px;
+	font-size:10pt;
+	font-family:serif;
+}
+
+td.comment_head {
+	font-size:10pt;
+	font-family:serif;
+}
+
+td.said_base {
+	background-color:#ffffff;
+}
+
+td.said_balloon {
+	background-color:#ffffff;
+	background-image: url(../image/balloon.png);
+}
+
+td.source {
+	background-color:#e6ebf2;
+	border-right: 1px solid #505050;
+	border-bottom: 1px solid #505050;
+	padding:5px;
+	font-size:11pt;
+	font-family:serif;
+}
+
+td.source_base {
+	background-color:#dae5f2;
+}
+
+td.source_item {
+	background-color:#f2f2f2;
+	border-right: 1px solid #505050;
+	border-bottom: 1px solid #505050;
+	padding:5px;
+	font-size:11pt;
+	font-family:serif;
+}
+
+td.dae5f2 {
+	background-color:#dae5f2;
+}
+
+td.73d2e6 {
+	background-color:#73d2e6;
+}
+
+td.e6ebf2 {
+	background-color:#e6ebf2;
+}
+
+td.cell_02 {
+	background-color:#b0c4de;
+}
+
+td.cell_03 {
+	background-color:#dcdcdc;
+}
+
+td.cell_04 {
+	background-color:#66cdaa;
+}
+
+td.cell_05 {
+	background-color:#6699cc;
+}
+
+td.cell_06 {
+	background-color:#aaddff;
+}
+
+th.cell_01 {
+	background-color:#aaddff;
+}
+
+th.cell_02 {
+	background-color:#dcdcdc;
+}
+
+th.comment {
+	background-color:#c2f2de;
+	border-right: 1px solid #505050;
+	border-bottom: 1px solid #505050;
+	padding:2px;
+}
+
+th.comment_no {
+	font-size:10pt;
+	font-family:serif;
+}
+
+th.source {
+	background-color:#e6ebf2;
+	border-right: 1px solid #505050;
+	border-bottom: 1px solid #505050;
+	padding:5px;
+	font-size:11pt;
+	font-family:serif;
+}
+
+textarea.confirmation {
+	font-size:12px;
+}
+
+textarea.penetration {
+	color:#ffffff;
+	background:transparent;
+}

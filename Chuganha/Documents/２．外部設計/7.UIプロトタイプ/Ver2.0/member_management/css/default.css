@@ -1,0 +1,144 @@
+a.cell_link {
+	display:block;
+	width:100%;
+	height:100%;
+	text-decoration:none;
+}
+
+body {
+	background-color:#b0c4de;
+}
+
+div.vertical_middle {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+font.confirm {
+	 color:#113366;
+	 font-weight:bold;
+}
+
+font.quote {
+	color: #ffffff;
+}
+
+font.warning {
+	 color:#993300;
+}
+
+form {
+	margin:0;
+}
+
+hr.dot {
+	border:none;
+	border-top:2px dotted gray;
+	height:1px;
+}
+
+input.openid_url {
+	text-indent: 18px;
+	background-image: url("../image/login-bg.gif");
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+
+input.penetration {
+	color:#ffffff;
+	background:transparent;
+}
+
+input.secretly {
+	color:transparent;
+}
+
+table.base_01 {
+	background-color:#ffffff;
+}
+
+table.form_01 {
+	background-color:#ffffff;
+	border-top-color:#3399cc;
+	border-right-color:#3399cc;
+	border-bottom-color:#3399cc;
+	border-left-color:#3399cc;
+}
+
+table.form_02 {
+	background-color:#ffffff;
+	border-top-color:#dcdcdc;
+	border-right-color:#dcdcdc;
+	border-bottom-color:#dcdcdc;
+	border-left-color:#dcdcdc;
+}
+
+table.comment_01 {
+	border-top-color:#dcdcdc;
+	border-right-color:#dcdcdc;
+	border-bottom-color:#dcdcdc;
+	border-left-color:#dcdcdc;
+}
+
+td.cell_01 {
+	background-color:#3399cc;
+}
+
+td.cell_02 {
+	background-color:#b0c4de;
+}
+
+td.cell_03 {
+	background-color:#dcdcdc;
+}
+
+td.cell_04 {
+	background-color:#66cdaa;
+}
+
+td.cell_05 {
+	background-color:#6699cc;
+}
+
+td.cell_06 {
+	background-color:#aaddff;
+}
+td.cell_07 {
+	background-image: url("../image/title_back2.jpg");
+}
+td.cell_08 {
+	background-image: url("../image/title_back3.jpg");
+}
+
+th.cell_01 {
+	background-color:#aaddff;
+}
+
+th.cell_02 {
+	background-color:#dcdcdc;
+}
+
+th.cell_03 {
+	background-image: url("../image/title_back6.jpg");
+}
+
+th.cell_04 {
+	background-image: url("../image/title_back.jpg");
+}
+
+th.cell_05 {
+	background-image: url("../image/title_back7.jpg");
+}
+
+th.cell_06 {
+	background-color:#3399cc;
+}
+
+textarea.confirmation {
+	font-size:12px;
+}
+
+textarea.penetration {
+	color:#ffffff;
+	background:transparent;
+}

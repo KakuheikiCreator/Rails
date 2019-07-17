@@ -1,0 +1,87 @@
+###############################################################################
+# 国際化設定:: 引用表示
+# Copyright:: Copyright (c) 2013 仲観派
+# 作成日:2013/02/08 Nakanohito  (mailto:)
+# 更新日:
+###############################################################################
+ja:
+  views:
+    quote:
+      view:
+        index:
+          item_names:
+            page_title: 引用の表示
+            quote_title: 引用文
+            quote_speaker: "%{speaker}さんは"
+            quote_footer: と言われた
+            quote: 引用
+            similar_title: 類似する引用
+            source_title: 出　典
+            speaker: 発言者の名前
+            speaker_title: 発言者の肩書き
+            source_class: 出所分類
+            description: 引用文の説明
+            member_title: この引用の投稿者・訂正者
+            registered_member: 投稿者
+            registered_date: 投稿日時
+            update_member: 訂正者
+            update_date: 訂正日時
+            comment_title: 批評・コメント
+            delete_quote_btn: 引用を削除
+            update_quote_btn: 引用を更新
+            delete_comment_btn: コメントを削除
+            report_comment_btn: コメントを通報
+            post_comment_btn: コメントを投稿
+
+en:
+  views:
+    quote:
+      view:
+        index:
+          item_names:
+            page_title: View quote
+            quote_title: Quote
+            quote_speaker: "%{speaker} said"
+            quote_footer: ""
+            quote: Quote
+            similar_title: Similar quote
+            source_title: Source
+            speaker: Name of the speaker
+            speaker_title: speaker's title
+            source_class: Classification of Source
+            description: Description of quote
+            member_title: この引用の投稿者・訂正者
+            registered_member: Registered
+            registered_date: Registered date
+            update_member: Updated
+            update_date: Updated date
+
+            comment_title: Criticism and comments
+            delete_quote_btn: Delete a quote
+            update_quote_btn: Update a quote
+            delete_comment_btn: Delete a comment
+            report_comment_btn: Report a comment
+            post_comment_btn: Post a comment
+
+en-US:
+  views:
+    quote:
+      view:
+        index:
+          item_names:
+            page_title: View quote
+            quote_title: Quote
+            quote_footer: ""
+            quote: Quote
+            similar_title: Similar quote
+            source_title: Source
+            speaker: Name of the speaker
+            speaker_title: speaker's title
+            source_class: Classification of Source
+            description: Description of quote
+            comment_title: Criticism and comments
+            delete_quote_btn: Delete a quote
+            update_quote_btn: Update a quote
+            delete_comment_btn: Delete a comment
+            report_comment_btn: Report a comment
+            post_comment_btn: Post a comment

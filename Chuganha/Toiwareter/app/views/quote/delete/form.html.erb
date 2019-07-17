@@ -1,0 +1,219 @@
+<% i18n_cache(:suffix=>'quote-delete-form-1') do %>
+<%= javascript_include_tag("quote/delete/form")%>
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+	<td align="center">
+<% end %>
+		<!-- 機能一覧 -->
+		<%= render('partials/func_link')%>
+<% i18n_cache(:suffix=>'quote-delete-form-2') do %>
+	</td>
+</tr>
+<tr><td height="5"></td></tr>
+<tr>
+	<td align="center">
+		<table border="0" cellpadding="0" cellspacing="0">
+		<tbody>
+		<tr>
+		<td>
+			<!-- 引用文 -->
+			<table width="852" border="0" cellpadding="0" cellspacing="0">
+			<tbody>
+			<tr>
+				<td class="pattern_5 angle_ul"></td>
+				<td class="pattern_5"></td>
+				<td class="pattern_5 angle_ur"></td>
+			</tr>
+			<tr>
+				<td class="pattern_5">&nbsp;</td>
+				<td align="center" class="pattern_5">
+					<table border="0" cellpadding="0" cellspacing="0">
+					<tbody>
+					<tr>
+						<td colspan="3" align="center">
+							<h2 class="pattern_2"><%=vt('form.item_names.quote_title')%></h2>
+						</td>
+					</tr>
+					<tr>
+						<td width="30">&nbsp;</td>
+						<td colspan="2">
+							<div class="font_oversize">
+<% end %>
+								<%=vt('form.item_names.quote_speaker', :speaker=>@biz_obj.quote_ent.speaker)%>
+<% i18n_cache(:suffix=>'quote-delete-form-3') do %>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td width="600">
+<% end %>
+							<%=text_area_tag('quote', @biz_obj.quote_ent.quote, {:class=>'said_balloon', :readonly=>true})%>
+<% i18n_cache(:suffix=>'quote-delete-form-4') do %>
+						</td>
+						<td width="170" align="right">
+							<div class="font_oversize"><%=vt('form.item_names.quote_footer')%></div>
+						</td>
+					</tr>
+					</tbody>
+					</table>
+				</td>
+				<td class="pattern_5">&nbsp;</td>
+			</tr>
+			<tr>
+				<td class="pattern_5 angle_ll"></td>
+				<td class="pattern_5"></td>
+				<td class="pattern_5 angle_lr"></td>
+			</tr>
+			</tbody>
+			</table>
+		</td>
+		</tr>
+		<tr><td height="5"></td></tr>
+		<tr>
+		<td>
+			<!-- 出典情報 -->
+			<table width="852" border="0" cellpadding="0" cellspacing="0">
+			<tbody>
+			<tr>
+				<td class="pattern_2 angle_ul"></td>
+				<td class="pattern_2"></td>
+				<td class="pattern_2 angle_ur"></td>
+			</tr>
+			<tr>
+				<td class="pattern_2">&nbsp;</td>
+				<td align="center" class="pattern_2">
+					<h2 class="pattern_2"><%=vt('form.item_names.source_title')%></h2>
+				</td>
+				<td class="pattern_2">&nbsp;</td>
+			</tr>
+			<tr>
+				<td class="pattern_2">&nbsp;</td>
+				<td align="center" class="pattern_2">
+					<table width="820" border="0" cellpadding="0" cellspacing="0" class="pattern_1">
+					<tbody>
+					<tr>
+						<th width="156" align="left" class="pattern_4"><%=vt('form.item_names.speaker')%></th>
+						<td colspan="3" class="pattern_4">
+<% end %>
+						<font size="2"><%=@biz_obj.quote_ent.speaker%></font>
+						</td>
+					</tr>
+					<tr>
+						<th align="left" class="pattern_4"><%=vt('form.item_names.speaker_title')%></th>
+						<td colspan="3" class="pattern_4">
+						<font size="2">
+							<%=job_title_name(@biz_obj.quote_ent.speaker_job_title_id)%>&nbsp;
+							<%=@biz_obj.quote_ent.speaker_job_title%></font>
+						</td>
+					</tr>
+					<tr id="select_source_row">
+						<th align="left" class="pattern_4"><%=vt('form.item_names.source_class')%></th>
+						<td colspan="3" class="pattern_4">
+						<font size="2"><%=source_name(@biz_obj.quote_ent.source_id)%></font>
+						</td>
+					</tr>
+					<!-- 出所情報 -->
+					<%= render('partials/source_view/' + @biz_obj.partial_name)%>
+					<tr>
+						<th align="left" class="pattern_4"><%=vt('form.item_names.description')%></th>
+						<td colspan="3" class="pattern_4">
+							<%=text_area_tag('description', @biz_obj.quote_ent.description,
+							 {:class=>'disp_description', :readonly=>true})%>
+<% i18n_cache(:suffix=>'quote-delete-form-5') do %>
+						</td>
+					</tr>
+					</tbody>
+					</table>
+				</td>
+				<td class="pattern_2">&nbsp;</td>
+			</tr>
+			<tr>
+				<td class="pattern_2 angle_ll"></td>
+				<td class="pattern_2"></td>
+				<td class="pattern_2 angle_lr"></td>
+			</tr>
+			</tbody>
+			</table>
+		</td>
+		</tr>
+		<tr><td height="5"></td></tr>
+		<tr>
+		<td>
+<% end %>
+			<!--  削除理由-->
+			<%= form_tag_with_params({:controller=>'quote/delete', :action=>'check'},
+				{:id=>'delete_form', :name=>'delete_form'}, :TRANS_PTN_NOW) do %>
+			<%=hidden_tag("quote_id", @biz_obj.quote_id)%>
+			<table width="852" border="0" cellpadding="0" cellspacing="0">
+			<tbody>
+			<tr>
+				<td class="pattern_6 angle_ul"></td>
+				<td class="pattern_6"></td>
+				<td class="pattern_6 angle_ur"></td>
+			</tr>
+			<tr>
+				<td class="pattern_6">&nbsp;</td>
+				<td align="center" class="pattern_6">
+					<h2 class="pattern_2"><%=vt('form.item_names.delete_title')%></h2>
+				</td>
+				<td class="pattern_6">&nbsp;</td>
+			</tr>
+			<tr>
+				<td class="pattern_6">&nbsp;</td>
+				<td align="center" class="pattern_6">
+					<table border="0" cellpadding="0" cellspacing="0" class="pattern_2">
+					<tbody>
+					<tr>
+						<th width="156" align="left" class="pattern_4"><%=vt('form.item_names.delete_reason')%></th>
+						<td width="640" class="pattern_4">
+						<%=delete_reason_select('delete_reason_id', @biz_obj.delete_reason_id)%>
+						<%=svr_error_tag("sverr_delete_reason_id", @error_msg_hash[:delete_reason_id])%>
+						</td>
+					</tr>
+					<tr>
+						<th align="left" class="pattern_4"><%=vt('form.item_names.detailed_reason')%></th>
+						<td class="pattern_4">
+						<%=text_area_tag('delete_reason_detail', @biz_obj.delete_reason_detail,
+						 {:class=>'description', :style=>"ime-mode: active;"})%>
+						<%=svr_error_tag("sverr_delete_reason_detail", @error_msg_hash[:delete_reason_detail])%>
+						</td>
+					</tr>
+					</tbody>
+					</table>
+				</td>
+				<td class="pattern_6">&nbsp;</td>
+			</tr>
+			<tr>
+				<td class="pattern_6">&nbsp;</td>
+				<td height="60" align="center" class="pattern_6">
+					<%=submit_tag(vt('form.item_names.return_btn'),
+					 {:onclick=>'return return_to_quote();', :class=>'button_1'})%>&nbsp;
+					<%=submit_tag(vt('form.item_names.check_btn'), {:class=>'button_1'})%>
+				</td>
+				<td class="pattern_6">&nbsp;</td>
+			</tr>
+			<tr>
+				<td class="pattern_6 angle_ll"></td>
+				<td class="pattern_6"></td>
+				<td class="pattern_6 angle_lr"></td>
+			</tr>
+			</tbody>
+			</table>
+			<% end %>
+			<!-- リターンフォーム -->
+			<%= form_tag_with_params({:controller=>'quote/view'},
+				{:id=>'return_form', :name=>'return_form'}, :TRANS_PTN_CLH) do %>
+			<%=hidden_tag("quote_id", @biz_obj.quote_ent.id)%>
+			<% end %>
+<% i18n_cache(:suffix=>'quote-delete-form-6') do %>
+		</td>
+		</tr>
+		</tbody>
+		</table>
+	</td>
+</tr>
+</tbody>
+</table>
+<% end %>

@@ -1,0 +1,47 @@
+###############################################################################
+# 国際化設定:: コメント投稿（書籍）
+# Copyright:: Copyright (c) 2013 仲観派
+# 作成日:2013/02/11 Nakanohito  (mailto:)
+# 更新日:
+###############################################################################
+ja:
+  views:
+    partials:
+      source_form:
+        book:
+          item_names:
+            isbn_cd: ISBNコード
+            isbn: ISBN
+            book_title: 書籍名（必須）
+            publisher: 出版社
+            release_date: 発売日
+            author: 著者（必須）
+            job_title: 著者肩書き
+
+en:
+  views:
+    partials:
+      source_form:
+        book:
+          item_names:
+            isbn_cd: ISBN Code
+            isbn: ISBN
+            book_title: Book Name(Required)
+            publisher: Publisher
+            release_date: Release Date
+            author: Author(Required)
+            job_title: Job titles
+
+en-US:
+  views:
+    partials:
+      source_form:
+        book:
+          item_names:
+            isbn_cd: ISBN Code
+            isbn: ISBN
+            book_title: Book Name(Required)
+            publisher: Publisher
+            release_date: Release Date
+            author: Author(Required)
+            job_title: Job titles

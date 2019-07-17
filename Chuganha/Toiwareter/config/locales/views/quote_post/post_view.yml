@@ -1,0 +1,124 @@
+###############################################################################
+# 国際化設定:: 引用投稿
+# Copyright:: Copyright (c) 2013 仲観派
+# 作成日:2013/01/23 Nakanohito  (mailto:)
+# 更新日:
+###############################################################################
+ja:
+  views:
+    quote:
+      post:
+        # 投稿フォーム
+        form:
+          item_names:
+            page_title: 引用の投稿
+            quote_title: 引用文
+            quote_footer: と言われた
+            source_title: 出　典
+            speaker: 発言者の名前（必須）
+            speaker_title: 発言者の肩書き
+            source_class: 出所分類（必須）
+            description: 引用文の説明
+            comment_title: 批評・コメント
+            check_btn: 入力値チェック
+          messages:
+            notes_on_post: ご投稿時の注意
+            duplication_err: この引用は既に登録済みです。
+        # 投稿確認
+        check: 
+          item_names:
+            page_title: 引用の投稿
+            quote_title: 引用文
+            quote_speaker: "%{speaker}さんは"
+            quote_footer: と言われた
+            quote: 引用
+            similar_title: 類似する引用
+            source_title: 出　典
+            speaker: 発言者の名前（必須）
+            speaker_title: 発言者の肩書き
+            source_class: 出所分類（必須）
+            description: 引用文の説明
+            comment_title: 批評・コメント
+            correct_btn: 入力値を訂正
+            create_btn: この内容で登録
+          messages:
+            notes_on_post: ご投稿時の注意
+            duplication_err: この引用は既に登録済みです。
+
+en:
+  views:
+    quote:
+      post:
+        form:
+          item_names:
+            page_title: Quote Post
+            quote_title: Quote
+            quote_footer: ""
+            source_title: Source
+            speaker: Name of the speaker(Required)
+            speaker_title: speaker's title
+            source_class: Classification of Source(Required)
+            description: Description of quote
+            comment_title: Criticism and comments
+            check_btn: Check value
+          messages:
+            notes_on_post: Notes on Post
+            duplication_err: This quote is already registered.
+        check:
+          item_names:
+            page_title: Quote Post
+            quote_title: Quote
+            quote_speaker: "%{speaker} said"
+            quote_footer: ""
+            quote: Quote
+            similar_title: Similar quote
+            source_title: Source
+            speaker: Name of the speaker(Required)
+            speaker_title: speaker's title
+            source_class: Classification of Source(Required)
+            description: Description of quote
+            comment_title: Criticism and comments
+            correct_btn: Correct the value
+            create_btn: Registration
+          messages:
+            notes_on_post: Notes on Post
+            duplication_err: This quote is already registered.
+
+en-US:
+  views:
+    quote:
+      post:
+        form:
+          item_names:
+            page_title: Quote Post
+            quote_title: Quote
+            quote_speaker: "%{speaker} said"
+            quote_footer: ""
+            source_title: Source
+            speaker: Name of the speaker(Required)
+            speaker_title: speaker's title
+            source_class: Classification of Source(Required)
+            description: Description of quote
+            comment_title: Criticism and comments
+            check_btn: Check value
+          messages:
+            notes_on_post: Notes on Post
+            duplication_err: This quote is already registered.
+        check:
+          item_names:
+            page_title: Quote Post
+            quote_title: Quote
+            quote_footer: ""
+            quote: Quote
+            similar_title: Similar quote
+            source_title: Source
+            speaker: Name of the speaker(Required)
+            speaker_title: speaker's title
+            source_class: Classification of Source(Required)
+            description: Description of quote
+            comment_title: Criticism and comments
+            correct_btn: Correct the value
+            create_btn: Registration
+          messages:
+            notes_on_post: Notes on Post
+            duplication_err: This quote is already registered.

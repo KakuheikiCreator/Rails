@@ -1,0 +1,97 @@
+###############################################################################
+# 国際化設定:: 会員ホーム
+# Copyright:: Copyright (c) 2013 仲観派
+# 作成日:2013/01/12 Nakanohito  (mailto:)
+# 更新日:
+###############################################################################
+ja:
+  views:
+    member:
+      home:
+        home:
+          item_names:
+            page_title: 会員ホーム
+            prof_title: "%{nickname}さんのプロフィール"
+            update_btn: プロフィール更新
+            open_id: OpenID
+            member_id: 会員ID
+            nickname: ニックネーム
+            member_state: 会員状態
+            authority: 権限
+            email: メールアドレス
+            join_date: 入会日時
+            last_login_date: 最終ログイン日時
+            ineligibility_date: 資格停止日時
+            login_cnt: ログイン回数
+            quote_cnt: 引用投稿回数
+            quote_failure_cnt: 引用過失回数
+            quote_correct_cnt: 引用訂正回数
+            quote_correct_failure_cnt: 引用被訂正回数
+            quote_delete_cnt: 引用削除回数
+            comment_cnt: コメント投稿回数
+            comment_failure_cnt: コメント過失回数
+            comment_report_cnt: コメント通報回数
+            were_reported_cnt: コメント被通報回数
+            support_report_cnt: コメント通報対応回数
+
+en:
+  views:
+    member:
+      home:
+        home:
+          item_names:
+            page_title: Member Home
+            prof_title: "%{nickname}'s profile"
+            func_title: Function List
+            update_btn: Update Profile
+            open_id: OpenID
+            member_id: Member ID
+            nickname: Nickname
+            member_state: Member state
+            authority: Authority
+            email: Email
+            join_date: Join Date
+            last_login_date: Last Login Date
+            ineligibility_date: Ineligibility Date
+            login_cnt: The login number of times
+            quote_cnt: Quote Count
+            quote_failure_cnt: Fault quote Count
+            quote_correct_cnt: Correct quote Count
+            quote_correct_failure_cnt: Correct Fault quote Count
+            quote_delete_cnt: Quote delete Count
+            comment_cnt: Comment Count
+            comment_failure_cnt: Fault comment Count
+            comment_report_cnt: Comment report Count
+            were_reported_cnt: were reported Count
+            support_report_cnt: Support report Count
+
+en-US:
+  views:
+    member:
+      home:
+        home:
+          item_names:
+            page_title: Member Home
+            prof_title: "%{nickname}'s profile"
+            func_title: Function List
+            update_btn: Update Profile
+            open_id: OpenID
+            member_id: Member ID
+            nickname: Nickname
+            member_state: Member state
+            authority: Authority
+            email: Email
+            join_date: Join Date
+            last_login_date: Last Login Date
+            ineligibility_date: Ineligibility Date
+            login_cnt: The login number of times
+            quote_cnt: Quote Count
+            quote_failure_cnt: Fault quote Count
+            quote_correct_cnt: Correct quote Count
+            quote_correct_failure_cnt: Correct Fault quote Count
+            quote_delete_cnt: Quote delete Count
+            comment_cnt: Comment Count
+            comment_failure_cnt: Fault comment Count
+            comment_report_cnt: Comment report Count
+            were_reported_cnt: were reported Count
+            support_report_cnt: Support report Count

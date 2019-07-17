@@ -1,0 +1,38 @@
+###############################################################################
+# 国際化設定:: コメント投稿（テレビ）
+# Copyright:: Copyright (c) 2013 仲観派
+# 作成日:2013/02/11 Nakanohito  (mailto:)
+# 更新日:
+###############################################################################
+ja:
+  views:
+    partials:
+      source_form:
+        tv:
+          item_names:
+            program_name: 番組名称（必須）
+            production: 制作局
+            tv_station: 放送局（必須）
+            broadcast_date: 放送日時（必須）
+
+en:
+  views:
+    partials:
+      source_form:
+        tv:
+          item_names:
+            program_name: Program name(Required)
+            production: Production
+            tv_station: TV station(Required)
+            broadcast_date: Broadcast date(Required)
+
+en-US:
+  views:
+    partials:
+      source_form:
+        tv:
+          item_names:
+            program_name: Program name(Required)
+            production: Production
+            tv_station: TV station(Required)
+            broadcast_date: Broadcast date(Required)

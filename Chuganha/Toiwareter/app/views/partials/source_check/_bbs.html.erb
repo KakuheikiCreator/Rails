@@ -1,0 +1,52 @@
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_check.bbs.item_names.bbs_name')%></font>
+	</th>
+	<td width="200" class="pattern_4">
+		<font size="2"><%=bbs_name(@source_obj.bbs_id) %></font>
+		<%=hidden_tag("bbs_id", @source_obj.bbs_id)%>
+	</td>
+	<th width="180" align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_check.bbs.item_names.bbs_name_dtl')%></font>
+	</th>
+	<td class="pattern_4">
+		<font size="2"><%=@source_obj.bbs_detail_name %></font>
+		<%=hidden_tag("bbs_detail_name", @source_obj.bbs_detail_name)%>
+	</td>
+</tr>
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_check.bbs.item_names.thread_title')%></font>
+	</th>
+	<td colspan="3" class="pattern_4">
+		<font size="2"><%=@source_obj.thread_title %></font>
+		<%=hidden_tag("thread_title", @source_obj.thread_title)%>
+	</td>
+</tr>
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_check.bbs.item_names.posted_date')%></font>
+	</th>
+	<td colspan="3" class="pattern_4">
+		<font size="2"><%=default_time(@source_obj.posted_date) %></font>
+		<%=time_hidden_tag("posted_date", @source_obj.posted_date)%>
+	</td>
+</tr>
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_check.bbs.item_names.posted_by')%></font>
+	</th>
+	<td colspan="3" class="pattern_4">
+		<font size="2"><%=@source_obj.posted_by %></font>
+		<%=hidden_tag("posted_by", @source_obj.posted_by)%>
+	</td>
+</tr>
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_check.bbs.item_names.quoted_source_url')%></font>
+	</th>
+	<td colspan="3" class="pattern_4">
+		<font size="2"><%=@source_obj.quoted_source_url %></font>
+		<%=hidden_tag("quoted_source_url", @source_obj.quoted_source_url)%>
+	</td>
+</tr>

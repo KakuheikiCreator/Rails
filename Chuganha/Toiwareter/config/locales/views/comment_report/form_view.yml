@@ -1,0 +1,73 @@
+###############################################################################
+# 国際化設定:: コメント通報（フォーム）
+# Copyright:: Copyright (c) 2013 仲観派
+# 作成日:2013/02/14 Nakanohito  (mailto:)
+# 更新日:
+###############################################################################
+ja:
+  views:
+    comment:
+      report:
+        form:
+          item_names:
+            page_title: コメントの通報
+            quote_title: 引用文
+            quote_speaker: "%{speaker}さんは"
+            quote_footer: と言われた
+            quote: 引用
+            similar_title: 類似する引用
+            source_title: 出　典
+            speaker: 発言者の名前
+            speaker_title: 発言者の肩書き
+            source_class: 出所分類
+            description: 引用文の説明
+            report_title: 通報内容
+            report_reason: 通報理由（必須）
+            detailed_reason: 通報理由詳細（必須）
+            return_btn: 引用に戻る
+            check_btn: 入力値をチェック
+
+en:
+  views:
+    comment:
+      report:
+        form:
+          item_names:
+            page_title: Report Comment
+            quote_title: Quote
+            quote_speaker: "%{speaker} said"
+            quote_footer: ""
+            quote: Quote
+            similar_title: Similar quote
+            source_title: Source
+            speaker: Name of the speaker
+            speaker_title: speaker's title
+            source_class: Classification of Source
+            description: Description of quote
+            report_title: Contents of the report
+            report_reason: Report reason(Required)
+            detailed_reason: Detailed reason(Required)
+            return_btn: Return
+            check_btn: Check value
+
+en-US:
+  views:
+    comment:
+      report:
+        form:
+          item_names:
+            page_title: Report Comment
+            quote_title: Quote
+            quote_footer: ""
+            quote: Quote
+            similar_title: Similar quote
+            source_title: Source
+            speaker: Name of the speaker
+            speaker_title: speaker's title
+            source_class: Classification of Source
+            description: Description of quote
+            report_title: Contents of the report
+            report_reason: Report reason(Required)
+            detailed_reason: Detailed reason(Required)
+            return_btn: Return
+            check_btn: Check value

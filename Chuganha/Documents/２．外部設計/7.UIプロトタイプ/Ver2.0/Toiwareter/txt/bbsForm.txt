@@ -1,0 +1,58 @@
+<tr id="dynamic_input_fields">
+	<td class="cell_03"><font size="2">&nbsp;<strong>掲示板名（必須）</strong></font></td>
+	<td>
+		<script type="text/javascript">
+		<!--
+		$("#bbs_id").live('change',bbsSelected);
+
+		function bbsSelected(){
+			switch ($("#bbs_id").val()) {
+				case '07':
+					$("#bbs_name").attr('disabled','');
+					break;
+				default:
+					$("#bbs_name").attr('disabled','disabled');
+					break;
+			}
+		}
+		//-->
+		</script>
+		<font size="2">
+		<select name="bbs_id" id="bbs_id">
+			<option value="00" selected>選択</option>
+			<option value="01">２ちゃんねる（まちBBS含む）</option>
+			<option value="02">Yahoo!掲示板</option>
+			<option value="03">発言小町</option>
+			<option value="04">Yahoo!知恵袋</option>
+			<option value="05">OKWave（パートナーサイト含む）</option>
+			<option value="06">価格.com 口コミ掲示板</option>
+			<option value="07">その他</option>
+		</select>&nbsp;名称（その他の場合）
+		<input type="text" size="30" maxlength="30" name="bbs_name" id="bbs_name" disabled>
+		</font>
+	</td>
+</tr>
+<tr id="dynamic_input_fields">
+	<td class="cell_03"><font size="2">&nbsp;<strong>スレッド名等</strong></font></td>
+	<td><input type="text" size="50" maxlength="60" name="sender"></td>
+</tr>
+<tr id="dynamic_input_fields">
+	<td class="cell_03"><font size="2">&nbsp;<strong>投稿者（必須）</strong></font></td>
+	<td><input type="text" size="30" maxlength="30" name="sender"></td>
+</tr>
+<tr id="dynamic_input_fields">
+	<td class="cell_03"><font size="2">&nbsp;<strong>投稿日時（必須）</strong></font></td>
+	<td>
+		<font size="2">
+		<input type="text" size="4" maxlength="4" name="year">年
+		<input type="text" size="2" maxlength="2" name="month">月
+		<input type="text" size="2" maxlength="2" name="day">日&nbsp;
+		<input type="text" size="2" maxlength="2" name="hour">時
+		<input type="text" size="2" maxlength="2" name="minute">分
+		</font>
+	</td>
+</tr>
+<tr id="dynamic_input_fields">
+	<td class="cell_03"><font size="2">&nbsp;<strong>引用元URL（必須）</strong></font></td>
+	<td><input type="text" size="80" maxlength="255" name="url_yuan_quote"></td>
+</tr>

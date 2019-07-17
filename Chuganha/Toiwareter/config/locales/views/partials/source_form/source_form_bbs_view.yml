@@ -1,0 +1,44 @@
+###############################################################################
+# 国際化設定:: コメント投稿（電子掲示板）
+# Copyright:: Copyright (c) 2013 仲観派
+# 作成日:2013/02/11 Nakanohito  (mailto:)
+# 更新日:
+###############################################################################
+ja:
+  views:
+    partials:
+      source_form:
+        bbs:
+          item_names:
+            bbs_name: 掲示板名（必須）
+            bbs_name_dtl: 名称
+            thread_title: スレッド名等
+            posted_by: 投稿者（必須）
+            posted_date: 投稿日時（必須）
+            quoted_source_url: 引用元URL（必須）
+
+en:
+  views:
+    partials:
+      source_form:
+        bbs:
+          item_names:
+            bbs_name: BBS Name(Required)
+            bbs_name_dtl: Name
+            thread_title: Thread title, etc.
+            posted_by: Contributor(Required)
+            posted_date: Post time(Required)
+            quoted_source_url: Source URL(Required)
+
+en-US:
+  views:
+    partials:
+      source_form:
+        bbs:
+          item_names:
+            bbs_name: BBS Name(Required)
+            bbs_name_dtl: Name
+            thread_title: Thread title, etc.
+            posted_by: Contributor(Required)
+            posted_date: Post time(Required)
+            quoted_source_url: Source URL(Required)

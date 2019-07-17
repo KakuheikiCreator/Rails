@@ -1,0 +1,71 @@
+###############################################################################
+# 国際化設定:: 規制ホストリスト
+# Copyright:: Copyright (c) 2011 仲観派
+# 作成日:2012/07/30 Nakanohito  (mailto:)
+# 更新日:
+###############################################################################
+ja:
+  views:
+    regulation_host_list:
+      item_names:
+        menu: メニュー
+        logout: ログアウト
+        search_registration_form: 検索・登録フォーム
+        system_name: システム名
+        proxy_host: プロキシホスト
+        proxy_ip_address: プロキシIP
+        remote_host: クライアントホスト
+        ip_address: クライアントIP
+        remarks: 備考
+        ordering: 検索結果並び順
+        number_to_display: 表示件数
+        regulation_host_list: 規制ホストリスト
+        delete: 削
+        target_data: 対象データ
+      sentences:
+        number_of_indication: 件表示する
+        duplicate_data: 重複データが存在します。
+
+en:
+  views:
+    regulation_host_list:
+      item_names:
+        menu: Menu
+        logout: Logout
+        search_registration_form: Registration and search form
+        system_name: System name
+        proxy_host: Proxy host
+        proxy_ip_address: Proxy IP
+        remote_host: Client host
+        ip_address: Client IP
+        remarks: Remarks
+        ordering: Ordering of the search results
+        number_to_display: The number to display
+        regulation_host_list: Regulation Host List
+        delete: DEL
+        target_data: Target　data
+      sentences:
+        number_of_indication: ""
+        duplicate_data: Duplicate data exists.
+
+en-US:
+  views:
+    regulation_host_list:
+      item_names:
+        menu: Menu
+        logout: Logout
+        search_registration_form: Registration and search form
+        system_name: System name
+        proxy_host: Proxy host
+        proxy_ip_address: Proxy IP
+        remote_host: Client host
+        ip_address: Client IP
+        remarks: Remarks
+        ordering: Ordering of the search results
+        number_to_display: The number to display
+        regulation_host_list: Regulation Host List
+        delete: DEL
+        target_data: Target　data
+      sentences:
+        number_of_indication: ""
+        duplicate_data: Duplicate data exists.

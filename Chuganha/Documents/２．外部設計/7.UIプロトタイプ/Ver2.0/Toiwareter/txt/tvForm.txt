@@ -1,0 +1,24 @@
+<tr id="dynamic_input_fields">
+	<td class="cell_03"><font size="2">&nbsp;<strong>番組名称（必須）</strong></font></td>
+	<td><input type="text" size="30" maxlength="30" name="program_name"></td>
+</tr>
+<tr id="dynamic_input_fields">
+	<td class="cell_03"><font size="2">&nbsp;<strong>制作局</strong></font></td>
+	<td><input type="text" size="30" maxlength="30" name="production_department"></td>
+</tr>
+<tr id="dynamic_input_fields">
+	<td class="cell_03"><font size="2">&nbsp;<strong>放送局（必須）</strong></font></td>
+	<td><input type="text" size="30" maxlength="30" name="station"></td>
+</tr>
+<tr id="dynamic_input_fields">
+	<td class="cell_03"><font size="2">&nbsp;<strong>放送日時（必須）</strong></font></td>
+	<td>
+		<font size="2">
+		<input type="text" size="4" maxlength="4" name="year">年
+		<input type="text" size="2" maxlength="2" name="month">月
+		<input type="text" size="2" maxlength="2" name="day">日&nbsp;
+		<input type="text" size="2" maxlength="2" name="hour">時
+		<input type="text" size="2" maxlength="2" name="minute">分から放送
+		</font>
+	</td>
+</tr>

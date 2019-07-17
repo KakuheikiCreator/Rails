@@ -1,0 +1,102 @@
+###############################################################################
+# 国際化設定:: リクエスト解析スケジュール
+# Copyright:: Copyright (c) 2011 仲観派
+# 作成日:2011/08/14 Nakanohito  (mailto:)
+# 更新日:
+###############################################################################
+
+ja:
+  activerecord:
+    models:
+      request_analysis_schedule: "リクエスト解析スケジュール"
+    attributes:
+      request_analysis_schedule:
+        id: "ID"
+        gets_start_date: "取得開始日時"
+        system_id: "システムID"
+        gs_received_year: "取得設定（受信年）"
+        gs_received_month: "取得設定（受信月）"
+        gs_received_day: "取得設定（受信日）"
+        gs_received_hour: "取得設定（受信時）"
+        gs_received_minute: "取得設定（受信分）"
+        gs_received_second: "取得設定（受信秒）"
+        gs_function_id: "取得設定（機能ID）"
+        gs_function_transition_no: "取得設定（機能遷移番号）"
+        gs_session_id: "取得設定（セッションID）"
+        gs_client_id: "取得設定（クライアントID）"
+        gs_browser_id: "取得設定（ブラウザID）"
+        gs_browser_version_id: "取得設定（ブラウザバージョンID）"
+        gs_accept_language: "取得設定（言語）"
+        gs_referrer: "取得設定（リファラー）"
+        gs_domain_id: "取得設定（ドメインID）"
+        gs_proxy_host: "取得設定（プロキシホスト）"
+        gs_proxy_ip_address: "取得設定（プロキシIP）"
+        gs_remote_host: "取得設定（クライアントホスト）"
+        gs_ip_address: "取得設定（クライアントIP）"
+        lock_version: "ロックバージョン"
+        created_at: "作成日"
+        updated_at: "更新日"
+
+en:
+  activerecord:
+    models:
+      request_analysis_schedule: "Request analysis schedule"
+    attributes:
+      request_analysis_schedule:
+        id: "ID"
+        gets_start_date: "Gets Start Date"
+        system_id: "System ID"
+        gs_received_year: "Gets set (Reception year)"
+        gs_received_month: "Gets set (Reception Mon)"
+        gs_received_day: "Gets set (Received Day)"
+        gs_received_hour: "Gets set (Received Hour)"
+        gs_received_minute: "Gets set (Received minute)"
+        gs_received_second: "Gets set (Received second)"
+        gs_function_id: "Gets set (Using functional)"
+        gs_function_transition_no: "Gets set (Number of transition functions)"
+        gs_session_id: "Gets set (Session ID)"
+        gs_client_id: "Gets set (Client ID)"
+        gs_browser_id: "Gets set (Browser ID)"
+        gs_browser_version_id: "Gets set (Browser Version ID)"
+        gs_accept_language: "Gets set (Accept Language)"
+        gs_referrer: "Gets set (referrer)"
+        gs_domain_id: "Gets set (domain ID)"
+        gs_proxy_host: "Gets set (Proxy host)"
+        gs_proxy_ip_address: "Gets set (Proxy IP)"
+        gs_remote_host: "Gets set (Client host)"
+        gs_ip_address: "Gets set (Client IP)"
+        lock_version: "Lock Version"
+        created_at: "Date created"
+        updated_at: "Date updated"
+
+en-US:
+  activerecord:
+    models:
+      request_analysis_schedule: "Request analysis schedule"
+    attributes:
+      request_analysis_schedule:
+        id: "ID"
+        gets_start_date: "Gets Start Date"
+        system_id: "System information ID"
+        gs_received_year: "Gets set (Reception year)"
+        gs_received_month: "Gets set (Reception Mon)"
+        gs_received_day: "Gets set (Received Day)"
+        gs_received_hour: "Gets set (Received Hour)"
+        gs_received_minute: "Gets set (Received minute)"
+        gs_received_second: "Gets set (Received second)"
+        gs_function_id: "Gets set (Using functional)"
+        gs_function_transition_no: "Gets set (Number of transition functions)"
+        gs_session_id: "Gets set (Session ID)"
+        gs_client_id: "Gets set (Client ID)"
+        gs_browser_id: "Gets set (Browser ID)"
+        gs_browser_version_id: "Gets set (Browser Version ID)"
+        gs_accept_language: "Gets set (Accept Language)"
+        gs_referrer: "Gets set (referrer)"
+        gs_domain_id: "Gets set (domain ID)"
+        gs_proxy_host: "Gets set (Proxy host)"
+        gs_proxy_ip_address: "Gets set (Proxy IP)"
+        gs_remote_host: "Gets set (Client host)"
+        gs_ip_address: "Gets set (Client IP)"
+        lock_version: "Lock Version"
+        created_at: "Date created"
+        updated_at: "Date updated"

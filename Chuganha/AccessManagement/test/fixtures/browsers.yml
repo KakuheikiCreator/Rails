@@ -1,0 +1,43 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+entry_1:
+  id: 1
+  browser_name: Internet Explorer
+  lock_version: 0
+  created_at: 2011-08-09 00:00:00
+  updated_at: 2011-08-09 00:00:00
+
+entry_2:
+  id: 2
+  browser_name: Firefox
+  lock_version: 0
+  created_at: 2011-08-09 00:00:00
+  updated_at: 2011-08-09 00:00:00
+
+entry_3:
+  id: 3
+  browser_name: Google Chrome
+  lock_version: 0
+  created_at: 2011-08-09 00:00:00
+  updated_at: 2011-08-09 00:00:00
+
+entry_4:
+  id: 4
+  browser_name: Opera
+  lock_version: 0
+  created_at: 2011-08-09 00:00:00
+  updated_at: 2011-08-09 00:00:00
+
+entry_5:
+  id: 5
+  browser_name: Safari
+  lock_version: 0
+  created_at: 2011-08-09 00:00:00
+  updated_at: 2011-08-09 00:00:00
+
+entry_6:
+  id: 6
+  browser_name: Netscape
+  lock_version: 0
+  created_at: 2011-08-09 00:00:00
+  updated_at: 2011-08-09 00:00:00

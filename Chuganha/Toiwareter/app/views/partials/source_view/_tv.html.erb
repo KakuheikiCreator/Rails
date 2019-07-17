@@ -1,0 +1,30 @@
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_view.tv.item_names.program_name')%></font>
+	</th>
+	<td colspan="3" class="pattern_4">
+		<font size="2"><%=@source_obj.program_name %></font>
+	</td>
+</tr>
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_view.tv.item_names.broadcast_date')%></font>
+	</th>
+	<td colspan="3" class="pattern_4">
+		<font size="2"><%=default_time(@source_obj.broadcast_date) %></font>
+	</td>
+</tr>
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_view.tv.item_names.tv_station')%></font>
+	</th>
+	<td class="pattern_4">
+		<font size="2"><%=@source_obj.tv_station %></font>
+	</td>
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_view.tv.item_names.production')%></font>
+	</th>
+	<td class="pattern_4">
+		<font size="2"><%=@source_obj.production %></font>
+	</td>
+</tr>

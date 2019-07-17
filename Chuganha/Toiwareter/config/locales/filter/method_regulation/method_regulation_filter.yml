@@ -1,0 +1,24 @@
+###############################################################################
+# 国際化設定:: メソッド規制フィルタ
+# Copyright:: Copyright (c) 2013 仲観派
+# 作成日:2012/02/02 Nakanohito  (mailto:)
+# 更新日:
+###############################################################################
+
+ja:
+  filter:
+    method_regulation:
+      attributes:
+        request_method: "リクエストメソッド"
+
+en:
+  filter:
+    method_regulation:
+      attributes:
+        request_method: request method
+
+en-US:
+  filter:
+    method_regulation:
+      attributes:
+        request_method: request method

@@ -1,0 +1,51 @@
+###############################################################################
+# 国際化設定:: 全文検索
+# Copyright:: Copyright (c) 2013 仲観派
+# 作成日:2013/02/10 Nakanohito  (mailto:)
+# 更新日:
+###############################################################################
+ja:
+  views:
+    search:
+      fulltext:
+        # 検索フォーム
+        form:
+          item_names:
+            page_title: 全文検索
+            quote_title: 引用検索
+            comment_title: 批評・コメント検索
+            comment: 批評・コメント
+            result_title: 検索結果
+            quote_speaker: "%{speaker}さんは"
+            quote_footer: と言われた
+            comment_speaker: "%{speaker}さんのコメント"
+
+en:
+  views:
+    search:
+      fulltext:
+        form:
+          item_names:
+            page_title: Full Text Search
+            quote_title: Quote Search
+            comment_title: Criticism and comments Search
+            comment: Comment
+            result_title: Search result
+            quote_speaker: "%{speaker} said"
+            quote_footer: ""
+            comment_speaker: "%{speaker}'s comment"
+
+en-US:
+  views:
+    search:
+      fulltext:
+        form:
+          item_names:
+            page_title: Full Text Search
+            quote_title: Quote Search
+            comment_title: Criticism and comments Search
+            comment: Comment
+            result_title: Search result
+            quote_speaker: "%{speaker} said"
+            quote_footer: ""
+            comment_speaker: "%{speaker}'s comment"

@@ -1,0 +1,98 @@
+###############################################################################
+# 国際化設定:: コメント通報リスト
+# Copyright:: Copyright (c) 2013 仲観派
+# 作成日:2013/02/27 Nakanohito  (mailto:)
+# 更新日:
+###############################################################################
+ja:
+  views:
+    report:
+      list:
+        list:
+          item_names:
+            page_title: コメント通報一覧
+            list_title: コメント通報一覧
+            comment_state: コメント状態
+            quote_id: 引用ID
+            comment_id: コメントID
+            report_date: 通報日時
+            report_reason: 通報理由
+            report_reason_detail: 通報理由詳細
+            report_member_id: 通報会員ID
+            report_nickname: 通報会員ニックネーム
+            comment_member_id: コメント会員ID
+            comment_nickname: コメント会員ニックネーム
+            sort_limit_fields: ソート項目・表示件数
+            quote: 引用
+            comment: コメント
+            report: 通報
+            id: ID
+            member_id: 会員ID
+            failure_cnt: 過失
+            were_reported_cnt: 被通報
+            report_member: 通報者
+            detail_btn: 詳
+            prev_btn: 前へ
+            next_btn: 次へ
+
+en:
+  views:
+    report:
+      list:
+        list:
+          item_names:
+            page_title: Report List
+            list_title: Report List
+            comment_state: Comment State
+            quote_id: Quote ID
+            comment_id: Comment ID
+            report_date: Report datetime
+            report_reason: Report reason
+            report_reason_detail: Report reason detail
+            report_member_id: Report member ID
+            report_nickname: Report member nickname
+            comment_member_id: Comment member ID
+            comment_nickname: Comment member nickname
+            sort_limit_fields: Sort fields・Displayed
+            quote: Quote
+            comment: Comment
+            report: Report
+            id: ID
+            member_id: Member ID
+            failure_cnt: Failure
+            were_reported_cnt: were reported
+            report_member: Report member
+            detail_btn: Dtl
+            prev_btn: Prev
+            next_btn: Next
+
+en-US:
+  views:
+    report:
+      list:
+        list:
+          item_names:
+            page_title: Report List
+            list_title: Report List
+            comment_state: Comment State
+            quote_id: Quote ID
+            comment_id: Comment ID
+            report_date: Report datetime
+            report_reason: Report reason
+            report_reason_detail: Report reason detail
+            report_member_id: Report member ID
+            report_nickname: Report member nickname
+            comment_member_id: Comment member ID
+            comment_nickname: Comment member nickname
+            sort_limit_fields: Sort fields・Displayed
+            quote: Quote
+            comment: Comment
+            report: Report
+            id: ID
+            member_id: Member ID
+            failure_cnt: Failure
+            were_reported_cnt: were reported
+            report_member: Report member
+            detail_btn: Dtl
+            prev_btn: Prev
+            next_btn: Next

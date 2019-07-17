@@ -1,0 +1,40 @@
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_form.tv.item_names.program_name')%></font>
+	</th>
+	<td colspan="3" class="pattern_4">
+		<%=text_field_tag('program_name', @source_obj.program_name,
+		 {:size=>60, :maxlength=>60, :style=>"ime-mode: active;"})%>
+		<%=svr_error_tag("sverr_program_name", @error_msg_hash[:program_name])%>
+	</td>
+</tr>
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_form.tv.item_names.broadcast_date')%></font>
+	</th>
+	<td colspan="3" class="pattern_4">
+		<span id="broadcast_date_grp" name="broadcast_date_grp" class="chkgroup">
+		<%=default_select_datetime(@source_obj.broadcast_date, :broadcast_date,
+		 {:start_year=>1990, :end_year=>Time.zone.today.year})%>
+		</span>
+		<%=svr_error_tag("sverr_broadcast_date", @error_msg_hash[:broadcast_date])%>
+	</td>
+</tr>
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_form.tv.item_names.tv_station')%></font>
+	</th>
+	<td class="pattern_4">
+		<%=text_field_tag('tv_station', @source_obj.tv_station,
+		 {:size=>40, :maxlength=>60, :style=>"ime-mode: active;"})%>
+		<%=svr_error_tag("sverr_tv_station", @error_msg_hash[:tv_station])%>
+	</td>
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_form.tv.item_names.production')%></font>
+	</th>
+	<td class="pattern_4">
+		<%=text_field_tag('production', @source_obj.production,
+		 {:size=>40, :maxlength=>60, :style=>"ime-mode: active;"})%>
+		<%=svr_error_tag("sverr_production", @error_msg_hash[:production])%>
+	</td>
+</tr>

@@ -1,0 +1,393 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="robots" content="index,follow">
+<link rel="shortcut icon" type="image/png" href="image/favicon.png"> 
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<title>会員情報の更新</title>
+</head>
+<body leftmargin="0" topmargin="0">
+<a name="TOP">&nbsp;</a>
+<table width="750" border="0" align="center" cellpadding="0" cellspacing="0">
+<thead>
+<tr>
+	<td bgcolor="white">
+		<img src="image/member_info_update_title.png" width="750" height="60" alt="page_title">
+	</td>
+</tr>
+</thead>
+<tfoot>
+<tr>
+	<td>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+		<tbody>
+		<tr>
+			<td align="right" class="cell_02">
+				<font color="#ffffff" size="2"><strong>Copyright (C) 2011 仲観派 All Rights Reserved.</strong></font>
+			</td>
+		</tr>
+		</tbody>
+		</table>
+	</td>
+</tr>
+</tfoot>
+<tbody>
+<tr>
+	<td class="cell_02">
+		<table width="750" border="0" cellspacing="0" cellpadding="0">
+		<tbody>
+			<tr height="40">
+				<td width="150" align="center" background="image/tab_02.png">
+					<div class="vertical_middle">
+					<a href="#TOP" class="cell_link">
+					<font size="2" color="black"><strong>会員ログイン</strong></font>
+					</a>
+					</div>
+				</td>
+				<td width="150" align="center" background="image/tab_02.png">
+					<div class="vertical_middle">
+					<a href="#TOP" class="cell_link">
+					<font size="2" color="black"><strong>ご利用方法</strong></font>
+					</a>
+					</div>
+				</td>
+				<td width="150" align="center" background="image/tab_02.png">
+					<div class="vertical_middle">
+					<a href="#TOP" class="cell_link">
+					<font size="2" color="black"><strong>ご利用上の注意</strong></font>
+					</a>
+					</div>
+				</td>
+				<td width="150" align="center" background="image/tab_02.png">
+					<div class="vertical_middle">
+					<a href="#TOP" class="cell_link">
+					<font size="2" color="black"><strong>会員規約</strong></font>
+					</a>
+					</div>
+				</td>
+				<td width="150" align="center" background="image/tab_02.png">
+					<div class="vertical_middle">
+					<a href="#TOP" class="cell_link">
+					<font size="2" color="black"><strong>個人情報保護方針</strong></font>
+					</a>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+		</table>
+	</td>
+</tr>
+<tr>
+	<td>
+		<form action="xxx.cgi" method="post" enctype="text/css">
+		<table width="750" border="1" cellspacing="0" cellpadding="0" class="form_01">
+		<tbody>
+		<tr>
+			<th height="30" class="cell_06">
+				<font size="3">会員情報の更新フォーム</font>
+			</th>
+		</tr>
+		<tr>
+			<td>
+				<table border="1" cellpadding="2" cellspacing="0">
+				<thead>
+				<tr>
+					<th width="180" class="cell_04">&nbsp;</th>
+					<th width="236" align="center" class="cell_04">
+						<font size="2">現状</font>
+					</th>
+					<th width="310" align="center" class="cell_03">
+						<font size="2">更新後</font>
+					</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<th align="left" class="cell_04">
+						<font size="2">&nbsp;状態</font>
+					</th>
+					<td>
+						<font size="2">&nbsp;正常</font>
+					</td>
+					<td>
+						<select name="domain">
+							<option value="">仮登録</option>
+							<option value="">本登録</option>
+							<option value="">資格停止</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<th align="left" class="cell_04">
+						<font size="2">&nbsp;権限</font>
+					</th>
+					<td>
+						<font size="2">&nbsp;一般利用者</font>
+					</td>
+					<td>
+						<select name="domain">
+							<option value="">一般利用者</option>
+							<option value="">管理者</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<th align="left" class="cell_04">
+						<font size="2">&nbsp;OpenID</font>
+					</th>
+					<td>
+						<font size="2">&nbsp;http://nakanaka.naka.com</font>
+					</td>
+					<td>
+						<font size="2">&nbsp;ログインIDは変更できません。</font>
+					</td>
+				</tr>
+				<tr>
+					<th align="left" class="cell_04">
+						<font size="2">&nbsp;ログインパスワード</font>
+					</th>
+					<td rowspan="2" valign="middle">
+						<font size="2">&nbsp;※非公開</font><br>
+						<input type="text" value="ABCDEFG" size="32" readonly="readonly" class="secretly">
+					</td>
+					<td>
+						<font size="2">&nbsp;※半角英数小文字で 12〜32 文字以内</font><br>
+						&nbsp;<input type="password" size="32" maxlength="32">
+					</td>
+				</tr>
+				<tr>
+					<th align="left" class="cell_04">
+						<font size="2">&nbsp;ログインパスワード確認</font>
+					</th>
+					<td>
+						<font size="2">&nbsp;※確認のため、もう一度ログインパスワードを入力</font><br>
+						&nbsp;<input type="password" size="32" maxlength="32">
+					</td>
+				</tr>
+				<tr>
+					<th align="left" class="cell_04">
+						<font size="2">&nbsp;ニックネーム</font>
+					</th>
+					<td>
+						<font size="2">&nbsp;芸術は爆発だ</font>
+					</td>
+					<td>
+						<font size="2">
+						&nbsp;※全角文字で 20 文字以内<br>
+						</font>
+						&nbsp;<input type="text" name="Nickname" size="30" maxlength="30">
+					</td>
+				</tr>
+				<tr>
+					<th align="left" class="cell_04">
+						<font size="2">&nbsp;お名前</font>
+					</th>
+					<td>
+						<font size="2">&nbsp;岡本　太郎</font>
+					</td>
+					<td>
+						<font size="2">&nbsp;※全角文字で入力</font><br>
+						<font size="2">
+						&nbsp;<input type="text" name="Name" size="40" maxlength="80">
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<th align="left" class="cell_04">
+						<font size="2">&nbsp;ヨミガナ</font>
+					</th>
+					<td>
+						<font size="2">&nbsp;オカモト　タロウ</font>
+					</td>
+					<td>
+						<font size="2">&nbsp;※全角カタカナで入力</font><br>
+						<font size="2">
+						&nbsp;<input type="text" name="NameKana" size="40" maxlength="80">
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<th align="left" class="cell_04">
+						<font size="2">&nbsp;性別</font>
+					</th>
+					<td>
+						<font size="2">&nbsp;男性</font>
+					</td>
+					<td>
+						<font size="2">
+						&nbsp;<input type=radio name="Sex" value="Man" checked>男性
+						&nbsp;<input type=radio name="Sex" value="Female">女性
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<th align="left" class="cell_04">
+						<font size="2">&nbsp;生年月日</font>
+					</th>
+					<td>
+						<font size="2">&nbsp;1985年8月20日</font>
+					</td>
+					<td>
+						&nbsp;<input type="text" name="BirthYear" size="4" maxlength="4">年
+						<input type="text" name="BirthMonth" size="2" maxlength="2">月
+						<input type="text" name="BirthDay" size="2" maxlength="2">日
+					</td>
+				</tr>
+				<tr>
+					<th align="left" class="cell_04">
+						<font size="2">&nbsp;居住国</font>
+					</th>
+					<td>
+						<font size="2">&nbsp;日本</font>
+					</td>
+					<td>
+						&nbsp;<select name="country">
+							<option value="jap">日本</option>
+							<option value="usa">米帝</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<th align="left" class="cell_04">
+						<font size="2">&nbsp;言語</font>
+					</th>
+					<td>
+						<font size="2">&nbsp;日本語</font>
+					</td>
+					<td>
+						&nbsp;<select name="language">
+							<option value="jap">日本語</option>
+							<option value="usa">米帝語</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<th align="left" class="cell_04">
+						<font size="2">&nbsp;タイムゾーン</font>
+					</th>
+					<td>
+						<font size="2">&nbsp;Asia/Tokyo</font>
+					</td>
+					<td>
+						&nbsp;<select name="language">
+							<option value="jap">Asia/Tokyo</option>
+							<option value="usa">America/Newyork</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<th align="left" class="cell_04">
+						<font size="2">&nbsp;郵便番号</font>
+					</th>
+					<td>
+						<font size="2">&nbsp;123-4567</font>
+					</td>
+					<td>
+						<font size="2">&nbsp;※半角数字で、ハイフンなしで入力してください。</font><br>
+						&nbsp;<input type="text" size="10" maxlength="7">
+					</td>
+				</tr>
+				<tr>
+					<th align="left" class="cell_04">
+						<font size="2">&nbsp;メールアドレス</font>
+					</th>
+					<td>
+						<font size="2">&nbsp;nakanaka@nakayan.com</font>
+					</td>
+					<td>
+						<font size="2">&nbsp;※半角で入力してください。</font><br>
+						&nbsp;<input type="text" size="40" maxlength="7">
+					</td>
+				</tr>
+				<tr>
+					<th align="left" class="cell_04">
+						<font size="2">&nbsp;携帯電話番号</font>
+					</th>
+					<td>
+						<font size="2">&nbsp;090-1234-5678</font>
+					</td>
+					<td>
+						<font size="2">&nbsp;※半角数字で、ハイフンなしで入力してください。</font><br>
+						&nbsp;<input type="text" size="14" maxlength="11">
+					</td>
+				</tr>
+				<tr>
+					<th align="left" class="cell_04">
+						<font size="2">&nbsp;携帯メールアドレス</font>
+					</th>
+					<td>
+						<font size="2">&nbsp;abcdefg@docomo.ne.jp</font>
+					</td>
+					<td>
+						<font size="2">&nbsp;※仮更新完了メールの送付先として使用されます。</font><br>
+						<font size="2">
+						&nbsp;<input type="text" size="20" align="right">@
+						<select name="domain">
+							<option value="docomo.ne.jp">docomo.ne.jp</option>
+							<option value="ezweb.ne.jp">ezweb.ne.jp</option>
+							<option value="biz.ezweb.ne.jp">biz.ezweb.ne.jp</option>
+							<option value="ido.ne.jp">ido.ne.jp</option>
+							<option value="d.vodafone.ne.jp">d.vodafone.ne.jp</option>
+							<option value="h.vodafone.ne.jp">h.vodafone.ne.jp</option>
+							<option value="t.vodafone.ne.jp">t.vodafone.ne.jp</option>
+							<option value="c.vodafone.ne.jp">c.vodafone.ne.jp</option>
+							<option value="r.vodafone.ne.jp">r.vodafone.ne.jp</option>
+							<option value="k.vodafone.ne.jp">k.vodafone.ne.jp</option>
+							<option value="n.vodafone.ne.jp">n.vodafone.ne.jp</option>
+							<option value="s.vodafone.ne.jp">s.vodafone.ne.jp</option>
+							<option value="q.vodafone.ne.jp">q.vodafone.ne.jp</option>
+							<option value="disney.ne.jp">disney.ne.jp</option>
+							<option value="i.softbank.jp">i.softbank.jp</option>
+							<option value="pdx.ne.jp">pdx.ne.jp</option>
+							<option value="willcom.com">willcom.com</option>
+							<option value="vertuclub.ne.jp">vertuclub.ne.jp</option>
+						</select>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<th align="left" class="cell_04">
+						<font size="2">&nbsp;個体識別番号</font>
+					</th>
+					<td>
+						<font size="2">&nbsp;12345678901234567890</font>
+					</td>
+					<td>
+						&nbsp;<input type="text" size="26" maxlength="22">
+					</td>
+				</tr>
+				</tbody>
+				</table>
+			</td>
+				</tr>
+				<tr>
+			<td height="50" align="center" valign="middle">
+				<table border="0" cellspacing="0" cellpadding="0">
+				<tbody>
+				<tr>
+					<td width="140" height="30" align="center" background="image/button_06.png">
+						<div class="vertical_middle">
+						<a href="#TOP" class="cell_link">
+						<font size="2" color="black"><strong>会員情報を更新</strong></font>
+						</a>
+						</div>
+					</td>
+					</tr>
+				</tbody>
+				</table>
+			</td>
+		</tr>
+		</tbody>
+		</table>
+		</form>
+	</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

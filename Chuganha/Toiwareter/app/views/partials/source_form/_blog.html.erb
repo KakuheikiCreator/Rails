@@ -1,0 +1,63 @@
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_form.blog.item_names.blog_name')%></font>
+	</th>
+	<td colspan="3" class="pattern_4">
+		<%=text_field_tag('blog_name', @source_obj.blog_name,
+		 {:size=>60, :maxlength=>60, :style=>"ime-mode: active;"})%>
+		<%=svr_error_tag("sverr_blog_name", @error_msg_hash[:blog_name])%>
+	</td>
+</tr>
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_form.blog.item_names.posted_date')%></font>
+	</th>
+	<td colspan="3" class="pattern_4">
+		<span id="posted_date_grp" name="posted_date_grp" class="chkgroup">
+		<%=default_select_datetime(@source_obj.posted_date, :posted_date,
+		 {:start_year=>2000, :end_year=>Time.zone.today.year})%>
+		</span>
+		<%=svr_error_tag("sverr_posted_date", @error_msg_hash[:posted_date])%>
+	</td>
+</tr>
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_form.blog.item_names.article_title')%></font>
+	</th>
+	<td class="pattern_4">
+		<%=text_field_tag('article_title', @source_obj.article_title,
+		 {:size=>50, :maxlength=>80, :style=>"ime-mode: active;"})%>
+		<%=svr_error_tag("sverr_article_title", @error_msg_hash[:article_title])%>
+	</td>
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_form.blog.item_names.posted_by')%></font>
+	</th>
+	<td class="pattern_4">
+		<%=text_field_tag('posted_by', @source_obj.posted_by,
+		 {:size=>30, :maxlength=>60, :style=>"ime-mode: active;"})%>
+		<%=svr_error_tag("sverr_posted_by", @error_msg_hash[:posted_by])%>
+	</td>
+</tr>
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_form.blog.item_names.job_title')%></font>
+	</th>
+	<td colspan="3" class="pattern_4">
+		<span id="contributor_job_title_grp" name="contributor_job_title_grp" class="chkgroup">
+		<%=job_title_select('contributor_job_title_id', @source_obj.job_title_id, {:include_blank=>true})%>
+		<%=text_field_tag('contributor_job_title', @source_obj.job_title,
+		 {:size=>50, :maxlength=>40, :style=>'ime-mode: active;'})%>
+		</span>
+		<%=svr_error_tag("sverr_contributor_job_title", @error_msg_hash[:contributor_job_title])%>
+	</td>
+</tr>
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_form.blog.item_names.quoted_source_url')%></font>
+	</th>
+	<td colspan="3" class="pattern_4">
+		<%=text_field_tag('quoted_source_url', @source_obj.quoted_source_url,
+		 {:size=>100, :maxlength=>255, :style=>"ime-mode: inactive;"})%>
+		<%=svr_error_tag("sverr_quoted_source_url", @error_msg_hash[:quoted_source_url])%>
+	</td>
+</tr>

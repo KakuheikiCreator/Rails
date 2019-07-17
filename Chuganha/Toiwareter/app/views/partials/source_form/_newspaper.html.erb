@@ -1,0 +1,62 @@
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_form.newspaper.item_names.newspaper')%></font>
+	</th>
+	<td colspan="3" class="pattern_4">
+		<span id="newspaper_grp" name="newspaper_grp" class="chkgroup">
+		<%=newspaper_select('newspaper_id', @source_obj.newspaper_id)%>
+		<font size="2"><%=t('views.partials.source_form.newspaper.messages.description_1')%></font>
+		<%=text_field_tag('newspaper_detail', @source_obj.newspaper_detail,
+		 {:size=>40, :maxlength=>60, :style=>'ime-mode: active;'})%>
+		</span>
+		<%=svr_error_tag("sverr_newspaper", @error_msg_hash[:newspaper])%>
+	</td>
+</tr>
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_form.newspaper.item_names.edition')%></font>
+	</th>
+	<td colspan="3" class="pattern_4">
+		<span id="edition_grp" name="edition_grp" class="chkgroup">
+		<%=text_field_tag('posted_date_year', @source_obj.posted_date_year,
+		 {:size=>6, :maxlength=>5, :style=>"ime-mode: disabled;"})%>
+		<%=default_select_date(@source_obj.posted_date, :posted_date,
+		 {:discard_year=>true, :end_year=>Time.zone.today.year})%>
+		<%=code_select_tag(:newspaper_cls, :NEWSPAPER_CLS, @source_obj.newspaper_cls)%>
+		</span>
+		<%=svr_error_tag("sverr_edition", @error_msg_hash[:edition])%>
+	</td>
+</tr>
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_form.newspaper.item_names.headline')%></font>
+	</th>
+	<td colspan="3" class="pattern_4">
+		<%=text_field_tag('headline', @source_obj.headline,
+		 {:size=>60, :maxlength=>80, :style=>"ime-mode: active;"})%>
+		<%=svr_error_tag("sverr_headline", @error_msg_hash[:headline])%>
+	</td>
+</tr>
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_form.newspaper.item_names.reporter')%></font>
+	</th>
+	<td colspan="3" class="pattern_4">
+		<%=text_field_tag('reporter', @source_obj.reporter,
+		 {:size=>50, :maxlength=>255, :style=>"ime-mode: active;"})%>
+		<%=svr_error_tag("sverr_reporter", @error_msg_hash[:reporter])%>
+	</td>
+</tr>
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_form.newspaper.item_names.job_title')%></font>
+	</th>
+	<td colspan="3" class="pattern_4">
+		<span id="reporter_job_title_grp" name="reporter_job_title_grp" class="chkgroup">
+		<%=job_title_select('reporter_job_title_id', @source_obj.job_title_id, {:include_blank=>true})%>
+		<%=text_field_tag('reporter_job_title', @source_obj.job_title,
+		 {:size=>50, :maxlength=>255, :style=>'ime-mode: active;'})%>
+		</span>
+		<%=svr_error_tag("sverr_reporter_job_title", @error_msg_hash[:reporter_job_title])%>
+	</td>
+</tr>

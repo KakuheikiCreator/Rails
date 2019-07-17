@@ -1,0 +1,478 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Expires" content="Thu, 01 Dec 1994 16:00:00 GMT">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="robots" content="index,follow">
+<link rel="shortcut icon" type="image/png" href="image/favicon.png"> 
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<title>解析情報取得スケジュール</title>
+<script type="text/javascript" src="./js/jquery-1.5.2.js"></script>
+<script type="text/javascript" src="./js/jquery.tablesorter.min.js"></script>
+<script type="text/javascript">
+<!--
+$(document).ready(init);
+
+function init(){
+	$("#report_comment_table").tablesorter();
+}
+//-->
+</script>
+</head>
+<body leftmargin="0" topmargin="0">
+<a name="TOP"></a>
+<table width="1000" border="0" align="center" cellpadding="0" cellspacing="0">
+<thead>
+<tr height="20">
+   	<td>&nbsp;</td>
+</tr>
+<tr>
+	<td class="cell_02">
+		<table width="1050" border="0" cellspacing="0" cellpadding="0">
+		<tbody>
+			<tr>
+				<td bgcolor="white">
+					<img src="image/schedule_list_title.png" width="750" height="60" alt="title">
+				</td>
+				<td width="150" align="center" background="image/tab_button.png">
+					<div class="vertical_middle">
+					<a href="#TOP" class="cell_link"><font size="2" color="black"><strong>トップページ</strong></font></a>
+					</div>
+				</td>
+				<td width="150" align="center" background="image/tab_button.png">
+					<div class="vertical_middle">
+					<a href="#TOP" class="cell_link"><font size="2" color="black"><strong>ログアウト</strong></font></a>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+		</table>
+	</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>
+		<table border="1" cellspacing="0" cellpadding="0" class="form_02">
+		<tbody>
+		<tr>
+			<td align="center" class="cell_03">
+				<font size="3"><strong>検索条件</strong></font>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<form method="POST" action="xxx.cgi">
+				<table border="1" cellspacing="0" cellpadding="1">
+				<tbody>
+				<tr>
+					<td width="110" class="cell_03">
+						<font size="2">&nbsp;<strong>システム</strong></font>
+					</td>
+					<td width="180">
+						<select name="condition" id="condition">
+							<option value="0">全て</option>
+							<option value="1">引用寮</option>
+						</select>
+					</td>
+					<td width="100" class="cell_03">
+						<font size="2">&nbsp;<strong>サブシステム</strong></font>
+					</td>
+					<td width="168">
+						<select name="condition" id="condition">
+							<option value="0">全て</option>
+							<option value="1">Toitter</option>
+							<option value="2">会員管理</option>
+							<option value="3">アクセス解析</option>
+						</select>
+					</td>
+					<td width="100" class="cell_03">
+						<font size="2">&nbsp;<strong>取得開始日時</strong></font>
+					</td>
+					<td width="482">
+						<font size="2">
+							<input type="text" size="4" maxlength="4" name="year">年
+							<input type="text" size="1" maxlength="2" name="month">月
+							<input type="text" size="1" maxlength="2" name="day">日&nbsp;
+							<input type="text" size="1" maxlength="2" name="hour">時
+							<input type="text" size="1" maxlength="2" name="minute">分
+							<input type="text" size="1" maxlength="2" name="minute">秒から<br>
+							<input type="text" size="4" maxlength="4" name="year">年
+							<input type="text" size="1" maxlength="2" name="month">月
+							<input type="text" size="1" maxlength="2" name="day">日&nbsp;
+							<input type="text" size="1" maxlength="2" name="hour">時
+							<input type="text" size="1" maxlength="2" name="minute">分
+							<input type="text" size="1" maxlength="2" name="minute">秒まで
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td class="cell_03">
+						<font size="2">&nbsp;<strong>検索結果並び順</strong></font>
+					</td>
+					<td>
+						<select name="sort_item_01" id="sor_item_01">
+							<option value="00">システム</option>
+							<option value="01">取得開始日時</option>
+						</select>
+						<select name="sort_condition_01" id="sort_condition=01">
+							<option value="0">昇順</option>
+							<option value="1">降順</option>
+						</select>
+					</td>
+					<td class="cell_03">
+						<font size="2">&nbsp;<strong>表示件数</strong></font>
+					</td>
+					<td>
+						<select name="number_display" id="number_display">
+							<option value="10">10</option>
+							<option value="50">50</option>
+							<option value="100">100</option>
+							<option value="300">300</option>
+							<option value="500">500</option>
+						</select>
+						<font size="2">件表示する</font>
+					</td>
+					<td colspan="2" align="center">
+						<input type="submit" name="search" value="検索">
+					</td>
+				</tr>
+				</tbody>
+				</table>
+				</form>
+			</td>
+		</tr>
+		</tbody>
+		</table>
+	</td>
+</tr>
+<tr>
+	<td>
+		<table border="1" cellspacing="0" cellpadding="0" class="form_02">
+		<tbody>
+		<tr>
+			<td align="center" class="cell_01">
+				<font size="3"><strong>解析情報取得予定追加</strong></font>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<form method="POST" action="xxx.cgi">
+				<table border="1" cellspacing="0" cellpadding="1" class="form_02">
+				<tbody>
+				<tr>
+					<td width="110" class="cell_01">
+						<font size="2">&nbsp;<strong>システム</strong></font>
+					</td>
+					<td width="180">
+						<select name="condition" id="condition">
+							<option value="1">引用寮</option>
+						</select>
+					</td>
+					<td width="100" class="cell_01">
+						<font size="2">&nbsp;<strong>サブシステム</strong></font>
+					</td>
+					<td width="168">
+						<select name="condition" id="condition">
+							<option value="1">Toitter</option>
+							<option value="2">会員管理</option>
+							<option value="3">アクセス解析</option>
+						</select>
+					</td>
+					<td width="100" class="cell_01">
+						<font size="2">&nbsp;<strong>取得開始日時</strong></font>
+					</td>
+					<td width="410">
+						<font size="2">
+							<input type="text" size="4" maxlength="4" name="year">年
+							<input type="text" size="1" maxlength="2" name="month">月
+							<input type="text" size="1" maxlength="2" name="day">日&nbsp;
+							<input type="text" size="1" maxlength="2" name="hour">時
+							<input type="text" size="1" maxlength="2" name="minute">分
+							<input type="text" size="1" maxlength="2" name="minute">秒
+						</font>
+					</td>
+					<td width="68" align="center">
+						<input type="submit" name="search" value="追加">
+					</td>
+				</tr>
+				</tbody>
+				</table>
+				</form>
+			</td>
+		</tr>
+		</tbody>
+		</table>
+	</td>
+</tr>
+<tr>
+	<td>
+		<table width="1244" border="1" cellspacing="0" cellpadding="0" class="base_01">
+		<thead>
+		<tr>
+			<td align="center" class="cell_05">
+				<font size="3" color="#ffffff"><strong>解析情報取得スケジュール</strong></font>
+			</td>
+		</tr>
+		</thead>
+		<tfoot>
+		<tr>
+			<td class="cell_05">&nbsp;</td>
+		</tr>
+		</tfoot>
+		<tbody>
+		<tr>
+			<td valign="middle">
+				<table border="1" cellspacing="0" cellpadding="1" id="report_comment_table">
+				<thead>
+				<tr>
+					<th width="100" align="center" rowspan="3" class="cell_01">
+						<font size="2">システム</font>
+					</th>
+					<th width="100" align="center" rowspan="3" class="cell_01">
+						<font size="2">サブシステム</font>
+					</th>
+					<th width="130" align="center" rowspan="3" class="cell_01">
+						<font size="2">取得開始日時</font>
+					</th>
+					<th align="center" colspan="17" class="cell_01">
+						<font size="2">集計単位</font>
+					</th>
+					<th width="68" align="center" rowspan="3" class="cell_01">
+						<font size="2">操作</font>
+					</th>
+				</tr>
+				<tr>
+					<th align="center" colspan="6" class="cell_01">
+						<font size="2">受信日時</font>
+					</th>
+					<th width="60" align="center" rowspan="2" class="cell_01">
+						<font size="2">機能</font>
+					</th>
+					<th width="60" align="center" rowspan="2" class="cell_01">
+						<font size="2">機能遷移<br>番号</font>
+					</th>
+					<th align="center" colspan="2" class="cell_01">
+						<font size="2">ユーザー</font>
+					</th>
+					<th align="center" colspan="2" class="cell_01">
+						<font size="2">ブラウザ</font>
+					</th>
+					<th width="60" align="center" rowspan="2" class="cell_01">
+						<font size="2">言語</font>
+					</th>
+					<th width="60" align="center" rowspan="2" class="cell_01">
+						<font size="2">リファラー</font>
+					</th>
+					<th width="60" align="center" rowspan="2" class="cell_01">
+						<font size="2">ドメイン</font>
+					</th>
+					<th width="60" align="center" rowspan="2" class="cell_01">
+						<font size="2">プロキシ</font>
+					</th>
+					<th width="60" align="center" rowspan="2" class="cell_01">
+						<font size="2">ホスト</font>
+					</th>
+				</tr>
+				<tr>
+					<th width="20" class="cell_01">
+						<font size="2">年</font>
+					</th>
+					<th width="20" class="cell_01">
+						<font size="2">月</font>
+					</th>
+					<th width="20" class="cell_01">
+						<font size="2">日</font>
+					</th>
+					<th width="20" class="cell_01">
+						<font size="2">時</font>
+					</th>
+					<th width="20" class="cell_01">
+						<font size="2">分</font>
+					</th>
+					<th width="20" class="cell_01">
+						<font size="2">秒</font>
+					</th>
+					<th width="70" class="cell_01">
+						<font size="2">ログインID</font>
+					</th>
+					<th width="70" class="cell_01">
+						<font size="2">識別子</font>
+					</th>
+					<th width="70" class="cell_01">
+						<font size="2">名前</font>
+					</th>
+					<th width="70" class="cell_01">
+						<font size="2">バージョン</font>
+					</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td align="center">
+						<font size="2">引用寮</font>
+					</td>
+					<td align="center">
+						<font size="2">会員管理</font>
+					</td>
+					<td align="center">
+						<font size="2">2011/05/02&nbsp;06:49:30</font>
+					</td>
+					<td align="center">
+						<input type="checkbox" name="system_id">
+					</td>
+					<td align="center">
+						<input type="checkbox" name="system_id">
+					</td>
+					<td align="center">
+						<input type="checkbox" name="system_id">
+					</td>
+					<td align="center">
+						<input type="checkbox" name="system_id">
+					</td>
+					<td align="center">
+						<input type="checkbox" name="system_id">
+					</td>
+					<td align="center">
+						<input type="checkbox" name="system_id">
+					</td>
+					<td align="center">
+						<input type="checkbox" name="system_id">
+					</td>
+					<td align="center">
+						<input type="checkbox" name="system_id">
+					</td>
+					<td align="center">
+						<input type="checkbox" name="system_id">
+					</td>
+					<td align="center">
+						<input type="checkbox" name="system_id">
+					</td>
+					<td align="center">
+						<input type="checkbox" name="system_id">
+					</td>
+					<td align="center">
+						<input type="checkbox" name="system_id">
+					</td>
+					<td align="center">
+						<input type="checkbox" name="system_id">
+					</td>
+					<td align="center">
+						<input type="checkbox" name="system_id">
+					</td>
+					<td align="center">
+						<input type="checkbox" name="system_id">
+					</td>
+					<td align="center">
+						<input type="checkbox" name="system_id">
+					</td>
+					<td align="center">
+						<input type="checkbox" name="system_id">
+					</td>
+					<td align="center">
+						<a href="#prop"><font size="2">更</font></a>
+						<a href="#prop"><font size="2">削</font></a>
+					</td>
+				</tr>
+				<tr>
+					<td align="center">
+						<font size="2">引用寮</font>
+					</td>
+					<td align="center">
+						<font size="2">Toitter</font>
+					</td>
+					<td align="center">
+						<font size="2">2011/05/02&nbsp;06:49:30</font>
+					</td>
+					<td align="center">
+						<input type="checkbox" name="system_id">
+					</td>
+					<td align="center">
+						<input type="checkbox" name="system_id">
+					</td>
+					<td align="center">
+						<input type="checkbox" name="system_id">
+					</td>
+					<td align="center">
+						<input type="checkbox" name="system_id">
+					</td>
+					<td align="center">
+						<input type="checkbox" name="system_id">
+					</td>
+					<td align="center">
+						<input type="checkbox" name="system_id">
+					</td>
+					<td align="center">
+						<input type="checkbox" name="system_id">
+					</td>
+					<td align="center">
+						<input type="checkbox" name="system_id">
+					</td>
+					<td align="center">
+						<input type="checkbox" name="system_id">
+					</td>
+					<td align="center">
+						<input type="checkbox" name="system_id">
+					</td>
+					<td align="center">
+						<input type="checkbox" name="system_id">
+					</td>
+					<td align="center">
+						<input type="checkbox" name="system_id">
+					</td>
+					<td align="center">
+						<input type="checkbox" name="system_id">
+					</td>
+					<td align="center">
+						<input type="checkbox" name="system_id">
+					</td>
+					<td align="center">
+						<input type="checkbox" name="system_id">
+					</td>
+					<td align="center">
+						<input type="checkbox" name="system_id">
+					</td>
+					<td align="center">
+						<input type="checkbox" name="system_id">
+					</td>
+					<td align="center">
+						<a href="#prop"><font size="2">更</font></a>
+						<a href="#prop"><font size="2">削</font></a>
+					</td>
+				</tr>
+				</tbody>
+				</table>
+			</td>
+		</tr>
+		</tbody>
+		</table>
+	</td>
+</tr>
+<tr>
+	<td class="cell_02">&nbsp;</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+	<td>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+		<tbody>
+		<tr>
+			<td align="right" class="cell_02">
+				<font color="#ffffff" size="2"><strong>Copyright (C) 2011 仲観派 All Rights Reserved.</strong></font>
+			</td>
+		</tr>
+		</tbody>
+		</table>
+	</td>
+</tr>
+</tfoot>
+</table>
+</body>
+</html>

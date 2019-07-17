@@ -1,0 +1,49 @@
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_form.sns.item_names.sns_name')%></font>
+	</th>
+	<td colspan="3" class="pattern_4">
+		<span id="sns_name_grp" name="sns_name_grp" class="chkgroup">
+		<%=sns_select('sns_id', @source_obj.sns_id)%>
+		&nbsp;<font size="2"><%=t('views.partials.source_form.sns.item_names.sns_name_dtl')%></font>
+		<%=text_field_tag('sns_detail_name', @source_obj.sns_detail_name,
+		 {:size=>40, :maxlength=>60, :style=>"ime-mode: active;"})%>
+		</span>
+		<%=svr_error_tag("sverr_sns_name", @error_msg_hash[:sns_name])%>
+	</td>
+</tr>
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_form.sns.item_names.posted_date')%></font>
+	</th>
+	<td colspan="3" class="pattern_4">
+		<span id="posted_date_grp" name="posted_date_grp" class="chkgroup">
+		<%=default_select_datetime(@source_obj.posted_date, :posted_date,
+		 {:start_year=>1990, :end_year=>Time.zone.today.year})%>
+		</span>
+		<%=svr_error_tag("sverr_posted_date", @error_msg_hash[:posted_date])%>
+	</td>
+</tr>
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_form.sns.item_names.posted_by')%></font>
+	</th>
+	<td colspan="3" class="pattern_4">
+		<%=text_field_tag('posted_by', @source_obj.posted_by,
+		 {:size=>50, :maxlength=>60, :style=>"ime-mode: active;"})%>
+		<%=svr_error_tag("sverr_posted_by", @error_msg_hash[:posted_by])%>
+	</td>
+</tr>
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_form.sns.item_names.job_title')%></font>
+	</th>
+	<td colspan="3" class="pattern_4">
+		<span id="contributor_job_title_grp" name="contributor_job_title_grp" class="chkgroup">
+		<%=job_title_select('contributor_job_title_id', @source_obj.job_title_id, {:include_blank=>true})%>
+		<%=text_field_tag('contributor_job_title', @source_obj.job_title,
+		 {:size=>50, :maxlength=>40, :style=>'ime-mode: active;'})%>
+		</span>
+		<%=svr_error_tag("sverr_contributor_job_title", @error_msg_hash[:contributor_job_title])%>
+	</td>
+</tr>

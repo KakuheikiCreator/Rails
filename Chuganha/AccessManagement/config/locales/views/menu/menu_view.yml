@@ -1,0 +1,47 @@
+###############################################################################
+# 国際化設定:: メニュー機能
+# Copyright:: Copyright (c) 2011 仲観派
+# 作成日:2012/01/31 Nakanohito  (mailto:)
+# 更新日:
+###############################################################################
+ja:
+  views:
+    menu:
+      item_names:
+        new_window: 新しいウィンドウで開く
+        menu_button: メニューボタン
+        login_form: ログインフォーム
+        access_total: アクセス集計
+        schedule_list: 解析情報取得予定一覧
+        logout: ログアウト
+        regulated_host_list: 規制ホストリスト
+        regulation_cookie_list: 規制クッキーリスト
+        regulation_referrers_list: 規制リファラーリスト
+
+en:
+  views:
+    menu:
+      item_names:
+        new_window: Open in new window
+        menu_button: Menu button
+        login_form: Login Form
+        access_total: Access total
+        schedule_list: Schedule List
+        logout: Logout
+        regulated_host_list: Regulated host list
+        regulation_cookie_list: Regulation cookie list
+        regulation_referrers_list: Regulation referrers list
+
+en-US:
+  views:
+    menu:
+      item_names:
+        new_window: Open in new window
+        menu_button: Menu button
+        login_form: Login Form
+        access_total: Access total
+        schedule_list: Schedule List
+        logout: Logout
+        regulated_host_list: Regulated host list
+        regulation_cookie_list: Regulation cookie list
+        regulation_referrers_list: Regulation referrers list

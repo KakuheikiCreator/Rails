@@ -1,0 +1,211 @@
+<% i18n_cache(:suffix=>'list_1') do %>
+<%= javascript_include_tag("regulation_referrer_list/list")%>
+<table align="center" border="0" cellpadding="0" cellspacing="0">
+<thead>
+<tr height="20"><td>&nbsp;</td></tr>
+<tr>
+	<td>
+		<table border="0" cellspacing="0" cellpadding="0">
+		<tbody>
+		<tr>
+			<td width="750">
+				<%= image_tag("regulation_referrer_list/regulation_referrer_list_title.png", :size=>"750x60")%>
+			</td>
+			<td width="150">
+<% end %>
+				<%= form_tag_with_params({:controller => 'menu/menu', :action => 'menu'},
+										 {:id => '01', :name => '01'}, :TRANS_PTN_CLH) do %>
+				<%= submit_tag(vt('item_names.menu'), :id=>'01_submit', :class=>'tab_button', :tabindex=>'1')%>
+				<% end %>
+			</td>
+			<td width="150">
+				<%= form_tag_with_params({:controller => 'login/login', :action => 'logout'},
+										 {:id => '02', :name => '02'}, :TRANS_PTN_CLR) do %>
+				<%= submit_tag(vt('item_names.logout'), :id=>'02_submit', :class=>'tab_button', :tabindex=>'2')%>
+				<% end %>
+<% i18n_cache(:suffix=>'list_2') do %>
+			</td>
+		</tr>
+		</tbody>
+		</table>
+	</td>
+</tr>
+<tr>
+	<td>
+		<table border="1" cellspacing="0" cellpadding="0" class="form_01">
+		<tbody>
+		<tr>
+			<td align="center" class="cell_02">
+				<font size="3"><strong><%=vt('item_names.search_registration_form')%></strong></font>
+			</td>
+		</tr>
+		<tr>
+			<td>
+<% end %>
+				<%= form_for_with_params(@reg_referrer,
+						{:url=>{:action=>"list"},
+						 :html=>{:id=>"input_form", :class=>"input_form"}},
+						 :TRANS_PTN_NOW) do |frm| %>
+<% i18n_cache(:suffix=>'list_3') do %>
+				<table border="1" cellspacing="0" cellpadding="1" class="form_01">
+				<tbody>
+				<tr>
+					<td width="140" class="cell_02">&nbsp;
+						<font size="2"><strong><%=System.human_attribute_name("system_name")%></strong></font>
+					</td>
+					<td width="270">
+						<select name="regulation_referrer[system_id]" id="regulation_referrer_system_id">
+							<%= @helper.system_select_options(@reg_referrer.system_id)%>
+						</select>
+						<%=svr_error_tag("sverr_system_id", @err_hash[:system_id])%>
+					</td>
+					<td width="140" class="cell_02">&nbsp;
+						<font size="2"><strong><%=RegulationReferrer.human_attribute_name("remarks")%></strong></font>
+					</td>
+					<td width="478" colspan="2">
+						<%=frm.text_field(:remarks, {:size=>70, :maxlength=>255})%>
+						<%=svr_error_tag("sverr_remarks", @err_hash[:remarks])%>
+					</td>
+				</tr>
+				<tr>
+					<td class="cell_02">&nbsp;
+						<font size="2"><strong><%=RegulationReferrer.human_attribute_name("referrer")%></strong></font>
+					</td>
+					<td colspan="4">
+						<%=frm.text_field(:referrer, {:size=>140, :maxlength=>1024})%>
+						<%=svr_error_tag("sverr_referrer", @err_hash[:referrer])%>
+					</td>
+				</tr>
+				<tr>
+					<td class="cell_02">&nbsp;
+						<font size="2"><strong><%=vt('item_names.ordering')%></strong></font>
+					</td>
+					<td>
+						<span id="sort_cond" name="sort_cond" class="chkgroup">
+						<select name="sort_item" id="sort_item">
+							<%=@helper.item_select_options(@sort_item)%>
+						</select>
+						<select name="sort_order" id="sort_order">
+							<%=options_from_code(:SORT_ORDER_CLS, @sort_order)%>
+						</select>
+						</span>
+						<%=svr_error_tag("sverr_sort_cond", @err_hash[:sort_cond])%>
+					</td>
+					<td class="cell_02">&nbsp;
+						<font size="2"><strong><%=vt('item_names.number_to_display')%></strong></font>
+					</td>
+					<td width="220">
+						<span id="disp_cnt_cond" name="disp_cnt_cond" class="chkgroup">
+						<select name="disp_counts" id="disp_counts">
+							<%=options_from_code(:COUNT_L, @disp_counts)%>
+						</select>
+						<font size="2"><%=vt('sentences.number_of_indication')%></font>
+						</span>
+						<%=svr_error_tag("sverr_disp_cnt_cond", @err_hash[:disp_counts])%>
+					</td>
+					<td align="center">
+						<%=@helper.submit_button(t('helpers.submit.search'), 'list', {:class=>"small_button"})%>&nbsp;
+						<%=@helper.submit_button(t('helpers.submit.create'), 'create', {:class=>"small_button"})%>&nbsp;
+						<%=@helper.submit_button(t('helpers.submit.notify'), 'notify', {:class=>"small_button"})%>
+					</td>
+				</tr>
+<% end %>
+				<% if @err_hash.has_key?(:error_msg) then %>
+				<tr>
+					<td colspan="5"><%=error_msg(@err_hash[:error_msg]) %></td>
+				</tr>
+				<% end %>
+				</tbody>
+				</table>
+				<% end %>
+<% i18n_cache(:suffix=>'list_4') do %>
+			</td>
+		</tr>
+		</tbody>
+		</table>
+	</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>
+		<table width="1050" border="1" cellspacing="0" cellpadding="0" class="form_01">
+		<thead>
+		<tr>
+			<td align="center" class="cell_03">
+				<font size="3" color="#ffffff"><strong><%=vt('item_names.regulation_referrer_list')%></strong></font>
+			</td>
+		</tr>
+		</thead>
+		<tfoot>
+		<tr><td class="cell_03">&nbsp;</td></tr>
+		</tfoot>
+		<tbody>
+		<tr>
+			<td>
+<% end %>
+				<%= form_tag_with_params({:controller => 'regulation_referrer_list/regulation_referrer_list',
+										 :action => 'delete'}, {:id => 'delete_form', :name => 'delete_form'},
+										 :TRANS_PTN_NOW) do %>
+<% i18n_cache(:suffix=>'list_5') do %>
+				<div style="margin:0;padding:0;display:inline">
+					<input type="hidden" name="delete_id" id="delete_id" value=""/>
+				</div>
+				<table border="1" cellspacing="0" cellpadding="2" id="search_result_list">
+				<thead>
+				<tr>
+					<th width="120" class="cell_01">
+						<font size="2"><%=System.human_attribute_name("system_name")%></font>
+					</th>
+					<th width="124" class="cell_01">
+						<font size="2"><%=System.human_attribute_name("subsystem_name")%></font>
+					</th>
+					<th width="430" class="cell_01">
+						<font size="2"><%=RegulationReferrer.human_attribute_name("referrer")%></font>
+					</th>
+					<th width="290" class="cell_01">
+						<font size="2"><%=RegulationReferrer.human_attribute_name("remarks")%></font>
+					</th>
+					<th width="50" class="cell_01">&nbsp;</th>
+				</tr>
+				</thead>
+				<tbody>
+<% end %>
+				<% @reg_referrer_list.each do |entity| %>
+				<tr>
+					<td align="left">
+						<font size="2"><%=entity.system.system_name%></font>
+					</td>
+					<td align="left">
+						<font size="2"><%=entity.system.subsystem_name%></font>
+					</td>
+					<td align="left">
+						<font size="2"><%=entity.referrer%></font>
+					</td>
+					<td align="left">
+						<font size="2"><%=entity.remarks%></font>
+					</td>
+					<td align="center">
+						<%=@helper.delete_button(entity, {:class=>"small_button"})%>
+					</td>
+				</tr>
+				<% end %>
+				</tbody>
+				</table>
+				<% end %>
+<% i18n_cache(:suffix=>'list_6') do %>
+			</td>
+		</tr>
+		</tbody>
+		</table>
+	</td>
+</tr>
+<tr><td class="cell_01">&nbsp;</td></tr>
+</tbody>
+<tfoot>
+<tr>
+	<td align="right" class="cell_01"><%=copyright_notation%></td>
+</tr>
+</tfoot>
+</table>
+<% end %>

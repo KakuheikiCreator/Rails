@@ -1,0 +1,802 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Expires" content="Thu, 01 Dec 1994 16:00:00 GMT">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="robots" content="index,follow">
+<link rel="shortcut icon" type="image/png" href="image/favicon.png"> 
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<title>詳細検索</title>
+<script type="text/javascript" src="./js/jquery-1.5.2.js"></script>
+<script type="text/javascript" src="./js/jquery-ui-1.8.11.custom.min.js"></script>
+<script type="text/javascript" src="./js/contribution-form.js"></script>
+<script type="text/javascript">
+<!--
+$(document).ready(init);
+
+function init(){
+	var accordion_setting = {
+			header:'#accordion_head',
+			collapsible:true,
+			animated:'bounceslide',
+			active:false,
+			alwaysOpen:false,
+			autoheight:false
+	};
+	
+	$("#accordion_00").accordion(accordion_setting);
+	$("#accordion_01").accordion(accordion_setting);
+	$("#accordion_02").accordion(accordion_setting);
+	$("#accordion_03").accordion(accordion_setting);
+}
+//-->
+</script>
+</head>
+<body leftmargin="0" topmargin="0">
+<a name="TOP"></a>
+<table width="750" border="0" align="center" cellpadding="0" cellspacing="0">
+<thead>
+<tr height="20">
+	<td>&nbsp;</td>
+</tr>
+<tr>
+	<td bgcolor="white">
+		<img src="image/advanced_search_title.png" width="750" height="60" alt="title">
+	</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>
+		<form method="POST" action="xxx.cgi">
+		<table width="750" border="1" cellspacing="0" cellpadding="0" class="form_02">
+		<tbody>
+		<tr>
+			<td>
+				<table width="750" border="0" cellspacing="0" cellpadding="0">
+				<tbody>
+				<tr>
+					<td width="220" height="200" background="image/rogo_03_left.jpg">&nbsp;</td>
+					<td width="530" valign="middle" background="image/rogo_03_right.jpg">
+						<table border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<td height="30" colspan="2" align="center">
+								<font size="3" class="quote"><strong>検索条件（引用文）</strong></font>
+							</td>
+						</tr>
+						<tr>
+							<td width="100" height="40">
+								<font size="2" class="quote"><strong>検索キーワード</strong></font>
+							</td>
+							<td>
+								<input type="text" size="40" maxlength="80" class="penetration">
+								<select name="matching_condition" id="matching_condition">
+									<option value="0">で始まる</option>
+									<option value="1">を含む</option>
+									<option value="2">で終わる</option>
+								</select>
+							</td>
+						</tr>
+						</table>
+					</td>
+				</tr>
+				</tbody>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td class="cell_03">
+				<div id="accordion_00">
+				<table width="100%" border="0" cellspacing="0" cellpadding="0" id="accordion_head">
+				<tbody>
+				<tr>
+					<td height="30" align="center">
+						<font size="3" color="#000000"><strong>検索条件（出所）</strong></font>
+					</td>
+				</tr>
+				</tbody>
+				</table>
+				<table border="1" cellspacing="0" cellpadding="1" class="form_02">
+				<tbody>
+				<tr>
+					<td class="cell_03">
+						<font size="2">&nbsp;<strong>発言者</strong></font>
+					</td>
+					<td>
+						<input type="text" size="30" maxlength="40">
+						<select name="matching_condition" id="matching_condition">
+							<option value="0">で始まる</option>
+							<option value="1">を含む</option>
+							<option value="2">で終わる</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td class="cell_03">
+						<font size="2">&nbsp;<strong>発言者肩書き</strong></font>
+					</td>
+					<td>
+						<select name="sender_titile_id" id="sender_titile_id">
+							<option value="">分類選択</option>
+							<option value="01">タレント</option>
+							<option value="02">アイドル</option>
+							<option value="03">俳優</option>
+							<option value="04">ファッションモデル</option>
+							<option value="05">ミュージシャン</option>
+							<option value="06">その他芸能人</option>
+							<option value="07">スポーツ選手</option>
+							<option value="08">評論家</option>
+							<option value="09">報道関係者</option>
+							<option value="10">その他文化人</option>
+							<option value="11">芸術家</option>
+							<option value="12">写真家</option>
+							<option value="13">作家</option>
+							<option value="14">漫画家</option>
+							<option value="15">映画監督</option>
+							<option value="16">その他創作業</option>
+							<option value="17">宗教家</option>
+							<option value="18">思想家・社会運動家</option>
+							<option value="19">実業家</option>
+							<option value="20">学者（人文科学）</option>
+							<option value="21">学者（社会科学）</option>
+							<option value="22">学者（自然科学）</option>
+							<option value="23">学者（応用科学）</option>
+							<option value="24">学者（総合科学）</option>
+							<option value="25">政治家・官僚</option>
+							<option value="26">軍人・自衛官</option>
+							<option value="27">法曹</option>
+							<option value="28">その他</option>
+						</select>
+						<input type="text" size="30" maxlength="30" name="sender_titile">
+						<select name="matching_condition" id="matching_condition">
+							<option value="0">で始まる</option>
+							<option value="1">を含む</option>
+							<option value="2">で終わる</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td width="146" class="cell_03">
+						<font size="2">&nbsp;<strong>引用文の説明</strong></font>
+					</td>
+					<td width="596">
+						<input type="text" size="60" maxlength="80">
+						<select name="matching_condition" id="matching_condition">
+							<option value="0">で始まる</option>
+							<option value="1">を含む</option>
+							<option value="2">で終わる</option>
+						</select>
+					</td>
+				</tr>
+				<tr id="select_media_row">
+					<td class="cell_03">
+						<font size="2">&nbsp;<strong>出所分類</strong></font>
+					</td>
+					<td>
+						<select name="select_media" id="select_media">
+							<option value="0">選択</option>
+							<option value="1">新聞</option>
+							<option value="2">雑誌</option>
+							<option value="3">書籍</option>
+							<option value="4">テレビ</option>
+							<option value="5">ラジオ</option>
+							<option value="6">音楽</option>
+							<option value="7">動画</option>
+							<option value="8">ゲーム</option>
+							<option value="9">ニュースサイト</option>
+							<option value="10">Twitter</option>
+							<option value="11">ブログ</option>
+							<option value="12">SNS</option>
+							<option value="13">電子掲示板</option>
+							<option value="14">その他のサイト</option>
+							<option value="15">その他</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td class="cell_03">
+						<font size="2">&nbsp;<strong>媒体名</strong></font>
+					</td>
+					<td>
+						<input type="text" size="40" maxlength="40">
+						<select name="matching_condition" id="matching_condition">
+							<option value="0">で始まる</option>
+							<option value="1">を含む</option>
+							<option value="2">で終わる</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td class="cell_03">
+						<font size="2">&nbsp;<strong>媒体発信元</strong></font>
+					</td>
+					<td>
+						<input type="text" size="40" maxlength="40">
+						<select name="matching_condition" id="matching_condition">
+							<option value="0">で始まる</option>
+							<option value="1">を含む</option>
+							<option value="2">で終わる</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td class="cell_03">
+						<font size="2">&nbsp;<strong>発信日時</strong></font>
+					</td>
+					<td>
+						<font size="2">
+							<input type="text" size="4" maxlength="4" name="year">年
+							<input type="text" size="1" maxlength="2" name="month">月
+							<input type="text" size="1" maxlength="2" name="day">日&nbsp;
+							<input type="text" size="1" maxlength="2" name="hour">時
+							<input type="text" size="1" maxlength="2" name="minute">分
+							<select name="matching_condition" id="matching_condition">
+								<option value="0">以前</option>
+								<option value="1">同時刻</option>
+								<option value="2">以後</option>
+							</select>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td class="cell_03">
+						<font size="2">&nbsp;<strong>報じた人</strong></font>
+					</td>
+					<td>
+						<input type="text" size="30" maxlength="40">
+						<select name="matching_condition" id="matching_condition">
+							<option value="0">で始まる</option>
+							<option value="1">を含む</option>
+							<option value="2">で終わる</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td class="cell_03">
+						<font size="2">&nbsp;<strong>報じた人肩書き</strong></font>
+					</td>
+					<td>
+						<select name="sender_titile_id" id="sender_titile_id">
+							<option value="">分類選択</option>
+							<option value="01">タレント</option>
+							<option value="02">アイドル</option>
+							<option value="03">俳優</option>
+							<option value="04">ファッションモデル</option>
+							<option value="05">ミュージシャン</option>
+							<option value="06">その他芸能人</option>
+							<option value="07">スポーツ選手</option>
+							<option value="08">評論家</option>
+							<option value="09">報道関係者</option>
+							<option value="10">その他文化人</option>
+							<option value="11">芸術家</option>
+							<option value="12">写真家</option>
+							<option value="13">作家</option>
+							<option value="14">漫画家</option>
+							<option value="15">映画監督</option>
+							<option value="16">その他創作業</option>
+							<option value="17">宗教家</option>
+							<option value="18">思想家・社会運動家</option>
+							<option value="19">実業家</option>
+							<option value="20">学者（人文科学）</option>
+							<option value="21">学者（社会科学）</option>
+							<option value="22">学者（自然科学）</option>
+							<option value="23">学者（応用科学）</option>
+							<option value="24">学者（総合科学）</option>
+							<option value="25">政治家・官僚</option>
+							<option value="26">軍人・自衛官</option>
+							<option value="27">法曹</option>
+							<option value="28">その他</option>
+						</select>
+						<input type="text" size="30" maxlength="30" name="sender_titile">
+						<select name="matching_condition" id="matching_condition">
+							<option value="0">で始まる</option>
+							<option value="1">を含む</option>
+							<option value="2">で終わる</option>
+						</select>
+					</td>
+				</tr>
+				</tbody>
+				</table>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td class="cell_06">
+				<div id="accordion_01">
+				<table width="100%" border="0" cellspacing="0" cellpadding="0" id="accordion_head">
+				<tbody>
+				<tr>
+					<td height="30" align="center">
+						<font size="3" color="#000000"><strong>検索条件（投稿者・訂正者）</strong></font>
+					</td>
+				</tr>
+				</tbody>
+				</table>
+				<table border="1" cellspacing="0" cellpadding="1" class="form_02">
+				<tbody>
+				<tr>
+					<td width="146" class="cell_06">
+						<font size="2">&nbsp;<strong>投稿者</strong></font>
+					</td>
+					<td width="596">
+						<select name="matching_target_condition" id="matching_target_condition">
+							<option value="0">ニックネーム</option>
+							<option value="1">ID</option>
+						</select>
+						<input type="text" size="20" maxlength="40">
+						<select name="matching_condition" id="matching_condition">
+							<option value="0">で始まる</option>
+							<option value="1">を含む</option>
+							<option value="2">で終わる</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td class="cell_06">
+						<font size="2">&nbsp;<strong>投稿日時</strong></font>
+					</td>
+					<td>
+						<font size="2">
+							<input type="text" size="4" maxlength="4" name="year">年
+							<input type="text" size="1" maxlength="2" name="month">月
+							<input type="text" size="1" maxlength="2" name="day">日&nbsp;
+							<input type="text" size="1" maxlength="2" name="hour">時
+							<input type="text" size="1" maxlength="2" name="minute">分
+							<select name="matching_condition" id="matching_condition">
+								<option value="0">以前</option>
+								<option value="1">同時刻</option>
+								<option value="2">以後</option>
+							</select>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td class="cell_06">
+						<font size="2">&nbsp;<strong>最終訂正者</strong></font>
+					</td>
+					<td>
+						<select name="matching_target_condition" id="matching_target_condition">
+							<option value="0">ニックネーム</option>
+							<option value="1">ID</option>
+						</select>
+						<input type="text" size="20" maxlength="40">
+						<select name="matching_condition" id="matching_condition">
+							<option value="0">で始まる</option>
+							<option value="1">を含む</option>
+							<option value="2">で終わる</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td class="cell_06">
+						<font size="2">&nbsp;<strong>最終訂正日時</strong></font>
+					</td>
+					<td>
+						<font size="2">
+							<input type="text" size="4" maxlength="4" name="year">年
+							<input type="text" size="1" maxlength="2" name="month">月
+							<input type="text" size="1" maxlength="2" name="day">日&nbsp;
+							<input type="text" size="1" maxlength="2" name="hour">時
+							<input type="text" size="1" maxlength="2" name="minute">分
+							<select name="matching_condition" id="matching_condition">
+								<option value="0">以前</option>
+								<option value="1">同時刻</option>
+								<option value="2">以後</option>
+							</select>
+						</font>
+					</td>
+				</tr>
+				</tbody>
+				</table>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td class="cell_04">
+				<div id="accordion_02">
+				<table width="100%" border="0" cellspacing="0" cellpadding="0" id="accordion_head">
+				<tbody>
+				<tr>
+					<td height="30" align="center">
+						<font size="3" color="#000000"><strong>検索条件（コメント情報）</strong></font>
+					</td>
+				</tr>
+				</tbody>
+				</table>
+				<table border="1" cellspacing="0" cellpadding="1" class="form_02">
+				<tbody>
+				<tr>
+					<td width="146" class="cell_04">
+						<font size="2">&nbsp;<strong>コメント文</strong></font>
+					</td>
+					<td width="596">
+						<input type="text" size="20" maxlength="40">
+						<select name="matching_condition" id="matching_condition">
+							<option value="0">で始まる</option>
+							<option value="1">を含む</option>
+							<option value="2">で終わる</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td width="146" class="cell_04">
+						<font size="2">&nbsp;<strong>コメント投稿者</strong></font>
+					</td>
+					<td width="596">
+						<select name="matching_target_condition" id="matching_target_condition">
+							<option value="0">ニックネーム</option>
+							<option value="1">ID</option>
+						</select>
+						<input type="text" size="20" maxlength="40">
+						<select name="matching_condition" id="matching_condition">
+							<option value="0">で始まる</option>
+							<option value="1">を含む</option>
+							<option value="2">で終わる</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td class="cell_04">
+						<font size="2">&nbsp;<strong>コメント投稿日時</strong></font>
+					</td>
+					<td>
+						<font size="2">
+							<input type="text" size="4" maxlength="4" name="year">年
+							<input type="text" size="1" maxlength="2" name="month">月
+							<input type="text" size="1" maxlength="2" name="day">日&nbsp;
+							<input type="text" size="1" maxlength="2" name="hour">時
+							<input type="text" size="1" maxlength="2" name="minute">分
+							<select name="matching_condition" id="matching_condition">
+								<option value="0">以前</option>
+								<option value="1">同時刻</option>
+								<option value="2">以後</option>
+							</select>
+						</font>
+					</td>
+				</tr>
+				</tbody>
+				</table>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td class="cell_01">
+				<div id="accordion_03">
+				<table width="100%" border="0" cellspacing="0" cellpadding="0" id="accordion_head">
+				<tbody>
+				<tr>
+					<td height="30" align="center">
+						<font size="3" color="#000000"><strong>検索結果表示設定</strong></font>
+					</td>
+				</tr>
+				</tbody>
+				</table>
+				<table border="1" cellspacing="0" cellpadding="1" class="form_01">
+				<tbody>
+				<tr>
+					<td width="146" class="cell_01">
+						<font size="2">&nbsp;<strong>検索結果並び順</strong></font>
+					</td>
+					<td width="596">
+						<select name="sort_item_01" id="sor_item_01">
+							<option value="">第１項目</option>
+							<option value="00">引用文</option>
+							<option value="01">発言者</option>
+							<option value="02">発言者肩書き</option>
+							<option value="03">引用文説明</option>
+							<option value="04">出所分類</option>
+							<option value="05">媒体名</option>
+							<option value="06">媒体発信元</option>
+							<option value="07">発信日時</option>
+							<option value="08">報じた人</option>
+							<option value="09">報じた人肩書き</option>
+							<option value="10">投稿者</option>
+							<option value="11">投稿者ID</option>
+							<option value="12">投稿日時</option>
+							<option value="13">最終訂正者</option>
+							<option value="14">最終訂正者ID</option>
+							<option value="15">最終訂正日時</option>
+							<option value="16">コメント文</option>
+							<option value="17">コメント投稿者</option>
+							<option value="18">コメント投稿者ID</option>
+							<option value="19">コメント投稿日時</option>
+						</select>
+						<select name="sort_condition_01" id="sort_condition=01">
+							<option value="0">昇順</option>
+							<option value="1">降順</option>
+						</select>
+						<select name="sort_item_02" id="sor_item_02">
+							<option value="">第２項目</option>
+							<option value="00">引用文</option>
+							<option value="01">発言者</option>
+							<option value="02">発言者肩書き</option>
+							<option value="03">引用文説明</option>
+							<option value="04">出所分類</option>
+							<option value="05">媒体名</option>
+							<option value="06">媒体発信元</option>
+							<option value="07">発信日時</option>
+							<option value="08">報じた人</option>
+							<option value="09">報じた人肩書き</option>
+							<option value="10">投稿者</option>
+							<option value="11">投稿者ID</option>
+							<option value="12">投稿日時</option>
+							<option value="13">最終訂正者</option>
+							<option value="14">最終訂正者ID</option>
+							<option value="15">最終訂正日時</option>
+							<option value="16">コメント文</option>
+							<option value="17">コメント投稿者</option>
+							<option value="18">コメント投稿者ID</option>
+							<option value="19">コメント投稿日時</option>
+						</select>
+						<select name="sort_condition_02" id="sort_condition=02">
+							<option value="0">昇順</option>
+							<option value="1">降順</option>
+						</select>
+						<select name="sort_item_03" id="sor_item_03">
+							<option value="">第３項目</option>
+							<option value="00">引用文</option>
+							<option value="01">発言者</option>
+							<option value="02">発言者肩書き</option>
+							<option value="03">引用文説明</option>
+							<option value="04">出所分類</option>
+							<option value="05">媒体名</option>
+							<option value="06">媒体発信元</option>
+							<option value="07">発信日時</option>
+							<option value="08">報じた人</option>
+							<option value="09">報じた人肩書き</option>
+							<option value="10">投稿者</option>
+							<option value="11">投稿者ID</option>
+							<option value="12">投稿日時</option>
+							<option value="13">最終訂正者</option>
+							<option value="14">最終訂正者ID</option>
+							<option value="15">最終訂正日時</option>
+							<option value="16">コメント文</option>
+							<option value="17">コメント投稿者</option>
+							<option value="18">コメント投稿者ID</option>
+							<option value="19">コメント投稿日時</option>
+						</select>
+						<select name="sort_condition_03" id="sort_condition=03">
+							<option value="0">昇順</option>
+							<option value="1">降順</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td class="cell_01">
+						<font size="2">&nbsp;<strong>表示件数</strong></font>
+					</td>
+					<td>
+						<select name="number_display" id="number_display">
+							<option value="10">10件</option>
+							<option value="50">50件</option>
+							<option value="100">100件</option>
+						</select>
+						<font size="2">づつ表示する</font>
+					</td>
+				</tr>
+				</tbody>
+				</table>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td align="center">
+				<table width="140" border="0" cellspacing="0" cellpadding="0">
+				<tbody>
+				<tr><td>&nbsp;</td></tr>
+				<tr>
+					<td width="140" height="30" align="center" background="image/button_06.png">
+						<div class="vertical_middle">
+						<a href="#TOP" class="cell_link">
+						<font size="2" color="black"><strong>詳細検索</strong></font>
+						</a>
+						</div>
+					</td>
+ 				</tr>
+				<tr><td>&nbsp;</td></tr>
+				</tbody>
+				</table>
+			</td>
+		</tr>
+		</tbody>
+		</table>
+		</form>
+	</td>
+</tr>
+<tr height="20">
+	<td>&nbsp;</td>
+</tr>
+<tr>
+	<td>
+		<table width="750" border="0" cellspacing="0" cellpadding="0">
+		<tbody>
+		<tr height="40">
+			<td width="150" align="center" background="image/tab_02.png">
+				<div class="vertical_middle">
+				<a href="#TOP" class="cell_link"><font size="2" color="black"><strong>ログイン</strong></font></a>
+				</div>
+			</td>
+			<td width="150" align="center" background="image/tab_02.png">
+				<div class="vertical_middle">
+				<a href="#TOP" class="cell_link"><font size="2" color="black"><strong>ご利用方法</strong></font></a>
+				</div>
+			</td>
+			<td width="150" align="center" background="image/tab_02.png">
+				<div class="vertical_middle">
+				<a href="#TOP" class="cell_link"><font size="2" color="black"><strong>ご利用上の注意</strong></font></a>
+				</div>
+			</td>
+			<td width="150" align="center" background="image/tab_02.png">
+				<div class="vertical_middle">
+				<a href="#TOP" class="cell_link"><font size="2" color="black"><strong>会員規約</strong></font></a>
+				</div>
+			</td>
+			<td width="150" align="center" background="image/tab_02.png">
+				<div class="vertical_middle">
+				<a href="#TOP" class="cell_link"><font size="2" color="black"><strong>個人情報保護方針</strong></font></a>
+				</div>
+			</td>
+		</tr>
+		</tbody>
+		</table>
+	</td>
+</tr>
+<tr>
+	<td>
+		<table width="750" border="1" cellspacing="1" cellpadding="1" class="base_01">
+		<thead>
+		<tr>
+			<td valign="middle" class="cell_06">
+				<table border="0" cellspacing="0" cellpadding="0">
+				<tbody>
+				<tr>
+					<td width="80" align="right">
+						<a href="#TOP">
+						<font size="2"><strong>前頁へ</strong></font>
+						</a>
+					</td>
+					<td width="30">&nbsp;</td>
+					<td width="560">
+						<font size="2">10件ヒットしました。 1件目から10件目を表示しています。</font>
+					</td>
+					<td width="80" align="left">
+						<a href="#TOP">
+						<font size="2"><strong>次頁へ</strong></font>
+						</a>
+					</td>
+				</tr>
+				</tbody>
+				</table>
+			</td>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td align="center">
+				<table width="700" border="0" cellspacing="0" cellpadding="0">
+				<tbody>
+				<tr>
+					<td><hr></td>
+				</tr>
+				<tr>
+					<td>
+						<table border="0" cellspacing="0" cellpadding="2">
+						<tbody>
+						<tr>
+							<td rowspan="2"><font size="3">1.</font></td>
+							<td>
+							<font size="3"><a href="#TOP">道徳は、最も重要な事です。　神にとってではなく　私たちにとって</a></font>
+							</td>
+						</tr>
+						<tr>
+							<td><font size="2">変質者のキチペンギンが寝言を言っているページ</font></td>
+						</tr>
+						</tbody>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td><hr></td>
+				</tr>
+				<tr>
+					<td>
+						<table border="0" cellspacing="0" cellpadding="2">
+						<tbody>
+						<tr>
+							<td rowspan="2"><font size="3">2.</font></td>
+							<td>
+							<font size="3"><a href="#TOP">犯罪者の戯言、犯罪者の戯言、犯罪者の戯言、犯罪者の戯言、犯罪者の戯言、犯罪者の戯言、犯罪者の戯言、犯罪者の戯言、犯罪者の戯言、犯罪者の戯言、犯罪者の戯言、犯罪者の戯言、犯罪者の戯言</a></font>
+							</td>
+						</tr>
+						<tr>
+							<td><font size="2">変質者のキチペンギンが寝言を言っているページ</font></td>
+						</tr>
+						</tbody>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td><hr></td>
+				</tr>
+				<tr>
+					<td>
+						<table border="0" cellspacing="0" cellpadding="2">
+						<tbody>
+						<tr>
+							<td rowspan="2"><font size="3">3.</font></td>
+							<td>
+							<font size="3"><a href="#TOP">犯罪者の戯言その３</a></font>
+							</td>
+						</tr>
+						<tr>
+							<td><font size="2">変質者のキチペンギンが寝言を言っているページのその３</font></td>
+						</tr>
+						</tbody>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td><hr></td>
+				</tr>
+				</tbody>
+				</table>
+			</td>
+		</tr>
+		</tbody>
+		<tfoot>
+		<tr>
+			<td valign="middle" class="cell_06">
+				<table border="0" cellspacing="0" cellpadding="0">
+				<tbody>
+				<tr>
+					<td width="80" align="right">
+						<a href="#TOP">
+						<font size="2"><strong>前頁へ</strong></font>
+						</a>
+					</td>
+					<td width="30">&nbsp;</td>
+					<td width="560">
+						<font size="2">10件ヒットしました。 1件目から10件目を表示しています。</font>
+					</td>
+					<td width="80" align="left">
+						<a href="#TOP">
+						<font size="2"><strong>次頁へ</strong></font>
+						</a>
+					</td>
+				</tr>
+				</tbody>
+				</table>
+			</td>
+		</tr>
+		</tfoot>
+		</table>
+	</td>
+</tr>
+<tr>
+	<td class="cell_02">&nbsp;</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+	<td>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+		<tbody>
+		<tr>
+			<td align="right" class="cell_02">
+				<font color="#ffffff" size="2"><strong>Copyright (C) 2011 引用道 All Rights Reserved.</strong></font>
+			</td>
+		</tr>
+		</tbody>
+		</table>
+	</td>
+</tr>
+</tfoot>
+</table>
+</body>
+</html>

@@ -1,0 +1,360 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="robots" content="index,follow">
+<link rel="shortcut icon" type="image/png" href="image/favicon.png"> 
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<title>引用の投稿</title>
+<script type="text/javascript" src="./js/jquery-1.5.2.js"></script>
+<script type="text/javascript" src="./js/jquery-ui-1.8.11.custom.min.js"></script>
+<script type="text/javascript" src="./js/contribution-form.js"></script>
+<script type="text/javascript">
+<!--
+$(document).ready(init);
+
+function init(){
+	$.ajaxSetup({cache:false});
+	var accordion_setting = {
+			header:'#accordion_head',
+			collapsible:true,
+			animated:'bounceslide',
+			active:false,
+			alwaysOpen:false,
+			autoheight:false
+		};
+	$("#accordion").accordion(accordion_setting);
+	$("#select_media").live('change',mediaSelected);
+}
+//-->
+</script>
+</head>
+<body>
+<a name="TOP"></a>
+<table width="750" border="0" align="center" cellpadding="0" cellspacing="0">
+<thead>
+<tr height="20">
+   	<td>&nbsp;</td>
+</tr>
+<tr>
+	<td align="center" bgcolor="white">
+		<img src="image/posts_citation_title.png" width="750" height="60" alt="title">
+	</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td class="cell_02">
+		<table width="750" border="0" cellspacing="0" cellpadding="0">
+		<tbody>
+			<tr height="40">
+				<td width="150" align="center" background="image/tab_02.png">
+					<div class="vertical_middle">
+					<a href="#TOP" class="cell_link">
+					<font size="2" color="black"><strong>会員ログイン</strong></font>
+					</a>
+					</div>
+				</td>
+				<td width="150" align="center" background="image/tab_02.png">
+					<div class="vertical_middle">
+					<a href="#TOP" class="cell_link">
+					<font size="2" color="black"><strong>ご利用方法</strong></font>
+					</a>
+					</div>
+				</td>
+				<td width="150" align="center" background="image/tab_02.png">
+					<div class="vertical_middle">
+					<a href="#TOP" class="cell_link">
+					<font size="2" color="black"><strong>ご利用上の注意</strong></font>
+					</a>
+					</div>
+				</td>
+				<td width="150" align="center" background="image/tab_02.png">
+					<div class="vertical_middle">
+					<a href="#TOP" class="cell_link">
+					<font size="2" color="black"><strong>会員規約</strong></font>
+					</a>
+					</div>
+				</td>
+				<td width="150" align="center" background="image/tab_02.png">
+					<div class="vertical_middle">
+					<a href="#TOP" class="cell_link">
+					<font size="2" color="black"><strong>個人情報保護方針</strong></font>
+					</a>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+		</table>
+	</td>
+</tr>
+<tr>
+	<td>
+		<form method="POST" action="xxx.cgi">
+		<table width="750" border="0" cellspacing="0" cellpadding="0" class="base_01">
+		<tbody>
+		<tr>
+			<td>
+				<table width="750" border="0" cellspacing="0" cellpadding="0">
+				<tbody>
+				<tr>
+					<td width="220" height="200" background="image/rogo_03_left.jpg">&nbsp;</td>
+					<td width="530" valign="middle" background="image/rogo_03_right.jpg">
+						<font size="3" color="#ffffff">投稿したい引用</font>
+						<font size="2" color="#ffffff">※200文字以内</font><br>
+						<textarea rows="8" cols="60" class="penetration">
+●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○
+●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○
+●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○
+●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○
+●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○
+●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○
+●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○
+●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○</textarea>
+					</td>
+				</tr>
+				</tbody>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="30" align="center" valign="middle" bgcolor="#000000">
+				<div id="accordion">
+				<a href="#" class="cell_link" id="accordion_head">
+				<font size="3" color="#ffffff"><strong>投稿時の注意点</strong></font>
+				</a>
+				<table border="0" cellspacing="0" cellpadding="0">
+				<tbody>
+				<tr><td height="20" colspan="2">&nbsp;</td></tr>
+				<tr>
+					<td width="20">&nbsp;</td>
+					<td align="left" valign="middle">
+						<font size="2" color="#ffffff">
+						1.当サイトに投稿された著作物の著作権は、基本的には引用元の著作者<br>
+						　もしくは投稿された方に帰属するものとみなします。<br>
+						　従って、投稿をされた方が、その情報によって生じた全ての責任を負っています。<br>
+						<br>
+						2.投稿する文章は、著作権法等の法制度に抵触しない範囲で行って下さい。<br>
+						　つまり、著作物の全文の登録や、引用内容に対するあなたのコメントも無い<br>
+						　備忘録の様な形での投稿はしないで下さい。<br>
+						<br>
+						3.投稿された情報が引用として成立する必要がある為、出所の情報は必ず記述して下さい。<br>
+						<br>
+						4.引用の出所情報は、客観性を重視して入力して下さい。<br>
+						　特に「引用箇所の説明」は、投稿する文章の背景や、それが行われた経緯等の説明について<br>
+						　客観性を重視した記述にして下さい。<br>
+						　主観的なコメントは、「引用箇所に関するあなたのコメント」の箇所にお願いします。<br>
+						<br>
+						5.投稿した情報（特に引用箇所と出所の情報）に問題が有る場合には、投稿内容の訂正や削除<br>
+						　および会員機能の利用停止等の措置を講ずる場合があります。<br>
+						　投稿内容の訂正・削除機能は、他の会員の方にも提供していますので、誤った引用の投稿にはご注意下さい。<br>
+						</font>
+					</td>
+				</tr>
+				<tr><td height="20" colspan="2">&nbsp;</td></tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td align="left" valign="middle">
+						<font size="2" color="#0033ff">
+						※以下参考<br>
+						<br>
+						著作権法　第三十二条<br>
+						　公表された著作物は、引用して利用することができる。<br>
+						　この場合において、その引用は、公正な慣行に合致するものであり、かつ、報道、批評、研究その他の<br>
+						　引用の目的上正当な範囲内で行なわれるものでなければならない。<br>
+						<br>
+						<br>
+						引用として成立する条件は、おおむね以下の通りです。<br>
+						<br>
+						　1.引用できるのは、公表された著作物であること<br>
+						　　（つまり、閉鎖的なSNS内等での発言等は「公表された」に該当しない場合が有ります。）<br>
+						　2.明瞭区別性があること（引用箇所が区別出来ること）<br>
+						　3.主従関係があること（引用箇所が従で、引用内容に関するあなたのコメントが主であること）<br>
+						　4.公正な慣行に合致していること（自分の主張を展開する為等の必要性）<br>
+						　5.目的上正当な範囲内であること（必要性の無い箇所まで引用していないこと）<br>
+						　6.出所の明示をすること
+						</font>
+					</td>
+				</tr>
+				<tr><td height="20" colspan="2">&nbsp;</td></tr>
+				</tbody>
+				</table>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<table width="750" border="1" cellspacing="0" cellpadding="0" class="form_02">
+				<tbody>
+				<tr>
+					<td height="30" align="center" valign="middle" class="cell_03">
+						<font size="3"><strong>引用内容の出所情報</strong></font>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1" cellpadding="2" cellspacing="0">
+						<tbody>
+						<tr>
+							<td class="cell_03"><font size="2">&nbsp;<strong>引用文発信者（必須）</strong></font></td>
+							<td><input type="text" size="30" maxlength="30" name="sender"></td>
+						</tr>
+						<tr>
+							<td class="cell_03"><font size="2">&nbsp;<strong>引用文発信者肩書き</strong></font></td>
+							<td>
+								<select name="sender_titile_id" id="sender_titile_id">
+									<option value="">分類選択</option>
+									<option value="00">芸能人</option>
+									<option value="01">スポーツ選手</option>
+									<option value="02">評論家</option>
+									<option value="03">報道関係者</option>
+									<option value="04">その他文化人</option>
+									<option value="05">芸術家</option>
+									<option value="06">写真家</option>
+									<option value="07">作家</option>
+									<option value="08">漫画家</option>
+									<option value="09">映画監督</option>
+									<option value="10">その他創作業</option>
+									<option value="11">宗教家</option>
+									<option value="12">思想家・社会運動家</option>
+									<option value="13">実業家</option>
+									<option value="14">学者（人文科学）</option>
+									<option value="15">学者（社会科学）</option>
+									<option value="16">学者（自然科学）</option>
+									<option value="17">学者（応用科学）</option>
+									<option value="18">学者（総合科学）</option>
+									<option value="19">政治家・官僚</option>
+									<option value="20">軍人・自衛官</option>
+									<option value="21">法曹</option>
+									<option value="22">その他</option>
+								</select>
+								&nbsp;<input type="text" size="30" maxlength="30" name="sender_titile">
+							</td>
+						</tr>
+						<tr id="select_media_row">
+							<td width="140" class="cell_03">
+								<font size="2">&nbsp;<strong>出所分類（必須）</strong></font>
+							</td>
+							<td width="592">
+								<select name="select_media" id="select_media">
+									<option value="0">選択</option>
+									<option value="1">新聞</option>
+									<option value="2">雑誌</option>
+									<option value="3">書籍</option>
+									<option value="4">テレビ</option>
+									<option value="5">ラジオ</option>
+									<option value="6">音楽</option>
+									<option value="7">動画</option>
+									<option value="8">ゲーム</option>
+									<option value="9">ニュースサイト</option>
+									<option value="10">Twitter</option>
+									<option value="11">ブログ</option>
+									<option value="12">SNS</option>
+									<option value="13">電子掲示板</option>
+									<option value="14">その他のサイト</option>
+									<option value="15">その他</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td height="80" valign="middle" class="cell_03">
+								<font size="2">&nbsp;<strong>引用文の説明</strong></font>
+							</td>
+							<td>
+								<textarea rows="8" cols="70" class="description">
+●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○
+●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○
+●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○
+●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○
+●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○
+●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○
+●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○
+●○●○●○●○●○●○●○●○●○●○●○●○●○●○●○</textarea>
+							</td>
+						</tr>
+						</tbody>
+						</table>
+					</td>
+				</tr>
+				</tbody>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<table width="750" border="1" cellspacing="0" cellpadding="0" class="form_01">
+				<tbody>
+				<tr>
+					<td align="center" class="cell_01">
+						<font size="3"><strong>引用内容に関するあなたのコメント（必須）</strong></font>
+					</td>
+				</tr>
+				<tr>
+					<td>
+					<textarea name="comment" cols="85" rows="10">あいうえお</textarea>
+					</td>
+				</tr>
+				</tbody>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<table width="750" border="0" cellspacing="0" cellpadding="0">
+				<tbody>
+				<tr height="20">
+					<td colspan="3" align="center" valign="middle">
+						<font size="2" class="warning">
+						※投稿された情報は、<a href="#TOP">会員規約</a>および<a href="">個人情報保護方針</a>に沿って管理を行いますので、ご注意下さい。
+						</font>
+					</td>
+ 				</tr>
+				<tr height="30">
+					<td width="305">&nbsp;</td>
+					<td width="140" align="center" background="image/button_06.png">
+						<div class="vertical_middle">
+						<a href="#TOP" class="cell_link">
+						<font size="2" color="black"><strong>入力内容を確認</strong></font>
+						</a>
+						</div>
+					</td>
+					<td width="305">&nbsp;</td>
+ 				</tr>
+				<tr height="10">
+					<td colspan="3">&nbsp;</td>
+ 				</tr>
+				</tbody>
+				</table>
+			</td>
+		</tr>
+		</tbody>
+		</table>
+		</form>
+	</td>
+</tr>
+<tr>
+	<td class="cell_02">&nbsp;</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+	<td>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+		<tbody>
+		<tr>
+			<td align="right" class="cell_02">
+				<font color="#ffffff" size="2"><strong>Copyright (C) 2011 引用道 All Rights Reserved.</strong></font>
+			</td>
+		</tr>
+		</tbody>
+		</table>
+	</td>
+</tr>
+</tfoot>
+</table>
+</body>
+</html>

@@ -1,0 +1,105 @@
+###############################################################################
+# 国際化設定:: リクエスト解析結果
+# Copyright:: Copyright (c) 2011 仲観派
+# 作成日:2011/08/14 Nakanohito  (mailto:)
+# 更新日:
+###############################################################################
+
+ja:
+  activerecord:
+    models:
+      request_analysis_result: "リクエスト解析"
+    attributes:
+      request_analysis_result:
+        id: "ID"
+        system_id: "システムID"
+        request_analysis_schedule_id: "リクエスト解析スケジュールID"
+        received_year: "受信年"
+        received_month: "受信月"
+        received_day: "受信日"
+        received_hour: "受信時"
+        received_minute: "受信分"
+        received_second: "受信秒"
+        function_id: "機能ID"
+        function_transition_no: "機能遷移番号"
+        session_id: "セッションID"
+        client_id: "クライアントID"
+        browser_id: "ブラウザID"
+        browser_version_id: "ブラウザバージョンID"
+        accept_language: "言語"
+        referrer: "リファラー"
+        domain_id: "ドメインID"
+        proxy_host: "プロキシホスト"
+        proxy_ip_address: "プロキシIP"
+        remote_host: "クライアントホスト"
+        ip_address: "クライアントIP"
+        request_count: "リクエスト回数"
+        lock_version: "ロックバージョン"
+        created_at: "作成日"
+        updated_at: "更新日"
+
+en:
+  activerecord:
+    models:
+      request_analysis_result: "Analysis of information requests"
+    attributes:
+      request_analysis_result:
+        id: "ID"
+        system_id: "System ID"
+        request_analysis_schedule_id: "Request Analysis Schedule ID"
+        received_year: "Reception year"
+        received_month: "Reception Mon"
+        received_day: "Reception Mon"
+        received_hour: "Received Hour"
+        received_minute: "Received minute"
+        received_second: "Received second"
+        function_id: "Function ID"
+        function_transition_no: "Number of transition functions"
+        session_id: "Session ID"
+        client_id: "Client ID"
+        browser_id: "Browser ID"
+        browser_version_id: "Browser Version ID"
+        accept_language: "Accept Language"
+        referrer: "referrer"
+        domain_id: "Domain ID"
+        proxy_host: "Proxy host"
+        proxy_ip_address: "Proxy IP"
+        remote_host: "Client host"
+        ip_address: "Client IP"
+        request_count: "Number of requests"
+        lock_version: "Lock Version"
+        created_at: "Date created"
+        updated_at: "Date updated"
+
+en-US:
+  activerecord:
+    models:
+      request_analysis_result: "Analysis of information requests"
+    attributes:
+      request_analysis_result:
+        id: "ID"
+        system_id: "System ID"
+        request_analysis_schedule_id: "Request Analysis Schedule ID"
+        received_year: "Reception year"
+        received_month: "Reception Mon"
+        received_day: "Reception Mon"
+        received_hour: "Received Hour"
+        received_minute: "Received minute"
+        received_second: "Received second"
+        function_id: "Function ID"
+        function_transition_no: "Number of transition functions"
+        session_id: "Session ID"
+        client_id: "Client ID"
+        browser_id: "Browser ID"
+        browser_version_id: "Browser Version ID"
+        accept_language: "Accept Language"
+        referrer: "referrer"
+        domain_id: "Domain ID"
+        proxy_host: "Proxy host"
+        proxy_ip_address: "Proxy IP"
+        remote_host: "Client host"
+        ip_address: "Client IP"
+        request_count: "Number of requests"
+        lock_version: "Lock Version"
+        created_at: "Date created"
+        updated_at: "Date updated"

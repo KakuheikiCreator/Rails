@@ -1,0 +1,29 @@
+###############################################################################
+# 国際化設定:: コメント投稿（その他）
+# Copyright:: Copyright (c) 2013 仲観派
+# 作成日:2013/02/11 Nakanohito  (mailto:)
+# 更新日:
+###############################################################################
+ja:
+  views:
+    partials:
+      source_view:
+        other:
+          item_names:
+            media_name: 引用元媒体
+
+en:
+  views:
+    partials:
+      source_view:
+        other:
+          item_names:
+            media_name: Media name
+
+en-US:
+  views:
+    partials:
+      source_view:
+        other:
+          item_names:
+            media_name: Media name

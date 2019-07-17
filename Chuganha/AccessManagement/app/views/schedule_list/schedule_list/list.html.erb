@@ -1,0 +1,357 @@
+<% i18n_cache(:suffix=>'list_1') do %>
+<%= javascript_include_tag("schedule_list/list")%>
+<table align="left" border="0" cellpadding="0" cellspacing="0">
+<thead>
+<tr>
+	<td>
+		<table border="0" cellspacing="0" cellpadding="0">
+		<tbody>
+		<tr>
+			<td width="750">
+				<%= image_tag("schedule_list/schedule_list_title.png", :size=>"750x60")%>
+			</td>
+			<td align="left">
+<% end %>
+				<!-- メニューリンク -->
+				<%= render('partials/menu_link')%>
+<% i18n_cache(:suffix=>'list_2') do %>
+			</td>
+		</tr>
+		</tbody>
+		</table>
+	</td>
+</tr>
+</thead>
+</table>
+<br>
+<table align="left" border="0" cellpadding="0" cellspacing="0">
+<thead>
+<tr>
+	<td>
+		<table width="1300" border="1" cellspacing="0" cellpadding="0" class="form_01">
+		<tbody>
+		<tr>
+			<td align="center" class="cell_02">
+				<font size="3"><strong><%=vt('item_names.search_registration_form')%></strong></font>
+			</td>
+		</tr>
+		<tr>
+			<td>
+<% end %>
+				<%= form_tag_with_params({:controller => 'schedule_list/schedule_list',
+										  :action => 'list'},
+										 {:id=>"input_form", :class=>"input_form"},
+										 :TRANS_PTN_NOW) do %>
+<% i18n_cache(:suffix=>'list_3') do %>
+				<table border="1" cellspacing="0" cellpadding="1" class="form_01">
+				<tbody>
+				<tr>
+					<td width="120" class="cell_02">&nbsp;
+						<font size="2"><strong><%=System.human_attribute_name("system_name")%></strong></font>
+					</td>
+					<td width="284">
+						<select name="system_id" id="system_id">
+							<%= system_select_options(@system_id)%>
+						</select>
+						<%=svr_error_tag("sverr_system_id", @err_hash[:system_id])%>
+					</td>
+					<td width="120" class="cell_02">&nbsp;
+						<font size="2"><strong><%=RequestAnalysisSchedule.human_attribute_name("gets_start_date")%></strong></font>
+					</td>
+					<td colspan="2">
+						<span id="gets_start_date" name="gets_start_date" class="chkgroup">
+							<%=default_select_datetime(@from_datetime, :from_datetime, {:include_blank=>true, :end_year=>Date.today.year + 1})%>～
+							<%=default_select_datetime(@to_datetime, :to_datetime, {:include_blank=>true, :end_year=>Date.today.year + 1})%>
+						</span>
+						<%=svr_error_tag("sverr_gets_start_date", @err_hash[:gets_start_date])%>
+						<%=hidden_tag('delete_id', '')%>
+					</td>
+				</tr>
+				<tr>
+					<td class="cell_02">&nbsp;
+						<font size="2"><strong><%=vt('item_names.ordering')%></strong></font>
+					</td>
+					<td>
+						<span id="sort_cond" name="sort_cond" class="chkgroup">
+						<select name="sort_item" id="sort_item">
+							<%=@helper.item_select_options(@sort_item)%>
+						</select>
+						<select name="sort_order" id="sort_order">
+							<%=options_from_code(:SORT_ORDER_CLS, @sort_order)%>
+						</select>
+						</span>
+						<%=svr_error_tag("sverr_sort_cond", @err_hash[:sort_cond])%>
+					</td>
+					<td class="cell_02">&nbsp;
+						<font size="2"><strong><%=vt('item_names.number_to_display')%></strong></font>
+					</td>
+					<td width="300">
+						<span id="disp_cnt_cond" name="disp_cnt_cond" class="chkgroup">
+						<select name="disp_counts" id="disp_counts">
+							<%=options_from_code(:COUNT_L, @disp_counts)%>
+						</select>
+						<font size="2"><%=vt('sentences.number_of_indication')%></font>
+						</span>
+						<%=svr_error_tag("sverr_disp_cnt_cond", @err_hash[:disp_counts])%>
+					</td>
+					<td width="450" align="center">
+						<%=@helper.submit_button(t('helpers.submit.search'), 'list', {:class=>"small_button"})%>&nbsp;
+						<%=@helper.submit_button(t('helpers.submit.create'), 'create', {:class=>"small_button"})%>&nbsp;
+						<%=@helper.submit_button(t('helpers.submit.delete'), 'delete', {:class=>"small_button"})%>&nbsp;
+						<%=@helper.submit_button(t('helpers.submit.notify'), 'notify', {:class=>"small_button"})%>&nbsp;
+						<%=clear_button({:class=>"small_button"})%>
+					</td>
+				</tr>
+<% end %>
+				<% if @err_hash.has_key?(:error_msg) then %>
+				<tr>
+					<td colspan="8"><%=error_msg(@err_hash[:error_msg]) %></td>
+				</tr>
+				<% end %>
+				</tbody>
+				</table>
+				<% end %>
+<% i18n_cache(:suffix=>'list_4') do %>
+			</td>
+		</tr>
+		</tbody>
+		</table>
+	</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>
+		<table width="1450" border="1" cellspacing="0" cellpadding="0" class="form_01">
+		<thead>
+		<tr>
+			<td align="center" class="cell_03">
+				<font size="3" color="#ffffff"><strong><%=vt('item_names.schedule_list')%></strong></font>
+			</td>
+		</tr>
+		</thead>
+		<tfoot>
+		<tr><td class="cell_03">&nbsp;</td></tr>
+		</tfoot>
+		<tbody>
+		<tr>
+			<td>
+<% end %>
+				<%= form_tag_with_params({:controller => 'schedule_list/schedule_list',
+										  :action => 'update'},
+										 {:id=>"update_form", :class=>"update_form"},
+										 :TRANS_PTN_NOW) do %>
+					<%=hidden_tag(:target_id, nil)%>
+					<%=@helper.entity_hidden(:gs_received_year)%>
+					<%=@helper.entity_hidden(:gs_received_month)%>
+					<%=@helper.entity_hidden(:gs_received_day)%>
+					<%=@helper.entity_hidden(:gs_received_hour)%>
+					<%=@helper.entity_hidden(:gs_received_minute)%>
+					<%=@helper.entity_hidden(:gs_received_second)%>
+					<%=@helper.entity_hidden(:gs_function_id)%>
+					<%=@helper.entity_hidden(:gs_function_transition_no)%>
+					<%=@helper.entity_hidden(:gs_session_id)%>
+					<%=@helper.entity_hidden(:gs_client_id)%>
+					<%=@helper.entity_hidden(:gs_browser_id)%>
+					<%=@helper.entity_hidden(:gs_browser_version_id)%>
+					<%=@helper.entity_hidden(:gs_accept_language)%>
+					<%=@helper.entity_hidden(:gs_referrer)%>
+					<%=@helper.entity_hidden(:gs_domain_id)%>
+					<%=@helper.entity_hidden(:gs_proxy_host)%>
+					<%=@helper.entity_hidden(:gs_proxy_ip_address)%>
+					<%=@helper.entity_hidden(:gs_remote_host)%>
+					<%=@helper.entity_hidden(:gs_ip_address)%>
+				<% end %>
+<% i18n_cache(:suffix=>'list_5') do %>
+				<table border="1" cellspacing="0" cellpadding="1" id="search_result_list">
+				<thead>
+				<tr>
+					<th width="120" rowspan="3" class="cell_01">
+						<font size="2"><%=System.human_attribute_name("system_name")%></font>
+					</th>
+					<th width="154" rowspan="3" class="cell_01">
+						<font size="2"><%=System.human_attribute_name("subsystem_name")%></font>
+					</th>
+					<th width="130" rowspan="3" class="cell_01">
+						<font size="2"><%=RequestAnalysisSchedule.human_attribute_name("gets_start_date")%></font>
+					</th>
+					<th width="40" rowspan="3" class="cell_01">&nbsp;</th>
+					<th colspan="19" class="cell_01">
+						<font size="2"><%=vt('item_names.summary_unit')%></font>
+					</th>
+					<th width="90" rowspan="3" class="cell_01">&nbsp;</th>
+				</tr>
+				<tr>
+					<th align="center" colspan="6" class="cell_01">
+						<font size="2"><%=vt('item_names.received_date')%></font>
+					</th>
+					<th width="60" align="center" rowspan="2" class="cell_01">
+						<font size="2"><%=vt('item_names.function')%></font>
+					</th>
+					<th width="64" align="center" rowspan="2" class="cell_01">
+						<font size="2"><%=vt('item_names.transition_number')%></font>
+					</th>
+					<th align="center" colspan="2" class="cell_01">
+						<font size="2"><%=vt('item_names.session')%></font>
+					</th>
+					<th align="center" colspan="2" class="cell_01">
+						<font size="2"><%=vt('item_names.browser')%></font>
+					</th>
+					<th width="60" align="center" rowspan="2" class="cell_01">
+						<font size="2"><%=vt('item_names.language')%></font>
+					</th>
+					<th width="64" align="center" rowspan="2" class="cell_01">
+						<font size="2"><%=vt('item_names.referrer')%></font>
+					</th>
+					<th width="60" align="center" rowspan="2" class="cell_01">
+						<font size="2"><%=vt('item_names.domain')%></font>
+					</th>
+					<th align="center" colspan="2" class="cell_01">
+						<font size="2"><%=vt('item_names.proxy')%></font>
+					</th>
+					<th align="center" colspan="2" class="cell_01">
+						<font size="2"><%=vt('item_names.host')%></font>
+					</th>
+				</tr>
+				<tr>
+					<th width="20" class="cell_01">
+						<font size="2"><%=t('datetime.prompts.year')%></font>
+					</th>
+					<th width="20" class="cell_01">
+						<font size="2"><%=t('datetime.prompts.month')%></font>
+					</th>
+					<th width="20" class="cell_01">
+						<font size="2"><%=t('datetime.prompts.day')%></font>
+					</th>
+					<th width="20" class="cell_01">
+						<font size="2"><%=t('datetime.prompts.hour')%></font>
+					</th>
+					<th width="20" class="cell_01">
+						<font size="2"><%=t('datetime.prompts.minute')%></font>
+					</th>
+					<th width="20" class="cell_01">
+						<font size="2"><%=t('datetime.prompts.second')%></font>
+					</th>
+					<th width="30" class="cell_01">
+						<font size="2"><%=vt('item_names.session_id')%></font>
+					</th>
+					<th width="100" class="cell_01">
+						<font size="2"><%=vt('item_names.client_id')%></font>
+					</th>
+					<th width="70" class="cell_01">
+						<font size="2"><%=vt('item_names.name')%></font>
+					</th>
+					<th width="70" class="cell_01">
+						<font size="2"><%=vt('item_names.version')%></font>
+					</th>
+					<th width="35" class="cell_01">
+						<font size="2"><%=vt('item_names.short_name')%></font>
+					</th>
+					<th width="35" class="cell_01">
+						<font size="2"><%=vt('item_names.ip')%></font>
+					</th>
+					<th width="35" class="cell_01">
+						<font size="2"><%=vt('item_names.short_name')%></font>
+					</th>
+					<th width="35" class="cell_01">
+						<font size="2"><%=vt('item_names.ip')%></font>
+					</th>
+				</tr>
+				</thead>
+				<tbody>
+<% end %>
+				<% @schedule_list.each do |entity| %>
+				<tr>
+					<td align="left">
+						<font size="2"><%=entity.system.system_name%></font>
+					</td>
+					<td align="left">
+						<font size="2"><%=entity.system.subsystem_name%></font>
+					</td>
+					<td align="left">
+						<font size="2"><%=default_time(entity.gets_start_date)%></font>
+					</td>
+					<td align="center" id="click_full_check">
+						<%=@helper.full_check_button(entity, {:class=>"small_button"})%>
+					</td>
+					<td align="center" id="click_check">
+						<%=@helper.entity_check_box(entity, :gs_received_year)%>
+					</td>
+					<td align="center" id="click_check">
+						<%=@helper.entity_check_box(entity, :gs_received_month)%>
+					</td>
+					<td align="center" id="click_check">
+						<%=@helper.entity_check_box(entity, :gs_received_day)%>
+					</td>
+					<td align="center" id="click_check">
+						<%=@helper.entity_check_box(entity, :gs_received_hour)%>
+					</td>
+					<td align="center" id="click_check">
+						<%=@helper.entity_check_box(entity, :gs_received_minute)%>
+					</td>
+					<td align="center" id="click_check">
+						<%=@helper.entity_check_box(entity, :gs_received_second)%>
+					</td>
+					<td align="center" id="click_check">
+						<%=@helper.entity_check_box(entity, :gs_function_id)%>
+					</td>
+					<td align="center" id="click_check">
+						<%=@helper.entity_check_box(entity, :gs_function_transition_no)%>
+					</td>
+					<td align="center" id="click_check">
+						<%=@helper.entity_check_box(entity, :gs_session_id)%>
+					</td>
+					<td align="center" id="click_check">
+						<%=@helper.entity_check_box(entity, :gs_client_id)%>
+					</td>
+					<td align="center" id="click_check">
+						<%=@helper.entity_check_box(entity, :gs_browser_id)%>
+					</td>
+					<td align="center" id="click_check">
+						<%=@helper.entity_check_box(entity, :gs_browser_version_id)%>
+					</td>
+					<td align="center" id="click_check">
+						<%=@helper.entity_check_box(entity, :gs_accept_language)%>
+					</td>
+					<td align="center" id="click_check">
+						<%=@helper.entity_check_box(entity, :gs_referrer)%>
+					</td>
+					<td align="center" id="click_check">
+						<%=@helper.entity_check_box(entity, :gs_domain_id)%>
+					</td>
+					<td align="center" id="click_check">
+						<%=@helper.entity_check_box(entity, :gs_proxy_host)%>
+					</td>
+					<td align="center" id="click_check">
+						<%=@helper.entity_check_box(entity, :gs_proxy_ip_address)%>
+					</td>
+					<td align="center" id="click_check">
+						<%=@helper.entity_check_box(entity, :gs_remote_host)%>
+					</td>
+					<td align="center" id="click_check">
+						<%=@helper.entity_check_box(entity, :gs_ip_address)%>
+					</td>
+					<td align="center">
+						<%=@helper.update_button(entity, {:class=>"small_button"})%>
+						<%=@helper.delete_button(entity, {:class=>"small_button"})%>
+					</td>
+				</tr>
+				<% end %>
+				</tbody>
+				</table>
+<% i18n_cache(:suffix=>'list_6') do %>
+			</td>
+		</tr>
+		</tbody>
+		</table>
+	</td>
+</tr>
+<tr><td class="cell_01">&nbsp;</td></tr>
+</tbody>
+<tfoot>
+<tr>
+	<td align="right" class="cell_01"><%=copyright_notation%></td>
+</tr>
+</tfoot>
+</table>
+<% end %>

@@ -1,0 +1,45 @@
+###############################################################################
+# 国際化設定:: システム
+# Copyright:: Copyright (c) 2013 仲観派
+# 作成日:2011/08/14 Nakanohito  (mailto:)
+# 更新日:
+###############################################################################
+
+ja:
+  activerecord:
+    models:
+      system: "システム"
+    attributes:
+      system:
+        id: "ID"
+        system_name: "システム名"
+        subsystem_name: "サブシステム名"
+        lock_version: "ロックバージョン"
+        created_at: "作成日"
+        updated_at: "更新日"
+
+en:
+  activerecord:
+    models:
+      system: "System"
+    attributes:
+      system:
+        id: "ID"
+        system_name: "System name"
+        subsystem_name: "Subsystem name"
+        lock_version: "Lock Version"
+        created_at: "Date created"
+        updated_at: "Date updated"
+        
+en-US:
+  activerecord:
+    models:
+      system: "System"
+    attributes:
+      system:
+        id: "ID"
+        system_name: "System name"
+        subsystem_name: "Subsystem name"
+        lock_version: "Lock Version"
+        created_at: "Date created"
+        updated_at: "Date updated"

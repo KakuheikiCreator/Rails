@@ -1,0 +1,31 @@
+<%=hidden_field_tag("server_time", Time.now.strftime("%Y/%m/%d %H:%M:%S"))%>
+<% i18n_cache(:suffix=>'partials-func_link-1') do %>
+<%= javascript_include_tag("partials/menu_link")%>
+<!-- 基本機能ボタン-->
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+	<td width="150">
+<% end %>
+		<%= form_tag_with_params({:controller => 'menu/menu', :action => 'menu'},
+								 {:id => '01', :name => '01'}, :TRANS_PTN_CLH) do %>
+		<%= submit_tag(vt('item_names.menu'), :id=>'01_submit', :class=>'tab_button', :tabindex=>'1')%>
+		<% end %>
+	</td>
+	<td width="150">
+		<%= form_tag_with_params({:controller => 'login/login', :action => 'logout'},
+								 {:id => '02', :name => '02'}, :TRANS_PTN_CLR) do %>
+		<%= submit_tag(vt('item_names.logout'), :id=>'02_submit', :class=>'tab_button', :tabindex=>'2')%>
+		<% end %>
+<% i18n_cache(:suffix=>'partials-func_link-2') do %>
+	</td>
+	<td width="150" align="center" class="cell_04">
+		<div id="server_time_clock">
+			<div id="date" style="font-size: 80%; font-weight: bolder;"></div>
+			<div id="time" style="font-size: 140%; font-weight: bolder;"></div>
+		</div>
+	</td>
+</tr>
+</tbody>
+</table>
+<% end %>

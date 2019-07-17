@@ -1,0 +1,378 @@
+<% i18n_cache(:suffix=>'member-list-list-1') do %>
+<%= javascript_include_tag("member/list")%>
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+	<td align="center">
+<% end %>
+		<!-- 機能一覧 -->
+		<%= render('partials/func_link_wide')%>
+<% i18n_cache(:suffix=>'member-list-list-2') do %>
+	</td>
+</tr>
+<tr>
+	<td height="5"></td>
+</tr>
+<tr>
+	<td align="center">
+		<!-- 会員情報 -->
+		<table border="0" cellpadding="0" cellspacing="0">
+		<tbody>
+		<tr>
+			<td class="pattern_2 angle_ul"></td>
+			<td class="pattern_2"></td>
+			<td class="pattern_2 angle_ur"></td>
+		</tr>
+		<tr>
+			<td class="pattern_2">&nbsp;</td>
+			<td align="center" class="pattern_2">
+				<h2 class="pattern_2"><%=vt('list.item_names.list_title')%></h2>
+			</td>
+			<td class="pattern_2">&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="pattern_2">&nbsp;</td>
+			<td align="center" class="pattern_2">
+<% end %>
+			<%= form_tag_with_params({:controller=>'member/list', :action=>'search'},
+					{:id=>'search_form', :name=>'search_form'}, :TRANS_PTN_NOW) do %>
+				<table border="0" cellpadding="0" cellspacing="0" class="pattern_1" id="ng_word_table">
+				<tbody>
+				<tr>
+					<th width="66" class="pattern_4"><font size="2"><%=vt('list.item_names.authority')%></font></th>
+					<th width="53" class="pattern_4"><font size="2"><%=vt('list.item_names.member_state')%></font></th>
+					<th width="368" class="pattern_4"><font size="2"><%=vt('list.item_names.open_id')%></font></th>
+					<th width="200" class="pattern_4"><font size="2"><%=vt('list.item_names.member_id')%></font></th>
+					<th width="272" class="pattern_4"><font size="2"><%=vt('list.item_names.nickname')%></font></th>
+				</tr>
+				<tr>
+					<td class="pattern_4">
+						<%=ent_select_tag('authority_id', @biz_obj.authority_list, :id, :authority_simple, @biz_obj.authority_id, {:include_blank=>true})%>
+						<%=svr_error_tag("sverr_authority_id", @error_msg_hash[:authority_id])%>
+					</td>
+					<td class="pattern_4">
+						<%=ent_select_tag('member_state_id', @biz_obj.member_state_list, :id, :member_state_simple, @biz_obj.member_state_id, {:include_blank=>true})%>
+						<%=svr_error_tag("sverr_member_state_id", @error_msg_hash[:member_state_id])%>
+					</td>
+					<td class="pattern_4">
+						<span id="open_id_grp" name="open_id_grp" class="chkgroup">
+						<%=text_field_tag('open_id', @biz_obj.open_id, {:size=>40, :maxlength=>255})%>
+						<%=code_select_tag('open_id_match', :MATCH_COND_CLS, @biz_obj.open_id_match) %>
+						</span>
+						<%=svr_error_tag("sverr_open_id", @error_msg_hash[:open_id])%>
+					</td>
+					<td class="pattern_4">
+						<span id="member_id_grp" name="member_id_grp" class="chkgroup">
+						<%=text_field_tag('member_id', @biz_obj.member_id, {:size=>12, :maxlength=>10, :style=>"ime-mode: disabled;"})%>
+						<%=code_select_tag('member_id_match', :MATCH_COND_CLS, @biz_obj.member_id_match) %>
+						</span>
+						<%=svr_error_tag("sverr_member_id", @error_msg_hash[:member_id])%>
+					</td>
+					<td class="pattern_4">
+						<span id="nickname_grp" name="nickname_grp" class="chkgroup">
+						<%=text_field_tag('nickname', @biz_obj.nickname, {:size=>24, :maxlength=>255})%>
+						<%=code_select_tag('nickname_match', :MATCH_COND_CLS, @biz_obj.nickname_match) %>
+						</span>
+						<%=svr_error_tag("sverr_nickname", @error_msg_hash[:nickname])%>
+					</td>
+				</tr>
+				</tbody>
+				</table>
+				<table border="0" cellpadding="0" cellspacing="0" class="pattern_1" id="ng_word_table">
+				<tbody>
+				<tr>
+					<th colspan="3" class="pattern_4"><font size="2"><%=vt('list.item_names.email')%></font></th>
+					<th colspan="3" class="pattern_4"><font size="2"><%=vt('list.item_names.join_date')%></font></th>
+				</tr>
+				<tr>
+					<td colspan="3" class="pattern_4">
+						<span id="email_grp" name="email_grp" class="chkgroup">
+						<%=text_field_tag('email', @biz_obj.email, {:size=>60, :maxlength=>255})%>
+						<%=code_select_tag('email_match', :MATCH_COND_CLS, @biz_obj.email_match) %>
+						</span>
+						<%=svr_error_tag("sverr_email", @error_msg_hash[:email])%>
+					</td>
+					<td colspan="3" class="pattern_4">
+						<span id="join_date_grp" name="join_date_grp" class="chkgroup">
+						<%=default_select_datetime(@biz_obj.join_date, :join_date,
+						 {:start_year=>Date.today.year-10, :end_year=>Date.today.year, :include_blank=>true})%>
+						<%=code_select_tag('join_date_comp', :COMP_COND_CLS, @biz_obj.join_date_comp) %>
+						</span>
+						<%=svr_error_tag("sverr_join_date", @error_msg_hash[:join_date])%>
+					</td>
+				</tr>
+				<tr>
+					<th colspan="3" class="pattern_4"><font size="2"><%=vt('list.item_names.ineligibility_date')%></font></th>
+					<th colspan="3" class="pattern_4"><font size="2"><%=vt('list.item_names.last_login_date')%></font></th>
+				</tr>
+				<tr>
+					<td colspan="3" class="pattern_4">
+						<span id="ineligibility_date_grp" name="ineligibility_date_grp" class="chkgroup">
+						<%=default_select_datetime(@biz_obj.ineligibility_date, :ineligibility_date,
+						 {:start_year=>Date.today.year-10, :end_year=>Date.today.year, :include_blank=>true})%>
+						<%=code_select_tag('ineligibility_date_comp', :COMP_COND_CLS, @biz_obj.ineligibility_date_comp) %>
+						</span>
+						<%=svr_error_tag("sverr_ineligibility_date", @error_msg_hash[:ineligibility_date])%>
+					</td>
+					<td colspan="3" class="pattern_4">
+						<span id="last_login_date_grp" name="last_login_date_grp" class="chkgroup">
+						<%=default_select_datetime(@biz_obj.last_login_date, :last_login_date,
+						 {:start_year=>Date.today.year-10, :end_year=>Date.today.year, :include_blank=>true})%>
+						<%=code_select_tag('last_login_date_comp', :COMP_COND_CLS, @biz_obj.last_login_date_comp) %>
+						</span>
+						<%=svr_error_tag("sverr_last_login_date", @error_msg_hash[:last_login_date])%>
+					</td>
+				</tr>
+				<tr>
+					<th width="158" class="pattern_4"><font size="2"><%=vt('list.item_names.quote_cnt')%></font></th>
+					<th width="158" class="pattern_4"><font size="2"><%=vt('list.item_names.quote_failure_cnt')%></font></th>
+					<th width="158" class="pattern_4"><font size="2"><%=vt('list.item_names.quote_correct_cnt')%></font></th>
+					<th width="158" class="pattern_4"><font size="2"><%=vt('list.item_names.quote_correct_failure_cnt')%></font></th>
+					<th width="158" class="pattern_4"><font size="2"><%=vt('list.item_names.comment_cnt')%></font></th>
+					<th width="158" class="pattern_4"><font size="2"><%=vt('list.item_names.comment_failure_cnt')%></font></th>
+				</tr>
+				<tr>
+					<td class="pattern_4">
+						<span id="quote_cnt_grp" name="quote_cnt_grp" class="chkgroup">
+						<%=text_field_tag('quote_cnt', @biz_obj.quote_cnt, {:size=>4, :maxlength=>8, :style=>"ime-mode: disabled;"})%>
+						<%=code_select_tag('quote_cnt_comp', :COMP_COND_CLS, @biz_obj.quote_cnt_comp) %>
+						</span>
+						<%=svr_error_tag("sverr_quote_cnt", @error_msg_hash[:quote_cnt])%>
+					</td>
+					<td class="pattern_4">
+						<span id="quote_failure_cnt_grp" name="quote_failure_cnt_grp" class="chkgroup">
+						<%=text_field_tag('quote_failure_cnt', @biz_obj.quote_failure_cnt, {:size=>4, :maxlength=>8, :style=>"ime-mode: disabled;"})%>
+						<%=code_select_tag('quote_failure_cnt_comp', :COMP_COND_CLS, @biz_obj.quote_failure_cnt_comp) %>
+						</span>
+						<%=svr_error_tag("sverr_quote_failure_cnt", @error_msg_hash[:quote_failure_cnt])%>
+					</td>
+					<td class="pattern_4">
+						<span id="quote_correct_cnt_grp" name="quote_correct_cnt_grp" class="chkgroup">
+						<%=text_field_tag('quote_correct_cnt', @biz_obj.quote_correct_cnt, {:size=>4, :maxlength=>8, :style=>"ime-mode: disabled;"})%>
+						<%=code_select_tag('quote_correct_cnt_comp', :COMP_COND_CLS, @biz_obj.quote_correct_cnt_comp) %>
+						</span>
+						<%=svr_error_tag("sverr_quote_correct_cnt", @error_msg_hash[:quote_correct_cnt])%>
+					</td>
+					<td class="pattern_4">
+						<span id="quote_correct_failure_cnt_grp" name="quote_correct_failure_cnt_grp" class="chkgroup">
+						<%=text_field_tag('quote_correct_failure_cnt', @biz_obj.quote_correct_failure_cnt, {:size=>4, :maxlength=>8, :style=>"ime-mode: disabled;"})%>
+						<%=code_select_tag('quote_correct_failure_cnt_comp', :COMP_COND_CLS, @biz_obj.quote_correct_failure_cnt_comp) %>
+						</span>
+						<%=svr_error_tag("sverr_quote_correct_failure_cnt", @error_msg_hash[:quote_correct_failure_cnt])%>
+					</td>
+					<td class="pattern_4">
+						<span id="comment_cnt_grp" name="comment_cnt_grp" class="chkgroup">
+						<%=text_field_tag('comment_cnt', @biz_obj.comment_cnt, {:size=>4, :maxlength=>8, :style=>"ime-mode: disabled;"})%>
+						<%=code_select_tag('comment_cnt_comp', :COMP_COND_CLS, @biz_obj.comment_cnt_comp) %>
+						</span>
+						<%=svr_error_tag("sverr_comment_cnt", @error_msg_hash[:comment_cnt])%>
+					</td>
+					<td class="pattern_4">
+						<span id="comment_failure_cnt_grp" name="comment_failure_cnt_grp" class="chkgroup">
+						<%=text_field_tag('comment_failure_cnt', @biz_obj.comment_failure_cnt, {:size=>4, :maxlength=>8, :style=>"ime-mode: disabled;"})%>
+						<%=code_select_tag('comment_failure_cnt_comp', :COMP_COND_CLS, @biz_obj.comment_failure_cnt_comp) %>
+						</span>
+						<%=svr_error_tag("sverr_comment_failure_cnt", @error_msg_hash[:comment_failure_cnt])%>
+					</td>
+				</tr>
+				<tr>
+					<th class="pattern_4"><font size="2"><%=vt('list.item_names.comment_report_cnt')%></font></th>
+					<th class="pattern_4"><font size="2"><%=vt('list.item_names.were_reported_cnt')%></font></th>
+					<th class="pattern_4"><font size="2"><%=vt('list.item_names.support_report_cnt')%></font></th>
+					<th colspan="3" class="pattern_4"><font size="2"><%=vt('list.item_names.sort_limit_fields')%></font></th>
+				</tr>
+				<tr>
+					<td class="pattern_4">
+						<span id="comment_report_cnt_grp" name="comment_report_cnt_grp" class="chkgroup">
+						<%=text_field_tag('comment_report_cnt', @biz_obj.comment_report_cnt, {:size=>4, :maxlength=>8, :style=>"ime-mode: disabled;"})%>
+						<%=code_select_tag('comment_report_cnt_comp', :COMP_COND_CLS, @biz_obj.comment_report_cnt_comp) %>
+						</span>
+						<%=svr_error_tag("sverr_comment_report_cnt", @error_msg_hash[:comment_report_cnt])%>
+					</td>
+					<td class="pattern_4">
+						<span id="were_reported_cnt_grp" name="were_reported_cnt_grp" class="chkgroup">
+						<%=text_field_tag('were_reported_cnt', @biz_obj.were_reported_cnt, {:size=>4, :maxlength=>8, :style=>"ime-mode: disabled;"})%>
+						<%=code_select_tag('were_reported_cnt_comp', :COMP_COND_CLS, @biz_obj.were_reported_cnt_comp) %>
+						</span>
+						<%=svr_error_tag("sverr_were_reported_cnt", @error_msg_hash[:were_reported_cnt])%>
+					</td>
+					<td class="pattern_4">
+						<span id="support_report_cnt_grp" name="support_report_cnt_grp" class="chkgroup">
+						<%=text_field_tag('support_report_cnt', @biz_obj.support_report_cnt, {:size=>4, :maxlength=>8, :style=>"ime-mode: disabled;"})%>
+						<%=code_select_tag('support_report_cnt_comp', :COMP_COND_CLS, @biz_obj.support_report_cnt_comp) %>
+						</span>
+						<%=svr_error_tag("sverr_support_report_cnt", @error_msg_hash[:support_report_cnt])%>
+					</td>
+					<td colspan="3" class="pattern_4">
+						<span id="sort_limit_fields_grp" name="sort_limit_fields_grp" class="chkgroup">
+						<%=code_select_tag('sort_field_1', :MEMBER_SORT_FIELDS, @biz_obj.sort_field_1, {:include_blank=>true}) %>
+						<%=code_select_tag('sort_order_1', :SORT_ORDER_CLS, @biz_obj.sort_order_1) %>
+						<%=code_select_tag('sort_field_2', :MEMBER_SORT_FIELDS, @biz_obj.sort_field_2, {:include_blank=>true}) %>
+						<%=code_select_tag('sort_order_2', :SORT_ORDER_CLS, @biz_obj.sort_order_2) %>
+						<%=code_select_tag('display_count', :COUNT_L, @biz_obj.display_count) %>
+						</span>
+						<%=svr_error_tag("sverr_sort_limit_fields", @error_msg_hash[:sort_limit_fields])%>
+					</td>
+				</tr>
+				<tr>
+					<td align="center" colspan="6" class="pattern_4">
+						<%=submit_tag(t('helpers.submit.search'), {:class=>'button_1'})%>
+						<%=clear_button(:class=>'button_1')%>
+					</td>
+				</tr>
+				</tbody>
+				</table>
+			<% end %>
+<% i18n_cache(:suffix=>'member-list-list-3') do %>
+			</td>
+			<td class="pattern_2">&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="pattern_2">&nbsp;</td>
+			<td class="pattern_2" height="5">&nbsp;</td>
+			<td class="pattern_2">&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="pattern_2">&nbsp;</td>
+			<td align="center" class="pattern_2">
+				<table border="0" cellpadding="0" cellspacing="0" class="pattern_1">
+				<thead>
+				<tr>
+					<th colspan="4" class="pattern_4"><font size="2"><%=vt('list.item_names.member_title')%></font></th>
+					<th class="pattern_4" ><font size="2"><%=vt('list.item_names.usage_title')%></font></th>
+					<th colspan="4" class="pattern_4"><font size="2"><%=vt('list.item_names.quoted_title')%></font></th>
+					<th colspan="5" class="pattern_4"><font size="2"><%=vt('list.item_names.comment_title')%></font></th>
+					<th width="42" rowspan="2" class="pattern_4">&nbsp;</th>
+				</tr>
+				<tr>
+					<th width="30" class="pattern_4"><font size="2"><%=vt('list.item_names.authority')%></font></th>
+					<th width="30" class="pattern_4"><font size="2"><%=vt('list.item_names.member_state')%></font></th>
+					<th width="80" class="pattern_4"><font size="2"><%=vt('list.item_names.member_id')%></font></th>
+					<th width="170" class="pattern_4"><font size="2"><%=vt('list.item_names.nickname')%></font></th>
+					<th width="130" class="pattern_4"><font size="2"><%=vt('list.item_names.last_login_date')%></font></th>
+					<th width="46" class="pattern_4"><font size="2"><%=vt('list.item_names.contribution')%></font></th>
+					<th width="46" class="pattern_4"><font size="2"><%=vt('list.item_names.negligence')%></font></th>
+					<th width="46" class="pattern_4"><font size="2"><%=vt('list.item_names.correction')%></font></th>
+					<th width="46" class="pattern_4"><font size="2"><%=vt('list.item_names.mis_correction')%></font></th>
+					<th width="46" class="pattern_4"><font size="2"><%=vt('list.item_names.contribution')%></font></th>
+					<th width="46" class="pattern_4"><font size="2"><%=vt('list.item_names.negligence')%></font></th>
+					<th width="46" class="pattern_4"><font size="2"><%=vt('list.item_names.report')%></font></th>
+					<th width="46" class="pattern_4"><font size="2"><%=vt('list.item_names.were_reported')%></font></th>
+					<th width="46" class="pattern_4"><font size="2"><%=vt('list.item_names.support_report')%></font></th>
+				</tr>
+				</thead>
+				<tfoot>
+				<tr>
+					<td colspan="15" align="center" class="pattern_4">
+<% end %>
+						<%=form_tag_with_params({:controller=>'member/home', :action=>'index'},
+								{:target=>'_blank', :id=>'detail_form', :name=>'detail_form'}, :TRANS_PTN_OTH) do %>
+						<%=hidden_field_tag("member_id", nil)%>
+						<% end %>
+						<%=form_tag_with_params({:controller=>'member/list', :action=>'search'},
+												{:id=>'search_form', :name=>'search_form'}, :TRANS_PTN_NOW) do %>
+						<%=hidden_field_tag("open_id", @biz_obj.open_id)%>
+						<%=hidden_field_tag("open_id_match", @biz_obj.open_id_match)%>
+						<%=hidden_field_tag("member_id", @biz_obj.member_id)%>
+						<%=hidden_field_tag("member_id_match", @biz_obj.member_id_match)%>
+						<%=hidden_field_tag("member_state_id", @biz_obj.member_state_id)%>
+						<%=hidden_field_tag("authority_id", @biz_obj.authority_id)%>
+						<%=hidden_field_tag("nickname", @biz_obj.nickname)%>
+						<%=hidden_field_tag("nickname_match", @biz_obj.nickname_match)%>
+						<%=hidden_field_tag("email", @biz_obj.email)%>
+						<%=hidden_field_tag("email_match", @biz_obj.email_match)%>
+						<%=time_hidden_tag("join_date", @biz_obj.join_date)%>
+						<%=hidden_field_tag("join_date_comp", @biz_obj.join_date_comp)%>
+						<%=time_hidden_tag("ineligibility_date", @biz_obj.ineligibility_date)%>
+						<%=hidden_field_tag("ineligibility_date_comp", @biz_obj.ineligibility_date_comp)%>
+						<%=time_hidden_tag("last_login_date", @biz_obj.last_login_date)%>
+						<%=hidden_field_tag("last_login_date_comp", @biz_obj.last_login_date_comp)%>
+						<%=hidden_field_tag("quote_cnt", @biz_obj.quote_cnt)%>
+						<%=hidden_field_tag("quote_cnt_comp", @biz_obj.quote_cnt_comp)%>
+						<%=hidden_field_tag("quote_failure_cnt", @biz_obj.quote_failure_cnt)%>
+						<%=hidden_field_tag("quote_failure_cnt_comp", @biz_obj.quote_failure_cnt_comp)%>
+						<%=hidden_field_tag("quote_correct_cnt", @biz_obj.quote_correct_cnt)%>
+						<%=hidden_field_tag("quote_correct_cnt_comp", @biz_obj.quote_correct_cnt_comp)%>
+						<%=hidden_field_tag("quote_correct_failure_cnt", @biz_obj.quote_correct_failure_cnt)%>
+						<%=hidden_field_tag("quote_correct_failure_cnt_comp", @biz_obj.quote_correct_failure_cnt_comp)%>
+						<%=hidden_field_tag("comment_cnt", @biz_obj.comment_cnt)%>
+						<%=hidden_field_tag("comment_cnt_comp", @biz_obj.comment_cnt_comp)%>
+						<%=hidden_field_tag("comment_failure_cnt", @biz_obj.comment_failure_cnt)%>
+						<%=hidden_field_tag("comment_failure_cnt_comp", @biz_obj.comment_failure_cnt_comp)%>
+						<%=hidden_field_tag("comment_report_cnt", @biz_obj.comment_report_cnt)%>
+						<%=hidden_field_tag("comment_report_cnt_comp", @biz_obj.comment_report_cnt_comp)%>
+						<%=hidden_field_tag("were_reported_cnt", @biz_obj.were_reported_cnt)%>
+						<%=hidden_field_tag("were_reported_cnt_comp", @biz_obj.were_reported_cnt_comp)%>
+						<%=hidden_field_tag("support_report_cnt", @biz_obj.support_report_cnt)%>
+						<%=hidden_field_tag("support_report_cnt_comp", @biz_obj.support_report_cnt_comp)%>
+						<%=hidden_field_tag("sort_field_1", @biz_obj.sort_field_1)%>
+						<%=hidden_field_tag("sort_field_2", @biz_obj.sort_field_2)%>
+						<%=hidden_field_tag("sort_order_1", @biz_obj.sort_order_1)%>
+						<%=hidden_field_tag("sort_order_2", @biz_obj.sort_order_2)%>
+						<%=hidden_field_tag("display_count", @biz_obj.display_count)%>
+						<%=hidden_field_tag("page_num", @biz_obj.page_num)%>
+						<%=hidden_field_tag("page_btn", nil)%>
+						<table width="100%" border="0" cellpadding="0" cellspacing="0">
+						<tbody>
+						<tr>
+							<td width="150" align="left">
+								<% if @biz_obj.prev_page_flg then%>
+								<%=submit_tag(vt('list.item_names.prev_btn'),
+								{:class=>'button_5', :onclick=>raw("$('#page_btn').val('prev');")})%>
+								<% end %>
+							</td>
+							<td align="center"><font size="2"><%=@biz_obj.page_num%></font></td>
+							<td width="150" align="right">
+								<% if @biz_obj.next_page_flg then%>
+								<%=submit_tag(vt('list.item_names.next_btn'),
+								{:class=>'button_5', :onclick=>raw("$('#page_btn').val('next');")})%>
+								<% end %>
+							</td>
+						</tr>
+						</tbody>
+						</table>
+						<% end %>
+					</td>
+				</tr>
+				</tfoot>
+				<tbody>
+				<% @biz_obj.member_list.each do |ent| %>
+				<tr>
+					<td class="pattern_4" align="center"><font size="2"><%=ent.authority.authority_simple %></font></td>
+					<td class="pattern_4" align="center"><font size="2"><%=ent.member_state.member_state_simple %></font></td>
+					<td class="pattern_4"><font size="2"><%=ent.member_id %></font></td>
+					<td class="pattern_4"><font size="2"><%=ent.dec_value(:enc_nickname) %></font></td>
+					<td class="pattern_4"><font size="2"><%=default_time(ent.last_login_date) %></font></td>
+					<td class="pattern_4" align="right"><font size="2"><%=ent.quote_cnt %></font></td>
+					<td class="pattern_4" align="right"><font size="2"><%=ent.quote_failure_cnt %></font></td>
+					<td class="pattern_4" align="right"><font size="2"><%=ent.quote_correct_cnt %></font></td>
+					<td class="pattern_4" align="right"><font size="2"><%=ent.quote_correct_failure_cnt %></font></td>
+					<td class="pattern_4" align="right"><font size="2"><%=ent.comment_cnt %></font></td>
+					<td class="pattern_4" align="right"><font size="2"><%=ent.comment_failure_cnt %></font></td>
+					<td class="pattern_4" align="right"><font size="2"><%=ent.comment_report_cnt %></font></td>
+					<td class="pattern_4" align="right"><font size="2"><%=ent.were_reported_cnt %></font></td>
+					<td class="pattern_4" align="right"><font size="2"><%=ent.support_report_cnt %></font></td>
+					<td class="pattern_4" align="center">
+						<%=submit_tag(vt('list.item_names.detail_btn'),
+						{:onclick=>raw("redirect_home('" + ent.member_id + "');"), :class=>'button_5'})%>
+					</td>
+				</tr>
+				<% end %>
+<% i18n_cache(:suffix=>'member-list-list-4') do %>
+				</tbody>
+				</table>
+			</td>
+			<td class="pattern_2">&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="pattern_2 angle_ll"></td>
+			<td class="pattern_2"> </td>
+			<td class="pattern_2 angle_lr"></td>
+		</tr>
+		</tbody>
+		</table>
+	</td>
+</tr>
+</tbody>
+</table>
+<% end %>

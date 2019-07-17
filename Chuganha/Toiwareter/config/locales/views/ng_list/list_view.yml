@@ -1,0 +1,50 @@
+###############################################################################
+# 国際化設定:: NGワードリスト
+# Copyright:: Copyright (c) 2013 仲観派
+# 作成日:2013/01/14 Nakanohito  (mailto:)
+# 更新日:
+###############################################################################
+ja:
+  views:
+    ng_list:
+      ng_list:
+        list:
+          item_names:
+            page_title: NGワード一覧
+            list_title: NGワード一覧
+            ng_word: NGワード
+            replace_word: 置換ワード
+            replace_cnt: 置換回数
+            regist_date: 登録日時
+            delete_id: 削除対象ID
+            delete_btn: 削
+
+en:
+  views:
+    ng_list:
+      ng_list:
+        list:
+          item_names:
+            page_title: NG Word List
+            list_title: NG Word List
+            ng_word: NG Word
+            replace_word: Replacement word
+            replace_cnt: Number of replacements
+            regist_date: Registered Date
+            delete_id: Delete ID
+            delete_btn: Del
+
+en-US:
+  views:
+    ng_list:
+      ng_list:
+        list:
+          item_names:
+            page_title: NG Word List
+            list_title: NG Word List
+            ng_word: NG Word
+            replace_word: Replacement word
+            replace_cnt: Number of replacements
+            regist_date: Registered Date
+            delete_id: Delete ID
+            delete_btn: Del

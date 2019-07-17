@@ -1,0 +1,216 @@
+<% i18n_cache(:suffix=>'comment-post-check-1') do %>
+<%= javascript_include_tag("comment/post/check")%>
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<% end %>
+<tr>
+	<td align="center">
+		<!-- 機能一覧 -->
+		<%= render('partials/func_link')%>
+	</td>
+</tr>
+<tr><td height="5"></td></tr>
+<tr>
+	<td align="center">
+<% i18n_cache(:suffix=>'comment-post-check-2') do %>
+<% end %>
+		<table border="0" cellpadding="0" cellspacing="0">
+		<tbody>
+		<tr>
+		<td>
+			<!-- 引用文 -->
+			<table width="852" border="0" cellpadding="0" cellspacing="0">
+			<tbody>
+			<tr>
+				<td class="pattern_5 angle_ul"></td>
+				<td class="pattern_5"></td>
+				<td class="pattern_5 angle_ur"></td>
+			</tr>
+			<tr>
+				<td class="pattern_5">&nbsp;</td>
+				<td align="center" class="pattern_5">
+					<table border="0" cellpadding="0" cellspacing="0">
+					<tbody>
+					<tr>
+						<td colspan="3" align="center">
+							<h2 class="pattern_2"><%=vt('check.item_names.quote_title')%></h2>
+						</td>
+					</tr>
+					<tr>
+						<td width="30">&nbsp;</td>
+						<td colspan="2">
+							<div class="font_oversize">
+								<%=vt('check.item_names.quote_speaker', :speaker=>@biz_obj.quote_ent.speaker)%>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td width="600">
+							<%=text_area_tag('quote', @biz_obj.quote_ent.quote, {:class=>'said_balloon', :readonly=>true})%>
+						</td>
+						<td width="170" align="right">
+							<div class="font_oversize"><%=vt('check.item_names.quote_footer')%></div>
+						</td>
+					</tr>
+					</tbody>
+					</table>
+				</td>
+				<td class="pattern_5">&nbsp;</td>
+			</tr>
+			<tr>
+				<td class="pattern_5 angle_ll"></td>
+				<td class="pattern_5"></td>
+				<td class="pattern_5 angle_lr"></td>
+			</tr>
+			</tbody>
+			</table>
+		</td>
+		</tr>
+		<tr><td height="5"></td></tr>
+		<tr>
+		<td>
+			<!-- 出典情報 -->
+			<table width="852" border="0" cellpadding="0" cellspacing="0">
+			<tbody>
+			<tr>
+				<td class="pattern_2 angle_ul"></td>
+				<td class="pattern_2"></td>
+				<td class="pattern_2 angle_ur"></td>
+			</tr>
+			<tr>
+				<td class="pattern_2">&nbsp;</td>
+				<td align="center" class="pattern_2">
+					<h2 class="pattern_2"><%=vt('check.item_names.source_title')%></h2>
+				</td>
+				<td class="pattern_2">&nbsp;</td>
+			</tr>
+			<tr>
+				<td class="pattern_2">&nbsp;</td>
+				<td align="center" class="pattern_2">
+					<table width="820" border="0" cellpadding="0" cellspacing="0" class="pattern_1">
+					<tbody>
+					<tr>
+						<th width="156" align="left" class="pattern_4"><%=vt('check.item_names.speaker')%></th>
+						<td colspan="3" class="pattern_4">
+						<font size="2"><%=@biz_obj.quote_ent.speaker%></font>
+						</td>
+					</tr>
+					<tr>
+						<th align="left" class="pattern_4"><%=vt('check.item_names.speaker_title')%></th>
+						<td colspan="3" class="pattern_4">
+						<font size="2">
+							<%=job_title_name(@biz_obj.quote_ent.speaker_job_title_id)%>&nbsp;
+							<%=@biz_obj.quote_ent.speaker_job_title%></font>
+						</td>
+					</tr>
+					<tr id="select_source_row">
+						<th align="left" class="pattern_4"><%=vt('check.item_names.source_class')%></th>
+						<td colspan="3" class="pattern_4">
+						<font size="2"><%=source_name(@biz_obj.quote_ent.source_id)%></font>
+						</td>
+					</tr>
+					<!-- 出所情報 -->
+					<%= render('partials/source_view/' + @biz_obj.partial_name)%>
+					<tr>
+						<th align="left" class="pattern_4"><%=vt('check.item_names.description')%></th>
+						<td colspan="3" class="pattern_4">
+							<%=text_area_tag('description', @biz_obj.quote_ent.description,
+							 {:class=>'disp_description', :readonly=>true})%>
+						</td>
+					</tr>
+					</tbody>
+					</table>
+				</td>
+				<td class="pattern_2">&nbsp;</td>
+			</tr>
+			<tr>
+				<td class="pattern_2 angle_ll"></td>
+				<td class="pattern_2"></td>
+				<td class="pattern_2 angle_lr"></td>
+			</tr>
+			</tbody>
+			</table>
+		</td>
+		</tr>
+		<tr><td height="5"></td></tr>
+		<tr>
+		<td>
+			<!-- 批評・コメント -->
+			<%= form_tag_with_params({:controller=>'comment/post', :action=>'create'},
+				{:id=>'comment_form', :name=>'comment_form'}, :TRANS_PTN_NOW) do %>
+			<%=hidden_tag("quote_id", @biz_obj.quote_id)%>
+			<table width="852" border="0" cellpadding="0" cellspacing="0">
+			<tbody>
+			<tr>
+				<td class="pattern_6 angle_ul"></td>
+				<td class="pattern_6"></td>
+				<td class="pattern_6 angle_ur"></td>
+			</tr>
+			<tr>
+				<td class="pattern_6">&nbsp;</td>
+				<td align="center" class="pattern_6">
+					<h2 class="pattern_2"><%=vt('check.item_names.comment_title')%></h2>
+				</td>
+				<td class="pattern_6">&nbsp;</td>
+			</tr>
+			<tr>
+				<td class="pattern_6">&nbsp;</td>
+				<td class="pattern_6">
+					<table border="0" cellpadding="0" cellspacing="0" class="pattern_2">
+					<tbody>
+					<tr>
+						<th width="844" class="pattern_7">
+							<table border="0" cellpadding="0" cellspacing="0">
+							<tr>
+								<th width="50" align="center"></th>
+								<td width="400" align="left">
+									<div title="ID:<%=@biz_obj.member_ent.member_id %>"><%=@biz_obj.member_ent.nickname %></div>
+								</td>
+							</tr>
+							</table>
+						</th>
+					</tr>
+					<tr>
+						<td class="pattern_4">
+						<%=text_area_tag('comment', @biz_obj.comment, {:class=>'disp_comment', :readonly=>true})%>
+						</td>
+					</tr>
+					</tbody>
+					</table>
+				</td>
+				<td class="pattern_6">&nbsp;</td>
+			</tr>
+			<tr>
+				<td class="pattern_6">&nbsp;</td>
+				<td height="60" align="center" class="pattern_6">
+					<%=submit_tag(vt('check.item_names.correct_btn'), {:onclick=>'return return_to_quote();', :class=>'button_1'})%>&nbsp;
+					<%=submit_tag(vt('check.item_names.post_comment_btn'), {:class=>'button_1'})%>
+				</td>
+				<td class="pattern_6">&nbsp;</td>
+			</tr>
+			<tr>
+				<td class="pattern_6 angle_ll"></td>
+				<td class="pattern_6"></td>
+				<td class="pattern_6 angle_lr"></td>
+			</tr>
+			</tbody>
+			</table>
+			<% end %>
+			<!-- 訂正フォーム -->
+			<%= form_tag_with_params({:controller=>'quote/view'},
+				{:id=>'return_form', :name=>'return_form'}, :TRANS_PTN_CLH) do %>
+			<%=hidden_tag("quote_id", @biz_obj.quote_id)%>
+			<%=hidden_tag("comment", @biz_obj.comment)%>
+			<%=hidden_tag("comment_err_msg", @biz_obj.error_msg_hash[:comment])%>
+			<% end %>
+		</td>
+		</tr>
+		</tbody>
+		</table>
+<% i18n_cache(:suffix=>'comment-post-check-3') do %>
+	</td>
+</tr>
+</tbody>
+</table>
+<% end %>

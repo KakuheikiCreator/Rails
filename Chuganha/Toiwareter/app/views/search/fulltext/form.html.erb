@@ -1,0 +1,224 @@
+<% i18n_cache(:suffix=>'search-fulltext-form-1') do %>
+<%= javascript_include_tag("search/fulltext/form")%>
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<% end %>
+<% @method = :get %>
+<% if @biz_obj.login_flg then %>
+<% @method = :post %>
+<tr>
+	<td align="center">
+		<!-- 機能一覧 -->
+		<%= render('partials/func_link')%>
+	</td>
+</tr>
+<tr><td height="5"></td></tr>
+<% end %>
+<% i18n_cache(:suffix=>'search-fulltext-form-2') do %>
+<tr>
+	<td align="center">
+		<table border="0" cellpadding="0" cellspacing="0">
+		<tbody>
+		<tr>
+		<td>
+<% end %>
+			<%=form_tag({:controller=>'search/fulltext', :action=>'quote'},
+						{:id=>'quote_search_form', :name=>'quote_search_form', :method=>@method}) do %>
+			<% if @biz_obj.login_flg then %>
+			<%=transition_param_tag(:TRANS_PTN_NOW)%>
+			<% end %>
+<% i18n_cache(:suffix=>'search-fulltext-form-3') do %>
+			<!-- 引用文 -->
+			<table width="852" border="0" cellpadding="0" cellspacing="0">
+			<tbody>
+			<tr>
+				<td class="pattern_5 angle_ul"></td>
+				<td class="pattern_5"></td>
+				<td class="pattern_5 angle_ur"></td>
+			</tr>
+			<tr>
+				<td class="pattern_5">&nbsp;</td>
+				<td align="center" class="pattern_5">
+					<table border="0" cellpadding="0" cellspacing="0">
+					<tbody>
+					<tr>
+						<td colspan="2" align="center">
+							<h2 class="pattern_2"><%=vt('form.item_names.quote_title')%></h2>
+						</td>
+					</tr>
+					<tr>
+						<td width="630">
+<% end %>
+							<%=text_area_tag('quote', @biz_obj.quote,
+							 {:class=>'said_balloon_wide', :style=>"ime-mode: active;"})%>
+							<%=svr_error_tag("sverr_quote", @error_msg_hash[:quote])%>
+						</td>
+						<td width="170" align="right">&nbsp;</td>
+					</tr>
+					</tbody>
+					</table>
+				</td>
+				<td class="pattern_5">&nbsp;</td>
+			</tr>
+			<tr>
+				<td height="60" class="pattern_5">&nbsp;</td>
+				<td align="center" class="pattern_5">
+					<%=submit_tag(t('helpers.submit.search'), {:class=>'button_1'})%>
+				</td>
+				<td class="pattern_5">&nbsp;</td>
+			</tr>
+			<tr>
+				<td class="pattern_5 angle_ll"></td>
+				<td class="pattern_5"></td>
+				<td class="pattern_5 angle_lr"></td>
+			</tr>
+			</tbody>
+			</table>
+			<% end %>
+		</td>
+		</tr>
+		<tr><td height="5"></td></tr>
+		<tr>
+		<td>
+			<%=form_tag({:controller=>'search/fulltext', :action=>'comment'},
+						{:id=>'comment_search_form', :name=>'comment_search_form', :method=>@method}) do %>
+			<% if @biz_obj.login_flg then %>
+			<%=transition_param_tag(:TRANS_PTN_NOW)%>
+			<% end %>
+			<!-- 批評・コメント -->
+			<table width="852" border="0" cellpadding="0" cellspacing="0">
+			<tbody>
+			<tr>
+				<td class="pattern_6 angle_ul"></td>
+				<td class="pattern_6"></td>
+				<td class="pattern_6 angle_ur"></td>
+			</tr>
+			<tr>
+				<td class="pattern_6">&nbsp;</td>
+				<td align="center" class="pattern_6">
+					<h2 class="pattern_2"><%=vt('form.item_names.comment_title')%></h2>
+				</td>
+				<td class="pattern_6">&nbsp;</td>
+			</tr>
+			<tr>
+				<td class="pattern_6">&nbsp;</td>
+				<td class="pattern_6">
+					<%=text_area_tag('comment', @biz_obj.comment,
+					 {:class=>'disp_comment', :style=>"ime-mode: active;"})%>
+					<%=svr_error_tag("sverr_comment", @error_msg_hash[:comment])%>
+				</td>
+				<td class="pattern_6">&nbsp;</td>
+			</tr>
+			<tr>
+				<td height="60" class="pattern_6">&nbsp;</td>
+				<td align="center" class="pattern_6">
+					<%=submit_tag(t('helpers.submit.search'), {:class=>'button_1'})%>
+				</td>
+				<td class="pattern_6">&nbsp;</td>
+			</tr>
+			<tr>
+				<td class="pattern_6 angle_ll"></td>
+				<td class="pattern_6"></td>
+				<td class="pattern_6 angle_lr"></td>
+			</tr>
+			</tbody>
+			</table>
+			<% end %>
+		</td>
+		</tr>
+		<% unless @biz_obj.result_list.empty? then %>
+		<tr><td height="5"></td></tr>
+		<tr>
+		<td>
+			<!-- 検索結果-->
+			<%=form_tag({:controller=>'quote/view'},
+						{:id=>'quote_form', :name=>'quote_form', :target=>'_blank', :method=>@method}) do %>
+				<% if member_post? then %>
+				<%=transition_param_tag(:TRANS_PTN_OTH)%>
+				<% end %>
+				<%=hidden_field_tag("quote_id", nil)%>
+			<% end %>
+			<table width="852" border="0" cellpadding="0" cellspacing="0">
+			<tbody>
+			<tr>
+				<td class="pattern_5 angle_ul"></td>
+				<td class="pattern_5"></td>
+				<td class="pattern_5 angle_ur"></td>
+			</tr>
+			<tr>
+				<td class="pattern_5">&nbsp;</td>
+				<td align="center" class="pattern_5">
+					<table border="0" cellpadding="0" cellspacing="0">
+					<tbody>
+					<tr>
+						<td colspan="3" align="center">
+							<h2 class="pattern_2"><%=vt('form.item_names.result_title')%></h2>
+						</td>
+					</tr>
+					<% if Quote === @biz_obj.result_list[0] then %>
+					<% @biz_obj.result_list.each do |ent| %>
+					<% last_upd_member_id = ent.update_member_id
+					   last_upd_member_id ||= ent.registered_member_id %>
+					<tr>
+						<td width="30">&nbsp;</td>
+						<td colspan="2">
+							<div class="font_oversize" title="ID:<%=last_upd_member_id %>">
+								<%=vt('form.item_names.quote_speaker', :speaker=>ent.speaker)%>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td width="600" align="right">
+							<%=onclick_tag("return open_quote(" + ent.id.to_s + ");") do %>
+							<%=text_area_tag('result_quote', ent.quote, {:class=>'disp_balloon', :readonly=>true})%>
+							<% end %>
+						</td>
+						<td width="170" align="right">
+							<div class="font_oversize"><%=vt('form.item_names.quote_footer')%></div>
+						</td>
+					</tr>
+					<% end %>
+					<% elsif Comment === @biz_obj.result_list[0] then %>
+					<% @biz_obj.result_list.each do |ent| %>
+					<tr>
+						<td>&nbsp;</td>
+						<td colspan="2">
+							<div class="font_oversize" title="ID:<%=ent.critic.member_id %>">
+							<%=vt('form.item_names.comment_speaker', :speaker=>ent.critic.nickname)%>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td width="30">&nbsp;</td>
+						<td colspan="2" width="770">
+							<%=onclick_tag("return open_quote(" + ent.quote_id.to_s + ");") do %>
+							<%=text_area_tag('result_comment', ent.comment, {:class=>'disp_comment', :readonly=>true})%>
+							<% end %>
+						</td>
+					</tr>
+					<% end %>
+					<% end %>
+					</tbody>
+					</table>
+				</td>
+				<td class="pattern_5">&nbsp;</td>
+			</tr>
+			<tr>
+				<td class="pattern_5 angle_ll"></td>
+				<td class="pattern_5"></td>
+				<td class="pattern_5 angle_lr"></td>
+			</tr>
+			</tbody>
+			</table>
+		</td>
+		</tr>
+		<% end %>
+<% i18n_cache(:suffix=>'search-fulltext-form-4') do %>
+		</tbody>
+		</table>
+	</td>
+</tr>
+</tbody>
+</table>
+<% end %>

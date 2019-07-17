@@ -1,0 +1,275 @@
+<% i18n_cache(:suffix=>'quote-post-check-1') do %>
+<%= javascript_include_tag("quote/post/check")%>
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+	<td align="center">
+<% end %>
+		<!-- 機能一覧 -->
+		<%= render('partials/func_link')%>
+<% i18n_cache(:suffix=>'quote-post-check-2') do %>
+	</td>
+</tr>
+<tr><td height="5"></td></tr>
+<tr>
+	<td align="center">
+<% end %>
+		<%= form_tag_with_params({:controller=>'quote/post', :action=>'create'},
+				{:id=>'create_form', :name=>'create_form'}, :TRANS_PTN_NOW) do %>
+<% i18n_cache(:suffix=>'quote-post-check-3') do %>
+		<table border="0" cellpadding="0" cellspacing="0">
+		<tbody>
+		<tr>
+		<td>
+			<!-- 引用文 -->
+			<table width="852" border="0" cellpadding="0" cellspacing="0">
+			<tbody>
+			<tr>
+				<td class="pattern_5 angle_ul"></td>
+				<td class="pattern_5"></td>
+				<td class="pattern_5 angle_ur"></td>
+			</tr>
+			<tr>
+				<td class="pattern_5">&nbsp;</td>
+				<td align="center" class="pattern_5">
+					<table border="0" cellpadding="0" cellspacing="0">
+					<tbody>
+					<tr>
+						<td colspan="3" align="center">
+							<h2 class="pattern_2"><%=vt('check.item_names.quote_title')%></h2>
+						</td>
+					</tr>
+					<tr>
+						<td width="30">&nbsp;</td>
+						<td colspan="2">
+							<div class="font_oversize">
+<% end %>
+								<%=vt('check.item_names.quote_speaker', :speaker=>@biz_obj.speaker)%>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td width="600">
+							<%=text_area_tag('quote', @biz_obj.quote, {:class=>'said_balloon', :readonly=>true})%>
+							<%=hidden_field_tag("quote", @biz_obj.quote)%>
+<% i18n_cache(:suffix=>'quote-post-check-4') do %>
+						</td>
+						<td width="170" align="right">
+							<div class="font_oversize"><%=vt('check.item_names.quote_footer')%></div>
+						</td>
+					</tr>
+					</tbody>
+					</table>
+				</td>
+				<td class="pattern_5">&nbsp;</td>
+			</tr>
+			<tr>
+				<td class="pattern_5 angle_ll"></td>
+				<td class="pattern_5"></td>
+				<td class="pattern_5 angle_lr"></td>
+			</tr>
+			</tbody>
+			</table>
+		</td>
+		</tr>
+<% end %>
+		<% unless @biz_obj.similar_list.empty? then %>
+<% i18n_cache(:suffix=>'quote-post-check-5') do %>
+		<tr><td height="5"></td></tr>
+		<tr>
+		<td>
+			<!-- 類似する引用 -->
+			<table width="852" border="0" cellpadding="0" cellspacing="0">
+			<tbody>
+			<tr>
+				<td class="pattern_5 angle_ul"></td>
+				<td class="pattern_5"></td>
+				<td class="pattern_5 angle_ur"></td>
+			</tr>
+			<tr>
+				<td class="pattern_5">&nbsp;</td>
+				<td align="center" class="pattern_5">
+					<table border="0" cellpadding="0" cellspacing="0">
+					<tbody>
+					<tr>
+						<td colspan="3" align="center">
+							<h2 class="pattern_2"><%=vt('check.item_names.similar_title')%></h2>
+						</td>
+					</tr>
+<% end %>
+					<% @biz_obj.similar_list.each do |ent| %>
+					<tr>
+						<td width="30">&nbsp;</td>
+						<td colspan="2">
+							<div class="font_oversize" title="ID:<%=ent.update_member_id %>">
+								<%=vt('check.item_names.quote_speaker', :speaker=>ent.speaker)%>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td width="600" align="right">
+							<%=text_area_tag('similar_quote', ent.quote, {:class=>'disp_balloon', :readonly=>true})%>
+						</td>
+						<td width="170" align="right">
+							<div class="font_oversize"><%=vt('check.item_names.quote_footer')%></div>
+						</td>
+					</tr>
+					<% end %>
+<% i18n_cache(:suffix=>'quote-post-check-6') do %>
+					</tbody>
+					</table>
+				</td>
+				<td class="pattern_5">&nbsp;</td>
+			</tr>
+			<tr>
+				<td class="pattern_5 angle_ll"></td>
+				<td class="pattern_5"></td>
+				<td class="pattern_5 angle_lr"></td>
+			</tr>
+			</tbody>
+			</table>
+		</td>
+		</tr>
+<% end %>
+		<% end %>
+<% i18n_cache(:suffix=>'quote-post-check-7') do %>
+		<tr><td height="5"></td></tr>
+		<tr>
+		<td>
+			<!-- 出典情報 -->
+			<table width="852" border="0" cellpadding="0" cellspacing="0">
+			<tbody>
+			<tr>
+				<td class="pattern_2 angle_ul"></td>
+				<td class="pattern_2"></td>
+				<td class="pattern_2 angle_ur"></td>
+			</tr>
+			<tr>
+				<td class="pattern_2">&nbsp;</td>
+				<td align="center" class="pattern_2">
+					<h2 class="pattern_2"><%=vt('check.item_names.source_title')%></h2>
+				</td>
+				<td class="pattern_2">&nbsp;</td>
+			</tr>
+			<tr>
+				<td height="15" class="pattern_2">&nbsp;</td>
+				<td align="right" class="pattern_2">
+					<div class="page_link">
+<% end %>
+					<%= link_to(vt('check.messages.notes_on_post'), "/notes_on_post.html", {:target=>'_blank'})%>
+<% i18n_cache(:suffix=>'quote-post-check-8') do %>
+					</div>
+				</td>
+				<td class="pattern_2">&nbsp;</td>
+			</tr>
+			<tr>
+				<td class="pattern_2">&nbsp;</td>
+				<td align="center" class="pattern_2">
+					<table width="820" border="0" cellpadding="0" cellspacing="0" class="pattern_1">
+					<tbody>
+					<tr>
+						<th width="156" align="left" class="pattern_4"><%=vt('check.item_names.speaker')%></th>
+						<td colspan="3" class="pattern_4">
+<% end %>
+						<font size="2"><%=@biz_obj.speaker%></font>
+						<%=hidden_field_tag("speaker", @biz_obj.speaker)%>
+						</td>
+					</tr>
+					<tr>
+						<th align="left" class="pattern_4"><%=vt('check.item_names.speaker_title')%></th>
+						<td colspan="3" class="pattern_4">
+						<font size="2"><%=job_title_name(@biz_obj.job_title_id)%>&nbsp;<%=@biz_obj.job_title%></font>
+						<%=hidden_field_tag("job_title_id", @biz_obj.job_title_id)%>
+						<%=hidden_field_tag("job_title", @biz_obj.job_title)%>
+						</td>
+					</tr>
+					<tr id="select_source_row">
+						<th align="left" class="pattern_4"><%=vt('check.item_names.source_class')%></th>
+						<td colspan="3" class="pattern_4">
+						<font size="2"><%=source_name(@biz_obj.source_id)%></font>
+						<%=hidden_field_tag("source_id", @biz_obj.source_id)%>
+						</td>
+					</tr>
+					<% unless @biz_obj.source_obj.nil? then %>
+					<!-- 出所情報 -->
+					<%= render('partials/source_check/' + @biz_obj.source_obj.form_name)%>
+					<% end %>
+					<tr>
+						<th align="left" class="pattern_4"><%=vt('check.item_names.description')%></th>
+						<td colspan="3" class="pattern_4">
+							<%=text_area_tag('description', @biz_obj.description, {:class=>'disp_description', :readonly=>true})%>
+							<%=hidden_field_tag("description", @biz_obj.description)%>
+<% i18n_cache(:suffix=>'quote-post-check-9') do %>
+						</td>
+					</tr>
+					</tbody>
+					</table>
+				</td>
+				<td class="pattern_2">&nbsp;</td>
+			</tr>
+			<tr>
+				<td class="pattern_2 angle_ll"></td>
+				<td class="pattern_2"></td>
+				<td class="pattern_2 angle_lr"></td>
+			</tr>
+			</tbody>
+			</table>
+		</td>
+		</tr>
+		<tr><td height="5"></td></tr>
+		<tr>
+		<td>
+			<!-- 批評・コメント -->
+			<table width="852" border="0" cellpadding="0" cellspacing="0">
+			<tbody>
+			<tr>
+				<td class="pattern_6 angle_ul"></td>
+				<td class="pattern_6"></td>
+				<td class="pattern_6 angle_ur"></td>
+			</tr>
+			<tr>
+				<td class="pattern_6">&nbsp;</td>
+				<td align="center" class="pattern_6">
+					<h2 class="pattern_2"><%=vt('check.item_names.comment_title')%></h2>
+				</td>
+				<td class="pattern_6">&nbsp;</td>
+			</tr>
+			<tr>
+				<td class="pattern_6">&nbsp;</td>
+				<td class="pattern_6">
+<% end %>
+					<%=text_area_tag('comment', @biz_obj.comment, {:class=>'disp_comment', :readonly=>true})%>
+					<%=hidden_field_tag("comment", @biz_obj.comment)%>
+				</td>
+				<td class="pattern_6">&nbsp;</td>
+			</tr>
+			<tr>
+				<td height="60" class="pattern_6">&nbsp;</td>
+				<td align="center" class="pattern_6">
+					<%=submit_tag(vt('check.item_names.correct_btn'), {:class=>'button_1', :action_url=>'form'})%>
+					<%=submit_tag(vt('check.item_names.create_btn'), {:class=>'button_1', :action_url=>'create'})%>
+<% i18n_cache(:suffix=>'quote-post-check-10') do %>
+				</td>
+				<td class="pattern_6">&nbsp;</td>
+			</tr>
+			<tr>
+				<td class="pattern_6 angle_ll"></td>
+				<td class="pattern_6"></td>
+				<td class="pattern_6 angle_lr"></td>
+			</tr>
+			</tbody>
+			</table>
+		</td>
+		</tr>
+		</tbody>
+		</table>
+<% end %>
+		<% end %>
+<% i18n_cache(:suffix=>'quote-post-check-11') do %>
+	</td>
+</tr>
+</tbody>
+</table>
+<% end %>

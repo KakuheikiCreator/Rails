@@ -1,0 +1,220 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ja">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="Thu, 01 Dec 1994 16:00:00 GMT">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="robots" content="index,follow">
+    <link rel="shortcut icon" type="image/png" href="image/favicon.png">
+    <link rel="stylesheet" type="text/css" href="css/default.css">
+    <title>規制クッキーリスト</title>
+    <script type="text/javascript" src="./js/jquery-1.5.2.js"></script>
+    <script type="text/javascript" src="./js/jquery.tablesorter.min.js"></script>
+    <script type="text/javascript" src="./js/jquery.corner.js"></script>
+    <script type="text/javascript">
+<!--
+$(document).ready(init);
+
+function init(){
+	$("#report_comment_table").tablesorter();
+	$("#search").corner();
+	$("#add").corner();
+	$("#notify").corner();
+}
+//-->
+</script> </head>
+  <body leftmargin="0" topmargin="0"> <a name="TOP"></a>
+    <table align="center" border="0" cellpadding="0" cellspacing="0" width="1000">
+      <thead>
+        <tr height="20">
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td class="cell_02">
+            <table border="0" cellpadding="0" cellspacing="0" width="1050">
+              <tbody>
+                <tr>
+                  <td> <img src="image/regulation_cookie_list_title.png" alt="title"
+
+                      height="60" width="750"> </td>
+                  <td align="center" width="150"> <input value="メニュー" class="tab_button"
+
+                      type="submit"> </td>
+                  <td align="center" width="150"> <input value="ログアウト" class="tab_button"
+
+                      type="submit"> </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <table class="form_02" border="1" cellpadding="0" cellspacing="0">
+              <tbody>
+                <tr>
+                  <td class="cell_03" align="center"> <font size="3"><strong>検索・登録フォーム</strong></font> </td>
+                </tr>
+                <tr>
+                  <td>
+                    <form method="POST" action="xxx.cgi">
+                      <table border="1" cellpadding="1" cellspacing="0">
+                        <tbody>
+                          <tr>
+                            <td class="cell_03" width="110"> <font size="2">&nbsp;<strong>システム</strong></font> </td>
+                            <td width="210">
+                              <select name="system" id="system">
+                                <option value="">選択してください。</option>
+                                <optgroup label="仲観派">
+                                  <option value="1">Access Management</option>
+                                  <option value="2">Member Management</option>
+                                  <option value="3">Toitter</option>
+                                </optgroup>
+                              </select>
+                               </td>
+                            <td class="cell_03" width="110"> <font size="2">&nbsp;<strong>備考</strong></font> </td>
+                            <td colspan="2" width="598">
+				<input size="80" maxlength="255" name="remarks" type="text">
+			    </td>
+                          </tr>
+                          <tr>
+                            <td class="cell_03"> <font size="2">&nbsp;<strong>クッキー</strong></font> </td>
+                            <td colspan="4"> <input size="100" maxlength="255"
+
+                                name="cookie" type="text"> </td>
+                          </tr>
+                          <tr>
+                            <td class="cell_03"> <font size="2">&nbsp;<strong>検索結果並び順</strong></font> </td>
+                            <td>
+                              <select name="sort_item_01" id="sor_item_01">
+                                <option value="00">システム</option>
+                                <option value="01">サブシステム</option>
+                                <option value="02">クッキー</option>
+                                <option value="03">備考</option>
+                              </select>
+                              <select name="sort_condition_01" id="sort_condition=01">
+                                <option value="0">昇順</option>
+                                <option value="1">降順</option>
+                              </select>
+                            </td>
+                            <td class="cell_03"> <font size="2">&nbsp;<strong>表示件数</strong></font> </td>
+                            <td>
+                              <select name="number_display" id="number_display">
+                                <option value="all">全て</option>
+                                <option value="10">10</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                                <option value="300">300</option>
+                                <option value="500">500</option>
+                              </select>
+                              <font size="2">件表示する</font>
+			    </td>
+                            <td colspan="1" align="center"> <input id="search"
+
+                                value="検索" class="small_button" type="submit">&nbsp;
+                              <input id="add" value="追加" class="small_button" type="submit">&nbsp;
+                              <input id="notify" value="通知" class="small_button"
+
+                                type="submit"> </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </form>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <table class="base_01" border="1" cellpadding="0" cellspacing="0" width="1050">
+              <thead>
+                <tr>
+                  <td class="cell_05" align="center"> <font color="#ffffff" size="3"><strong>規
+                        制クッキーリスト</strong></font> </td>
+                </tr>
+              </thead>
+              <tfoot>
+                <tr>
+                  <td class="cell_05">&nbsp;</td>
+                </tr>
+              </tfoot>
+              <tbody>
+                <tr>
+                  <td valign="middle">
+                    <table id="report_comment_table" border="1" cellpadding="2"
+
+                      cellspacing="0">
+                      <thead>
+                        <tr>
+                          <th class="cell_01" align="center" width="120"> <font
+
+                              size="2">システム</font> </th>
+                          <th class="cell_01" align="center" width="124"> <font
+
+                              size="2">サブシステム</font> </th>
+                          <th class="cell_01" align="center" width="440"> <font
+
+                              size="2">クッキー</font> </th>
+                          <th class="cell_01" align="center" width="306"> <font
+
+                              size="2">備考</font> </th>
+                          <th class="cell_01" width="24">&nbsp;</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td align="left"> <font size="2">仲観派</font> </td>
+                          <td align="left"> <font size="2">アクセス管理</font> </td>
+                          <td align="left"> <font size="2">nfmv001163078.uqw.ppp.infoweb.ne.jp</font>
+                          </td>
+                          <td align="left"> <font size="2">謎のホスト</font> </td>
+                          <td align="center"> <a href="#prop"><font size="2">削</font></a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td align="left"> <font size="2">仲観派</font> </td>
+                          <td align="left"> <font size="2">アクセス管理</font> </td>
+                          <td align="left"> <font size="2">nfmv001163078.uqw.ppp.infoweb.ne.jp</font>
+                          </td>
+                          <td align="left"> <font size="2">謎のホスト</font> </td>
+                          <td align="center"> <a href="#prop"><font size="2">削</font></a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td class="cell_02">&nbsp;</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td>
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tbody>
+                <tr>
+                  <td class="cell_02" align="right"> <font color="#ffffff" size="2"><strong>Copyright
+                        (C) 2011 仲観派 All Rights Reserved.</strong></font> </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+  </body>
+</html>

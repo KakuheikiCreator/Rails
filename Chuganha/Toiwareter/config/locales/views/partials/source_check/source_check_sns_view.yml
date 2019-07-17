@@ -1,0 +1,44 @@
+###############################################################################
+# 国際化設定:: コメント投稿（SNS）
+# Copyright:: Copyright (c) 2013 仲観派
+# 作成日:2013/02/11 Nakanohito  (mailto:)
+# 更新日:
+###############################################################################
+ja:
+  views:
+    partials:
+      source_check:
+        sns:
+          item_names:
+            sns_name: SNS名
+            sns_name_dtl: 名称
+            posted_date: 投稿日時
+            posted_by: 投稿者
+            job_title: 投稿者の肩書き
+            quoted_source_url: 引用元URL
+
+en:
+  views:
+    partials:
+      source_check:
+        sns:
+          item_names:
+            sns_name: sns Name
+            sns_name_dtl: Name
+            posted_date: Post time
+            posted_by: Contributor
+            job_title: Job titles
+            quoted_source_url: Source URL
+
+en-US:
+  views:
+    partials:
+      source_check:
+        sns:
+          item_names:
+            sns_name: sns Name
+            sns_name_dtl: Name
+            posted_date: Post time
+            posted_by: Contributor
+            job_title: Job titles
+            quoted_source_url: Source URL

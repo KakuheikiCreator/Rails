@@ -1,0 +1,80 @@
+###############################################################################
+# 国際化設定:: コメント通報（チェック）
+# Copyright:: Copyright (c) 2013 仲観派
+# 作成日:2013/02/16 Nakanohito  (mailto:)
+# 更新日:
+###############################################################################
+ja:
+  views:
+    comment:
+      report:
+        check:
+          item_names:
+            page_title: コメントの通報
+            quote_title: 引用文
+            quote_speaker: "%{speaker}さんは"
+            quote_footer: と言われた
+            quote: 引用
+            similar_title: 類似する引用
+            source_title: 出　典
+            speaker: 発言者の名前
+            speaker_title: 発言者の肩書き
+            source_class: 出所分類
+            description: 引用文の説明
+            report_title: 通報内容
+            comment: コメント
+            report_reason: 通報理由
+            detailed_reason: 通報理由詳細
+            return_btn: 引用に戻る
+            correct_btn: 入力値を訂正
+            report_btn: 通報する
+
+
+en:
+  views:
+    comment:
+      report:
+        check:
+          item_names:
+            page_title: Report Comment
+            quote_title: Quote
+            quote_speaker: "%{speaker} said"
+            quote_footer: ""
+            quote: Quote
+            similar_title: Similar quote
+            source_title: Source
+            speaker: Name of the speaker
+            speaker_title: speaker's title
+            source_class: Classification of Source
+            description: Description of quote
+            report_title: Contents of the report
+            comment: Comment
+            report_reason: Report reason
+            detailed_reason: Detailed reason
+            return_btn: Return
+            correct_btn: Correct the value
+            report_btn: Report
+
+en-US:
+  views:
+    comment:
+      report:
+        check:
+          item_names:
+            page_title: Report Comment
+            quote_title: Quote
+            quote_footer: ""
+            quote: Quote
+            similar_title: Similar quote
+            source_title: Source
+            speaker: Name of the speaker
+            speaker_title: speaker's title
+            source_class: Classification of Source
+            description: Description of quote
+            report_title: Contents of the report
+            comment: Comment
+            report_reason: Report reason
+            detailed_reason: Detailed reason
+            return_btn: Return
+            correct_btn: Correct the value
+            report_btn: Report

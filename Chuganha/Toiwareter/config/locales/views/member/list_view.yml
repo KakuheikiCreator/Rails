@@ -1,0 +1,123 @@
+###############################################################################
+# 国際化設定:: 会員リスト
+# Copyright:: Copyright (c) 2013 仲観派
+# 作成日:2013/01/20 Nakanohito  (mailto:)
+# 更新日:
+###############################################################################
+ja:
+  views:
+    member:
+      list:
+        list:
+          item_names:
+            page_title: 会員一覧
+            list_title: 会員一覧
+            member_title: 会員情報
+            usage_title: 利用履歴
+            quoted_title: 引用履歴
+            comment_title: コメント履歴
+            authority: 権限
+            member_state: 状態
+            open_id: OpenID
+            member_id: 会員ID
+            nickname: ニックネーム
+            email: メールアドレス
+            join_date: 入会日時
+            last_login_date: 最終ログイン日時
+            ineligibility_date: 資格停止日時
+            quote_cnt: 引用投稿
+            quote_failure_cnt: 引用過失
+            quote_correct_cnt: 引用訂正
+            quote_correct_failure_cnt: 引用誤訂正
+            comment_cnt: コメント投稿
+            comment_failure_cnt: コメント過失
+            comment_report_cnt: コメント通報
+            were_reported_cnt: コメント被通報
+            support_report_cnt: 通報コメント対応
+            contribution: 投稿
+            negligence: 過失
+            correction: 訂正
+            mis_correction: 誤訂正
+            report: 通報
+            were_reported: 被通報
+            support_report: 対応
+            sort_limit_fields: ソート項目・表示件数
+            detail_btn: 詳
+            prev_btn: 前へ
+            next_btn: 次へ
+
+en:
+  views:
+    member:
+      list:
+        list:
+          item_names:
+            page_title: Member List
+            list_title: Member List
+            authority: Authority
+            member_state: State
+            open_id: OpenID
+            member_id: Member ID
+            nickname: Nickname
+            email: E-mail address
+            join_date: Join Date
+            last_login_date: Last Login date
+            ineligibility_date: Ineligibility date
+            quote_cnt: Quoted
+            quote_failure_cnt: Quotation fault
+            quote_correct_cnt: Quotation correction
+            quote_correct_failure_cnt: Quotation false correction
+            comment_cnt: Comment
+            comment_failure_cnt: Negligence comment
+            comment_report_cnt: Report comment
+            were_reported_cnt: Comments were reported
+            support_report_cnt: Corresponded
+            contribution: Contribution
+            negligence: Negligence
+            correction: Correction
+            mis_correction: Mis correction
+            report: Report
+            were_reported: were reported
+            support_report: Corresponded
+            sort_limit_fields: Sort fields・Displayed
+            detail_btn: Dtl
+            prev_btn: Prev
+            next_btn: Next
+
+en-US:
+  views:
+    member:
+      list:
+        list:
+          item_names:
+            page_title: Member List
+            list_title: Member List
+            authority: Authority
+            member_state: State
+            open_id: OpenID
+            member_id: Member ID
+            nickname: Nickname
+            email: E-mail address
+            join_date: Join Date
+            last_login_date: Last Login date
+            ineligibility_date: Ineligibility date
+            quote_cnt: Quoted
+            quote_failure_cnt: Quotation fault
+            quote_correct_cnt: Quotation correction
+            quote_correct_failure_cnt: Quotation false correction
+            comment_cnt: Comment
+            comment_failure_cnt: Negligence comment
+            comment_report_cnt: Report comment
+            were_reported_cnt: Comments were reported
+            support_report_cnt: Corresponded
+            contribution: Contribution
+            negligence: Negligence
+            correction: Correction
+            mis_correction: Mis correction
+            report: Report
+            were_reported: were reported
+            support_report: Corresponded
+            sort_limit_fields: Sort fields・Displayed
+            detail_btn: Dtl
+            prev_btn: Prev
+            next_btn: Next

@@ -1,0 +1,110 @@
+<% i18n_cache(:suffix=>'menu_1') do %>
+<%= javascript_include_tag("menu/menu")%>
+<div class="contextMenu" id="context_menu">
+	<ul>
+		<li id="open"><%=image_tag("icon_new_window.png")%> <%=vt('item_names.new_window')%></li>
+	</ul>
+</div>
+<table width="750" align="center" border="0" cellpadding="0" cellspacing="0">
+<thead>
+<tr height="20"><td>&nbsp;</td></tr>
+<tr>
+	<td class="cell_01"><%=image_tag("menu/menu_title.png", :size=>"750x60")%></td>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>
+		<table border="1" cellspacing="0" cellpadding="0" class="form_01">
+		<tbody>
+		<tr>
+			<td align="center" class="cell_02">
+				<font size="3"><strong><%=vt('item_names.menu_button')%></strong></font>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<table border="0" cellspacing="0" cellpadding="1">
+				<tbody>
+				<tr><td colspan="7" height="10"></td></tr>
+				<tr>
+					<td width="10">&nbsp;</td>
+					<td width="230" height="50">
+<% end %>
+						<%= form_tag_with_params({:controller => 'access_total/access_total', :action => 'form'},
+        		        						 {:id => '01', :name => '01'}, :TRANS_PTN_NEW) do %>
+						<%= link_submit_tag(:id=>'link_01', :tabindex=>'1', :style=>'text-decoration:none;') do%>
+						<div class="menu_button"><%=vt('item_names.access_total')%></div>
+						<% end %>
+						<% end %>
+					</td>
+					<td width="11">&nbsp;</td>
+					<td width="230" height="50">
+						<%= form_tag_with_params({:controller => 'schedule_list/schedule_list', :action => 'list'},
+        		      							 {:id => '02', :name => '02'}, :TRANS_PTN_NEW) do %>
+						<%= link_submit_tag(:id=>'link_02', :tabindex=>'2', :style=>'text-decoration:none;') do%>
+						<div class="menu_button"><%=vt('item_names.schedule_list')%></div>
+						<% end %>
+						<% end %>
+					</td>
+					<td width="11">&nbsp;</td>
+					<td width="230" height="50">
+						<%= form_tag_with_params({:controller => 'login/login', :action => 'logout'},
+        		      							 {:id => '03', :name => '03'}, :TRANS_PTN_CLR) do %>
+						<%= link_submit_tag(:id=>'link_03', :tabindex=>'3', :style=>'text-decoration:none;') do%>
+						<div class="menu_button"><%=vt('item_names.logout')%></div>
+						<% end %>
+						<% end %>
+					</td>
+					<td width="10">&nbsp;</td>
+				</tr>
+				<tr><td colspan="7" height="10"></td></tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td>
+						<%= form_tag_with_params({:controller => 'regulation_host_list/regulation_host_list', :action => 'list'},
+        		        						 {:id => '04', :name => '04'}, :TRANS_PTN_NEW) do %>
+						<%= link_submit_tag(:id=>'link_04', :tabindex=>'4', :style=>'text-decoration:none;') do%>
+						<div class="menu_button"><%=vt('item_names.regulated_host_list')%></div>
+						<% end %>
+						<% end %>
+					</td>
+					<td>&nbsp;</td>
+					<td>
+						<%= form_tag_with_params({:controller => 'regulation_cookie_list/regulation_cookie_list', :action => 'list'},
+        		      							 {:id => '05', :name => '05'}, :TRANS_PTN_NEW) do %>
+						<%= link_submit_tag(:id=>'link_05', :tabindex=>'5', :style=>'text-decoration:none;') do%>
+						<div class="menu_button"><%=vt('item_names.regulation_cookie_list')%></div>
+						<% end %>
+						<% end %>
+					</td>
+					<td>&nbsp;</td>
+					<td>
+						<%= form_tag_with_params({:controller => 'regulation_referrer_list/regulation_referrer_list', :action => 'list'},
+        		      							 {:id => '05', :name => '05'}, :TRANS_PTN_NEW) do %>
+						<%= link_submit_tag(:id=>'link_06', :tabindex=>'6', :style=>'text-decoration:none;') do%>
+						<div class="menu_button"><%=vt('item_names.regulation_referrers_list')%></div>
+						<% end %>
+						<% end %>
+<% i18n_cache(:suffix=>'menu_2') do %>
+					</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr><td colspan="7" height="10"></td></tr>
+				</tbody>
+				</table>
+			</td>
+		</tr>
+		</tbody>
+		</table>
+	</td>
+</tr>
+<tr><td class="cell_01">&nbsp;</td></tr>
+</tbody>
+<tfoot>
+<tr>
+	<td align="right" class="cell_01"><%=copyright_notation%></td>
+</tr>
+</tfoot>
+</table>
+<% end %>

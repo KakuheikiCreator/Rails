@@ -1,0 +1,53 @@
+###############################################################################
+# 国際化設定:: 会員登録
+# Copyright:: Copyright (c) 2013 仲観派
+# 作成日:2012/11/14 Nakanohito  (mailto:)
+# 更新日:
+###############################################################################
+ja:
+  views:
+    admission:
+      admission:
+        form:
+          item_names:
+            page_title: 会員登録
+            open_id: OpenID（非公開）
+            nickname: ニックネーム（公開）
+            email: メールアドレス（非公開）
+            agreement: 会員規約に同意します
+          sentences:
+            caption_1: ようこそ！
+            caption_2: ご利用にはユーザー登録が必要です。
+            caption_3: 以下の情報でユーザー登録しますか？
+
+en:
+  views:
+    admission:
+      admission:
+        form:
+          item_names:
+            page_title: Membership registration
+            open_id: OpenID(Secrecy)
+            nickname: Nickname(Exhibition)
+            email: Email(Secrecy)
+            agreement: I agree to a member agreement
+          sentences:
+            caption_1: Welcome!
+            caption_2: Registration is required in order to use.
+            caption_3: Do you want to register as a user in the following information?
+
+en-US:
+  views:
+    admission:
+      admission:
+        form:
+          item_names:
+            page_title: Membership registration
+            open_id: OpenID(Secrecy)
+            nickname: Nickname(Exhibition)
+            email: Email(Secrecy)
+            agreement: I agree to a member agreement
+          sentences:
+            caption_1: Welcome!
+            caption_2: Registration is required in order to use.
+            caption_3: Do you want to register as a user in the following information?

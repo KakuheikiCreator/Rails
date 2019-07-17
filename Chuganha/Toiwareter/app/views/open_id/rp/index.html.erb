@@ -1,0 +1,55 @@
+<% i18n_cache(:suffix=>'open_id-rp-index-1') do %>
+<%= javascript_include_tag("open_id/rp/index")%>
+<table border="0" cellspacing="0" cellpadding="0">
+<thead>
+<tr>
+	<td height="32" colspan="3">&nbsp;</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td width="600" height="150" align="left" valign="middle">
+		<h1 class="pattern_1"><%=vt('index.sentences.caption_1')%></h1>
+	</td>
+	<td>&nbsp;</td>
+	<td width="370" valign="top">
+		<table border="0" cellspacing="0" cellpadding="0">
+		<tbody>
+		<tr><td height="28">&nbsp;</td></tr>
+		<tr>
+			<td valign="top">
+				<h4 class="pattern_1"><%=vt('index.sentences.caption_2')%><em><%=vt('index.sentences.caption_3')%></em></h4>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top">
+<% end %>
+				<%= form_tag({:controller=>'open_id/rp', :action=>'start'},
+							 {:id=>'login_form', :name=>'login_form', :method=>:post}) do %>
+				<span id="login_fields" name="login_fields" class="chkgroup">
+				<%=text_field_tag("open_id", @open_id, {:size=>'20', :maxlength=>'255', :class=>'openid'}) %>
+				<%=submit_tag(vt('index.item_names.login'), :id=>'commit', :class=>'button_1', :tabindex=>2)%>
+				</span>
+				<% unless @error_msg_hash[:login_form].nil? then %>
+				<label class="validation_error" generated="true" for="login_fields"><%=@error_msg_hash[:login_form]%></label>
+				<% end %>
+				<% end %><br><br>
+				<span class="font_description_medium">ログインについては
+				<a href="/usage_guidelines.html#OpenId">ご利用上の注意</a>
+				をご覧下さい。</span>
+<% i18n_cache(:suffix=>'open_id-rp-index-2') do %>
+			</td>
+		</tr>
+		</tbody>
+		</table>
+	</td>
+</tr>
+<tr>
+	<td height="116" valign="top" colspan="3">
+		<p class="pattern_1"><%=vt('index.sentences.caption_4')%></p>
+		<input type="text" value="<%=vt('index.sentences.caption_5')%>" class="disabled" disabled>
+	</td>
+</tr>
+</tbody>
+</table>
+<% end %>

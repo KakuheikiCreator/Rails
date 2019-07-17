@@ -1,0 +1,339 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="robots" content="index,follow">
+<link rel="shortcut icon" type="image/png" href="image/favicon.png"> 
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<title>会員利用情報の更新</title>
+</head>
+<body>
+<a name="TOP"></a>
+<table width="750" border="0" align="center" cellpadding="0" cellspacing="0">
+<thead>
+<tr height="20">
+	<td>&nbsp;</td>
+</tr>
+<tr>
+	<td bgcolor="white">
+		<img src="image/member_use_info_update_title.png" width="750" height="60" alt="title">
+	</td>
+</tr>
+</thead>
+<tfoot>
+<tr>
+	<td class="cell_02">&nbsp;</td>
+</tr>
+<tr>
+	<td>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+		<tbody>
+		<tr>
+			<td align="right" class="cell_02">
+				<font color="#ffffff" size="2"><strong>Copyright (C) 2011 引用道 All Rights Reserved.</strong></font>
+			</td>
+		</tr>
+		</tbody>
+		</table>
+	</td>
+</tr>
+</tfoot>
+<tbody>
+<tr>
+	<td class="cell_02">
+		<table width="750" border="0" cellspacing="0" cellpadding="0">
+		<tbody>
+			<tr height="40">
+				<td width="150" align="center" background="image/tab_02.png">
+					<div class="vertical_middle">
+					<a href="#TOP" class="cell_link">
+					<font size="2" color="black"><strong>会員ログイン</strong></font>
+					</a>
+					</div>
+				</td>
+				<td width="150" align="center" background="image/tab_02.png">
+					<div class="vertical_middle">
+					<a href="#TOP" class="cell_link">
+					<font size="2" color="black"><strong>ご利用方法</strong></font>
+					</a>
+					</div>
+				</td>
+				<td width="150" align="center" background="image/tab_02.png">
+					<div class="vertical_middle">
+					<a href="#TOP" class="cell_link">
+					<font size="2" color="black"><strong>ご利用上の注意</strong></font>
+					</a>
+					</div>
+				</td>
+				<td width="150" align="center" background="image/tab_02.png">
+					<div class="vertical_middle">
+					<a href="#TOP" class="cell_link">
+					<font size="2" color="black"><strong>会員規約</strong></font>
+					</a>
+					</div>
+				</td>
+				<td width="150" align="center" background="image/tab_02.png">
+					<div class="vertical_middle">
+					<a href="#TOP" class="cell_link">
+					<font size="2" color="black"><strong>個人情報保護方針</strong></font>
+					</a>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+		</table>
+	</td>
+</tr>
+<tr>
+	<td>
+		<table width="750" border="0" cellspacing="0" cellpadding="0" class="base_01">
+		<tbody>
+		<tr>
+			<td>
+				<form action="xxx.cgi" method="post" enctype="text/css">
+				<table border="1" cellspacing="0" cellpadding="0" class="form_01">
+				<tbody>
+				<tr height="30">
+					<td align="center" valign="middle" class="cell_01">
+					<font size="3"><strong>会員利用情報の更新</strong></font>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<table border="1" cellpadding="2" cellspacing="0">
+						<thead>
+						<tr>
+							<td width="180" class="cell_02">&nbsp;</td>
+							<td width="236" align="center" class="cell_02">
+								<font size="2"><strong>現状</strong></font>
+							</td>
+							<td width="310" colspan="2" align="center" class="cell_03">
+								<font size="2"><strong>更新後</strong></font>
+							</td>
+						</tr>
+						</thead>
+						<tbody>
+						<tr>
+							<td class="cell_02">
+								<font size="2">&nbsp;<strong>権限</strong></font>
+							</td>
+							<td>
+								<font size="2">&nbsp;一般利用者</font>
+							</td>
+							<td>
+								<select name="domain">
+									<option value="">一般利用者</option>
+									<option value="">管理者</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td class="cell_02">
+								<font size="2">&nbsp;<strong>状態</strong></font>
+							</td>
+							<td>
+								<font size="2">&nbsp;正常</font>
+							</td>
+							<td>
+								<select name="condition" id="condition">
+									<option value="0">正常</option>
+									<option value="1">資格停止</option>
+									<option value="2">論理削除</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td class="cell_02">
+								<font size="2">&nbsp;<strong>ログインID</strong></font>
+							</td>
+							<td>
+								<font size="2">&nbsp;ABCDEFG12345</font>
+							</td>
+							<td>
+								<font size="2">&nbsp;ログインIDは変更できません。</font>
+							</td>
+						</tr>
+						<tr>
+							<td class="cell_02">
+								<font size="2">&nbsp;<strong>ニックネーム</strong></font>
+							</td>
+							<td>
+								<font size="2">&nbsp;芸術は爆発だ</font>
+							</td>
+							<td>
+								<font size="2">
+								&nbsp;※全角文字で 20 文字以内<br>&nbsp;　サービス利用時に公開されます。<br>
+								</font>
+								<input type="text" name="Nickname" size="30" maxlength="30">
+							</td>
+						</tr>
+						<tr>
+							<td class="cell_02">
+								<font size="2">&nbsp;<strong>官名</strong></font>
+							</td>
+							<td>
+								<font size="2">&nbsp;引用生</font>
+							</td>
+							<td>
+								<select name="official_name" id="official_name">
+									<option value="00">引用生</option>
+									<option value="01">引用得業生</option>
+									<option value="02">引用少属</option>
+									<option value="03">引用大属</option>
+									<option value="04">引用師</option>
+									<option value="05">引用允</option>
+									<option value="06">引用博士</option>
+									<option value="07">引用助</option>
+									<option value="08">引用頭</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td class="cell_02">
+								<font size="2">&nbsp;<strong>資格停止回数</strong></font>
+							</td>
+							<td>
+								<font size="2">&nbsp;10</font>
+							</td>
+							<td>
+								<input type="text" name="" size="5" maxlength="5">
+							</td>
+						</tr>
+						<tr>
+							<td class="cell_02">
+								<font size="2">&nbsp;<strong>引用投稿回数</strong></font>
+							</td>
+							<td>
+								<font size="2">&nbsp;10</font>
+							</td>
+							<td>
+								<input type="text" name="" size="5" maxlength="5">
+							</td>
+						</tr>
+						<tr>
+							<td class="cell_02">
+								<font size="2">&nbsp;<strong>引用訂正回数</strong></font>
+							</td>
+							<td>
+								<font size="2">&nbsp;10</font>
+							</td>
+							<td>
+								<input type="text" name="" size="5" maxlength="5">
+							</td>
+						</tr>
+						<tr>
+							<td class="cell_02">
+								<font size="2">&nbsp;<strong>引用被投稿回数</strong></font>
+							</td>
+							<td>
+								<font size="2">&nbsp;10</font>
+							</td>
+							<td>
+								<input type="text" name="" size="5" maxlength="5">
+							</td>
+						</tr>
+						<tr>
+							<td class="cell_02">
+								<font size="2">&nbsp;<strong>引用過失回数</strong></font>
+							</td>
+							<td>
+								<font size="2">&nbsp;10</font>
+							</td>
+							<td>
+								<input type="text" name="" size="5" maxlength="5">
+							</td>
+						</tr>
+						<tr>
+							<td class="cell_02">
+								<font size="2">&nbsp;<strong>コメント投稿回数</strong></font>
+							</td>
+							<td>
+								<font size="2">&nbsp;10</font>
+							</td>
+							<td>
+								<input type="text" name="" size="5" maxlength="5">
+							</td>
+						</tr>
+						<tr>
+							<td class="cell_02">
+								<font size="2">&nbsp;<strong>コメント通報回数</strong></font>
+							</td>
+							<td>
+								<font size="2">&nbsp;10</font>
+							</td>
+							<td>
+								<input type="text" name="" size="5" maxlength="5">
+							</td>
+						</tr>
+						<tr>
+							<td class="cell_02">
+								<font size="2">&nbsp;<strong>コメント通報対応回数</strong></font>
+							</td>
+							<td>
+								<font size="2">&nbsp;10</font>
+							</td>
+							<td>
+								<input type="text" name="" size="5" maxlength="5">
+							</td>
+						</tr>
+						<tr>
+							<td class="cell_02">
+								<font size="2">&nbsp;<strong>コメント被通報回数</strong></font>
+							</td>
+							<td>
+								<font size="2">&nbsp;10</font>
+							</td>
+							<td>
+								<input type="text" name="" size="5" maxlength="5">
+							</td>
+						</tr>
+						<tr>
+							<td class="cell_02">
+								<font size="2">&nbsp;<strong>コメント過失回数</strong></font>
+							</td>
+							<td>
+								<font size="2">&nbsp;10</font>
+							</td>
+							<td>
+								<input type="text" name="" size="5" maxlength="5">
+							</td>
+						</tr>
+						</tbody>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td height="50" align="center" valign="middle">
+						<table border="0" cellspacing="0" cellpadding="0">
+						<tbody>
+						<tr>
+							<td width="140" height="30" align="center" background="image/button_06.png">
+								<div class="vertical_middle">
+								<a href="#TOP" class="cell_link">
+								<font size="2" color="black"><strong>会員情報を更新</strong></font>
+								</a>
+								</div>
+							</td>
+ 						</tr>
+						</tbody>
+						</table>
+					</td>
+				</tr>
+				</tbody>
+				</table>
+				</form>
+			</td>
+		</tr>
+		</tbody>
+		</table>
+		</form>
+	</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

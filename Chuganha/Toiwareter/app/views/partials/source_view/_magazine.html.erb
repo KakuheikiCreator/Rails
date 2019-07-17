@@ -1,0 +1,55 @@
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_view.magazine.item_names.magazine_name')%></font>
+	</th>
+	<td class="pattern_4">
+		<font size="2"><%=@source_obj.magazine_name %></font>
+	</td>
+	<th width="110" align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_view.magazine.item_names.magazine_cd')%></font>
+	</th>
+	<td class="pattern_4">
+		<font size="2"><%=@source_obj.magazine_cd %></font>
+	</td>
+</tr>
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_view.magazine.item_names.article_title')%></font>
+	</th>
+	<td colspan="3" class="pattern_4">
+		<font size="2"><%=@source_obj.article_title %></font>
+	</td>
+</tr>
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_view.magazine.item_names.publisher')%></font>
+	</td>
+	<td class="pattern_4">
+		<font size="2"><%=@source_obj.publisher %></font>
+	</td>
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_view.magazine.item_names.release_date')%></font>
+	</th>
+	<td class="pattern_4">
+		<font size="2"><%=default_date(@source_obj.release_date) %></font>
+	</td>
+</tr>
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_view.magazine.item_names.reporter')%></font>
+	</th>
+	<td colspan="3" class="pattern_4">
+		<font size="2"><%=@source_obj.reporter %></font>
+	</td>
+</tr>
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_view.magazine.item_names.job_title')%></font>
+	</th>
+	<td colspan="3" class="pattern_4">
+		<font size="2">
+		<%=job_title_name(@source_obj.job_title_id) %>　
+		<%=@source_obj.job_title %>
+		</font>
+	</td>
+</tr>

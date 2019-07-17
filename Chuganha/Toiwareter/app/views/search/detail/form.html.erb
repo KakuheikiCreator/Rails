@@ -1,0 +1,435 @@
+<% i18n_cache(:suffix=>'search-detail-form-1') do %>
+<%= javascript_include_tag("search/detail/form")%>
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+	<td align="center">
+<% end %>
+		<!-- 機能一覧 -->
+		<%= render('partials/func_link')%>
+<% i18n_cache(:suffix=>'search-detail-form-2') do %>
+	</td>
+</tr>
+<tr><td height="5"></td></tr>
+<tr>
+	<td align="center">
+		<table border="0" cellpadding="0" cellspacing="0">
+		<tbody>
+		<tr>
+		<td>
+<% end %>
+		<%=form_tag_with_params({:controller=>'search/detail', :action=>'quote'},
+			{:id=>'quote_search_form', :name=>'quote_search_form'}, :TRANS_PTN_NOW) do %>
+<% i18n_cache(:suffix=>'search-detail-form-3') do %>
+			<!-- 引用文 -->
+			<table width="852" border="0" cellpadding="0" cellspacing="0">
+			<tbody>
+			<tr>
+				<td class="pattern_5 angle_ul"></td>
+				<td class="pattern_5"></td>
+				<td class="pattern_5 angle_ur"></td>
+			</tr>
+			<tr>
+				<td class="pattern_5">&nbsp;</td>
+				<td align="center" class="pattern_5">
+					<table border="0" cellpadding="0" cellspacing="0">
+					<tbody>
+					<tr>
+						<td colspan="3" align="center">
+							<h2 class="pattern_2"><%=vt('form.item_names.quote_title')%></h2>
+						</td>
+					</tr>
+					<tr>
+						<td width="600" colspan="2">
+<% end %>
+							<%=text_area_tag('quote', @biz_obj.quote, {:class=>'said_balloon'})%>
+							<%=svr_error_tag("sverr_quote", @error_msg_hash[:quote])%>
+<% i18n_cache(:suffix=>'search-detail-form-4') do %>
+						</td>
+						<td width="170" align="right">
+							<div class="font_oversize"><%=vt('form.item_names.quote_footer')%></div>
+						</td>
+					</tr>
+					</tbody>
+					</table>
+				</td>
+				<td class="pattern_5">&nbsp;</td>
+			</tr>
+			<tr>
+				<td height="20" colspan="3" class="pattern_5">&nbsp;</td>
+			</tr>
+			<tr>
+				<td class="pattern_5">&nbsp;</td>
+				<td align="center" class="pattern_5">
+					<table width="800" border="0" cellpadding="0" cellspacing="0" class="pattern_1">
+					<tbody>
+					<tr>
+						<th width="140" align="left" class="pattern_4"><%=vt('form.item_names.speaker')%></th>
+						<td colspan="3" class="pattern_4">
+<% end %>
+						<%=text_field_tag('speaker', @biz_obj.speaker,
+						 {:size=>50, :maxlength=>60, :style=>"ime-mode: active;"})%>
+						<%=svr_error_tag("sverr_speaker", @error_msg_hash[:speaker])%>
+						</td>
+					</tr>
+					<tr>
+						<th align="left" class="pattern_4"><%=vt('form.item_names.speaker_title')%></th>
+						<td colspan="3" class="pattern_4">
+						<span id="speaker_job_title_grp" name="speaker_job_title_grp" class="chkgroup">
+						<%=job_title_select('speaker_job_title_id', @biz_obj.speaker_job_title_id, {:include_blank=>true})%>
+						<%=text_field_tag('speaker_job_title', @biz_obj.speaker_job_title,
+						 {:size=>50, :maxlength=>40, :style=>'ime-mode: active;'})%>
+						</span>
+						<%=svr_error_tag("sverr_speaker_job_title", @error_msg_hash[:speaker_job_title])%>
+						</td>
+					</tr>
+					<tr>
+						<th align="left" class="pattern_4"><%=vt('form.item_names.description')%></th>
+						<td colspan="3" class="pattern_4">
+							<%=text_area_tag('description', @biz_obj.description,
+							 {:class=>'disp_description', :style=>"ime-mode: active;"})%>
+							<%=svr_error_tag("sverr_description", @error_msg_hash[:description])%>
+						</td>
+					</tr>
+					<tr>
+						<th align="left" class="pattern_4"><%=vt('form.item_names.contributor')%></th>
+						<td class="pattern_4">
+						<%=text_field_tag('registered_member', @biz_obj.registered_member,
+						 {:size=>32, :maxlength=>60, :style=>"ime-mode: active;"})%>
+						<%=svr_error_tag("sverr_registered_member", @error_msg_hash[:registered_member])%>
+						</td>
+						<th width="140" align="left" class="pattern_4"><%=vt('form.item_names.correction')%></th>
+						<td class="pattern_4">
+						<%=text_field_tag('update_member', @biz_obj.update_member,
+						 {:size=>32, :maxlength=>60, :style=>"ime-mode: active;"})%>
+						<%=svr_error_tag("sverr_update_member", @error_msg_hash[:update_member])%>
+						</td>
+					</tr>
+					<tr>
+						<th align="left" class="pattern_4"><%=vt('form.item_names.contribution_date')%></th>
+						<td colspan="3" class="pattern_4">
+						<span id="registered_date_grp" name="registered_date_grp" class="chkgroup">
+						<%=default_select_datetime(@biz_obj.registered_date, :registered_date,
+						 {:start_year=>2010, :end_year=>Time.zone.today.year, :include_blank=>true})%>
+						<%=code_select_tag('registered_date_comp', :COMP_COND_CLS, @biz_obj.registered_date_comp) %>
+						</span>
+						<%=svr_error_tag("sverr_registered_date", @error_msg_hash[:registered_date])%>
+						</td>
+					</tr>
+					</tbody>
+					</table>
+				</td>
+				<td class="pattern_5">&nbsp;</td>
+			</tr>
+			<tr>
+				<td class="pattern_5">&nbsp;</td>
+				<td height="80" align="center" valign="middle" class="pattern_5">
+					<%=submit_tag(t('helpers.submit.search'), {:class=>'button_1'})%>
+					<%=clear_button(:class=>'button_1')%>
+				</td>
+				<td class="pattern_5">&nbsp;</td>
+			</tr>
+			<tr>
+				<td class="pattern_5 angle_ll"></td>
+				<td class="pattern_5"></td>
+				<td class="pattern_5 angle_lr"></td>
+			</tr>
+			</tbody>
+			</table>
+		<% end %>
+		</td>
+		</tr>
+		<tr><td height="5"></td></tr>
+		<tr>
+		<td>
+		<%=form_tag_with_params({:controller=>'search/detail', :action=>'source'},
+			{:id=>'source_search_form', :name=>'source_search_form'}, :TRANS_PTN_NOW) do %>
+<% i18n_cache(:suffix=>'search-detail-form-5') do %>
+			<!-- 出典情報 -->
+			<table width="852" border="0" cellpadding="0" cellspacing="0">
+			<tbody>
+			<tr>
+				<td class="pattern_2 angle_ul"></td>
+				<td class="pattern_2"></td>
+				<td class="pattern_2 angle_ur"></td>
+			</tr>
+			<tr>
+				<td class="pattern_2">&nbsp;</td>
+				<td align="center" class="pattern_2">
+					<h2 class="pattern_2"><%=vt('form.item_names.source_title')%></h2>
+				</td>
+				<td class="pattern_2">&nbsp;</td>
+			</tr>
+			<tr>
+				<td class="pattern_2">&nbsp;</td>
+				<td align="center" class="pattern_2">
+					<table width="800" border="0" cellpadding="0" cellspacing="0" class="pattern_1">
+					<tbody>
+					<tr id="select_source_row">
+						<th align="left" class="pattern_4"><%=vt('form.item_names.source_class')%></th>
+						<td class="pattern_4">
+<% end %>
+						<%=source_select('source_id', @biz_obj.source_id) %>
+						<%=svr_error_tag("sverr_source_id", @error_msg_hash[:source_id])%>
+						</td>
+					</tr>
+					<tr>
+						<th align="left" class="pattern_4"><%=vt('form.item_names.media_name')%></th>
+						<td class="pattern_4">
+						<%=text_field_tag('media_name', @biz_obj.media_name,
+						 {:size=>80, :maxlength=>60, :style=>"ime-mode: active;"})%>
+						<%=svr_error_tag("sverr_media_name", @error_msg_hash[:media_name])%>
+						</td>
+					</tr>
+					<tr>
+						<th align="left" class="pattern_4"><%=vt('form.item_names.media_source')%></th>
+						<td class="pattern_4">
+						<%=text_field_tag('media_source', @biz_obj.media_source,
+						 {:size=>80, :maxlength=>60, :style=>"ime-mode: active;"})%>
+						<%=svr_error_tag("sverr_media_source", @error_msg_hash[:media_source])%>
+						</td>
+					</tr>
+					<tr>
+						<th align="left" class="pattern_4"><%=vt('form.item_names.delivery_date')%></th>
+						<td class="pattern_4">
+						<span id="distribution_date_grp" name="distribution_date_grp" class="chkgroup">
+						<%=default_select_datetime(@biz_obj.distribution_date, :distribution_date,
+						 {:start_year=>1990, :end_year=>Time.zone.today.year, :include_blank=>true})%>
+						<%=code_select_tag('distribution_date_comp', :COMP_COND_CLS, @biz_obj.distribution_date_comp) %>
+						</span>
+						<%=svr_error_tag("sverr_distribution_date", @error_msg_hash[:distribution_date])%>
+						</td>
+					</tr>
+					<tr>
+						<th width="140" align="left" class="pattern_4"><%=vt('form.item_names.reporter')%></th>
+						<td class="pattern_4">
+						<%=text_field_tag('reporter', @biz_obj.reporter,
+						 {:size=>50, :maxlength=>60, :style=>"ime-mode: active;"})%>
+						<%=svr_error_tag("sverr_reporter", @error_msg_hash[:reporter])%>
+						</td>
+					</tr>
+					<tr>
+						<th align="left" class="pattern_4"><%=vt('form.item_names.reporter_title')%></th>
+						<td class="pattern_4">
+						<span id="reporter_job_title_grp" name="reporter_job_title_grp" class="chkgroup">
+						<%=job_title_select('reporter_job_title_id', @biz_obj.reporter_job_title_id, {:include_blank=>true})%>
+						<%=text_field_tag('reporter_job_title', @biz_obj.reporter_job_title,
+						 {:size=>50, :maxlength=>40, :style=>'ime-mode: active;'})%>
+						</span>
+						<%=svr_error_tag("sverr_reporter_job_title", @error_msg_hash[:reporter_job_title])%>
+						</td>
+					</tr>
+					</tbody>
+					</table>
+				</td>
+				<td class="pattern_2">&nbsp;</td>
+			</tr>
+			<tr>
+				<td class="pattern_2">&nbsp;</td>
+				<td height="80" align="center" valign="middle" class="pattern_2">
+					<%=submit_tag(t('helpers.submit.search'), {:class=>'button_1'})%>
+					<%=clear_button(:class=>'button_1')%>
+				</td>
+				<td class="pattern_2">&nbsp;</td>
+			</tr>
+			<tr>
+				<td class="pattern_2 angle_ll"></td>
+				<td class="pattern_2"></td>
+				<td class="pattern_2 angle_lr"></td>
+			</tr>
+			</tbody>
+			</table>
+		<% end %>
+		</td>
+		</tr>
+		<tr><td height="5"></td></tr>
+		<tr>
+		<td>
+		<%=form_tag_with_params({:controller=>'search/detail', :action=>'comment'},
+			{:id=>'comment_search_form', :name=>'comment_search_form'}, :TRANS_PTN_NOW) do %>
+<% i18n_cache(:suffix=>'search-detail-form-6') do %>
+			<!-- 批評・コメント -->
+			<table width="852" border="0" cellpadding="0" cellspacing="0">
+			<tbody>
+			<tr>
+				<td class="pattern_6 angle_ul"></td>
+				<td class="pattern_6"></td>
+				<td class="pattern_6 angle_ur"></td>
+			</tr>
+			<tr>
+				<td class="pattern_6">&nbsp;</td>
+				<td align="center" class="pattern_6">
+					<h2 class="pattern_2"><%=vt('form.item_names.comment_title')%></h2>
+				</td>
+				<td class="pattern_6">&nbsp;</td>
+			</tr>
+			<tr>
+				<td class="pattern_6">&nbsp;</td>
+				<td align="center" class="pattern_6">
+<% end %>
+					<%=text_area_tag('comment', @biz_obj.comment,
+					 {:class=>'disp_comment', :style=>"ime-mode: active;"})%>
+					<%=svr_error_tag("sverr_comment", @error_msg_hash[:comment])%>
+<% i18n_cache(:suffix=>'search-detail-form-7') do %>
+				</td>
+				<td class="pattern_6">&nbsp;</td>
+			</tr>
+			<tr>
+				<td height="15" colspan="3" class="pattern_6">&nbsp;</td>
+			</tr>
+			<tr>
+				<td class="pattern_6">&nbsp;</td>
+				<td align="center" class="pattern_6">
+					<table width="800" border="0" cellpadding="0" cellspacing="0" class="pattern_1">
+					<tbody>
+					<tr>
+						<th width="140" align="left" class="pattern_4">
+							<%=vt('form.item_names.critic_member')%>
+						</th>
+						<td class="pattern_4">
+<% end %>
+						<%=text_field_tag('critic_member', @biz_obj.critic_member,
+						 {:size=>40, :maxlength=>60, :style=>"ime-mode: active;"})%>
+						<%=svr_error_tag("sverr_critic_member", @error_msg_hash[:critic_member])%>
+						</td>
+					</tr>
+					<tr>
+						<th align="left" class="pattern_4">
+							<%=vt('form.item_names.criticism_date')%>
+						</th>
+						<td class="pattern_4">
+						<span id="criticism_date_grp" name="criticism_date_grp" class="chkgroup">
+						<%=default_select_datetime(@biz_obj.criticism_date, :criticism_date,
+						 {:start_year=>2010, :end_year=>Time.zone.today.year, :include_blank=>true})%>
+						<%=code_select_tag('criticism_date_comp', :COMP_COND_CLS, @biz_obj.criticism_date_comp) %>
+						</span>
+						<%=svr_error_tag("sverr_criticism_date", @error_msg_hash[:criticism_date])%>
+						</td>
+					</tr>
+					</tbody>
+					</table>
+				</td>
+				<td class="pattern_6">&nbsp;</td>
+			</tr>
+			<tr>
+				<td class="pattern_6">&nbsp;</td>
+				<td height="80" align="center" valign="middle" class="pattern_6">
+					<%=submit_tag(t('helpers.submit.search'), {:class=>'button_1'})%>
+					<%=clear_button(:class=>'button_1')%>
+				</td>
+				<td class="pattern_6">&nbsp;</td>
+			</tr>
+			<tr>
+				<td class="pattern_6 angle_ll"></td>
+				<td class="pattern_6"></td>
+				<td class="pattern_6 angle_lr"></td>
+			</tr>
+			</tbody>
+			</table>
+		<% end %>
+		</td>
+		</tr>
+		</tbody>
+		</table>
+	</td>
+</tr>
+<tr><td height="5"></td></tr>
+<tr>
+	<td align="center">
+		<% unless @biz_obj.result_list.empty? then %>
+		<table border="0" cellpadding="0" cellspacing="0">
+		<tbody>
+		<tr><td height="5"></td></tr>
+		<tr>
+		<td>
+			<!-- 検索結果-->
+			<%=form_tag_with_params({:controller=>'quote/view'},
+			{:id=>'quote_form', :name=>'quote_form', :target=>'_blank'}, :TRANS_PTN_NEW) do %>
+				<%=hidden_field_tag("quote_id", nil)%>
+			<% end %>
+			<table width="852" border="0" cellpadding="0" cellspacing="0">
+			<tbody>
+			<tr>
+				<td class="pattern_5 angle_ul"></td>
+				<td class="pattern_5"></td>
+				<td class="pattern_5 angle_ur"></td>
+			</tr>
+			<tr>
+				<td class="pattern_5">&nbsp;</td>
+				<td align="center" class="pattern_5">
+					<table border="0" cellpadding="0" cellspacing="0">
+					<tbody>
+					<tr>
+						<td colspan="3" align="center">
+							<h2 class="pattern_2"><%=vt('form.item_names.result_title')%></h2>
+						</td>
+					</tr>
+					<% if Quote === @biz_obj.result_list[0] then %>
+					<% @biz_obj.result_list.each do |ent| %>
+					<% last_upd_member_id = ent.update_member_id
+					   last_upd_member_id ||= ent.registered_member_id %>
+					<tr>
+						<td width="30">&nbsp;</td>
+						<td colspan="2">
+							<div class="font_oversize" title="ID:<%=last_upd_member_id %>">
+								<%=vt('form.item_names.quote_speaker', :speaker=>ent.speaker)%>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td width="600" align="right">
+							<%=onclick_tag("return open_quote(" + ent.id.to_s + ");") do %>
+							<%=text_area_tag('result_quote', ent.quote, {:class=>'disp_balloon', :readonly=>true})%>
+							<% end %>
+						</td>
+						<td width="170" align="right">
+							<div class="font_oversize"><%=vt('form.item_names.quote_footer')%></div>
+						</td>
+					</tr>
+					<% end %>
+					<% elsif Comment === @biz_obj.result_list[0] then %>
+					<% @biz_obj.result_list.each do |ent| %>
+					<tr>
+						<td>&nbsp;</td>
+						<td colspan="2">
+							<div class="font_oversize" title="ID:<%=ent.critic.member_id %>">
+							<%=vt('form.item_names.comment_speaker', :speaker=>ent.critic.nickname)%>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td width="30">&nbsp;</td>
+						<td colspan="2" width="770">
+							<%=onclick_tag("return open_quote(" + ent.quote_id.to_s + ");") do %>
+							<%=text_area_tag('result_comment', ent.comment, {:class=>'disp_comment', :readonly=>true})%>
+							<% end %>
+						</td>
+					</tr>
+					<% end %>
+					<% end %>
+<% i18n_cache(:suffix=>'search-detail-form-8') do %>
+					</tbody>
+					</table>
+				</td>
+				<td class="pattern_5">&nbsp;</td>
+			</tr>
+			<tr>
+				<td class="pattern_5 angle_ll"></td>
+				<td class="pattern_5"></td>
+				<td class="pattern_5 angle_lr"></td>
+			</tr>
+			</tbody>
+			</table>
+		</td>
+		</tr>
+		</tbody>
+		</table>
+<% end %>
+		<% end %>
+<% i18n_cache(:suffix=>'search-detail-form-9') do %>
+	</td>
+</tr>
+</tbody>
+</table>
+<% end %>

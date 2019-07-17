@@ -1,0 +1,38 @@
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_view.sns.item_names.sns_name')%></font>
+	</th>
+	<td colspan="3" class="pattern_4">
+		<font size="2">
+		<%=sns_name(@source_obj.sns_id) %>　
+		<%=@source_obj.sns_detail_name %>
+		</font>
+	</td>
+</tr>
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_view.sns.item_names.posted_date')%></font>
+	</th>
+	<td colspan="3" class="pattern_4">
+		<font size="2"><%=default_time(@source_obj.posted_date) %></font>
+	</td>
+</tr>
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_view.sns.item_names.posted_by')%></font>
+	</th>
+	<td colspan="3" class="pattern_4">
+		<font size="2"><%=@source_obj.posted_by %></font>
+	</td>
+</tr>
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_view.sns.item_names.job_title')%></font>
+	</th>
+	<td colspan="3" class="pattern_4">
+		<font size="2">
+		<%=job_title_name(@source_obj.job_title_id) %>　
+		<%=@source_obj.job_title %>
+		</font>
+	</td>
+</tr>

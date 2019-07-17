@@ -1,0 +1,194 @@
+<% i18n_cache(:suffix=>'member-update-check-1') do %>
+<%= javascript_include_tag("member/update")%>
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+	<td align="center">
+<% end %>
+		<!-- 機能一覧 -->
+		<%= render('partials/func_link')%>
+<% i18n_cache(:suffix=>'member-update-check-2') do %>
+	</td>
+</tr>
+<tr>
+	<td height="5"></td>
+</tr>
+<tr>
+	<td align="center">
+		<!-- 会員情報 -->
+		<table width="848" border="0" cellpadding="0" cellspacing="0">
+		<tbody>
+		<tr>
+			<td class="pattern_2 angle_ul"></td>
+			<td class="pattern_2"></td>
+			<td class="pattern_2 angle_ur"></td>
+		</tr>
+		<tr>
+			<td class="pattern_2">&nbsp;</td>
+			<td align="center" class="pattern_2">
+<% end %>
+				<h2 class="pattern_2"><%=vt('form.item_names.prof_title', :nickname=>@biz_obj.member.nickname)%></h2>
+<% i18n_cache(:suffix=>'member-update-check-3') do %>
+			</td>
+			<td class="pattern_2">&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="pattern_2">&nbsp;</td>
+			<td align="center" class="pattern_2">
+				<table border="0" cellpadding="0" cellspacing="0" class="pattern_1">
+				<tfoot>
+				<tr>
+					<td colspan="3" align="center" class="pattern_4">
+<% end %>
+						<%= form_tag_with_params({:controller=>'member/update', :action=>'form'},
+							{:id=>'update_form', :name=>'update_form'}, :TRANS_PTN_NOW) do %>
+						<%=hidden_field_tag("member_state_id", @biz_obj.upd_member.member_state_id)%>
+						<%=hidden_field_tag("authority_id", @biz_obj.upd_member.authority_id)%>
+						<%=hidden_field_tag("nickname", @biz_obj.upd_member.nickname)%>
+						<%=hidden_field_tag("email", @biz_obj.upd_member.email)%>
+						<%=time_hidden_tag("join_date", @biz_obj.upd_member.join_date)%>
+						<%=time_hidden_tag("last_login_date", @biz_obj.upd_member.last_login_date)%>
+						<%=hidden_field_tag("quote_cnt", @biz_obj.upd_member.quote_cnt)%>
+						<%=hidden_field_tag("quote_failure_cnt", @biz_obj.upd_member.quote_failure_cnt)%>
+						<%=hidden_field_tag("quote_correct_cnt", @biz_obj.upd_member.quote_correct_cnt)%>
+						<%=hidden_field_tag("quote_correct_failure_cnt", @biz_obj.upd_member.quote_correct_failure_cnt)%>
+						<%=hidden_field_tag("comment_cnt", @biz_obj.upd_member.comment_cnt)%>
+						<%=hidden_field_tag("comment_failure_cnt", @biz_obj.upd_member.comment_failure_cnt)%>
+						<%=hidden_field_tag("comment_report_cnt", @biz_obj.upd_member.comment_report_cnt)%>
+						<%=hidden_field_tag("were_reported_cnt", @biz_obj.upd_member.were_reported_cnt)%>
+						<%=hidden_field_tag("support_report_cnt", @biz_obj.upd_member.support_report_cnt)%>
+						<%= submit_tag(vt('form.item_names.correct_btn'), :class=>'button_1')%>
+						<% end %>&nbsp;
+						<%= form_tag_with_params({:controller=>'member/update', :action=>'update'},
+							{:id=>'update_form', :name=>'update_form'}, :TRANS_PTN_NOW) do %>
+						<%=hidden_field_tag("member_state_id", @biz_obj.upd_member.member_state_id)%>
+						<%=hidden_field_tag("authority_id", @biz_obj.upd_member.authority_id)%>
+						<%=hidden_field_tag("nickname", @biz_obj.upd_member.nickname)%>
+						<%=hidden_field_tag("email", @biz_obj.upd_member.email)%>
+						<%=time_hidden_tag("join_date", @biz_obj.upd_member.join_date)%>
+						<%=time_hidden_tag("last_login_date", @biz_obj.upd_member.last_login_date)%>
+						<%=hidden_field_tag("quote_cnt", @biz_obj.upd_member.quote_cnt)%>
+						<%=hidden_field_tag("quote_failure_cnt", @biz_obj.upd_member.quote_failure_cnt)%>
+						<%=hidden_field_tag("quote_correct_cnt", @biz_obj.upd_member.quote_correct_cnt)%>
+						<%=hidden_field_tag("quote_correct_failure_cnt", @biz_obj.upd_member.quote_correct_failure_cnt)%>
+						<%=hidden_field_tag("comment_cnt", @biz_obj.upd_member.comment_cnt)%>
+						<%=hidden_field_tag("comment_failure_cnt", @biz_obj.upd_member.comment_failure_cnt)%>
+						<%=hidden_field_tag("comment_report_cnt", @biz_obj.upd_member.comment_report_cnt)%>
+						<%=hidden_field_tag("were_reported_cnt", @biz_obj.upd_member.were_reported_cnt)%>
+						<%=hidden_field_tag("support_report_cnt", @biz_obj.upd_member.support_report_cnt)%>
+						<%= submit_tag(t('helpers.submit.update'), :class=>'button_1')%>
+						<% end %>
+<% i18n_cache(:suffix=>'member-update-check-4') do %>
+					</td>
+				</tr>
+				</tfoot>
+				<tbody>
+				<tr>
+					<th width="160" class="pattern_4">&nbsp;</th>
+					<th width="240" class="pattern_4"><%=vt('form.item_names.current_value')%></th>
+					<th width="370" class="pattern_4"><%=vt('form.item_names.update_value')%></th>
+				</tr>
+				<tr>
+					<th align="left" class="pattern_4"><%=vt('form.item_names.open_id')%></th>
+<% end %>
+					<td colspan="2" class="pattern_4"><%=@biz_obj.member.open_id.to_s%></td>
+				</tr>
+				<tr>
+					<th align="left" class="pattern_4"><%=vt('form.item_names.member_id')%></th>
+					<td colspan="2" class="pattern_4"><%=@biz_obj.member.member_id.to_s%></td>
+				</tr>
+				<tr>
+					<th align="left" class="pattern_4"><%=vt('form.item_names.nickname')%></th>
+					<td class="pattern_4"><%=@biz_obj.member.nickname.to_s%></td>
+					<td class="pattern_4"><%=@biz_obj.upd_member.nickname.to_s%></td>
+				</tr>
+				<% if user_admin? then %>
+				<tr>
+					<th align="left" class="pattern_4"><%=vt('form.item_names.member_state')%></th>
+					<td class="pattern_4"><%=@biz_obj.member.member_state.member_state.to_s%></td>
+					<td class="pattern_4"><%=@biz_obj.upd_member.member_state.member_state.to_s%></td>
+				</tr>
+				<tr>
+					<th align="left" class="pattern_4"><%=vt('form.item_names.authority')%></th>
+					<td class="pattern_4"><%=@biz_obj.member.authority.authority.to_s%></td>
+					<td class="pattern_4"><%=@biz_obj.upd_member.authority.authority.to_s%></td>
+				</tr>
+				<tr>
+					<th align="left" class="pattern_4"><%=vt('form.item_names.email')%></th>
+					<td class="pattern_4"><%=@biz_obj.member.email.to_s%></td>
+					<td class="pattern_4"><%=@biz_obj.upd_member.email.to_s%></td>
+				</tr>
+				<tr>
+					<th align="left" class="pattern_4"><%=vt('form.item_names.join_date')%></th>
+					<td class="pattern_4"><%=default_time(@biz_obj.member.join_date)%></td>
+					<td class="pattern_4"><%=default_time(@biz_obj.upd_member.join_date)%></td>
+				</tr>
+				<tr>
+					<th align="left" class="pattern_4"><%=vt('form.item_names.last_login_date')%></th>
+					<td class="pattern_4"><%=default_time(@biz_obj.member.last_login_date)%></td>
+					<td class="pattern_4"><%=default_time(@biz_obj.upd_member.last_login_date)%></td>
+				</tr>
+				<tr>
+					<th align="left" class="pattern_4"><%=vt('form.item_names.quote_cnt')%></th>
+					<td class="pattern_4"><%=@biz_obj.member.quote_cnt.to_s%></td>
+					<td class="pattern_4"><%=@biz_obj.upd_member.quote_cnt.to_s%></td>
+				</tr>
+				<tr>
+					<th align="left" class="pattern_4"><%=vt('form.item_names.quote_failure_cnt')%></th>
+					<td class="pattern_4"><%=@biz_obj.member.quote_failure_cnt.to_s%></td>
+					<td class="pattern_4"><%=@biz_obj.upd_member.quote_failure_cnt.to_s%></td>
+				</tr>
+				<tr>
+					<th align="left" class="pattern_4"><%=vt('form.item_names.quote_correct_cnt')%></th>
+					<td class="pattern_4"><%=@biz_obj.member.quote_correct_cnt.to_s%></td>
+					<td class="pattern_4"><%=@biz_obj.upd_member.quote_correct_cnt.to_s%></td>
+				</tr>
+				<tr>
+					<th align="left" class="pattern_4"><%=vt('form.item_names.quote_correct_failure_cnt')%></th>
+					<td class="pattern_4"><%=@biz_obj.member.quote_correct_failure_cnt.to_s%></td>
+					<td class="pattern_4"><%=@biz_obj.upd_member.quote_correct_failure_cnt.to_s%></td>
+				</tr>
+				<tr>
+					<th align="left" class="pattern_4"><%=vt('form.item_names.comment_cnt')%></th>
+					<td class="pattern_4"><%=@biz_obj.member.comment_cnt.to_s%></td>
+					<td class="pattern_4"><%=@biz_obj.upd_member.comment_cnt.to_s%></td>
+				</tr>
+				<tr>
+					<th align="left" class="pattern_4"><%=vt('form.item_names.comment_failure_cnt')%></th>
+					<td class="pattern_4"><%=@biz_obj.member.comment_failure_cnt.to_s%></td>
+					<td class="pattern_4"><%=@biz_obj.upd_member.comment_failure_cnt.to_s%></td>
+				</tr>
+				<tr>
+					<th align="left" class="pattern_4"><%=vt('form.item_names.comment_report_cnt')%></th>
+					<td class="pattern_4"><%=@biz_obj.member.comment_report_cnt.to_s%></td>
+					<td class="pattern_4"><%=@biz_obj.upd_member.comment_report_cnt.to_s%></td>
+				</tr>
+				<tr>
+					<th align="left" class="pattern_4"><%=vt('form.item_names.were_reported_cnt')%></th>
+					<td class="pattern_4"><%=@biz_obj.member.were_reported_cnt.to_s%></td>
+					<td class="pattern_4"><%=@biz_obj.upd_member.were_reported_cnt.to_s%></td>
+				</tr>
+				<tr>
+					<th align="left" class="pattern_4"><%=vt('form.item_names.support_report_cnt')%></th>
+					<td class="pattern_4"><%=@biz_obj.member.support_report_cnt.to_s%></td>
+					<td class="pattern_4"><%=@biz_obj.upd_member.support_report_cnt.to_s%></td>
+				</tr>
+				<% end %>
+<% i18n_cache(:suffix=>'member-update-check-5') do %>
+				</tbody>
+				</table>
+			</td>
+			<td class="pattern_2">&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="pattern_2 angle_ll"></td>
+			<td class="pattern_2"> </td>
+			<td class="pattern_2 angle_lr"></td>
+		</tr>
+		</tbody>
+		</table>
+	</td>
+</tr>
+</tbody>
+</table>
+<% end %>

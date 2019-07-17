@@ -1,0 +1,48 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+entry_1:
+  id: 1
+  system_id: 1
+  function_path: access_total/access_total
+  function_name: アクセス解析
+  lock_version: 0
+  created_at: 2011-08-09 00:00:00
+  updated_at: 2011-08-09 00:00:00
+
+entry_2:
+  id: 2
+  system_id: 1
+  function_path: request/analysis
+  function_name: リクエスト解析スケジュール一覧
+  lock_version: 0
+  created_at: 2011-08-09 00:00:00
+  updated_at: 2011-08-09 00:00:00
+
+entry_3:
+  id: 3
+  system_id: 1
+  function_path: mock/mock
+#  function_name: MockController
+  function_name: モック機能
+  lock_version: 0
+  created_at: 2011-08-09 00:00:00
+  updated_at: 2011-08-09 00:00:00
+
+entry_4:
+  id: 4
+  system_id: 1
+  function_path: test/request
+  function_name: テスト用リクエストデータ
+  lock_version: 0
+  created_at: 2012-01-03 00:00:00
+  updated_at: 2012-01-03 00:00:00
+
+entry_5:
+  id: 5
+  system_id: 1
+  function_path: update_session_filter_test/sub
+#  function_name: MockController
+  function_name: セッション更新フィルターテストデータ
+  lock_version: 0
+  created_at: 2011-08-09 00:00:00
+  updated_at: 2011-08-09 00:00:00

@@ -1,0 +1,48 @@
+###############################################################################
+# 国際化設定:: 規制リファラー
+# Copyright:: Copyright (c) 2013 仲観派
+# 作成日:2011/08/14 Nakanohito  (mailto:)
+# 更新日:
+###############################################################################
+
+ja:
+  activerecord:
+    models:
+      regulation_referrer: "規制リファラー"
+    attributes:
+      regulation_referrer:
+        id: "ID"
+        system_id: "システムID"
+        referrer: "リファラー"
+        remarks: "備考"
+        lock_version: "ロックバージョン"
+        created_at: "作成日"
+        updated_at: "更新日"
+
+en:
+  activerecord:
+    models:
+      regulation_referrer: "Regulation Referrers"
+    attributes:
+      regulation_referrer:
+        id: "ID"
+        system_id: "System ID"
+        referrer: "referrer"
+        remarks: "Remarks"
+        lock_version: "Lock Version"
+        created_at: "Date created"
+        updated_at: "Date updated"
+
+en-US:
+  activerecord:
+    models:
+      regulation_referrer: "Regulation Referrers"
+    attributes:
+      regulation_referrer:
+        id: "ID"
+        system_id: "System ID"
+        referrer: "referrer"
+        remarks: "Remarks"
+        lock_version: "Lock Version"
+        created_at: "Date created"
+        updated_at: "Date updated"

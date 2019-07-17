@@ -1,0 +1,64 @@
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_form.book.item_names.isbn_cd')%></font>
+	</th>
+	<td class="pattern_4">
+		<font size="2"><%=t('views.partials.source_form.book.item_names.isbn')%></font>
+		<%=text_field_tag('isbn', @source_obj.isbn,
+		 {:size=>20, :maxlength=>17, :style=>"ime-mode: disabled;"})%>
+		<%=svr_error_tag("sverr_isbn", @error_msg_hash[:isbn])%>
+	</td>
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_form.book.item_names.book_title')%></font>
+	</th>
+	<td class="pattern_4">
+		<%=text_field_tag('book_title', @source_obj.book_title,
+		 {:size=>40, :maxlength=>60, :style=>"ime-mode: active;"})%>
+		<%=svr_error_tag("sverr_book_title", @error_msg_hash[:book_title])%>
+	</td>
+</tr>
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_form.book.item_names.publisher')%></font>
+	</th>
+	<td class="pattern_4">
+		<%=text_field_tag('publisher', @source_obj.publisher,
+		 {:size=>30, :maxlength=>60, :style=>"ime-mode: active;"})%>
+		<%=svr_error_tag("sverr_publisher", @error_msg_hash[:publisher])%>
+	</td>
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_form.book.item_names.release_date')%></font>
+	</th>
+	<td class="pattern_4">
+		<span id="release_date_grp" name="release_date_grp" class="chkgroup">
+		<%=text_field_tag('release_date_year', @source_obj.release_date_year,
+		 {:size=>6, :maxlength=>5, :style=>"ime-mode: disabled;"})%>/
+		<%=default_select_date(@source_obj.release_date, :release_date,
+		 {:discard_year=>true, :end_year=>Time.zone.today.year})%>
+		</span>
+		<%=svr_error_tag("sverr_release_date", @error_msg_hash[:release_date])%>
+	</td>
+</tr>
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_form.book.item_names.author')%></font>
+	</th>
+	<td colspan="3" class="pattern_4">
+		<%=text_field_tag('author', @source_obj.author,
+		 {:size=>50, :maxlength=>60, :style=>"ime-mode: active;"})%>
+		<%=svr_error_tag("sverr_author", @error_msg_hash[:author])%>
+	</td>
+</tr>
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_form.book.item_names.job_title')%></font>
+	</th>
+	<td colspan="3" class="pattern_4">
+		<span id="author_job_title_grp" name="author_job_title_grp" class="chkgroup">
+		<%=job_title_select('author_job_title_id', @source_obj.job_title_id, {:include_blank=>true})%>
+		<%=text_field_tag('author_job_title', @source_obj.job_title,
+		 {:size=>50, :maxlength=>40, :style=>'ime-mode: active;'})%>
+		</span>
+		<%=svr_error_tag("sverr_author_job_title", @error_msg_hash[:author_job_title])%>
+	</td>
+</tr>

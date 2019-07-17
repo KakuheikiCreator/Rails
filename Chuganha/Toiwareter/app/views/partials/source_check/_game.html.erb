@@ -1,0 +1,38 @@
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_check.game.item_names.title')%></font>
+	</th>
+	<td colspan="3" class="pattern_4">
+		<font size="2"><%=@source_obj.title %></font>
+		<%=hidden_tag("title", @source_obj.title)%>
+	</td>
+</tr>
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_check.game.item_names.game_console')%></font>
+	</th>
+	<td colspan="3" class="pattern_4">
+		<font size="2">
+		<%= game_console_name(@source_obj.game_console_id) %>　
+		<%= @source_obj.game_console_dtl_name %>
+		</font>
+		<%=hidden_tag("game_console_id", @source_obj.game_console_id)%>
+		<%=hidden_tag("game_console_dtl_name", @source_obj.game_console_dtl_name)%>
+	</td>
+</tr>
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_check.game.item_names.sold_by')%></font>
+	</th>
+	<td class="pattern_4">
+		<font size="2"><%=@source_obj.sold_by %></font>
+		<%=hidden_tag("sold_by", @source_obj.sold_by)%>
+	</td>
+	<th width="100" align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_check.game.item_names.release_date')%></font>
+	</th>
+	<td class="pattern_4">
+		<font size="2"><%=default_date(@source_obj.release_date) %></font>
+		<%=date_hidden_tag("release_date", @source_obj.release_date)%>
+	</td>
+</tr>

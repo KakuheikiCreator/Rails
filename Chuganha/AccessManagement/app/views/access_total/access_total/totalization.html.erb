@@ -1,0 +1,491 @@
+<% i18n_cache(:suffix=>'list_1') do %>
+<%= javascript_include_tag("access_total/totalization")%>
+<table align="center" border="0" cellpadding="0" cellspacing="0">
+<thead>
+<tr height="20"><td>&nbsp;</td></tr>
+<tr>
+	<td>
+		<table border="0" cellspacing="0" cellpadding="0">
+		<tbody>
+		<tr>
+			<td width="750">
+				<%= image_tag("access_total/access_total_title.png", :size=>"750x60")%>
+			</td>
+			<td align="left">
+<% end %>
+				<!-- メニューリンク -->
+				<%= render('partials/menu_link')%>
+<% i18n_cache(:suffix=>'list_2') do %>
+			</td>
+		</tr>
+		</tbody>
+		</table>
+	</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>
+		<table border="1" cellspacing="0" cellpadding="0" class="form_01">
+		<thead>
+		<tr>
+			<th align="center" class="cell_03">
+				<font size="3" color="#ffffff"><%=vt('item_names.disaggregate_results')%></font>
+			</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td align="center" valign="middle">
+<% end %>
+				<% unless @graph_data.empty? then %>
+				<canvas id="results_graphs"></canvas>
+				<%=@helper.graph_data_tag(@graph_data)%>
+				<% else %>
+				<font size="5"><%=vt('sentences.no_target_data')%></font>
+				<% end %>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<table border="1" cellspacing="0" cellpadding="1">
+				<thead>
+				<tr>
+					<th align="center" colspan="6" class="cell_03">
+						<font size="3" color="#ffffff"><%=vt('item_names.line_type')%></font>
+					</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<th width="28" align="center" class="cell_01">&nbsp;</th>
+					<th width="238" align="center" class="cell_01">
+						<font size="3"><%=code_label(:LINE_FIELDS, @biz_obj.item_1)%></font>
+					</th>
+					<th width="238" align="center" class="cell_01">
+						<font size="3"><%=code_label(:LINE_FIELDS, @biz_obj.item_2)%></font>
+					</th>
+					<th width="238" align="center" class="cell_01">
+						<font size="3"><%=code_label(:LINE_FIELDS, @biz_obj.item_3)%></font>
+					</th>
+					<th width="238" align="center" class="cell_01">
+						<font size="3"><%=code_label(:LINE_FIELDS, @biz_obj.item_4)%></font>
+					</th>
+					<th width="237" align="center" class="cell_01">
+						<font size="3"><%=code_label(:LINE_FIELDS, @biz_obj.item_5)%></font>
+					</th>
+				</tr>
+				<% @biz_obj.item_values.each_with_index do |values, idx| %>
+				<tr>
+					<th align="center" id="legend_<%=idx%>" name="legend_<%=idx%>">
+						<font size="3"><%=values[0]%></font>
+					</th>
+					<td>
+						<font size="3"><%=values[1]%></font>
+					</td>
+					<td>
+						<font size="3"><%=values[2]%></font>
+					</td>
+					<td>
+						<font size="3"><%=values[3]%></font>
+					</td>
+					<td>
+						<font size="3"><%=values[4]%></font>
+					</td>
+					<td>
+						<font size="3"><%=values[5]%></font>
+					</td>
+				</tr>
+				<% end %>
+				</tbody>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<table border="1" cellspacing="0" cellpadding="1">
+				<thead>
+				<tr>
+					<th align="center" colspan="14" class="cell_03">
+						<font size="3" color="#ffffff"><%=vt('item_names.counting_unit')%></font>
+					</th>
+				</tr>
+				</thead>
+				<tbody>
+				<% (@date_list.size / 7 + 1).times do |idx|%>
+				<tr>
+					<th width="28" align="center" class="cell_01">
+						<font size="2"><%=(idx*7+1).to_s%></font>
+					</th>
+					<td width="141" align="center">
+						<font size="2"><%=@date_list[idx*7]%></font>
+					</td>
+					<th width="28" align="center" class="cell_01">
+						<font size="2"><%=(idx*7+2).to_s%></font>
+					</th>
+					<td width="141" align="center">
+						<font size="2"><%=@date_list[idx*7+1]%></font>
+					</td>
+					<th width="28" align="center" class="cell_01">
+						<font size="2"><%=(idx*7+3).to_s%></font>
+					</th>
+					<td width="141" align="center">
+						<font size="2"><%=@date_list[idx*7+2]%></font>
+					</td>
+					<th width="28" align="center" class="cell_01">
+						<font size="2"><%=(idx*7+4).to_s%></font>
+					</th>
+					<td width="141" align="center">
+						<font size="2"><%=@date_list[idx*7+3]%></font>
+					</td>
+					<th width="28" align="center" class="cell_01">
+						<font size="2"><%=(idx*7+5).to_s%></font>
+					</th>
+					<td width="141" align="center">
+						<font size="2"><%=@date_list[idx*7+4]%></font>
+					</td>
+					<th width="28" align="center" class="cell_01">
+						<font size="2"><%=(idx*7+6).to_s%></font>
+					</th>
+					<td width="141" align="center">
+						<font size="2"><%=@date_list[idx*7+5]%></font>
+					</td>
+					<th width="28" align="center" class="cell_01">
+						<font size="2"><%=(idx*7+7).to_s%></font>
+					</th>
+					<td width="141" align="center">
+						<font size="2"><%=@date_list[idx*7+6]%></font>
+					</td>
+				</tr>
+				<% end %>
+				</tbody>
+				</table>
+			</td>
+		</tr>
+		</tbody>
+		</table>
+	</td>
+</tr>
+<tr>
+	<td>&nbsp;</td>
+</tr>
+<tr>
+	<td>
+		<%= form_tag_with_params({:controller=>'access_total/access_total', :action=>'totalization'},
+								 {:id=>"input_form", :class=>"input_form"}, :TRANS_PTN_NOW) do %>
+		<table border="1" cellspacing="0" cellpadding="0" class="form_01">
+		<thead>
+		<tr>
+			<th align="center" class="cell_02">
+				<font size="3"><%=vt('item_names.aggregate_conditions')%></font>
+			</th>
+		</tr>
+		</thead>
+		<tfoot>
+		<tr>
+			<td height="60" align="center" class="cell_02">
+				<input class="medium_button" type="submit" value="<%=vt('item_names.aggregate')%>" />
+			</td>
+		</tr>
+		</tfoot>
+		<tbody>
+		<tr>
+			<td>
+				<table border="1" cellspacing="0" cellpadding="1" id="">
+				<thead>
+				<tr>
+					<th colspan="6" align="center" class="cell_02">
+						<font size="3"><%=vt('item_names.line_type')%></font>
+					</th>
+				</tr>
+				<tr>
+					<th width="210" align="center" class="cell_01">
+						<font size="2"><%=vt('item_names.item_1')%></font>
+					</th>
+					<th width="210" align="center" class="cell_01">
+						<font size="2"><%=vt('item_names.item_2')%></font>
+					</th>
+					<th width="210" align="center" class="cell_01">
+						<font size="2"><%=vt('item_names.item_3')%></font>
+					</th>
+					<th width="210" align="center" class="cell_01">
+						<font size="2"><%=vt('item_names.item_4')%></font>
+					</th>
+					<th width="210" align="center" class="cell_01">
+						<font size="2"><%=vt('item_names.item_5')%></font>
+					</th>
+					<th width="166" align="center" class="cell_01">
+						<font size="2"><%=vt('item_names.display_target')%></font>
+					</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td align="center">
+						<%=code_select_tag('item_1', :LINE_FIELDS, @biz_obj.item_1)%>
+						<%=svr_error_tag("sverr_item_1", @err_hash[:item_1])%>
+					</td>
+					<td align="center">
+						<%=code_select_tag('item_2', :LINE_FIELDS, @biz_obj.item_2, {:include_blank=>''})%>
+						<%=svr_error_tag("sverr_item_2", @err_hash[:item_2])%>
+					</td>
+					<td align="center">
+						<%=code_select_tag('item_3', :LINE_FIELDS, @biz_obj.item_3, {:include_blank=>''})%>
+						<%=svr_error_tag("sverr_item_3", @err_hash[:item_3])%>
+					</td>
+					<td align="center">
+						<%=code_select_tag('item_4', :LINE_FIELDS, @biz_obj.item_4, {:include_blank=>''})%>
+						<%=svr_error_tag("sverr_item_4", @err_hash[:item_4])%>
+					</td>
+					<td align="center">
+						<%=code_select_tag('item_5', :LINE_FIELDS, @biz_obj.item_5, {:include_blank=>''})%>
+						<%=svr_error_tag("sverr_item_5", @err_hash[:item_5])%>
+					</td>
+					<td align="center">
+						<span id="disp_cond" name="disp_cond" class="chkgroup">
+						<%=code_select_tag('disp_order', :SORT_ORDER_CLS, @biz_obj.disp_order)%>
+						<%=code_select_tag('disp_number', :DISP_NUMBER_S, @biz_obj.disp_number)%>
+						</span>
+						<%=svr_error_tag("sverr_disp_cond", @err_hash[:disp_cond])%>
+					</td>
+				</tr>
+				</tbody>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<table border="1" cellspacing="0" cellpadding="1" id="">
+				<thead>
+				<tr>
+					<th colspan="4"  align="center" class="cell_02">
+						<font size="3"><%=vt('item_names.horizontal_axis')%></font>
+					</th>
+				</tr>
+				<tr>
+					<th width="380" align="center" class="cell_01">
+						<font size="2"><%=vt('item_names.received_datetime')%></font>
+					</th>
+					<th width="160" align="center" class="cell_01">
+						<font size="2" ><%=vt('item_names.counting_unit')%></font>
+					</th>
+					<th width="160" align="center" class="cell_01">
+						<font size="2" ><%=vt('item_names.aggregation_period')%></font>
+					</th>
+					<th width="523" class="cell_01">&nbsp;</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td>
+						<font size="2">
+							<span id="received_date_from" name="received_date_from" class="chkgroup">
+								<%=default_select_datetime(@biz_obj.received_date_from, :received_date_from,
+								 {:end_year=>Date.today.year})%>～
+							</span>
+							<%=svr_error_tag("sverr_received_date_from", @err_hash[:received_date_from])%>
+						</font>
+					</td>
+					<td align="center">
+						<span id="time_unit_cond" name="time_unit_cond" class="chkgroup">
+						<input type="text" size="2" maxlength="2" id="time_unit_num" name="time_unit_num" value="<%=@biz_obj.time_unit_num%>">
+						<%=code_select_tag('time_unit', :TIME_UNIT, @biz_obj.time_unit)%>
+						</span>
+						<%=svr_error_tag("sverr_time_unit_cond", @err_hash[:time_unit_cond])%>
+					</td>
+					<td align="center">
+						<%=code_select_tag('aggregation_period', :AGGREGATION_PERIOD, @biz_obj.aggregation_period)%>
+						<%=svr_error_tag("sverr_aggregation_period", @err_hash[:aggregation_period])%>
+					</td>
+					<td>&nbsp;</td>
+				</tr>
+				</tbody>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<table border="1" cellspacing="0" cellpadding="1">
+				<thead>
+				<tr>
+					<th colspan="6"  align="center" class="cell_02">
+						<font size="3"><%=vt('item_names.extraction_conditions')%></font>
+					</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<th width="430" align="center" class="cell_01">
+						<font size="2"><%=System.human_attribute_name("system_name")%></font>
+					</th>
+					<th colspan="2" align="center" class="cell_01">
+						<font size="2"><%=Function.human_attribute_name("function_name")%></font>
+					</th>
+					<th width="182" align="center" class="cell_01">
+						<font size="2"><%=RequestAnalysisResult.human_attribute_name("function_transition_no")%></font>
+					</th>
+				</tr>
+				<tr>
+					<td >
+						<select name="system_id" id="system_id">
+							<%= system_select_options(@biz_obj.system_id)%>
+						</select>
+						<%=svr_error_tag("sverr_system_id", @err_hash[:system_id])%>
+					</td>
+					<td colspan="2">
+						<select name="function_id" id="function_id">
+							<option value="">全て</option>
+						</select>
+						<%=svr_error_tag("sverr_function_id", @err_hash[:function_id])%>
+					</td>
+					<td>
+						<span id="function_trans_no_cond" name="function_trans_no_cond" class="chkgroup">
+						<input type="text" size="6" maxlength="4" name="function_trans_no" id="function_trans_no">
+						<select name="function_trans_no_comp" id="function_trans_no_comp">
+							<%=options_from_code(:COMP_COND_CLS, @biz_obj.function_trans_no_comp)%>
+						</select>
+						</span>
+						<%=svr_error_tag("sverr_function_trans_no_cond", @err_hash[:function_trans_no_cond])%>
+					</td>
+				</tr>
+				<tr>
+					<th align="center" class="cell_01">
+						<font size="2"><%=RequestAnalysisResult.human_attribute_name("session_id")%></font>
+					</th>
+					<th width="182" align="center" class="cell_01">
+						<font size="2"><%=RequestAnalysisResult.human_attribute_name("client_id")%></font>
+					</th>
+					<th width="430" align="center" class="cell_01">
+						<font size="2"><%=Browser.human_attribute_name("browser_name")%></font>
+					</th>
+					<th align="center" class="cell_01">
+						<font size="2"><%=BrowserVersion.human_attribute_name("browser_version")%></font>
+					</th>
+				</tr>
+				<tr>
+					<td>
+						<input type="text" size="60" maxlength="256" name="session_id" id="session_id" value="<%=@biz_obj.session_id%>">
+						<%=svr_error_tag("sverr_session_id", @err_hash[:session_id])%>
+					</td>
+					<td>
+						<input type="text" size="22" maxlength="256" name="client_id" id="client_id" value="<%=@biz_obj.client_id%>">
+						<%=svr_error_tag("sverr_client_id", @err_hash[:client_id])%>
+					</td>
+					<td>
+						<select name="browser_id" id="browser_id">
+							<%=browser_select_options(@biz_obj.browser_id)%>
+						</select>
+						<%=svr_error_tag("sverr_browser_id", @err_hash[:browser_id])%>
+					</td>
+					<td>
+						<span id="browser_version_cond" name="browser_version_cond" class="chkgroup">
+						<select name="browser_version_id" id="browser_version_id">
+							<option value="">全て</option>
+						</select>
+						<select name="browser_version_id_comp" id="browser_version_id_comp">
+							<%=options_from_code(:COMP_COND_CLS, @biz_obj.browser_version_id_comp)%>
+						</select>
+						</span>
+						<%=svr_error_tag("sverr_browser_version_cond", @err_hash[:browser_version_cond])%>
+					</td>
+				</tr>
+				<tr>
+					<th align="center" class="cell_01">
+						<font size="2"><%=RequestAnalysisResult.human_attribute_name("accept_language")%></font>
+					</th>
+					<th colspan="3" align="center" class="cell_01">
+						<font size="2"><%=Domain.human_attribute_name("domain_name")%></font>
+					</th>
+				</tr>
+				<tr>
+					<td>
+						<input type="text" size="20" maxlength="255" name="accept_language" id="accept_language" value="<%=@biz_obj.accept_language%>">
+						<%=svr_error_tag("sverr_accept_language", @err_hash[:accept_language])%>
+					</td>
+					<td colspan="3">
+						<span id="domain_name_cond" name="domain_name_cond" class="chkgroup">
+						<input type="text" size="100" maxlength="255" name="domain_name" id="domain_name" value="<%=@biz_obj.domain_name%>">
+						<select name="domain_name_match" id="domain_name_match">
+							<%=options_from_code(:MATCH_COND_CLS, @biz_obj.domain_name_match)%>
+						</select>
+						</span>
+						<%=svr_error_tag("sverr_domain_name_cond", @err_hash[:domain_name_cond])%>
+					</td>
+				</tr>
+				<tr>
+					<th colspan="4" align="center" class="cell_01">
+						<font size="2"><%=RequestAnalysisResult.human_attribute_name("referrer")%></font>
+					</th>
+				</tr>
+				<tr>
+					<td colspan="4">
+						<span id="referrer_cond" name="referrer_cond" class="chkgroup">
+						<input type="text" size="180" maxlength="255" name="referrer" id="referrer" value="<%=@biz_obj.referrer%>">
+						<select name="referrer_match" id="referrer_match">
+							<%=options_from_code(:MATCH_COND_CLS, @biz_obj.referrer_match)%>
+						</select>
+						</span>
+						<%=svr_error_tag("sverr_referrer_cond", @err_hash[:referrer_cond])%>
+					</td>
+				</tr>
+				<tr>
+					<th align="center" class="cell_01">
+						<font size="2"><%=RequestAnalysisResult.human_attribute_name("proxy_host")%></font>
+					</th>
+					<th align="center" class="cell_01">
+						<font size="2"><%=RequestAnalysisResult.human_attribute_name("proxy_ip_address")%></font>
+					</th>
+					<th align="center" class="cell_01">
+						<font size="2"><%=RequestAnalysisResult.human_attribute_name("remote_host")%></font>
+					</th>
+					<th align="center" class="cell_01">
+						<font size="2"><%=RequestAnalysisResult.human_attribute_name("ip_address")%></font>
+					</th>
+				</tr>
+				<tr>
+					<td>
+						<span id="proxy_host_cond" name="proxy_host_cond" class="chkgroup">
+						<input type="text" size="50" maxlength="255" name="proxy_host" id="proxy_host" value="<%=@biz_obj.proxy_host%>">
+						<select name="proxy_host_match" id="proxy_host_match">
+							<%=options_from_code(:MATCH_COND_CLS, @biz_obj.proxy_host_match)%>
+						</select>
+						</span>
+						<%=svr_error_tag("sverr_proxy_host_cond", @err_hash[:proxy_host_cond])%>
+					</td>
+					<td>
+						<input type="text" size="20" maxlength="15" name="proxy_ip_address" id="proxy_ip_address" value="<%=@biz_obj.proxy_ip_address%>">
+						<%=svr_error_tag("sverr_proxy_ip_address", @err_hash[:proxy_ip_address])%>
+					</td>
+					<td>
+						<span id="remote_host_cond" name="remote_host_cond" class="chkgroup">
+						<input type="text" size="50" maxlength="255" name="remote_host" id="remote_host" value="<%=@biz_obj.remote_host%>">
+						<select name="remote_host_match" id="remote_host_match">
+							<%=options_from_code(:MATCH_COND_CLS, @biz_obj.remote_host_match)%>
+						</select>
+						</span>
+						<%=svr_error_tag("sverr_remote_host_cond", @err_hash[:remote_host_cond])%>
+					</td>
+					<td>
+						<input type="text" size="20" maxlength="15" name="ip_address" id="ip_address" value="<%=@biz_obj.ip_address%>">
+						<%=svr_error_tag("sverr_ip_address", @err_hash[:ip_address])%>
+					</td>
+				</tr>
+				</tbody>
+				</table>
+			</td>
+		</tr>
+		</tbody>
+		</table>
+		<% end %>
+<% i18n_cache(:suffix=>'list_6') do %>
+	</td>
+</tr>
+<tr><td class="cell_01">&nbsp;</td></tr>
+</tbody>
+<tfoot>
+<tr>
+	<td align="right" class="cell_01"><%=copyright_notation%></td>
+</tr>
+</tfoot>
+</table>
+<% end %>

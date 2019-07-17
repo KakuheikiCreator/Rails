@@ -1,0 +1,119 @@
+###############################################################################
+# 国際化設定:: スケジュールリスト
+# Copyright:: Copyright (c) 2011 仲観派
+# 作成日:2012/08/02 Nakanohito  (mailto:)
+# 更新日:
+###############################################################################
+ja:
+  views:
+    schedule_list:
+      item_names:
+        menu: メニュー
+        logout: ログアウト
+        search_registration_form: 検索条件フォーム
+        system_name: システム名
+        gets_start_date: 取得開始日時
+        ordering: 検索結果並び順
+        number_to_display: 表示件数
+        schedule_list: 解析情報取得スケジュールリスト
+        summary_unit: 集計単位
+        received_date: 受信日時
+        function: 機能
+        transition_number: 機能遷移番号
+        session: セッション
+        browser: ブラウザ
+        language: 言語
+        referrer: リファラー
+        domain: ドメイン
+        proxy: プロキシ
+        host: ホスト
+        session_id: ID
+        client_id: クライアントID
+        name: 名前
+        version: バージョン
+        short_name: 名
+        ip: IP
+        select: 選
+        delete: 削
+        update: 更
+        target_data: 対象データ
+        target_id: 更新対象ID
+      sentences:
+        number_of_indication: 件表示する
+        duplicate_data: 重複データが存在します。
+
+en:
+  views:
+    schedule_list:
+      item_names:
+        menu: Menu
+        logout: Logout
+        search_registration_form: Registration and search form
+        system_name: System name
+        gets_start_date: Start date and time acquisition
+        ordering: Ordering of the search results
+        number_to_display: The number to display
+        schedule_list: Schedule list of information acquisition analysis
+        summary_unit: Summary Unit
+        received_date: Received Date
+        function: Function
+        transition_number: Transition<br>Number
+        session: Session
+        browser: Browser
+        language: Language
+        referrer: Referrer
+        domain: Domain
+        proxy: Proxy
+        host: Host
+        session_id: ID
+        client_id: Client ID
+        name: Name
+        version: Version
+        short_name: Name
+        ip: IP
+        select: SEL
+        delete: DEL
+        update: UPD
+        target_data: Target　data
+        target_id: Target　id
+      sentences:
+        number_of_indication: ""
+        duplicate_data: Duplicate data exists.
+
+en-US:
+  views:
+    schedule_list:
+      item_names:
+        menu: Menu
+        logout: Logout
+        search_registration_form: Registration and search form
+        system_name: System name
+        gets_start_date: Start date and time acquisition
+        ordering: Ordering of the search results
+        number_to_display: The number to display
+        schedule_list: Schedule list of information acquisition analysis
+        summary_unit: Summary Unit
+        received_date: Received Date
+        function: Function
+        transition_number: Transition<br>Number
+        session: Session
+        browser: Browser
+        language: Language
+        referrer: Referrer
+        domain: Domain
+        proxy: Proxy
+        host: Host
+        session_id: ID
+        client_id: Client ID
+        name: Name
+        version: Version
+        short_name: Name
+        ip: IP
+        select: SEL
+        delete: DEL
+        update: UPD
+        target_data: Target　data
+        target_id: Target　id
+      sentences:
+        number_of_indication: ""
+        duplicate_data: Duplicate data exists.

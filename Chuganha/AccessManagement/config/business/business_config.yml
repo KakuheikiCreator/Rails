@@ -1,0 +1,19 @@
+# -*- coding: utf-8 -*-
+###############################################################################
+# 業務設定情報
+# 概要：業務的な設定情報を記載
+# Copyright:: Copyright (c) 2011 仲観派
+# 作成日:2012/02/05 Nakanohito
+# 更新日:
+###############################################################################
+# システム情報
+system_name: 仲観派
+subsystem_name: Access Management
+root_path: 
+# 最大リクエスト頻度（秒間）
+max_request_frequency: 10
+# 最大機能状態ハッシュサイズ
+max_function_state_hash_size: 30
+# RKVサービスURI
+rkv_uri: 'druby://localhost:12345'
+#rkv_uri: 'druby://192.168.0.100:12345'

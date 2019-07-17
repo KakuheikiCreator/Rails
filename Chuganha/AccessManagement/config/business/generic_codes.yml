@@ -1,0 +1,238 @@
+# -*- coding: utf-8 -*-
+###############################################################################
+# 業務設定情報
+# 概要：業務共通のコード情報を記載
+# Copyright:: Copyright (c) 2011 仲観派
+# 作成日:2012/03/05 Nakanohito
+# 更新日:
+###############################################################################
+ja:
+  business:
+    code_information:
+      MATCH_COND_CLS:
+        code_name: 一致条件区分
+        code_values:
+          E: と一致
+          F: で始まる
+          P: を含む
+          B: で終わる
+
+      COMP_COND_CLS: 
+        code_name: 比較条件区分
+        code_values:
+          EQ: と一致
+          NE: と不一致
+          LT: より小さい
+          GT: より大きい
+          LE: 以下
+          GE: 以上
+
+      SORT_ORDER_CLS:
+        code_name: ソート順序区分
+        code_values:
+          ASC: 昇順
+          DESC: 降順
+
+      COUNT_L:
+        code_name: 件数
+        code_values:
+          ALL: 全て
+          10: 10
+          50: 50
+          100: 100
+          300: 300
+          500: 500
+
+      DISP_NUMBER_S:
+        code_name: 表示件数
+        code_values:
+          5: ５件
+          8: ８件
+
+      TIME_UNIT:
+        code_name: 時間単位
+        code_values:
+          year: 年単位
+          month: 月単位
+          day: 日単位
+          hour: 時単位
+          minute: 分単位
+          second: 秒単位
+
+      LINE_FIELDS:
+        code_name: 集計項目
+        code_values:
+          system_id: システム名
+          function_id: 機能
+          function_transition_no: 機能遷移番号
+          session_id: セッションID
+          client_id: クライアントID
+          browser_id: ブラウザ名
+          browser_version_id: ブラウザバージョン
+          accept_language: 言語
+          referrer: リファラー
+          domain_name: ドメイン名
+          proxy_host: プロキシホスト
+          proxy_ip_address: プロキシIP
+          remote_host: クライアントホスト
+          ip_address: クライアントIP
+
+      AGGREGATION_PERIOD:
+        code_name: 集計期間
+        code_values:
+          10: １０単位
+          20: ２０単位
+
+en:
+  business:
+    code_information:
+      MATCH_COND_CLS:
+        code_name: Match conditions
+        code_values:
+          E: Match
+          F: Begins with
+          P: Including
+          B: Ending in
+
+      COMP_COND_CLS:
+        code_name: Comparison conditions
+        code_values:
+          EQ: Equal to
+          NE: Not Equal to
+          LT: Less Than
+          GT: Greater Than
+          LE: Less than or Equal to
+          GE: Greater than or Equal to
+
+      SORT_ORDER_CLS:
+        code_name: Classification sort order
+        code_values:
+          ASC: ASC
+          DESC: DESC
+
+      COUNT_L:
+        code_name: Count
+        code_values:
+          ALL: All
+          10: 10
+          50: 50
+          100: 100
+          300: 300
+          500: 500
+
+      DISP_NUMBER_S:
+        code_name: Display number 
+        code_values:
+          5: 5
+          8: 8
+
+      TIME_UNIT:
+        code_name: Time unit
+        code_values:
+          year: years
+          month: months
+          day: days
+          hour: hours
+          minute: minutes
+          second: seconds
+
+      LINE_FIELDS:
+        code_name: Summary fields
+        code_values:
+          system_id: System Name
+          function_id: Function
+          function_transition_no: Number of transition functions
+          session_id: Session ID
+          client_id: Client ID
+          browser_id: Browser name
+          browser_version_id: Browser version
+          accept_language: Accept language
+          referrer: Referrer
+          domain_name: Domain name
+          proxy_host: Proxy host
+          proxy_ip_address: Proxy IP
+          remote_host: Client host
+          ip_address: Client IP
+
+      AGGREGATION_PERIOD:
+        code_name: Aggregation period
+        code_values:
+          10: 10 units
+          20: 20 units
+
+en-US:
+  business:
+    code_information:
+      MATCH_COND_CLS:
+        code_name: Match conditions
+        code_values:
+          E: Match
+          F: Begins with
+          P: Including
+          B: Ending in
+
+      COMP_COND_CLS:
+        code_name: Comparison conditions
+        code_values:
+          EQ: Equal to
+          NE: Not Equal to
+          LT: Less Than
+          GT: Greater Than
+          LE: Less than or Equal to
+          GE: Greater than or Equal to
+
+      SORT_ORDER_CLS:
+        code_name: Classification sort order
+        code_values:
+          ASC: ASC
+          DESC: DESC
+
+      COUNT_L:
+        code_name: Count
+        code_values:
+          ALL: All
+          10: 10
+          50: 50
+          100: 100
+          300: 300
+          500: 500
+
+      DISP_NUMBER_S:
+        code_name: Display number 
+        code_values:
+          5: 5
+          8: 8
+
+      TIME_UNIT:
+        code_name: Time unit
+        code_values:
+          year: years
+          month: months
+          day: days
+          hour: hours
+          minute: minutes
+          second: seconds
+
+      LINE_FIELDS:
+        code_name: Summary fields
+        code_values:
+          system_id: System Name
+          function_id: Function
+          function_transition_no: Number of transition functions
+          session_id: Session ID
+          client_id: Client ID
+          browser_id: Browser name
+          browser_version_id: Browser version
+          accept_language: Accept language
+          referrer: Referrer
+          domain_name: Domain name
+          proxy_host: Proxy host
+          proxy_ip_address: Proxy IP
+          remote_host: Client host
+          ip_address: Client IP
+
+      AGGREGATION_PERIOD:
+        code_name: Aggregation period
+        code_values:
+          10: 10 units
+          20: 20 units

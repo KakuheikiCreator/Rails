@@ -1,0 +1,62 @@
+###############################################################################
+# 国際化設定:: 規制クッキーリスト
+# Copyright:: Copyright (c) 2011 仲観派
+# 作成日:2012/03/27 Nakanohito  (mailto:)
+# 更新日:
+###############################################################################
+ja:
+  views:
+    regulation_cookie_list:
+      item_names:
+        menu: メニュー
+        logout: ログアウト
+        search_registration_form: 検索・登録フォーム
+        system_name: システム名
+        cookie: クッキー
+        remarks: 備考
+        ordering: 検索結果並び順
+        number_to_display: 表示件数
+        regulation_cookie_list: 規制クッキーリスト
+        delete: 削
+        target_data: 対象データ
+      sentences:
+        number_of_indication: 件表示する
+        duplicate_data: 重複データが存在します。
+
+en:
+  views:
+    regulation_cookie_list:
+      item_names:
+        menu: Menu
+        logout: Logout
+        search_registration_form: Registration and search form
+        system_name: System name
+        cookie: Cookie
+        remarks: Remarks
+        ordering: Ordering of the search results
+        number_to_display: The number to display
+        regulation_cookie_list: Regulation Cookie List
+        delete: DEL
+        target_data: Target　data
+      sentences:
+        number_of_indication: ""
+        duplicate_data: Duplicate data exists.
+
+en-US:
+  views:
+    regulation_cookie_list:
+      item_names:
+        menu: Menu
+        logout: Logout
+        search_registration_form: Registration and search form
+        system_name: System name
+        cookie: Cookie
+        remarks: Remarks
+        ordering: Ordering of the search results
+        number_to_display: The number to display
+        regulation_cookie_list: Regulation Cookie List
+        delete: DEL
+        target_data: Target　data
+      sentences:
+        number_of_indication: ""
+        duplicate_data: Duplicate data exists.

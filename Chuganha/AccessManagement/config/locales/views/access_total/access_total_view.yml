@@ -1,0 +1,80 @@
+###############################################################################
+# 国際化設定:: アクセス集計
+# Copyright:: Copyright (c) 2011 仲観派
+# 作成日:2012/09/20 Nakanohito  (mailto:)
+# 更新日:
+###############################################################################
+ja:
+  views:
+    access_total:
+      item_names:
+        menu: メニュー
+        logout: ログアウト
+        disaggregate_results: 集計結果
+        aggregate_conditions: 集計条件
+        line_type: 線種別
+        item_1: 第１項目
+        item_2: 第２項目
+        item_3: 第３項目
+        item_4: 第４項目
+        item_5: 第５項目
+        display_target: 表示対象
+        horizontal_axis: 横軸
+        received_datetime: 受信日時
+        counting_unit: 集計単位
+        aggregation_period: 集計期間
+        extraction_conditions: 抽出条件
+        aggregate: 集計
+      sentences:
+        all: 全て
+        no_target_data: 対象データがありません。
+
+en:
+  views:
+    access_total:
+      item_names:
+        menu: Menu
+        logout: Logout
+        disaggregate_results: Disaggregate results
+        aggregate_conditions: Aggregate conditions
+        line_type: Line type
+        item_1: Item 1
+        item_2: Item 2
+        item_3: Item 3
+        item_4: Item 4
+        item_5: Item 5
+        display_target: The display target
+        horizontal_axis: The horizontal axis
+        received_datetime: Received Date
+        counting_unit: Counting unit
+        aggregation_period: Aggregation period
+        extraction_conditions: Extraction　Conditions
+        aggregate: Aggregate
+      sentences:
+        all: ALL
+        no_target_data: There are no target data
+
+en-US:
+  views:
+    access_total:
+      item_names:
+        menu: Menu
+        logout: Logout
+        disaggregate_results: Disaggregate results
+        aggregate_conditions: Aggregate conditions
+        line_type: Line type
+        item_1: Item 1
+        item_2: Item 2
+        item_3: Item 3
+        item_4: Item 4
+        item_5: Item 5
+        display_target: The display target
+        horizontal_axis: The horizontal axis
+        received_datetime: Received Date
+        counting_unit: Counting unit
+        aggregation_period: Aggregation period
+        extraction_conditions: Extraction　Conditions
+        aggregate: Aggregate
+      sentences:
+        all: ALL
+        no_target_data: There are no target data

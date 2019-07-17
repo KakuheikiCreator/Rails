@@ -1,0 +1,28 @@
+# -*- coding: utf-8 -*-
+###############################################################################
+# 処理依頼先リスト
+# 概要：処理依頼先のノードリスト設定
+# Copyright:: Copyright (c) 2011 仲観派
+# 作成日:2012/06/12 Nakanohito
+# 更新日:
+###############################################################################
+
+TestProc:
+  - masamune_svr
+
+TestProc2:
+  - masamune_svr
+  - dummy_svr_data
+
+DUN001:
+  - masamune_svr
+
+DUN002:
+  - masamune_svr
+
+DUN003:
+  - masamune_svr
+
+DUN004:
+  - masamune_svr
+

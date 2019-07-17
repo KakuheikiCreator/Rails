@@ -1,0 +1,315 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="robots" content="index,follow">
+<link rel="shortcut icon" type="image/png" href="image/favicon.png"> 
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<title>OpenID 利用同意</title>
+</head>
+<body leftmargin="0" topmargin="0">
+<a name="TOP">&nbsp;</a>
+<table width="750" align="center" border="0" cellpadding="0" cellspacing="0">
+<thead>
+<tr>
+	<td align="center" bgcolor="white">
+		<img src="image/trust_confirmed_the_rp_title.png" width="750" height="60" alt="page_title">
+	</td>
+</tr>
+</thead>
+<tfoot>
+<tr>
+	<td>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+		<tbody>
+		<tr>
+			<td align="right" class="cell_02">
+				<font color="#ffffff" size="2"><strong>Copyright (C) 2011 仲観派 All Rights Reserved.</strong></font>
+			</td>
+		</tr>
+		</tbody>
+		</table>
+	</td>
+</tr>
+</tfoot>
+<tbody>
+<tr>
+	<td>
+		<table width="750" border="0" cellspacing="0" cellpadding="0" class="base_01">
+		<tbody>
+		<tr height="10"><td colspan="2">&nbsp;</td></tr>
+		<tr>
+			<td align="left" valign="top" width="200">
+				<table border="0" cellspacing="0" cellpadding="0">
+				<tbody>
+				<tr>
+					<td width="190" height="50" align="center" background="image/button_02.png">
+						<div class="vertical_middle">
+						<a href="#TOP" class="cell_link">
+							<font size="3" color="blue"><strong>トップページ</strong></font>
+						</a>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td height="50" align="center" background="image/button_02.png">
+						<div class="vertical_middle">
+						<a href="#TOP" class="cell_link">
+							<font size="3" color="blue"><strong>ログアウト</strong></font>
+						</a>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td height="50" align="center" background="image/button_02.png">
+						<div class="vertical_middle">
+						<a href="#TOP" class="cell_link">
+							<font size="3" color="blue"><strong>会員検索</strong></font>
+						</a>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td height="50" align="center" background="image/button_02.png">
+						<div class="vertical_middle">
+						<a href="#TOP" class="cell_link">
+							<font size="3" color="blue"><strong>メッセージ送信</strong></font>
+						</a>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td height="50" align="center" background="image/button_02.png">
+						<div class="vertical_middle">
+						<a href="#TOP" class="cell_link">
+							<font size="3" color="blue"><strong>ご利用上の注意</strong></font>
+						</a>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td height="50" align="center" background="image/button_02.png">
+						<div class="vertical_middle">
+						<a href="#TOP" class="cell_link">
+							<font size="3" color="blue"><strong>会員規約</strong></font>
+						</a>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td height="50" align="center" background="image/button_02.png">
+						<div class="vertical_middle">
+						<a href="privacy_policy.html" class="cell_link">
+							<font size="3" color="blue"><strong>個人情報保護方針</strong></font>
+						</a>
+						</div>
+					</td>
+				</tr>
+				</tbody>
+				</table>			</td>
+			<td width="550" valign="top">
+				<table width="550" border="0" cellspacing="0" cellpadding="0">
+				<tbody>
+				<tr>
+					<td align="center">
+						<table border="1" cellspacing="0" cellpadding="0" class="form_01">
+						<tbody>
+						<tr height="30" align="center" valign="middle">
+							<th valign="middle" class="cell_03">
+								<font size="3">OpenID 利用同意</font>
+							</th>
+						</tr>
+						<tr>
+							<td>
+								<table border="0" cellpadding="0" cellspacing="0">
+								<tbody>
+								<tr>
+									<td width="6">&nbsp;</td>
+									<td >
+										<font size="2">
+										以下の外部サービスからユーザー認証のリクエストを受けています。<br>
+										注意事項と外部サービスに提供する情報をご確認いただき<br>
+										ボタンにて同意の判断をしてください。
+										</font>
+									</td>
+								</tr>
+								</tbody>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<table border="1" cellpadding="2" cellspacing="0">
+								<tbody>
+								<tr>
+									<th colspan="2" class="cell_03">
+										<font size="3">&nbsp;外部サービスからの認証依頼</font>
+									</th>
+								</tr>
+								<tr>
+									<th width="160" align="left" class="cell_04">
+										<font size="3">&nbsp;認証依頼サービス</font>
+									</th>
+									<td width="350" align="left">
+										<font size="2">&nbsp;http://2manji.jp/</font>
+									</td>
+								</tr>
+								<tr>
+									<th align="left" class="cell_04">
+										<font size="3">&nbsp;対象OpenID</font>
+									</th>
+									<td align="left">
+										<font size="2">&nbsp;https://id.mixi.jp/25230312</font>
+									</td>
+								</tr>
+								<tr>
+									<th colspan="2" class="cell_03">
+										<font size="3">&nbsp;外部サービスへの提供情報</font>
+									</th>
+								</tr>
+								<tr>
+									<th align="left" class="cell_04">
+										<font size="3">&nbsp;ニックネーム</font>
+									</th>
+									<td align="left">
+										<font size="2">&nbsp;ポヨンポヨン</font>
+									</td>
+								</tr>
+								<tr>
+									<th align="left" class="cell_04">
+										<font size="3">&nbsp;メールアドレス</font>
+									</th>
+									<td align="left">
+										<font size="2">&nbsp;nakanaka@poyopoyo.jp</font>
+									</td>
+								</tr>
+								</tbody>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<table border="0" cellpadding="0" cellspacing="0">
+								<tbody>
+								<tr>
+									<td width="6">&nbsp;</td>
+									<td >
+										<font size="2">
+										以下は、当サービス（「仲観派」のこと、以下「当サ―ビス」と言う。）の<br>
+										運営者（「仲観派」の運営者のこと、以下「当運営者」と言う。）が<br>
+										外部の第三者が提供しているサービスから、会員のOpenID認証を依頼された際の<br>
+										確認事項ですので、ご確認頂いた上で同意について判断をして下さい。
+										<p>
+										１．仲観派 OpenIDとは、仲観派のアカウント情報によって<br>
+										　　外部のユーザー認証が必要とされるOpenID対応サービス（以下「外部サービス」と言う。）<br>
+										　　にログイン出来るしくみです。
+										</p>
+										<p>
+										２．仲観派 OpenIDは、外部サービスから仲観派のログイン認証機能を利用して<br>
+										　　仲観派のアカウント情報を入力することで外部サービスにログインする事ができます。<br>
+										　　また、すでに仲観派にログインしている場合にはアカウント情報の入力は省略されます。
+										</p>
+										<p>
+										３．仲観派 OpenIDを使用して外部サービスにログインすると、外部サービスからの要求に従い<br>
+										　　仲観派に登録した会員情報が当該外部サービスに提供されます。<br>
+										　　登録された会員情報には、個人情報が含まれている場合が有りますので<br>
+										　　提供される情報については注意して確認をし<br>
+										　　外部サービスに提供されることに同意した上で、外部サービスにログインしてください。<br>
+										</p>
+										<p>
+										４．仲観派 OpenIDの管理及び利用は、お客様ご自身の責任において行ってください。<br>
+										　　弊社は仲観派 OpenIDの利用や、ユーザー情報の提供等から生じた損害については<br>
+										　　一切保証しませんのでご注意ください。
+										</p>
+										<p>
+										５．仲観派のアカウント情報の利用に関しては、当運営者の定めた仲観派の会員規約及び<br>
+										　　その他の規約が適用されます。<br>
+										　　また、仲観派の退会・強制退会などによって、仲観派 OpenIDの利用及び<br>
+										　　外部サイトへのログインもできなくなります。
+										</p>
+										<p>
+										６．外部サービスで入力されたは情報は、当然ながら当運営者の管理対象ではありません。<br>
+										　　また、外部サービスで仲観派のアカウント情報を入力された場合には<br>
+										　　仲観派で管理しているユーザー情報等を当該外部サービスが取得する可能性が<br>
+										　　有るので、ご注意ください。
+										</p>
+										<p>
+										７．当運営者と外部サービスの間には、OpenIDに関して提携関係は一切ありません。<br>
+										　　外部サービスを利用する上での規約や注意事項等は、当該外部サービスの<br>
+										　　利用規約等をご覧ください。<br>
+										　　外部サービスにおいて収集された個人情報などについては<br>
+										　　外部サービスが責任を負っており、当運営者は一切の責任を負っていませんので<br>
+										　　ご注意ください。<br>
+										　　外部サービスに関するお問い合わせは、直接当該外部サービス宛てに行ってください。
+										</p>
+										<p>
+										８．外部サービスが仲観派の会員規約等の規約に照らして、不適切な内容を含む<br>
+										　　サービスである　または、ユーザーの情報やセキュリティを守るうえで<br>
+										　　問題があるサービスであると当運営者が判断した場合<br>
+										　　当運営者は当該外部サービスに仲観派 OpenIDで<br>
+										　　ログイン出来ないようにする事があります。<br>
+										　　ただし、当運営者はこのような外部サービス全てへのログインを防止する<br>
+										　　責任は負いません。<br>
+										　　また、仲観派 OpenIDでログインできるすべての外部サービスの安全性は<br>
+										　　当運営者が保証するものではありませんのでご注意ください。
+										</p>
+										</font>
+									</td>
+								</tr>
+								</tbody>
+								</table>
+							</td>
+						</tr>
+						</tbody>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>
+						<table width="550" border="0" cellspacing="0" cellpadding="0">
+						<tbody>
+						<tr height="30">
+							<td width="100">&nbsp;</td>
+							<td width="140" align="center" background="image/button_06.png">
+								<div class="vertical_middle">
+								<a href="#TOP" class="cell_link">
+									<font size="2" color="black"><strong>同意する</strong></font>
+								</a>
+								</div>
+							</td>
+							<td width="70">&nbsp;</td>
+							<td width="140" align="center" background="image/button_06.png">
+								<div class="vertical_middle">
+								<a href="#TOP" class="cell_link">
+									<font size="2" color="black"><strong>同意しない</strong></font>
+								</a>
+								</div>
+							</td>
+							<td width="100">&nbsp;</td>
+						</tr>
+						</tbody>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+				</tbody>
+				</table>
+			</td>
+		</tr>
+		</tbody>
+		</table>
+	</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

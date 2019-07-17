@@ -1,0 +1,62 @@
+###############################################################################
+# 国際化設定:: ログイン
+# Copyright:: Copyright (c) 2013 仲観派
+# 作成日:2012/11/14 Nakanohito  (mailto:)
+# 更新日:
+###############################################################################
+ja:
+  views:
+    open_id:
+      rp:
+        index:
+          item_names:
+            login: ログイン
+            open_id: OpenID
+          sentences:
+            caption_1: あなたの「興味」を引用しよう
+            caption_2: Toiwareter は初めて?
+            caption_3: 早速、ログインしよう!
+            caption_4: 有名人や専門家、様々な分野の偉い人の最新情報や世紀の大発言をお届けします!
+            caption_5: Twitter じゃないよ！
+            err_msg_1: OpenIDプロバイダが見つかりません
+            err_msg_2: OpenID認証エラー
+            err_msg_3: OpenID認証キャンセル
+            err_msg_4: 有効なOpenIDプロバイダではありません
+
+en:
+  views:
+    open_id:
+      rp:
+        index:
+          item_names:
+            login: Login
+            open_id: OpenID
+          sentences:
+            caption_1: Let's quote the "interest" of your
+            caption_2: Toiwareter the first time?
+            caption_3: Immediately, try to login!
+            caption_4: I send a celebrity and an expert, the latest information of the great person of various fields and the great remark of the century!
+            caption_5: It's not Twitter!
+            err_msg_1: OpenID provider is not found
+            err_msg_2: OpenID authentication error
+            err_msg_3: OpenID authentication canceled
+            err_msg_4: OpenID provider is invalid
+
+en-US:
+  views:
+    open_id:
+      rp:
+        index:
+          item_names:
+            login: Login
+            open_id: OpenID
+          sentences:
+            caption_1: Let's quote the "interest" of your
+            caption_2: Toiwareter the first time?
+            caption_3: Immediately, try to login!
+            caption_4: I send a celebrity and an expert, the latest information of the great person of various fields and the great remark of the century!
+            caption_5: It's not Twitter!
+            err_msg_1: OpenID provider is not found
+            err_msg_2: OpenID authentication error
+            err_msg_3: OpenID authentication canceled
+            err_msg_4: OpenID provider is invalid

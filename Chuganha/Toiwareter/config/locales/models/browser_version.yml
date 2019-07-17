@@ -1,0 +1,45 @@
+###############################################################################
+# 国際化設定:: ブラウザバージョン
+# Copyright:: Copyright (c) 2013 仲観派
+# 作成日:2011/08/14 Nakanohito  (mailto:)
+# 更新日:
+###############################################################################
+
+ja:
+  activerecord:
+    models:
+      browser_version: "ブラウザバージョン"
+    attributes:
+      browser_version:
+        id: "ID"
+        browser_id: "ブラウザID"
+        browser_version: "ブラウザバージョン"
+        lock_version: "ロックバージョン"
+        created_at: "作成日"
+        updated_at: "更新日"
+
+en:
+  activerecord:
+    models:
+      browser_version: "Browser Version"
+    attributes:
+      browser_version:
+        id: "ID"
+        browser_id: "Browser ID"
+        browser_version: "Browser Version"
+        lock_version: "Lock Version"
+        created_at: "Date created"
+        updated_at: "Date updated"
+
+en-US:
+  activerecord:
+    models:
+      browser_version: "Browser Version"
+    attributes:
+      browser_version:
+        id: "ID"
+        browser_id: "Browser ID"
+        browser_version: "Browser Version"
+        lock_version: "Lock Version"
+        created_at: "Date created"
+        updated_at: "Date updated"

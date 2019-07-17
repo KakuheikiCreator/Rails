@@ -1,0 +1,17 @@
+# -*- coding: utf-8 -*-
+###############################################################################
+# アカウント情報
+# 概要：ユーザーのアカウント情報を記述
+# Copyright:: Copyright (c) 2011 仲観派
+# 作成日:2012/02/03 Nakanohito
+# 更新日:
+###############################################################################
+
+a:
+  password: PiPoFgA5WUoziU9lZOGxNIu9egCI1CxKy3PurtWcAJ0=
+
+test_user:
+  password: ivM6ng+nPYn0Q4Qm3S6mrl/Zd9S0VxjbDfugpSLqM4Y=
+
+admin:
+  password: 1cy6TLLeQHi6jt6OX72MXzyVzU3v4k6tK3Tm+lgOFhU=

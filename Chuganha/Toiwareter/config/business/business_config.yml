@@ -1,0 +1,24 @@
+# -*- coding: utf-8 -*-
+###############################################################################
+# 業務設定情報
+# 概要：業務的な設定情報を記載
+# Copyright:: Copyright (c) 2013 仲観派
+# 作成日:2012/11/14 Nakanohito
+# 更新日:
+###############################################################################
+# システム情報
+system_name: 仲観派
+subsystem_name: Toiwareter
+root_path: 
+# 最大リクエスト頻度（秒間）
+max_request_frequency: 10
+# 最大機能状態ハッシュサイズ
+max_function_state_hash_size: 30
+# 最大キャッシュサイズ（会員）
+max_member_cache_size: 10000
+# 最大コメント件数
+max_comments_size: 50
+# 最大検索結果件数（引用）
+max_quote_search_results_size: 50
+# 最大検索結果件数（コメント）
+max_comment_search_results_size: 50

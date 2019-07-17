@@ -1,0 +1,2 @@
+module AccessTotal::AccessTotalHelper
+end

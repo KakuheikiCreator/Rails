@@ -1,0 +1,52 @@
+<tr id="dynamic_input_fields">
+	<td class="cell_03"><font size="2">&nbsp;<strong>投稿者（必須）</strong></font></td>
+	<td><input type="text" size="30" maxlength="30" name="speakers"></td>
+</tr>
+<tr id="dynamic_input_fields">
+	<td class="cell_03"><font size="2">&nbsp;<strong>投稿者肩書き</strong></font></td>
+	<td>
+		<select name="speakers_titile_id" id="speakers_titile_id">
+			<option value="">分類選択</option>
+			<option value="00">芸能人</option>
+			<option value="01">スポーツ選手</option>
+			<option value="02">評論家</option>
+			<option value="03">報道関係者</option>
+			<option value="04">その他文化人</option>
+			<option value="05">芸術家</option>
+			<option value="06">写真家</option>
+			<option value="07">作家</option>
+			<option value="08">漫画家</option>
+			<option value="09">映画監督</option>
+			<option value="10">その他創作業</option>
+			<option value="11">宗教家</option>
+			<option value="12">思想家・社会運動家</option>
+			<option value="13">実業家</option>
+			<option value="14">学者（人文科学）</option>
+			<option value="15">学者（社会科学）</option>
+			<option value="16">学者（自然科学）</option>
+			<option value="17">学者（応用科学）</option>
+			<option value="18">学者（総合科学）</option>
+			<option value="19">政治家・官僚</option>
+			<option value="20">軍人・自衛官</option>
+			<option value="21">法曹</option>
+			<option value="22">その他</option>
+		</select>
+		&nbsp;<input type="text" size="30" maxlength="30" name="speakers_titile">
+	</td>
+</tr>
+<tr id="dynamic_input_fields">
+	<td class="cell_03"><font size="2">&nbsp;<strong>投稿日時（必須）</strong></font></td>
+	<td>
+		<font size="2">
+		<input type="text" size="4" maxlength="4" name="year">年
+		<input type="text" size="2" maxlength="2" name="month">月
+		<input type="text" size="2" maxlength="2" name="day">日&nbsp;
+		<input type="text" size="2" maxlength="2" name="hour">時
+		<input type="text" size="2" maxlength="2" name="minute">分
+		</font>
+	</td>
+</tr>
+<tr id="dynamic_input_fields">
+	<td class="cell_03"><font size="2">&nbsp;<strong>引用元URL（必須）</strong></font></td>
+	<td><input type="text" size="80" maxlength="255" name="url_yuan_quote"></td>
+</tr>

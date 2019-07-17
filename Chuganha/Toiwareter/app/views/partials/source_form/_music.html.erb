@@ -1,0 +1,46 @@
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_form.music.item_names.music_name')%></font>
+	</th>
+	<td colspan="3" class="pattern_4">
+		<%=text_field_tag('music_name', @source_obj.music_name,
+		 {:size=>60, :maxlength=>60, :style=>"ime-mode: active;"})%>
+		<%=svr_error_tag("sverr_music_name", @error_msg_hash[:music_name])%>
+	</td>
+</tr>
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_form.music.item_names.lyricist')%></font>
+	</th>
+	<td class="pattern_4">
+		<%=text_field_tag('lyricist', @source_obj.lyricist,
+		 {:size=>40, :maxlength=>60, :style=>"ime-mode: active;"})%>
+		<%=svr_error_tag("sverr_lyricist", @error_msg_hash[:lyricist])%>
+	</td>
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_form.music.item_names.composer')%></font>
+	</th>
+	<td class="pattern_4">
+		<%=text_field_tag('composer', @source_obj.composer,
+		 {:size=>40, :maxlength=>60, :style=>"ime-mode: active;"})%>
+		<%=svr_error_tag("sverr_composer", @error_msg_hash[:composer])%>
+	</td>
+</tr>
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_form.music.item_names.jasrac_code')%></font>
+	</th>
+	<td class="pattern_4">
+		<%=text_field_tag('jasrac_code', @source_obj.jasrac_code,
+		 {:size=>10, :maxlength=>10, :style=>"ime-mode: disabled;"})%>
+		<%=svr_error_tag("sverr_jasrac_code", @error_msg_hash[:jasrac_code])%>
+	</td>
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_form.music.item_names.iswc')%></font>
+	</th>
+	<td class="pattern_4">
+		<%=text_field_tag('iswc', @source_obj.iswc,
+		 {:size=>13, :maxlength=>13, :style=>"ime-mode: disabled;"})%>
+		<%=svr_error_tag("sverr_iswc", @error_msg_hash[:iswc])%>
+	</td>
+</tr>

@@ -1,0 +1,56 @@
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_check.blog.item_names.blog_name')%></font>
+	</th>
+	<td colspan="3" class="pattern_4">
+		<font size="2"><%=@source_obj.blog_name %></font>
+		<%=hidden_tag("blog_name", @source_obj.blog_name)%>
+	</td>
+</tr>
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_check.blog.item_names.posted_date')%></font>
+	</th>
+	<td colspan="3" class="pattern_4">
+		<font size="2"><%=default_time(@source_obj.posted_date) %></font>
+		<%=time_hidden_tag("posted_date", @source_obj.posted_date)%>
+	</td>
+</tr>
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_check.blog.item_names.article_title')%></font>
+	</th>
+	<td class="pattern_4">
+		<font size="2"><%=@source_obj.article_title %></font>
+		<%=hidden_tag("article_title", @source_obj.article_title)%>
+	</td>
+	<th width="80" align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_check.blog.item_names.posted_by')%></font>
+	</th>
+	<td class="pattern_4">
+		<font size="2"><%=@source_obj.posted_by %></font>
+		<%=hidden_tag("posted_by", @source_obj.posted_by)%>
+	</td>
+</tr>
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_check.blog.item_names.job_title')%></font>
+	</th>
+	<td colspan="3" class="pattern_4">
+		<font size="2">
+		<%=job_title_name(@source_obj.job_title_id) %>　
+		<%=@source_obj.job_title.to_s %>
+		</font>
+		<%=hidden_tag("contributor_job_title_id", @source_obj.job_title_id)%>
+		<%=hidden_tag("contributor_job_title", @source_obj.job_title)%>
+	</td>
+</tr>
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_check.blog.item_names.quoted_source_url')%></font>
+	</th>
+	<td colspan="3" class="pattern_4">
+		<font size="2"><%=@source_obj.quoted_source_url %></font>
+		<%=hidden_tag("quoted_source_url", @source_obj.quoted_source_url)%>
+	</td>
+</tr>

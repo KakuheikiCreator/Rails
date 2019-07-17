@@ -1,0 +1,54 @@
+<tr id="dynamic_input_fields">
+	<td class="cell_03"><font size="2">&nbsp;<strong>作品名（必須）</strong></font></td>
+	<td><input type="text" size="40" maxlength="40" name="title"></td>
+</tr>
+<tr id="dynamic_input_fields">
+	<td class="cell_03"><font size="2">&nbsp;<strong>プラットフォーム</strong></font></td>
+	<td>
+		<script type="text/javascript">
+		<!--
+			$("#game_platform_id").live('change',gamePlatformSelected);
+
+			function gamePlatformSelected(){
+				switch ($("#game_platform_id").val()) {
+					case '09':
+						$("#game_platform_name").attr('disabled','');
+						break;
+					default:
+						$("#game_platform_name").attr('disabled','disabled');
+						break;
+				}
+			}
+		//-->
+		</script>
+		<font size="2">
+		<select name="game_platform_id" id="game_platform_id">
+			<option value="00" selected>選択</option>
+			<option value="01">PS3</option>
+			<option value="02">PS2</option>
+			<option value="03">PSP</option>
+			<option value="04">Wii</option>
+			<option value="05">ニンテンドー3DS</option>
+			<option value="06">ニンテンドーDS</option>
+			<option value="07">Xbox360</option>
+			<option value="08">Xbox</option>
+			<option value="09">その他</option>
+		</select>&nbsp;名称（その他の場合）
+		<input type="text" size="30" maxlength="30" name="game_platform_name" id="game_platform_name" disabled>
+		</font>
+	</td>
+</tr>
+<tr id="dynamic_input_fields">
+	<td class="cell_03"><font size="2">&nbsp;<strong>販売元（必須）</strong></font></td>
+	<td><input type="text" size="30" maxlength="30" name="publisher"></td>
+</tr>
+<tr id="dynamic_input_fields">
+	<td class="cell_03"><font size="2">&nbsp;<strong>発売日</strong></font></td>
+	<td>
+		<font size="2">
+		<input type="text" size="4" maxlength="4" name="year">年
+		<input type="text" size="2" maxlength="2" name="month">月
+		<input type="text" size="2" maxlength="2" name="day">日
+		</font>
+	</td>
+</tr>

@@ -1,0 +1,2 @@
+module Search::DetailHelper
+end

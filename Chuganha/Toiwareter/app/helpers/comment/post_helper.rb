@@ -1,0 +1,2 @@
+module Comment::PostHelper
+end

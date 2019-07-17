@@ -1,0 +1,38 @@
+###############################################################################
+# 国際化設定:: コメント投稿（動画）
+# Copyright:: Copyright (c) 2013 仲観派
+# 作成日:2013/02/11 Nakanohito  (mailto:)
+# 更新日:
+###############################################################################
+ja:
+  views:
+    partials:
+      source_form:
+        movie:
+          item_names:
+            title: 作品名（必須）
+            production: 制作（必須）
+            sold_by: 販売元
+            release_date: 発売日
+
+en:
+  views:
+    partials:
+      source_form:
+        movie:
+          item_names:
+            title: Title(Required)
+            production: Production(Required)
+            sold_by: Sold by
+            release_date: Release date
+
+en-US:
+  views:
+    partials:
+      source_form:
+        movie:
+          item_names:
+            title: Title(Required)
+            production: Production(Required)
+            sold_by: Sold by
+            release_date: Release date

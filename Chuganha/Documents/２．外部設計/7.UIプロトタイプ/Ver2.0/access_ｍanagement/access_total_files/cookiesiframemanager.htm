@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title></title>
+    <script src="cookiesiframemanager_data/jquery_002.js" type="text/javascript"></script> 
+    <script type="text/javascript">
+            
+            (function (window) {
+
+                try {
+
+                    // load all the script from cache...
+                    var baseURL = /baseURL=([^?&#]+)/.exec(location.href)[1],
+                    scripts = ["mngrs/cookiesiframemanager.js?v=1", "../3rdparty/json2.min.js", "misc/jquery.cookies.js"],
+                    random = /random=([^&]+)/.exec(location.href)[1],
+                    namespace = /namespace=([^&]+)/.exec(location.href)[1];
+                    var helper = window.helper = {
+
+                        "loadScript": function (scriptURL) {
+                            try {
+
+                                var script, url;
+                                var prefix = scriptURL.indexOf("?") > -1 ? "&" : "?";
+                                scriptURL += random !== null ? (prefix + "random=" + random) : "";
+                                scriptURL += "&namespace=" + namespace;
+                                url = baseURL + "/" + scriptURL;
+                                script = document.createElement("script");
+                                script.setAttribute("type", "text/javascript");
+                                script.setAttribute("src", url);
+                                document.getElementsByTagName("head")[0].appendChild(script);
+
+                            }
+
+                            catch (e) {
+
+
+                            }
+
+                        }
+
+
+
+                    };
+
+                    $(scripts).each(function () {
+
+                        try {
+
+                            var scriptURL = this.toString();
+                            helper.loadScript(scriptURL);
+
+                        }
+
+                        catch (e) {
+                        }
+
+
+
+                    });
+
+                    $(document).ready(function boot() {
+                        try {
+                            if (typeof mpvCookiesFilter !== "undefined" && typeof $.cookie !== "undefined" && typeof JSON !== "undefined") {
+
+                                mpvCookiesFilter.init();
+
+                            }
+
+                            else {
+                                setTimeout(boot, 50);
+                            }
+
+                        }
+
+                        catch (e) {
+                        }
+
+                    });
+                }
+
+                catch (e) {
+                }
+
+
+            } (window));
+
+    
+    </script><script src="cookiesiframemanager_data/cookiesiframemanager.js" type="text/javascript"></script><script src="cookiesiframemanager_data/json2.js" type="text/javascript"></script><script src="cookiesiframemanager_data/jquery.js" type="text/javascript"></script>
+<script src="access_total_files/BabylonBaseMap1.js" type="text/javascript"></script></head>
+<body>
+
+
+
+</body></html>

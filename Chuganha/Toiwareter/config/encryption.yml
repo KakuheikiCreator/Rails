@@ -1,0 +1,4 @@
+encryption_algorithm: "aes-128-ecb"
+encryption_password: 
+encryption_salt_size: 8
+hash_salt_size: 8

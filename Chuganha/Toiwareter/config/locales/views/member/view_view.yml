@@ -1,0 +1,68 @@
+###############################################################################
+# 国際化設定:: 会員ビュー
+# Copyright:: Copyright (c) 2013 仲観派
+# 作成日:2013/01/23 Nakanohito  (mailto:)
+# 更新日:
+###############################################################################
+ja:
+  views:
+    member:
+      view:
+        index:
+          item_names:
+            page_title: 会員情報
+            prof_title: "%{nickname}さんのプロフィール"
+            open_id: OpenID
+            member_id: 会員ID
+            nickname: ニックネーム
+            join_date: 入会日時
+            last_login_date: 最終ログイン日時
+            quote_cnt: 引用投稿回数
+            quote_failure_cnt: 引用過失回数
+            quote_correct_cnt: 引用訂正回数
+            quote_correct_failure_cnt: 引用訂正過失回数
+            quote_delete_cnt: 引用削除回数
+            comment_cnt: コメント投稿回数
+            comment_failure_cnt: コメント過失回数
+
+en:
+  views:
+    member:
+      view:
+        index:
+          item_names:
+            page_title: Member information
+            prof_title: "%{nickname}'s profile"
+            func_title: Function List
+            member_id: Member ID
+            nickname: Nickname
+            join_date: Join Date
+            last_login_date: Last Login Date
+            quote_cnt: Quote Count
+            quote_failure_cnt: Fault quote Count
+            quote_correct_cnt: Correct quote Count
+            quote_correct_failure_cnt: Correct Fault quote Count
+            quote_delete_cnt: Quote delete Count
+            comment_cnt: Comment Count
+            comment_failure_cnt: Fault comment Count
+
+en-US:
+  views:
+    member:
+      view:
+        index:
+          item_names:
+            page_title: Member information
+            prof_title: "%{nickname}'s profile"
+            func_title: Function List
+            member_id: Member ID
+            nickname: Nickname
+            join_date: Join Date
+            last_login_date: Last Login Date
+            quote_cnt: Quote Count
+            quote_failure_cnt: Fault quote Count
+            quote_correct_cnt: Correct quote Count
+            quote_correct_failure_cnt: Correct Fault quote Count
+            quote_delete_cnt: Quote delete Count
+            comment_cnt: Comment Count
+            comment_failure_cnt: Fault comment Count

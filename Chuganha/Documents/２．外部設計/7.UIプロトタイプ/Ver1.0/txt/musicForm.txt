@@ -1,0 +1,20 @@
+<tr id="dynamic_input_fields">
+	<td class="cell_03"><font size="2">&nbsp;<strong>楽曲名（必須）</strong></font></td>
+	<td><input type="text" size="30" maxlength="30" name="title"></td>
+</tr>
+<tr id="dynamic_input_fields">
+	<td class="cell_03"><font size="2">&nbsp;<strong>作詞家</strong></font></td>
+	<td><input type="text" size="30" maxlength="30" name="lyrics"></td>
+</tr>
+<tr id="dynamic_input_fields">
+	<td class="cell_03"><font size="2">&nbsp;<strong>作曲家（必須）</strong></font></td>
+	<td><input type="text" size="30" maxlength="30" name="composition"></td>
+</tr>
+<tr id="dynamic_input_fields">
+	<td class="cell_03"><font size="2">&nbsp;<strong>JASRAC作品コード</strong></font></td>
+	<td><input type="text" size="10" maxlength="10" name="work_code"></td>
+</tr>
+<tr id="dynamic_input_fields">
+	<td class="cell_03"><font size="2">&nbsp;<strong>ISWC</strong></font></td>
+	<td><input type="text" size="13" maxlength="13" name="iswc"></td>
+</tr>

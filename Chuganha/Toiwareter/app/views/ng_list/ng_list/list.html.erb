@@ -1,0 +1,118 @@
+<% i18n_cache(:suffix=>'ng_list-ng_list-list-1') do %>
+<%= javascript_include_tag("ng_list/list")%>
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+	<td align="center">
+<% end %>
+		<!-- 機能一覧 -->
+		<%= render('partials/func_link')%>
+<% i18n_cache(:suffix=>'ng_list-ng_list-list-2') do %>
+	</td>
+</tr>
+<tr>
+	<td height="5"></td>
+</tr>
+<tr>
+	<td align="center">
+		<!-- NGワード-->
+		<table width="852" border="0" cellpadding="0" cellspacing="0">
+		<tbody>
+		<tr>
+			<td class="pattern_2 angle_ul"></td>
+			<td class="pattern_2"></td>
+			<td class="pattern_2 angle_ur"></td>
+		</tr>
+		<tr>
+			<td class="pattern_2">&nbsp;</td>
+			<td align="center" class="pattern_2">
+				<h2 class="pattern_2"><%=vt('list.item_names.list_title')%></h2>
+			</td>
+			<td class="pattern_2">&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="pattern_2">&nbsp;</td>
+			<td align="center" class="pattern_2">
+<% end %>
+				<%= form_tag_with_params({:controller=>'ng_list/ng_list', :action=>'create'},
+					{:id=>'create_form', :name=>'create_form'}, :TRANS_PTN_NOW) do %>
+				<table border="0" cellpadding="0" cellspacing="0" class="pattern_1">
+				<thead>
+				<tr>
+					<th width="352" class="pattern_4"><font size="2"><%=vt('list.item_names.ng_word')%></font></th>
+					<th width="352" class="pattern_4"><font size="2"><%=vt('list.item_names.replace_word')%></font></th>
+					<th width="62" class="pattern_4">&nbsp;</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td class="pattern_4">
+						<%=text_field_tag("ng_word", @biz_obj.ng_word, {:size=>'40', :maxlength=>'255', :class=>'text_2'}) %>
+						<%=svr_error_tag("sverr_ng_word", @error_msg_hash[:ng_word])%>
+					</td>
+					<td class="pattern_4">
+						<%=text_field_tag("replace_word", @biz_obj.replace_word, {:size=>'40', :maxlength=>'255', :class=>'text_2'}) %>
+						<%=svr_error_tag("sverr_replace_word", @error_msg_hash[:replace_word])%>
+					</td>
+					<td class="pattern_4" align="center">
+						<%=submit_tag(t('helpers.submit.create'), :class=>'button_3')%>
+					</td>
+				</tr>
+				</tbody>
+				</table>
+				<% end %>
+<% i18n_cache(:suffix=>'ng_list-ng_list-list-3') do %>
+			</td>
+			<td class="pattern_2">&nbsp;</td>
+		</tr>
+		<tr>
+			<td height="10" colspan="3" class="pattern_2"></td>
+		</tr>
+		<tr>
+			<td class="pattern_2">&nbsp;</td>
+			<td align="center" class="pattern_2">
+<% end %>
+				<%= form_tag_with_params({:controller=>'ng_list/ng_list', :action=>'delete'},
+					{:id=>'delete_form', :name=>'delete_form'}, :TRANS_PTN_NOW) do %>
+				<%=hidden_field_tag("delete_id", nil)%>
+				<% end %>
+				<table border="0" cellpadding="0" cellspacing="0" class="pattern_1" id="ng_word_table">
+				<thead>
+				<tr>
+					<th width="250" class="pattern_4"><font size="2"><%=vt('list.item_names.ng_word')%></font></th>
+					<th width="250" class="pattern_4"><font size="2"><%=vt('list.item_names.replace_word')%></font></th>
+					<th width="70" class="pattern_4"><font size="2"><%=vt('list.item_names.replace_cnt')%></font></th>
+					<th width="132" class="pattern_4"><font size="2"><%=vt('list.item_names.regist_date')%></font></th>
+					<th width="42" class="pattern_4">&nbsp;</th>
+				</tr>
+				</thead>
+				<tbody>
+				<% @biz_obj.list.each do |ent| %>
+				<tr>
+					<td class="pattern_4"><font size="2"><%=ent.ng_word.to_s%></font></td>
+					<td class="pattern_4"><font size="2"><%=ent.replace_word.to_s%></font></td>
+					<td class="pattern_4" align="right"><font size="2"><%=ent.replace_count.to_s%></font></td>
+					<td class="pattern_4"><font size="2"><%=default_time(ent.created_at)%></font></td>
+					<td class="pattern_4" align="center">
+						<%=submit_tag(vt('list.item_names.delete_btn'), {:onclick=>raw("delete_sub('" + ent.id.to_s + "');"), :class=>'button_3'})%>
+					</td>
+				</tr>
+				<% end %>
+				</tbody>
+				</table>
+<% i18n_cache(:suffix=>'ng_list-ng_list-list-4') do %>
+			</td>
+			<td class="pattern_2">&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="pattern_2 angle_ll"></td>
+			<td class="pattern_2"> </td>
+			<td class="pattern_2 angle_lr"></td>
+		</tr>
+		</tbody>
+		</table>
+	</td>
+</tr>
+</tbody>
+</table>
+<% end %>

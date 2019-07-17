@@ -1,0 +1,554 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Expires" content="Thu, 01 Dec 1994 16:00:00 GMT">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="robots" content="index,follow">
+<link rel="shortcut icon" type="image/png" href="image/favicon.png"> 
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<title>コメント通報一覧</title>
+<script type="text/javascript" src="./js/jquery-1.5.2.js"></script>
+<script type="text/javascript" src="./js/jquery.tablesorter.min.js"></script>
+<script type="text/javascript">
+<!--
+$(document).ready(init);
+
+function init(){
+	$("#report_comment_table").tablesorter();
+}
+//-->
+</script>
+</head>
+<body leftmargin="0" topmargin="0">
+<a name="TOP"></a>
+<table width="1000" border="0" align="center" cellpadding="0" cellspacing="0">
+<thead>
+<tr height="20">
+   	<td>&nbsp;</td>
+</tr>
+<tr>
+	<td class="cell_02">
+		<table width="750" border="0" cellspacing="0" cellpadding="0">
+		<tbody>
+			<tr>
+				<td bgcolor="white">
+					<img src="image/report_comment_list_title.png" width="750" height="60" alt="title">
+				</td>
+			</tr>
+		</tbody>
+		</table>
+	</td>
+</tr>
+<tr>
+	<td class="cell_02">
+		<table width="750" border="0" cellspacing="0" cellpadding="0">
+		<tbody>
+			<tr height="40">
+				<td width="150" align="center" background="image/tab_02.png">
+					<div class="vertical_middle">
+					<a href="#TOP" class="cell_link"><font size="2" color="black"><strong>ログアウト</strong></font></a>
+					</div>
+				</td>
+				<td width="150" align="center" background="image/tab_02.png">
+					<div class="vertical_middle">
+					<a href="#TOP" class="cell_link"><font size="2" color="black"><strong>ご利用方法</strong></font></a>
+					</div>
+				</td>
+				<td width="150" align="center" background="image/tab_02.png">
+					<div class="vertical_middle">
+					<a href="#TOP" class="cell_link"><font size="2" color="black"><strong>ご利用上の注意</strong></font></a>
+					</div>
+				</td>
+				<td width="150" align="center" background="image/tab_02.png">
+					<div class="vertical_middle">
+					<a href="#TOP" class="cell_link"><font size="2" color="black"><strong>会員規約</strong></font></a>
+					</div>
+				</td>
+				<td width="150" align="center" background="image/tab_02.png">
+					<div class="vertical_middle">
+					<a href="#TOP" class="cell_link"><font size="2" color="black"><strong>個人情報保護方針</strong></font></a>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+		</table>
+	</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>
+		<table border="1" cellspacing="0" cellpadding="0" class="form_02">
+		<tbody>
+		<tr>
+			<td align="center" class="cell_03">
+				<font size="3"><strong>検索条件</strong></font>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<form method="POST" action="xxx.cgi">
+				<table border="1" cellspacing="0" cellpadding="1">
+				<tbody>
+				<tr>
+					<td width="110" class="cell_03">
+						<font size="2">&nbsp;<strong>削除状態</strong></font>
+					</td>
+					<td>
+						<select name="delete_condition" id="delete_condition">
+							<option value="0">未削除</option>
+							<option value="1">論理削除済</option>
+							<option value="2">物理削除済</option>
+							<option value="3">全て</option>
+						</select>
+					</td>
+					<td width="110" class="cell_03">
+						<font size="2">&nbsp;<strong>コメントID</strong></font>
+					</td>
+					<td>
+						<input type="text" size="8" maxlength="10">
+						<select name="matching_condition" id="matching_condition">
+							<option value="0">で始まる</option>
+							<option value="1">を含む</option>
+							<option value="2">で終わる</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td class="cell_03">
+						<font size="2">&nbsp;<strong>コメント投稿者</strong></font>
+					</td>
+					<td>
+						<select name="matching_target_condition" id="matching_target_condition">
+							<option value="0">ニックネーム</option>
+							<option value="1">ID</option>
+						</select>
+						<input type="text" size="20" maxlength="40">
+						<select name="matching_condition" id="matching_condition">
+							<option value="0">で始まる</option>
+							<option value="1">を含む</option>
+							<option value="2">で終わる</option>
+						</select>
+					</td>
+					<td class="cell_03">
+						<font size="2">&nbsp;<strong>コメント投稿日時</strong></font>
+					</td>
+					<td>
+						<font size="2">
+							<input type="text" size="4" maxlength="4" name="year">年
+							<input type="text" size="1" maxlength="2" name="month">月
+							<input type="text" size="1" maxlength="2" name="day">日&nbsp;
+							<input type="text" size="1" maxlength="2" name="hour">時
+							<input type="text" size="1" maxlength="2" name="minute">分
+							<select name="matching_condition" id="matching_condition">
+								<option value="0">以前</option>
+								<option value="1">同時刻</option>
+								<option value="2">以後</option>
+							</select>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td class="cell_03">
+						<font size="2">&nbsp;<strong>通報者</strong></font>
+					</td>
+					<td>
+						<select name="matching_target_condition" id="matching_target_condition">
+							<option value="0">ニックネーム</option>
+							<option value="1">ID</option>
+						</select>
+						<input type="text" size="20" maxlength="40">
+						<select name="matching_condition" id="matching_condition">
+							<option value="0">で始まる</option>
+							<option value="1">を含む</option>
+							<option value="2">で終わる</option>
+						</select>
+					</td>
+					<td class="cell_03">
+						<font size="2">&nbsp;<strong>通報日時</strong></font>
+					</td>
+					<td>
+						<font size="2">
+							<input type="text" size="4" maxlength="4" name="year">年
+							<input type="text" size="1" maxlength="2" name="month">月
+							<input type="text" size="1" maxlength="2" name="day">日&nbsp;
+							<input type="text" size="1" maxlength="2" name="hour">時
+							<input type="text" size="1" maxlength="2" name="minute">分
+							<select name="matching_condition" id="matching_condition">
+								<option value="0">以前</option>
+								<option value="1">同時刻</option>
+								<option value="2">以後</option>
+							</select>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td class="cell_03">
+						<font size="2">&nbsp;<strong>引用投稿者</strong></font>
+					</td>
+					<td>
+						<select name="matching_target_condition" id="matching_target_condition">
+							<option value="0">ニックネーム</option>
+							<option value="1">ID</option>
+						</select>
+						<input type="text" size="20" maxlength="40">
+						<select name="matching_condition" id="matching_condition">
+							<option value="0">で始まる</option>
+							<option value="1">を含む</option>
+							<option value="2">で終わる</option>
+						</select>
+					</td>
+					<td class="cell_03">
+						<font size="2">&nbsp;<strong>引用投稿日時</strong></font>
+					</td>
+					<td>
+						<font size="2">
+							<input type="text" size="4" maxlength="4" name="year">年
+							<input type="text" size="1" maxlength="2" name="month">月
+							<input type="text" size="1" maxlength="2" name="day">日&nbsp;
+							<input type="text" size="1" maxlength="2" name="hour">時
+							<input type="text" size="1" maxlength="2" name="minute">分
+							<select name="matching_condition" id="matching_condition">
+								<option value="0">以前</option>
+								<option value="1">同時刻</option>
+								<option value="2">以後</option>
+							</select>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td class="cell_03">
+						<font size="2">&nbsp;<strong>検索結果並び順</strong></font>
+					</td>
+					<td colspan="3">
+						<select name="sort_item_01" id="sor_item_01">
+							<option value="">第１項目</option>
+							<option value="0">コメントID</option>
+							<option value="1">コメント投稿者</option>
+							<option value="2">コメント投稿日時</option>
+							<option value="3">通報者</option>
+							<option value="4">通報日時</option>
+							<option value="5">引用投稿者</option>
+							<option value="6">引用投稿日時</option>
+						</select>
+						<select name="sort_condition_01" id="sort_condition=01">
+							<option value="0">昇順</option>
+							<option value="1">降順</option>
+						</select>
+						<select name="sort_item_02" id="sor_item_02">
+							<option value="">第２項目</option>
+							<option value="0">コメントID</option>
+							<option value="1">コメント投稿者</option>
+							<option value="2">コメント投稿日時</option>
+							<option value="3">通報者</option>
+							<option value="4">通報日時</option>
+							<option value="5">引用投稿者</option>
+							<option value="6">引用投稿日時</option>
+						</select>
+						<select name="sort_condition_02" id="sort_condition=02">
+							<option value="0">昇順</option>
+							<option value="1">降順</option>
+						</select>
+						<select name="sort_item_03" id="sor_item_03">
+							<option value="">第３項目</option>
+							<option value="0">コメントID</option>
+							<option value="1">コメント投稿者</option>
+							<option value="2">コメント投稿日時</option>
+							<option value="3">通報者</option>
+							<option value="4">通報日時</option>
+							<option value="5">引用投稿者</option>
+							<option value="6">引用投稿日時</option>
+						</select>
+						<select name="sort_condition_03" id="sort_condition=03">
+							<option value="0">昇順</option>
+							<option value="1">降順</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td class="cell_03">
+						<font size="2">&nbsp;<strong>表示件数</strong></font>
+					</td>
+					<td colspan="3">
+						<select name="number_display" id="number_display">
+							<option value="10">10件</option>
+							<option value="50">50件</option>
+							<option value="100">100件</option>
+							<option value="300">300件</option>
+							<option value="500">500件</option>
+						</select>
+						<font size="2">づつ表示する</font>
+					</td>
+				</tr>
+				</tbody>
+				<tfoot>
+				<tr>
+					<td colspan="4" align="center">
+						<input type="submit" name="search" value="検索">
+					</td>
+				</tr>
+				</tfoot>
+				</table>
+				</form>
+			</td>
+		</tr>
+		</tbody>
+		</table>
+	</td>
+</tr>
+<tr>
+	<td>
+		<table width="1040" border="1" cellspacing="0" cellpadding="0" class="base_01">
+		<tbody>
+		<tr>
+			<td align="center" class="cell_05">
+				<font size="3" color="#ffffff">&nbsp;<strong>コメント通報一覧</strong></font>
+			</td>
+		</tr>
+		<tr>
+			<td valign="middle">
+				<table border="1" cellspacing="0" cellpadding="1" id="report_comment_table">
+				<thead>
+				<tr>
+					<th width="40" height="30" class="cell_01">
+						<font size="2">削除</font>
+					</th>
+					<th width="80" height="30" class="cell_01">
+						<font size="2">コメントID</font>
+					</th>
+					<th width="160" class="cell_01">
+						<font size="2">コメント投稿者</font>
+					</th>
+					<th width="120" class="cell_01">
+						<font size="2">コメント投稿日時</font>
+					</th>
+					<th width="160" class="cell_01">
+						<font size="2">通報者</font>
+					</th>
+					<th width="120" class="cell_01">
+						<font size="2">通報日時</font>
+					</th>
+					<th width="160" class="cell_01">
+						<font size="2">引用投稿者</font>
+					</th>
+					<th width="120" class="cell_01">
+						<font size="2">引用投稿日時</font>
+					</th>
+					<th width="42" class="cell_01">&nbsp;
+					</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td align="center">
+						<font size="2">未</font>
+					</td>
+					<td align="center">
+						<a href="#" target="_blank">
+						<font size="2">10000000</font>
+						</a>
+					</td>
+					<td>
+						<div title="ID:ABCDEFG"><font size="2">キチペンギン</font></div>
+					</td>
+					<td align="center">
+						<font size="2">2011/04/20&nbsp;02:50</font>
+					</td>
+					<td>
+						<div title="ID:ABCDEFG"><font size="2">異端児ペンギン様</font></div>
+					</td>
+					<td align="center">
+						<font size="2">2011/04/20&nbsp;02:50</font>
+					</td>
+					<td>
+						<div title="ID:ABCDEFG"><font size="2">キチペンギン</font></div>
+					</td>
+					<td align="center">
+						<font size="2">2011/04/20&nbsp;02:50</font>
+					</td>
+					<td align="center">
+						<a href="#TOP"><font size="2">削除</font></a>
+					</td>
+				</tr>
+				<tr>
+					<td align="center">
+						<font size="2">未</font>
+					</td>
+					<td align="center">
+						<a href="#" target="_blank">
+						<font size="2">10000001</font>
+						</a>
+					</td>
+					<td>
+						<div title="ID:ABCDEFG"><font size="2">キチペンギン</font></div>
+					</td>
+					<td align="center">
+						<font size="2">2011/04/20&nbsp;02:51</font>
+					</td>
+					<td>
+						<div title="ID:ABCDEFG"><font size="2">異端児ペンギン様</font></div>
+					</td>
+					<td align="center">
+						<font size="2">2011/04/20&nbsp;02:50</font>
+					</td>
+					<td>
+						<div title="ID:ABCDEFG"><font size="2">キチペンギン</font></div>
+					</td>
+					<td align="center">
+						<font size="2">2011/04/20&nbsp;02:50</font>
+					</td>
+					<td align="center">
+						<a href="#TOP"><font size="2">削除</font></a>
+					</td>
+				</tr>
+				<tr>
+					<td align="center">
+						<font size="2">未</font>
+					</td>
+					<td align="center">
+						<a href="#" target="_blank">
+						<font size="2">10000002</font>
+						</a>
+					</td>
+					<td>
+						<div title="ID:ABCDEFG"><font size="2">キチペンギン</font></div>
+					</td>
+					<td align="center">
+						<font size="2">2011/04/20&nbsp;02:50</font>
+					</td>
+					<td>
+						<div title="ID:ABCDEFG"><font size="2">異端児ペンギン様</font></div>
+					</td>
+					<td align="center">
+						<font size="2">2011/04/20&nbsp;02:50</font>
+					</td>
+					<td>
+						<div title="ID:ABCDEFG"><font size="2">キチペンギン</font></div>
+					</td>
+					<td align="center">
+						<font size="2">2011/04/20&nbsp;02:50</font>
+					</td>
+					<td align="center">
+						<a href="#TOP"><font size="2">削除</font></a>
+					</td>
+				</tr>
+				<tr>
+					<td align="center">
+						<font size="2">未</font>
+					</td>
+					<td align="center">
+						<a href="#" target="_blank">
+						<font size="2">10000003</font>
+						</a>
+					</td>
+					<td>
+						<div title="ID:ABCDEFG"><font size="2">キチペンギン</font></div>
+					</td>
+					<td align="center">
+						<font size="2">2011/04/20&nbsp;02:50</font>
+					</td>
+					<td>
+						<div title="ID:ABCDEFG"><font size="2">異端児ペンギン様</font></div>
+					</td>
+					<td align="center">
+						<font size="2">2011/04/20&nbsp;02:50</font>
+					</td>
+					<td>
+						<div title="ID:ABCDEFG"><font size="2">キチペンギン</font></div>
+					</td>
+					<td align="center">
+						<font size="2">2011/04/20&nbsp;02:50</font>
+					</td>
+					<td align="center">
+						<a href="#TOP"><font size="2">削除</font></a>
+					</td>
+				</tr>
+				<tr>
+					<td align="center">
+						<font size="2">未</font>
+					</td>
+					<td align="center">
+						<a href="#" target="_blank">
+						<font size="2">10000004</font>
+						</a>
+					</td>
+					<td>
+						<div title="ID:ABCDEFG"><font size="2">キチペンギン</font></div>
+					</td>
+					<td align="center">
+						<font size="2">2011/04/20&nbsp;02:50</font>
+					</td>
+					<td>
+						<div title="ID:ABCDEFG"><font size="2">異端児ペンギン様</font></div>
+					</td>
+					<td align="center">
+						<font size="2">2011/04/20&nbsp;02:50</font>
+					</td>
+					<td>
+						<div title="ID:ABCDEFG"><font size="2">キチペンギン</font></div>
+					</td>
+					<td align="center">
+						<font size="2">2011/04/20&nbsp;02:50</font>
+					</td>
+					<td align="center">
+						<a href="#TOP"><font size="2">削除</font></a>
+					</td>
+				</tr>
+				</tbody>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td align="center" class="cell_05">
+				<table border="0" cellspacing="0" cellpadding="0">
+				<tbody>
+				<tr>
+					<td width="120" align="center" valign="middle">
+						<a href="#TOP">
+						<font size="2"><strong>前頁へ</strong></font>
+						</a>
+					</td>
+					<td width="760" align="center" valign="middle">
+					</td>
+					<td width="120" align="center" valign="middle">
+						<a href="#TOP">
+						<font size="2"><strong>次頁へ</strong></font>
+						</a>
+					</td>
+				</tr>
+				</tbody>
+				</table>
+			</td>
+		</tr>
+		</tbody>
+		</table>
+	</td>
+</tr>
+<tr>
+	<td class="cell_02">&nbsp;</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+	<td>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+		<tbody>
+		<tr>
+			<td align="right" class="cell_02">
+				<font color="#ffffff" size="2"><strong>Copyright (C) 2011 引用道 All Rights Reserved.</strong></font>
+			</td>
+		</tr>
+		</tbody>
+		</table>
+	</td>
+</tr>
+</tfoot>
+</table>
+</body>
+</html>

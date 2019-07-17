@@ -1,0 +1,24 @@
+<tr id="dynamic_input_fields">
+	<td class="cell_03"><font size="2">&nbsp;<strong>サイト名（必須）</strong></font></td>
+	<td><input type="text" size="50" maxlength="60" name="site_name"></td>
+</tr>
+<tr id="dynamic_input_fields">
+	<td class="cell_03"><font size="2">&nbsp;<strong>ページ名等</strong></font></td>
+	<td><input type="text" size="50" maxlength="60" name="page_name"></td>
+</tr>
+<tr id="dynamic_input_fields">
+	<td class="cell_03"><font size="2">&nbsp;<strong>発信日時</strong></font></td>
+	<td>
+		<font size="2">
+		<input type="text" size="4" maxlength="4" name="year">年
+		<input type="text" size="2" maxlength="2" name="month">月
+		<input type="text" size="2" maxlength="2" name="day">日&nbsp;
+		<input type="text" size="2" maxlength="2" name="hour">時
+		<input type="text" size="2" maxlength="2" name="minute">分
+		</font>
+	</td>
+</tr>
+<tr id="dynamic_input_fields">
+	<td class="cell_03"><font size="2">&nbsp;<strong>引用元URL（必須）</strong></font></td>
+	<td><input type="text" size="80" maxlength="255" name="url_yuan_quote"></td>
+</tr>

@@ -1,0 +1,58 @@
+###############################################################################
+# 国際化設定:: 規制ホスト
+# Copyright:: Copyright (c) 2011 仲観派
+# 作成日:2011/08/14 Nakanohito  (mailto:)
+# 更新日:
+###############################################################################
+
+ja:
+  activerecord:
+    models:
+      regulation_host: "規制ホスト"
+    attributes:
+      regulation_host:
+        id: "ID"
+        system_id: "システムID"
+        proxy_host: "プロキシホスト"
+        proxy_ip_address: "プロキシIP"
+        remote_host: "クライアントホスト"
+        ip_address: "クライアントIP"
+        remarks: "備考"
+        lock_version: "ロックバージョン"
+        created_at: "作成日"
+        updated_at: "更新日"
+
+en:
+  activerecord:
+    models:
+      regulation_host: "Regulation Hosts"
+    attributes:
+      regulation_host:
+        id: "ID"
+        system_id: "System ID"
+        proxy_host: "Proxy Host"
+        proxy_ip_address: "Proxy IP"
+        remote_host: "Client host"
+        ip_address: "Client IP"
+        remarks: "Remarks"
+        lock_version: "Lock Version"
+        created_at: "Date created"
+        updated_at: "Date updated"
+
+en-US:
+  activerecord:
+    models:
+      regulation_host: "Regulation Hosts"
+    attributes:
+      regulation_host:
+        id: "ID"
+        system_id: "System ID"
+        system_id: "System ID"
+        proxy_host: "Proxy Host"
+        proxy_ip_address: "Proxy IP"
+        remote_host: "Client host"
+        ip_address: "Client IP"
+        remarks: "Remarks"
+        lock_version: "Lock Version"
+        created_at: "Date created"
+        updated_at: "Date updated"

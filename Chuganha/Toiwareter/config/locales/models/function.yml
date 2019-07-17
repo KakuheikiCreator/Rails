@@ -1,0 +1,45 @@
+###############################################################################
+# 国際化設定:: 機能
+# Copyright:: Copyright (c) 2013 仲観派
+# 作成日:2011/08/14 Nakanohito  (mailto:)
+# 更新日:
+###############################################################################
+
+ja:
+  activerecord:
+    models:
+      function: "機能"
+    attributes:
+      function:
+        id: "ID"
+        system_id: "システムID"
+        function_name: "機能名"
+        lock_version: "ロックバージョン"
+        created_at: "作成日"
+        updated_at: "更新日"
+
+en:
+  activerecord:
+    models:
+      function: "Function"
+    attributes:
+      function:
+        id: "ID"
+        system_id: "System ID"
+        function_name: "Function Name"
+        lock_version: "Lock Version"
+        created_at: "Date created"
+        updated_at: "Date updated"
+
+en-US:
+  activerecord:
+    models:
+      function: "Function"
+    attributes:
+      function:
+        id: "ID"
+        system_id: "System ID"
+        function_name: "Function Name"
+        lock_version: "Lock Version"
+        created_at: "Date created"
+        updated_at: "Date updated"

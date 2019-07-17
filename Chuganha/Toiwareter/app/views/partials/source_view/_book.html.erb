@@ -1,0 +1,49 @@
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_view.book.item_names.isbn_cd')%></font>
+	</th>
+	<td width="250" class="pattern_4">
+		<font size="2">
+		<%=t('views.partials.source_view.book.item_names.isbn')%> <%=@source_obj.isbn %>
+		</font>
+	</td>
+	<th width="110" align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_view.book.item_names.book_title')%></font>
+	</th>
+	<td class="pattern_4">
+		<font size="2"><%=@source_obj.book_title %></font>
+	</td>
+</tr>
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_view.book.item_names.publisher')%></font>
+	</th>
+	<td class="pattern_4">
+		<font size="2"><%=@source_obj.publisher %></font>
+	</td>
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_view.book.item_names.release_date')%></font>
+	</th>
+	<td class="pattern_4">
+		<font size="2"><%=default_date(@source_obj.release_date) %></font>
+	</td>
+</tr>
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_view.book.item_names.author')%></font>
+	</th>
+	<td colspan="3" class="pattern_4">
+		<font size="2"><%=@source_obj.author %></font>
+	</td>
+</tr>
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_view.book.item_names.job_title')%></font>
+	</th>
+	<td colspan="3" class="pattern_4">
+		<font size="2">
+		<%=job_title_name(@source_obj.job_title_id) %>　
+		<%=@source_obj.job_title %>
+		</font>
+	</td>
+</tr>

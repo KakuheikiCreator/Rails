@@ -1,0 +1,218 @@
+a.cell_link {
+	display:block;
+	width:100%;
+	height:100%;
+	text-align:center;
+	text-decoration:none;
+}
+
+body {
+	background-color:#b0c4de;
+}
+
+div.info_msg, div.valid_msg, div.warning_msg, div.error_msg {
+	font-family: sans-serif;
+	font-size: small;
+	display: block;
+	padding: 6px 36px;
+	position: relative;
+}
+
+div.info_msg {
+	color: black;
+	background: #7abef4;
+	background-image: url("../image/icon_info.png");
+	background-repeat: no-repeat;
+	background-position: 5px center;
+}
+
+div.valid_msg {
+	color: black;
+	background: #a9ff52;
+	background-image: url("../image/icon_valid.png");
+	background-repeat: no-repeat;
+	background-position: 5px center;
+}
+
+div.warning_msg {
+	color: black;
+	background: #faca3c;
+	background-image: url("../image/icon_warn.png");
+	background-repeat: no-repeat;
+	background-position: 5px center;
+}
+
+div.error_msg {
+	color: black;
+	background: #ff6040;
+	background-image: url("../image/icon_error.png");
+	background-repeat: no-repeat;
+	background-position: 5px center;
+}
+
+div.vertical_middle {
+	display:block;
+	vertical-align:middle;
+}
+
+form {
+   margin:0;
+}
+
+img {
+   margin:0;
+   vertical-align:bottom;
+}
+
+input.small_button {
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	font: normal normal bold 80%/100% 'Ludica Sans Unicode';
+	padding: 0.2em 0.5em 0.22em;
+	color: black;
+	border: 1px solid #202020;
+	background: #b0c4de;
+	background: -webkit-gradient(linear, top, bottom, from(#eeeeee), to(#b0c4de));
+	background: -moz-linear-gradient(top, #eeeeee, #b0c4de);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#b0c4de');
+}
+
+input.large_button {
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	font: normal normal bold 150% 'Ludica Sans Unicode';
+	padding: 0.5em 2em 0.55em;
+	color: black;
+	border: 1px solid #202020;
+	background: #b0c4de;
+	background: -webkit-gradient(linear, top, bottom, from(#eeeeee), to(#b0c4de));
+	background: -moz-linear-gradient(top, #eeeeee, #b0c4de);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#b0c4de');
+}
+
+input.menu_button {
+	width: 13em;
+	height: 2.7em;
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	font: normal normal bold 100% 'serif';
+	padding: 0.5em 1em 0.55em;
+	text-shadow: gray 0 1px 1px;
+	color: black;
+	border: 2px solid #b0c4de;
+	background: #eeeeee;
+	background: -webkit-gradient(linear, top, bottom, from(#ffffff), to(#cae1ff));
+	background: -moz-linear-gradient(top, #ffffff, #cae1ff);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#cae1ff');
+}
+
+input.tab_button {
+	width: 150px;
+	height: 60px;
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	font: normal normal bold 100% 'serif';
+	text-shadow: gray 0 1px 1px;
+	color: black;
+	border: 1px solid #6699cc;
+	background: #eeeeee;
+	background: -webkit-gradient(linear, top, bottom, from(#ffffff), to(#6699cc));
+	background: -moz-linear-gradient(top, #ffffff, #6699cc);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#6699cc');
+}
+
+table.base_01 {
+	background-color:#ffffff;
+}
+
+table.form_01 {
+	background-color:#ffffff;
+	border-top-color:#dcdcdc;
+	border-right-color:#dcdcdc;
+	border-bottom-color:#dcdcdc;
+	border-left-color:#dcdcdc;
+}
+
+table.form_02 {
+	background-color:#ffffff;
+	border-top-color:#dcdcdc;
+	border-right-color:#dcdcdc;
+	border-bottom-color:#dcdcdc;
+	border-left-color:#dcdcdc;
+}
+
+th.cell_01 {
+	background-color:#aaddff;
+}
+
+th.cell_02 {
+	background-color:#dcdcdc;
+}
+
+th.cell_03 {
+	background-color:#6699cc;
+}
+
+th.class_01 {
+	background-color:#ff4000;
+}
+
+th.class_02 {
+	background-color:#ffbf00;
+}
+
+th.class_03 {
+	background-color:#bfff00;
+}
+
+th.class_04 {
+	background-color:#40ff00;
+}
+
+th.class_05 {
+	background-color:#00ff40;
+}
+
+th.class_06 {
+	background-color:#00ffbf;
+}
+
+th.class_07 {
+	background-color:#00bfff;
+}
+
+th.class_08 {
+	background-color:#0040ff;
+}
+
+td.cell_01 {
+	background-color:#3399cc;
+}
+
+td.cell_02 {
+	background-color:#b0c4de;
+}
+
+td.cell_03 {
+	background-color:#dcdcdc;
+}
+
+td.cell_04 {
+	background-color:#66cdaa;
+}
+
+td.cell_05 {
+	background-color:#6699cc;
+}
+
+td.cell_06 {
+	background-color:#aaddff;
+}

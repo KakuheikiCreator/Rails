@@ -1,0 +1,65 @@
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_form.news_site.item_names.site_name')%></font>
+	</th>
+	<td colspan="3" class="pattern_4">
+		<%=text_field_tag('site_name', @source_obj.site_name,
+		 {:size=>60, :maxlength=>60, :style=>"ime-mode: active;"})%>
+		<%=svr_error_tag("sverr_site_name", @error_msg_hash[:site_name])%>
+	</td>
+</tr>
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_form.news_site.item_names.article_title')%></font>
+	</th>
+	<td colspan="3" class="pattern_4">
+		<%=text_field_tag('article_title', @source_obj.article_title,
+		 {:size=>60, :maxlength=>80, :style=>"ime-mode: active;"})%>
+		<%=svr_error_tag("sverr_article_title", @error_msg_hash[:article_title])%>
+	</td>
+</tr>
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_form.news_site.item_names.posted_date')%></font>
+	</th>
+	<td colspan="3" class="pattern_4">
+		<span id="posted_date_grp" name="posted_date_grp" class="chkgroup">
+		<%=default_select_datetime(@source_obj.posted_date, :posted_date,
+		 {:start_year=>2000, :end_year=>Time.zone.today.year})%>
+		</span>
+		<%=svr_error_tag("sverr_posted_date", @error_msg_hash[:posted_date])%>
+	</td>
+</tr>
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_form.news_site.item_names.reporter')%></font>
+	</th>
+	<td colspan="3" class="pattern_4">
+		<%=text_field_tag('reporter', @source_obj.reporter,
+		 {:size=>60, :maxlength=>60, :style=>"ime-mode: active;"})%>
+		<%=svr_error_tag("sverr_reporter", @error_msg_hash[:reporter])%>
+	</td>
+</tr>
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_form.news_site.item_names.job_title')%></font>
+	</th>
+	<td colspan="3" class="pattern_4">
+		<span id="reporter_job_title_grp" name="reporter_job_title_grp" class="chkgroup">
+		<%=job_title_select('reporter_job_title_id', @source_obj.job_title_id, {:include_blank=>true})%>
+		<%=text_field_tag('reporter_job_title', @source_obj.job_title,
+		 {:size=>50, :maxlength=>40, :style=>'ime-mode: active;'})%>
+		</span>
+		<%=svr_error_tag("sverr_reporter_job_title", @error_msg_hash[:reporter_job_title])%>
+	</td>
+</tr>
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_form.news_site.item_names.quoted_source_url')%></font>
+	</th>
+	<td colspan="3" class="pattern_4">
+		<%=text_field_tag('quoted_source_url', @source_obj.quoted_source_url,
+		 {:size=>100, :maxlength=>255, :style=>"ime-mode: inactive;"})%>
+		<%=svr_error_tag("sverr_quoted_source_url", @error_msg_hash[:quoted_source_url])%>
+	</td>
+</tr>

@@ -1,0 +1,95 @@
+###############################################################################
+# 国際化設定:: 詳細検索
+# Copyright:: Copyright (c) 2013 仲観派
+# 作成日:2013/03/03 Nakanohito  (mailto:)
+# 更新日:
+###############################################################################
+ja:
+  views:
+    search:
+      detail:
+        form:
+          item_names:
+            page_title: 詳細検索
+            quote_title: 引用検索
+            quote_speaker: "%{speaker}さんは"
+            quote_footer: と言われた
+            speaker: 発言者の名前
+            speaker_title: 発言者の肩書き
+            description: 引用文の説明
+            contributor: 投稿者
+            correction: 最終訂正者
+            contribution_date: 投稿日時
+            source_title: 出典検索
+            source_class: 出所分類
+            media_name: 媒体名
+            media_source: 媒体配信元
+            delivery_date: 配信日時
+            reporter: 報じた人
+            reporter_title: 報じた人の肩書き
+            comment_title: 批評・コメント検索
+            comment_speaker: "%{speaker}さんのコメント"
+            critic_member: 批評者
+            criticism_date: 批評日時
+            result_cond: 検索条件
+            result_title: 検索結果
+
+en:
+  views:
+    search:
+      detail:
+        form:
+          item_names:
+            page_title: Detail Search
+            quote_title: Quote Search
+            quote_speaker: "%{speaker} said"
+            quote_footer: ""
+            speaker: Name of the speaker
+            speaker_title: speaker's title
+            description: Description of quote
+            contributor: Contributor
+            correction: Contributor person
+            contribution_date: Contribution date
+            source_title: Source Search
+            source_class: Classification of Source
+            media_name: Media name
+            distributor: Distributor
+            delivery_date: Delivery date
+            reporter: Reporter
+            reporter_title: Reporter's job title
+            comment_title: Criticism and comments Search
+            comment_speaker: "%{speaker}'s comment"
+            critic_member: Critic member
+            criticism_date: Criticism date
+            result_cond: Search condition
+            result_title: Search result
+
+en-US:
+  views:
+    search:
+      detail:
+        form:
+          item_names:
+            page_title: Detail Search
+            quote_title: Quote Search
+            quote_speaker: "%{speaker} said"
+            quote_footer: ""
+            speaker: Name of the speaker
+            speaker_title: speaker's title
+            description: Description of quote
+            contributor: Contributor
+            correction: Contributor person
+            contribution_date: Contribution date
+            source_title: Source Search
+            source_class: Classification of Source
+            media_name: Media name
+            distributor: Distributor
+            delivery_date: Delivery date
+            reporter: Reporter
+            reporter_title: Reporter's job title
+            comment_title: Criticism and comments Search
+            comment_speaker: "%{speaker}'s comment"
+            critic_member: Critic member
+            criticism_date: Criticism date
+            result_cond: Search condition
+            result_title: Search result

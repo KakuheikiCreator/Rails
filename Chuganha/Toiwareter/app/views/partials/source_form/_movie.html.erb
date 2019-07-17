@@ -1,0 +1,41 @@
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_form.movie.item_names.title')%></font>
+	</th>
+	<td colspan="3" class="pattern_4">
+		<%=text_field_tag('title', @source_obj.title,
+		 {:size=>60, :maxlength=>60, :style=>"ime-mode: active;"})%>
+		<%=svr_error_tag("sverr_title", @error_msg_hash[:title])%>
+	</td>
+</tr>
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_form.movie.item_names.production')%></font>
+	</th>
+	<td class="pattern_4">
+		<%=text_field_tag('production', @source_obj.production,
+		 {:size=>40, :maxlength=>60, :style=>"ime-mode: active;"})%>
+		<%=svr_error_tag("sverr_production", @error_msg_hash[:production])%>
+	</td>
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_form.movie.item_names.sold_by')%></font>
+	</th>
+	<td class="pattern_4">
+		<%=text_field_tag('sold_by', @source_obj.sold_by,
+		 {:size=>40, :maxlength=>60, :style=>"ime-mode: active;"})%>
+		<%=svr_error_tag("sverr_sold_by", @error_msg_hash[:sold_by])%>
+	</td>
+</tr>
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_form.movie.item_names.release_date')%></font>
+	</th>
+	<td colspan="3" class="pattern_4">
+		<span id="release_date_grp" name="release_date_grp" class="chkgroup">
+		<%=text_field_tag('release_date_year', @source_obj.release_date_year,
+		 {:size=>6, :maxlength=>5, :style=>"ime-mode: disabled;"})%>/
+		<%=default_select_date(@source_obj.release_date, :release_date,
+		 {:discard_year=>true, :end_year=>Time.zone.today.year})%>
+		</span>
+	</td>
+</tr>

@@ -1,0 +1,82 @@
+<% i18n_cache(:suffix=>'member-view-index-1') do %>
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+	<td align="center">
+		<!-- 会員情報 -->
+		<table width="852" border="0" cellpadding="0" cellspacing="0">
+		<tbody>
+		<tr>
+			<td class="pattern_2 angle_ul"></td>
+			<td class="pattern_2"></td>
+			<td class="pattern_2 angle_ur"></td>
+		</tr>
+		<tr>
+			<td class="pattern_2">&nbsp;</td>
+			<td align="center" class="pattern_2">
+<% end %>
+				<h2 class="pattern_2"><%=vt('index.item_names.prof_title', :nickname=>@biz_obj.member.nickname)%></h2>
+<% i18n_cache(:suffix=>'member-view-index-2') do %>
+			</td>
+			<td class="pattern_2">&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="pattern_2">&nbsp;</td>
+			<td align="center" class="pattern_2">
+<% end %>
+				<table width="820" border="0" cellpadding="0" cellspacing="0" class="pattern_1">
+				<tbody>
+				<tr>
+					<th width="152" align="left" class="pattern_4"><%=vt('index.item_names.member_id')%></th>
+					<td width="234" class="pattern_4"><%=@biz_obj.member.member_id.to_s%></td>
+					<th width="152" align="left" class="pattern_4"><%=vt('index.item_names.nickname')%></th>
+					<td width="234" class="pattern_4"><%=@biz_obj.member.nickname.to_s%></td>
+				</tr>
+				<tr>
+					<th align="left" class="pattern_4"><%=vt('index.item_names.join_date')%></th>
+					<td class="pattern_4"><%=default_time(@biz_obj.member.join_date)%></td>
+					<th align="left" class="pattern_4"><%=vt('index.item_names.last_login_date')%></th>
+					<td class="pattern_4"><%=default_time(@biz_obj.member.last_login_date)%></td>
+				</tr>
+				<tr>
+					<th align="left" class="pattern_4"><%=vt('index.item_names.quote_cnt')%></th>
+					<td class="pattern_4"><%=@biz_obj.member.quote_cnt.to_s%></td>
+					<th align="left" class="pattern_4"><%=vt('index.item_names.quote_failure_cnt')%></th>
+					<td class="pattern_4"><%=@biz_obj.member.quote_failure_cnt.to_s%></td>
+				</tr>
+				<tr>
+					<th align="left" class="pattern_4"><%=vt('index.item_names.quote_correct_cnt')%></th>
+					<td class="pattern_4"><%=@biz_obj.member.quote_correct_cnt.to_s%></td>
+					<th align="left" class="pattern_4"><%=vt('index.item_names.quote_correct_failure_cnt')%></th>
+					<td class="pattern_4"><%=@biz_obj.member.quote_correct_failure_cnt.to_s%></td>
+				</tr>
+				<tr>
+					<th align="left" class="pattern_4"><%=vt('index.item_names.quote_delete_cnt')%></th>
+					<td class="pattern_4"><%=@biz_obj.member.quote_delete_cnt.to_s%></td>
+					<th align="left" class="pattern_4">&nbsp;</th>
+					<td class="pattern_4">&nbsp;</td>
+				</tr>
+				<tr>
+					<th align="left" class="pattern_4"><%=vt('index.item_names.comment_cnt')%></th>
+					<td class="pattern_4"><%=@biz_obj.member.comment_cnt.to_s%></td>
+					<th align="left" class="pattern_4"><%=vt('index.item_names.comment_failure_cnt')%></th>
+					<td class="pattern_4"><%=@biz_obj.member.comment_failure_cnt.to_s%></td>
+				</tr>
+				</tbody>
+				</table>
+<% i18n_cache(:suffix=>'member-view-index-3') do %>
+			</td>
+			<td class="pattern_2">&nbsp;</td>
+		</tr>
+		<tr>
+			<td class="pattern_2 angle_ll"></td>
+			<td class="pattern_2"> </td>
+			<td class="pattern_2 angle_lr"></td>
+		</tr>
+		</tbody>
+		</table>
+	</td>
+</tr>
+</tbody>
+</table>
+<% end %>

@@ -1,0 +1,56 @@
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_form.bbs.item_names.bbs_name')%></font>
+	</th>
+	<td colspan="3" class="pattern_4">
+		<span id="bbs_name_grp" name="bbs_name_grp" class="chkgroup">
+		<%=bbs_select('bbs_id', @source_obj.bbs_id)%>
+		&nbsp;<font size="2"><%=t('views.partials.source_form.bbs.item_names.bbs_name_dtl')%></font>
+		<%=text_field_tag('bbs_detail_name', @source_obj.bbs_detail_name,
+		 {:size=>40, :maxlength=>60, :style=>"ime-mode: active;"})%>
+		</span>
+		<%=svr_error_tag("sverr_bbs_name", @error_msg_hash[:bbs_name])%>
+	</td>
+</tr>
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_form.bbs.item_names.thread_title')%></font>
+	</th>
+	<td colspan="3" class="pattern_4">
+		<%=text_field_tag('thread_title', @source_obj.thread_title,
+		 {:size=>60, :maxlength=>80, :style=>"ime-mode: active;"})%>
+		<%=svr_error_tag("sverr_thread_title", @error_msg_hash[:thread_title])%>
+	</td>
+</tr>
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_form.bbs.item_names.posted_date')%></font>
+	</th>
+	<td colspan="3" class="pattern_4">
+		<span id="posted_date_grp" name="posted_date_grp" class="chkgroup">
+		<%=default_select_datetime(@source_obj.posted_date, :posted_date,
+		 {:start_year=>1990, :end_year=>Time.zone.today.year})%>
+		</span>
+		<%=svr_error_tag("sverr_posted_date", @error_msg_hash[:posted_date])%>
+	</td>
+</tr>
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_form.bbs.item_names.posted_by')%></font>
+	</th>
+	<td colspan="3" class="pattern_4">
+		<%=text_field_tag('posted_by', @source_obj.posted_by,
+		 {:size=>50, :maxlength=>60, :style=>"ime-mode: active;"})%>
+		<%=svr_error_tag("sverr_posted_by", @error_msg_hash[:posted_by])%>
+	</td>
+</tr>
+<tr id="dynamic_input_fields">
+	<th align="left" class="pattern_4">
+		<font size="2"><%=t('views.partials.source_form.bbs.item_names.quoted_source_url')%></font>
+	</th>
+	<td colspan="3" class="pattern_4">
+		<%=text_field_tag('quoted_source_url', @source_obj.quoted_source_url,
+		 {:size=>100, :maxlength=>255, :style=>"ime-mode: inactive;"})%>
+		<%=svr_error_tag("sverr_quoted_source_url", @error_msg_hash[:quoted_source_url])%>
+	</td>
+</tr>

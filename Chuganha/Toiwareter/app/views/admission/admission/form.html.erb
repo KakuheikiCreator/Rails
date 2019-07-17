@@ -1,0 +1,71 @@
+<% i18n_cache(:suffix=>'admission-form-1') do %>
+<%= javascript_include_tag("admission/form")%>
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+	<td width="260" height="298" align="left" valign="middle">
+		<h1 class="pattern_1"><%=vt('form.sentences.caption_1')%></h1>
+	</td>
+	<td width="20">&nbsp;</td>
+	<td valign="middle">
+<% end %>
+		<%= form_tag_with_params({:controller=>'admission/admission', :action=>'register'},
+			{:id=>'register_form', :name=>'register_form'}, :TRANS_PTN_NOW) do %>
+		<table border="0" cellspacing="0" cellpadding="0">
+		<tbody>
+		<tr>
+			<td align="left" valign="top" colspan="2">
+				<h4 class="pattern_1"><%=vt('form.sentences.caption_2')%><br><%=vt('form.sentences.caption_3')%></h4>
+			</td>
+		</tr>
+		<tr>
+			<td width="200">
+				<font size="3" color="#ffffff"><%=vt('form.item_names.open_id')%></font>
+			</td>
+			<td>
+				<%=text_field_tag("open_id", @biz_obj.open_id, {:size=>'40', :maxlength=>'255', :class=>'openid', :disabled=>true}) %>
+				<%=svr_error_tag("sverr_open_id", @error_msg_hash[:open_id])%>
+			</td>
+		</tr>
+		<tr><td height="10" colspan="2"></td></tr>
+		<tr>
+			<td>
+				<font size="3" color="#ffffff"><%=vt('form.item_names.nickname')%></font>
+			</td>
+			<td>
+				<%=text_field_tag("nickname", @biz_obj.nickname, {:size=>'40', :maxlength=>'255', :class=>'text_1'}) %>
+				<%=svr_error_tag("sverr_nickname", @error_msg_hash[:nickname])%>
+			</td>
+		</tr>
+		<tr><td height="10" colspan="2"></td></tr>
+		<tr>
+			<td>
+				<font size="3" color="#ffffff"><%=vt('form.item_names.email')%></font>
+			</td>
+			<td>
+				<%=text_field_tag("email", conv_asterisk(@biz_obj.email), {:size=>'40', :maxlength=>'255', :class=>'text_1', :disabled=>true}) %>
+			</td>
+		</tr>
+		<tr><td height="10" colspan="2"></td></tr>
+		<tr>
+			<td>
+				<span id="agreement_fields" name="agreement_fields" class="chkgroup">
+					<%=check_box_tag('agreement', true)%>
+					<font size="3">
+					<a href="/agreement.html" target="_blank"><%=vt('form.item_names.agreement')%></a>
+					</font>
+				</span>
+			</td>
+			<td>
+				<%=submit_tag(t('helpers.submit.create'), :id=>'submit', :class=>'button_1')%>
+			</td>
+		</tr>
+		</tbody>
+		</table>
+		<% end %>
+<% i18n_cache(:suffix=>'admission-form-2') do %>
+	</td>
+</tr>
+</tbody>
+</table>
+<% end %>

@@ -1,0 +1,100 @@
+<% i18n_cache(:suffix=>'partials-func_link-1') do %>
+<%= javascript_include_tag("partials/func_link")%>
+<div class="contextMenu" id="context_menu">
+	<ul>
+		<li id="open"><%=image_tag("icon_new_window.png")%> <%=t('views.partials.item_names.new_window')%></li>
+	</ul>
+</div>
+<!-- 機能一覧 -->
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+	<td class="pattern_2 angle_ul"></td>
+	<td class="pattern_2"></td>
+	<td class="pattern_2 angle_ur"></td>
+</tr>
+<tr>
+	<td class="pattern_2">&nbsp;</td>
+	<th class="pattern_2"><h2 class="pattern_2"><%=t('views.partials.item_names.func_title')%></h2></th>
+	<td class="pattern_2">&nbsp;</td>
+</tr>
+<tr>
+	<td class="pattern_2">&nbsp;</td>
+	<td align="center" class="pattern_2">
+<% end %>
+		<table width="1064" border="0" cellpadding="4" cellspacing="0" class="pattern_2">
+		<tbody>
+		<tr>
+			<td align="center">
+				<%= form_tag_with_params({:controller=>'member/home', :action=>'index'},
+					{:id=>'member_home_form', :name=>'member_home_form'}, :TRANS_PTN_CLH) do %>
+				<%=submit_tag(t('views.partials.item_names.member_home'), {:id=>"home_btn", :class=>"button_4"})%>
+				<% end %>
+			</td>
+			<td align="center">
+				<%= form_tag_with_params({:controller=>'search/fulltext', :action=>'form'},
+					{:id=>'fulltext_search_form', :name=>'fulltext_search_form'}, :TRANS_PTN_CLH) do %>
+				<%=submit_tag(t('views.partials.item_names.fulltext_search'), {:id=>"fulltext_search_btn", :class=>"button_4"})%>
+				<% end %>
+			</td>
+			<td align="center">
+				<%= form_tag_with_params({:controller=>'search/detail', :action=>'form'},
+					{:id=>'detail_search_form', :name=>'detail_search_form'}, :TRANS_PTN_CLH) do %>
+				<%=submit_tag(t('views.partials.item_names.detail_search'), {:id=>"detail_search_btn", :class=>"button_4"})%>
+				<% end %>
+			</td>
+			<td align="center">
+				<% if quote_post? then %>
+				<%= form_tag_with_params({:controller=>'quote/post', :action=>'form'},
+					{:id=>'quote_post_form', :name=>'quote_post_form'}, :TRANS_PTN_CLH) do %>
+				<%=submit_tag(t('views.partials.item_names.quote_post'), {:id=>"quote_post_btn", :class=>"button_4"})%>
+				<% end %>
+				<% end %>
+			</td>
+			<td align="center">
+				<%= form_tag_with_params({:controller=>'common/session', :action=>'logout'},
+					{:id=>'logout_form', :name=>'logout_form'}, :TRANS_PTN_CLH) do %>
+				<%=submit_tag(t('views.partials.item_names.logout'), {:id=>"logout_btn", :class=>"button_4"})%>
+				<% end %>
+			</td>
+		</tr>
+		<% if user_admin? then %>
+		<tr>
+			<td align="center">
+				<%= form_tag_with_params({:controller=>'member/list', :action=>'list'},
+					{:id=>'member_list_form', :name=>'member_list_form'}, :TRANS_PTN_CLH) do %>
+				<%=submit_tag(t('views.partials.item_names.member_list'), {:id=>"member_list_btn", :class=>"button_4"})%>
+				<% end %>
+			</td>
+			<td align="center">
+				<%= form_tag_with_params({:controller=>'report/list', :action=>'list'},
+					{:id=>'report_list_form', :name=>'report_list_form'}, :TRANS_PTN_CLH) do %>
+				<%=submit_tag(t('views.partials.item_names.report_list'), {:id=>"report_list_btn", :class=>"button_4"})%>
+				<% end %>
+			</td>
+			<td align="center">
+				<%= form_tag_with_params({:controller=>'ng_list/ng_list', :action=>'list'},
+					{:id=>'ng_list_form', :name=>'ng_list_form'}, :TRANS_PTN_CLH) do %>
+				<%=submit_tag(t('views.partials.item_names.ng_word_list'), {:id=>"ng_word_list_btn", :class=>"button_4"})%>
+				<% end %>
+			</td>
+			<td align="center">
+			</td>
+			<td align="center">
+			</td>
+		</tr>
+		<% end %>
+		</tbody>
+		</table>
+<% i18n_cache(:suffix=>'partials-func_link-2') do %>
+	</td>
+	<td class="pattern_2">&nbsp;</td>
+</tr>
+<tr>
+	<td class="pattern_2 angle_ll"></td>
+	<td class="pattern_2"></td>
+	<td class="pattern_2 angle_lr"></td>
+</tr>
+</tbody>
+</table>
+<% end %>
