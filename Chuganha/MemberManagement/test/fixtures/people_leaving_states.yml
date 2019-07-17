@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  people_leaving_state_cls: 0
+  people_leaving_state: 退会済み
+
+two:
+  people_leaving_state_cls: 1
+  people_leaving_state: 個人情報削除済み

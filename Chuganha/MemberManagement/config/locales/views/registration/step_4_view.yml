@@ -1,0 +1,95 @@
+###############################################################################
+# 国際化設定:: 会員登録（会員情報の確認画面）
+# Copyright:: Copyright (c) 2011 仲観派
+# 作成日:2012/11/29 Nakanohito  (mailto:)
+# 更新日:
+###############################################################################
+ja:
+  views:
+    registration:
+      step_4:
+        item_names:
+          page_titile: 新規会員登録（ステップ４）
+          heading: ステップ４：会員情報の確認
+          confirmation: 会員情報の確認
+          previous_step: 会員情報を修正
+          next_step: 仮登録実行
+          open_id: OpenID
+          password: パスワード
+          nickname: ニックネーム
+          name: お名前
+          yomigana: ヨミガナ
+          gender: 性別
+          birthday: 生年月日
+          country: 居住国
+          language: 言語
+          timezone: タイムゾーン
+          postcode: 郵便番号
+          email: メールアドレス
+          mobile_num: 携帯電話番号
+          mobile_email: 携帯メールアドレス
+        messages:
+          explanation_1: 下記の内容で仮登録を行います。
+          explanation_2: 入力内容に問題が無ければ「仮登録実行」ボタンを押して
+          explanation_3: 次のステップへお進みください。
+          description_01: ※セキュリティに配慮して非表示にしています。
+
+en:
+  views:
+    registration:
+      step_4:
+        item_names:
+          page_titile: New Member Registration(Step 4)
+          heading: Step 4：Confirmation of membership information
+          confirmation: Confirmation of membership information
+          previous_step: Previous step
+          next_step: Temporary registration
+          open_id: OpenID
+          password: Password
+          nickname: Nickname
+          name: Name
+          yomigana: Yomigana
+          gender: Gender
+          birthday: Birthday
+          country: Country
+          language: Language
+          timezone: Timezone
+          postcode: Postcode
+          email: E-mail address
+          mobile_num: Mobile number
+          mobile_email: Mobile email address
+        messages:
+          explanation_1: I register the following contents provisionally.
+          explanation_2: If contents do not have a problem, I push the button,
+          explanation_3: and, please advance to the next step.
+          description_01: ※I make non-indication in consideration for security
+
+en-US:
+  views:
+    registration:
+      step_4:
+        item_names:
+          page_titile: New Member Registration(Step 4)
+          heading: Step 4：Confirmation of membership information
+          confirmation: Confirmation of membership information
+          previous_step: Previous step
+          next_step: Temporary registration
+          open_id: OpenID
+          password: Password
+          nickname: Nickname
+          name: Name
+          yomigana: Yomigana
+          gender: Gender
+          birthday: Birthday
+          country: Country
+          language: Language
+          timezone: Timezone
+          postcode: Postcode
+          email: E-mail address
+          mobile_num: Mobile number
+          mobile_email: Mobile email address
+        messages:
+          explanation_1: I register the following contents provisionally.
+          explanation_2: If contents do not have a problem, I push the button,
+          explanation_3: and, please advance to the next step.
+          description_01: ※I make non-indication in consideration for security

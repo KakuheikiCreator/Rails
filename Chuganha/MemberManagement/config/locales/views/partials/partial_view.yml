@@ -1,0 +1,57 @@
+###############################################################################
+# 国際化設定:: 部分テンプレート共通
+# Copyright:: Copyright (c) 2011 仲観派
+# 作成日:2012/11/17 Nakanohito  (mailto:)
+# 更新日:
+###############################################################################
+
+ja:
+  views:
+    partial:
+      item_names:
+        new_window: 新しいウィンドウで開く
+        registration: 新規会員登録はこちら
+        front_page: フロントページ
+        login: ログイン
+        logout: ログアウト
+        usage_notice: ご利用上の注意
+        agreement: 会員規約
+        privacy_policy: 個人情報保護方針
+        member_home: 会員ホーム
+        member_list: 会員一覧
+      messages:
+        invalid_account: 有効なアカウントを入力してください。
+
+en:
+  views:
+    partial:
+      item_names:
+        new_window: Open in new window
+        registration: Member Registration
+        front_page: Front page
+        login: Login
+        logout: Logout
+        usage_notice: Usage Notice
+        agreement: Membership Agreement
+        privacy_policy: Privacy Policy
+        member_home: Member Home
+        member_list: Member List
+      messages:
+        invalid_account: Please enter a valid account.
+
+en-US:
+  views:
+    partial:
+      item_names:
+        new_window: Open in new window
+        registration: Member Registration
+        front_page: Front page
+        login: Login
+        logout: Logout
+        usage_notice: Usage Notice
+        agreement: Membership Agreement
+        privacy_policy: Privacy Policy
+        member_home: Member Home
+        member_list: Member List
+      messages:
+        invalid_account: Please enter a valid account.

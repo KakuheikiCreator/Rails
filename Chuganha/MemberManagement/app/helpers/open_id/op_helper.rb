@@ -1,0 +1,2 @@
+module OpenId::OpHelper
+end

@@ -1,0 +1,108 @@
+###############################################################################
+# 国際化設定:: 会員ホーム
+# Copyright:: Copyright (c) 2011 仲観派
+# 作成日:2012/11/17 Nakanohito  (mailto:)
+# 更新日:
+###############################################################################
+
+ja:
+  views:
+    home:
+      home:
+        item_names:
+          page_titile: 仲観派（会員ホーム）
+          form_title: 会員情報
+          open_id: OpenID
+          nickname: ニックネーム
+          name: お名前
+          yomigana: ヨミガナ
+          gender: 性別
+          birthday: 生年月日
+          country: 居住国
+          language: 言語
+          timezone: タイムゾーン
+          postcode: 郵便番号
+          email: メールアドレス
+          mobile_num: 携帯電話番号
+          mobile_email: 携帯メールアドレス
+          mobile_id_no: 個体識別番号
+          mobile_host: 認証ホスト
+          join_date: 入会日時
+          last_auth_date: 最終認証日時
+          update_btn: 会員情報の更新
+          withdrawal_btn: 仲観派を退会
+          auth_history: 認証履歴
+          authentication_date: 認証日時
+          authentication_server: 認証サーバー
+        messages:
+          explanation_1: （クリックで表示）
+          explanation_2: 既に会員登録されている方は、ご自身のOpenIDとパスワードを入力し
+          explanation_3: ログインボタンをクリックする事によってログイン出来ます。
+
+en:
+  views:
+    home:
+      home:
+        item_names:
+          page_titile: 仲観派（Member home）
+          form_title: Member information
+          open_id: OpenID
+          nickname: Nickname
+          name: Name
+          yomigana: Yomigana
+          gender: Gender
+          birthday: Birthday
+          country: Country
+          language: Language
+          timezone: Timezone
+          postcode: Postcode
+          email: Email
+          mobile_num: Mobile phone number
+          mobile_email: Mobile e-mail address
+          mobile_id_no: Mobile identification number
+          mobile_host: Host authentication
+          join_date: Join Date
+          last_auth_date: Last authentication date
+          update_btn: Update information
+          withdrawal_btn: Withdrawal
+          auth_history: Authentication history
+          authentication_date: Authenticated date and time
+          authentication_server: Authentication server
+        messages:
+          explanation_1: (Click to view)
+          explanation_2: People that are registered member, enter your password and OpenID
+          explanation_3: You can login by clicking the Login button.
+
+en-US:
+  views:
+    home:
+      home:
+        item_names:
+          page_titile: 仲観派（Member home）
+          form_title: Member information
+          open_id: OpenID
+          nickname: Nickname
+          name: Name
+          yomigana: Yomigana
+          gender: Gender
+          birthday: Birthday
+          country: Country
+          language: Language
+          timezone: Timezone
+          postcode: Postcode
+          email: Email
+          mobile_num: Mobile phone number
+          mobile_email: Mobile e-mail address
+          mobile_id_no: Mobile identification number
+          mobile_host: Host authentication
+          join_date: Join Date
+          last_auth_date: Last authentication date
+          update_btn: Update information
+          withdrawal_btn: Withdrawal
+          auth_history: Authentication history
+          authentication_date: Authenticated date and time
+          authentication_server: Authentication server
+        messages:
+          explanation_1: (Click to view)
+          explanation_2: People that are registered member, enter your password and OpenID
+          explanation_3: You can login by clicking the Login button.

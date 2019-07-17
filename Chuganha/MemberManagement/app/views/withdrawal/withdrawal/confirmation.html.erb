@@ -1,0 +1,52 @@
+<% i18n_cache(:suffix=>'withdrawal_confirmation-1') do %>
+<table border="1" cellpadding="0" cellspacing="0" class="form_01">
+<tbody>
+<tr>
+	<th height="30" class="cell_02">
+		<font size="3"><%=vt('confirmation.item_names.form_title')%></font>
+	</th>
+</tr>
+<tr>
+	<td>
+<% end %>
+		<%= form_tag_with_params({:controller=>'withdrawal/withdrawal', :action=>'withdrawal'},
+					{:id=>'withdrawal_confirmation', :name=>'withdrawal_confirmation'}, :TRANS_PTN_NOW) do %>
+		<table border="1" cellspacing="0" cellpadding="4" class="base_01">
+		<tbody>
+		<tr>
+			<th width="180" align="left" class="cell_03">
+				&nbsp;<font size="2"><%=vt('confirmation.item_names.reason')%></font>
+			</th>
+			<td width="548">
+				<font size="2"><%=@biz_obj.withdrawal_reason_str.to_s%></font>
+				<%=hidden_field_tag("withdrawal_reason_cls", @biz_obj.withdrawal_reason_cls)%>
+			</td>
+		</tr>
+		<tr>
+			<th align="left" class="cell_03">
+				&nbsp;<font size="2"><%=vt('confirmation.item_names.detail')%></font>
+			</th>
+			<td>
+				<font size="2"><%=raw(@biz_obj.withdrawal_reason_dtl.to_s.gsub("\n", '<br />'))%></font>
+				<%=hidden_field_tag("withdrawal_reason_dtl", @biz_obj.withdrawal_reason_dtl)%>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center">
+				<%=submit_tag(vt('confirmation.item_names.home_btn'), :class=>'button_04', :onclick=>"$('#return_form').submit();return false;")%>
+				<%=submit_tag(vt('confirmation.item_names.withdrawal_btn'), :class=>'button_04')%>
+				<br />&nbsp;<font size="2"><%=vt('confirmation.messages.explanation_1')%></font>
+				<br />&nbsp;<font size="2"><%=vt('confirmation.messages.explanation_2')%></font>
+			</td>
+		</tr>
+		</tbody>
+		</table>
+		<% end %>
+		<%= form_tag_with_params({:controller=>'home/home', :action=>'home'},
+			{:id=>'return_form', :name=>'return_form'}, :TRANS_PTN_BACK) do %>
+		<% end %>
+<% i18n_cache(:suffix=>'withdrawal_confirmation-2') do %>
+	</td>
+</tr>
+</table>
+<% end %>

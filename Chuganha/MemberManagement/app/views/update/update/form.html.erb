@@ -1,0 +1,290 @@
+<% i18n_cache(:suffix=>'update_form-1') do %>
+<%= javascript_include_tag("password")%>
+<%= javascript_include_tag("update/form")%>
+<table border="1" cellpadding="0" cellspacing="0" class="form_01">
+<tbody>
+<tr>
+	<th height="30" class="cell_06">
+		<font size="3"><%=vt('form.item_names.form_title')%></font>
+	</th>
+</tr>
+<tr>
+	<td valign="top">
+<% end %>
+		<% unless @err_hash.empty? then %>
+		<script type="text/javascript">
+		<!--
+		$(window).load(function () {
+			// バリデーションチェック実行
+			$("#update_form").valid();
+		});
+		// -->
+		</script>
+		<% end %>
+		<%= form_tag_with_params({:controller=>'update/update', :action=>'confirmation'},
+					{:id=>'update_form', :name=>'update_form'}, :TRANS_PTN_NOW) do %>
+		<table border="1" cellspacing="0" cellpadding="2" class="base">
+		<thead>
+		<tr>
+			<th width="140" class="cell_03">&nbsp;</th>
+			<th width="220" align="center" class="cell_03">
+				<font size="2"><%=vt('form.item_names.current_values')%></font>
+			</th>
+			<th width="366" align="center" class="cell_04">
+				<font size="2"><%=vt('form.item_names.updated_values')%></font>
+			</th>
+		</tr>
+		</thead>
+		<tbody>
+		<% if @biz_obj.admin? then %>
+		<% end %>
+		<tr>
+			<th align="left" class="cell_03">
+				&nbsp;<font size="2"><%=vt('form.item_names.member_state')%></font>
+			</th>
+			<td>
+				&nbsp;<font size="2"><%=@biz_obj.member_state %></font>
+			</td>
+			<td>
+				&nbsp;<font size="2">
+				<%=ent_select_tag('upd_member_state_cls', @biz_obj.member_state_list, :member_state_cls, :member_state, @biz_obj.upd_member_state_cls)%>
+				<%=svr_error_tag("sverr_upd_member_state_cls", @err_hash[:upd_member_state_cls])%>
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<th align="left" class="cell_03">
+				&nbsp;<font size="2"><%=vt('form.item_names.authority')%></font>
+			</th>
+			<td>
+				&nbsp;<font size="2"><%=@biz_obj.authority %></font>
+			</td>
+			<td>
+				&nbsp;<font size="2">
+				<%=ent_select_tag('upd_authority_cls', @biz_obj.authority_list, :authority_cls, :authority, @biz_obj.upd_authority_cls)%>
+				<%=svr_error_tag("sverr_upd_authority_cls", @err_hash[:upd_authority_cls])%>
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<th align="left" class="cell_03">
+				&nbsp;<font size="2"><%=vt('form.item_names.open_id')%></font>
+			</th>
+			<td colspan="2">
+				&nbsp;<font size="2"><%=@biz_obj.open_id %><br />
+				&nbsp;<%=vt('form.messages.description_01')%></font>
+				<%=hidden_field_tag("user_id", @biz_obj.user_id.to_s)%>
+				<%=svr_error_tag("sverr_user_id", @err_hash[:user_id])%>
+			</td>
+		</tr>
+		<tr>
+			<th align="left" class="cell_03">
+				&nbsp;<font size="2"><%=vt('form.item_names.password')%></font>
+			</th>
+			<td rowspan="2">
+				&nbsp;<font size="2"><%=vt('form.messages.description_02')%></font>
+			</td>
+			<td>
+				&nbsp;<%=password_field_tag('upd_password', @biz_obj.upd_password, {:size=>40, :maxlength=>32, :autocomplete=>'off', :style=>"ime-mode: disabled;"})%><br>
+				<%=svr_error_tag("sverr_upd_password", @err_hash[:upd_password])%>
+				&nbsp;<font size="2"><%=vt('form.messages.description_03')%></font>
+			</td>
+		</tr>
+		<tr>
+			<th align="left" class="cell_03">
+				&nbsp;<font size="2"><%=vt('form.item_names.retype_pw')%></font>
+			</th>
+			<td>
+				&nbsp;<%=password_field_tag('upd_retype_pw', @biz_obj.upd_retype_pw, {:size=>40, :maxlength=>32, :autocomplete=>'off', :style=>"ime-mode: disabled;"})%><br>
+				<%=svr_error_tag("sverr_upd_retype_pw", @err_hash[:upd_re_enter])%>
+				&nbsp;<font size="2"><%=vt('form.messages.description_04')%></font>
+			</td>
+		</tr>
+		<tr>
+			<th align="left" class="cell_03">
+				&nbsp;<font size="2"><%=vt('form.item_names.nickname')%></font>
+			</th>
+			<td>
+				&nbsp;<font size="2"><%=@biz_obj.nickname %></font>
+			</td>
+			<td>
+				&nbsp;<%=text_field_tag('upd_nickname', @biz_obj.upd_nickname, {:size=>40, :maxlength=>20, :style=>"ime-mode: active;"})%><br>
+				<%=svr_error_tag("sverr_upd_nickname", @err_hash[:upd_nickname])%>
+				&nbsp;<font size="2"><%=vt('form.messages.description_05')%></font>
+			</td>
+		</tr>
+		<tr>
+			<th align="left" class="cell_03">
+				&nbsp;<font size="2"><%=vt('form.item_names.name')%></font>
+			</th>
+			<td>
+				&nbsp;<font size="2"><%=@biz_obj.name_1 %>　<%=@biz_obj.name_2 %></font>
+			</td>
+			<td>
+				<font size="3">
+				<span id="upd_name" name="upd_name" class="chkgroup">
+				&nbsp;<%=text_field_tag('upd_name_1', @biz_obj.upd_name_1, {:size=>20, :maxlength=>20})%>
+				&nbsp;<%=text_field_tag('upd_name_2', @biz_obj.upd_name_2, {:size=>20, :maxlength=>20})%>
+				</span>
+				<%=svr_error_tag("sverr_upd_name", @err_hash[:upd_name])%>
+				</font><br />
+				&nbsp;<font size="2"><%=vt('form.messages.description_06')%></font>
+			</td>
+		</tr>
+		<tr>
+			<th align="left" class="cell_03">
+				&nbsp;<font size="2"><%=vt('form.item_names.yomigana')%></font>
+			</th>
+			<td>
+				&nbsp;<font size="2"><%=@biz_obj.name_kana_1 %>　<%=@biz_obj.name_kana_2 %></font>
+			</td>
+			<td>
+				<font size="3">
+				<span id="upd_name_kana" name="upd_name_kana" class="chkgroup">
+				&nbsp;<%=text_field_tag('upd_name_kana_1', @biz_obj.upd_name_kana_1, {:size=>20, :maxlength=>30, :style=>"ime-mode: active;"})%>
+				&nbsp;<%=text_field_tag('upd_name_kana_2', @biz_obj.upd_name_kana_2, {:size=>20, :maxlength=>30, :style=>"ime-mode: active;"})%>
+				</span>
+				<%=svr_error_tag("sverr_upd_name_kana", @err_hash[:upd_name_kana])%>
+				</font><br />
+				<font size="2">&nbsp;<%=vt('form.messages.description_07')%></font>
+			</td>
+		</tr>
+		<tr>
+			<th align="left" class="cell_03">
+				&nbsp;<font size="2"><%=vt('form.item_names.gender')%></font>
+			</th>
+			<td>
+				&nbsp;<font size="2"><%=@biz_obj.gender %></font>
+			</td>
+			<td>
+				&nbsp;<font size="2">
+				<span id="upd_gender" name="upd_gender" class="chkgroup">
+				<%=ent_radio_tag('upd_gender', @biz_obj.gender_list, :gender_cls, :gender, @biz_obj.upd_gender_cls)%>
+				</span>
+				<%=svr_error_tag("sverr_upd_gender", @err_hash[:upd_gender])%>
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<th align="left" class="cell_03">
+				&nbsp;<font size="2"><%=vt('form.item_names.birthday')%></font>
+			</th>
+			<td>
+				&nbsp;<font size="2"><%=default_date(@biz_obj.birthday) %></font>
+			</td>
+			<td>
+				<span id="upd_birth" name="upd_birth" class="chkgroup">
+				&nbsp;<%=select_date(@biz_obj.upd_birthday,
+						   {:prefix=>'upd_birth', :date_separator=>'/', :use_month_numbers=>true,
+						    :start_year=>1900, :end_year=>Date.today.year})%>
+				</span>
+				<%=svr_error_tag("sverr_upd_birth", @err_hash[:upd_birth])%>
+			</td>
+		</tr>
+		<tr>
+			<th align="left" class="cell_03">
+				&nbsp;<font size="2"><%=vt('form.item_names.country')%></font>
+			</th>
+			<td>
+				&nbsp;<font size="2"><%=@biz_obj.country_name %></font>
+			</td>
+			<td>
+				&nbsp;<%=ent_select_tag('upd_country', @biz_obj.country_list, :country_name_cd, :country_name, @biz_obj.upd_country_name_cd)%>
+				<%=svr_error_tag("sverr_upd_country", @err_hash[:upd_country])%>
+			</td>
+		</tr>
+		<tr>
+			<th align="left" class="cell_03">
+				&nbsp;<font size="2"><%=vt('form.item_names.language')%></font>
+			</th>
+			<td>
+				&nbsp;<font size="2"><%=@biz_obj.lang_name %></font>
+			</td>
+			<td>
+				&nbsp;<%=ent_select_tag('upd_language', @biz_obj.language_list, :lang_name_cd, :lang_name, @biz_obj.upd_lang_name_cd)%>
+				<%=svr_error_tag("sverr_upd_language", @err_hash[:upd_language])%>
+			</td>
+		</tr>
+		<tr>
+			<th align="left" class="cell_03">
+				&nbsp;<font size="2"><%=vt('form.item_names.timezone')%></font>
+			</th>
+			<td>
+				&nbsp;<font size="2"><%=@biz_obj.timezone_id %></font>
+			</td>
+			<td>
+				&nbsp;<%=ent_select_tag('upd_timezone', @biz_obj.timezone_list, :timezone_id, :timezone_id, @biz_obj.upd_timezone_id)%>
+				<%=svr_error_tag("sverr_upd_timezone", @err_hash[:upd_timezone])%>
+			</td>
+		</tr>
+		<tr>
+			<th align="left" class="cell_03">
+				&nbsp;<font size="2"><%=vt('form.item_names.postcode')%></font>
+			</th>
+			<td>
+				&nbsp;<font size="2"><%=@biz_obj.postcode %></font>
+			</td>
+			<td>
+				&nbsp;<%=text_field_tag('upd_postcode', @biz_obj.upd_postcode, {:size=>10, :maxlength=>9, :style=>"ime-mode: disabled;"})%><br>
+				<%=svr_error_tag("sverr_upd_postcode", @err_hash[:upd_postcode])%>
+				<font size="2">&nbsp;<%=vt('form.messages.description_08')%></font>
+			</td>
+		</tr>
+		<tr>
+			<th align="left" class="cell_03">
+				&nbsp;<font size="2"><%=vt('form.item_names.email')%></strong></font>
+			</th>
+			<td>
+				&nbsp;<font size="2"><%=@biz_obj.email %></font>
+			</td>
+			<td>
+				&nbsp;<%=text_field_tag('upd_email', @biz_obj.upd_email, {:size=>50, :maxlength=>255, :style=>"ime-mode: disabled;"})%>
+				<%=svr_error_tag("sverr_upd_email", @err_hash[:upd_email])%>
+			</td>
+		</tr>
+		<tr>
+			<th align="left" class="cell_03">
+				&nbsp;<font size="2"><%=vt('form.item_names.mobile_num')%></font>
+			</th>
+			<td>
+				&nbsp;<font size="2"><%=@biz_obj.mobile_phone_no %></font>
+			</td>
+			<td>
+				&nbsp;<%=text_field_tag('upd_mobile_num', @biz_obj.upd_mobile_phone_no, {:size=>16, :maxlength=>11, :style=>"ime-mode: disabled;"})%><br>
+				<%=svr_error_tag("sverr_upd_mobile_num", @err_hash[:upd_mobile_num])%>
+				<font size="2">&nbsp;<%=vt('form.messages.description_09')%></font>
+			</td>
+		</tr>
+		<tr>
+			<th align="left" class="cell_03">
+				&nbsp;<font size="2"><%=vt('form.item_names.mobile_email')%></font>
+			</th>
+			<td>
+				&nbsp;<font size="2"><%=@biz_obj.mobile_email %></font>
+			</td>
+			<td>
+				<span id="upd_mobile_email" name="upd_mobile_email" class="chkgroup">
+				&nbsp;<%=text_field_tag('upd_mobile_email_local', @biz_obj.upd_mobile_email_local, {:size=>20, :maxlength=>220, :style=>"ime-mode: disabled;"})%>@
+				<%=ent_select_tag('upd_mobile_email_domain', @biz_obj.mobile_carrier_list, :id, :domain, @biz_obj.upd_mobile_carrier_id)%>
+				</span><br>
+				<%=svr_error_tag("sverr_upd_mobile_email", @err_hash[:upd_mobile_email])%>
+				&nbsp;<font size="2"><%=vt('form.messages.description_10')%></font>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="3" align="center">
+				<%= submit_tag(vt('form.item_names.home_btn'), :class=>'button_04', :onclick=>"$('#return_form').submit();return false;")%>
+				<%= submit_tag(vt('form.item_names.check_btn'), :class=>'button_04')%>
+			</td>
+		</tr>
+		</tbody>
+		</table>
+		<% end %>
+		<%= form_tag_with_params({:controller=>'home/home', :action=>'home'},
+			{:id=>'return_form', :name=>'return_form'}, :TRANS_PTN_BACK) do %>
+		<% end %>
+<% i18n_cache(:suffix=>'update_form-2') do %>
+	</td>
+</tr>
+</table>
+<% end %>

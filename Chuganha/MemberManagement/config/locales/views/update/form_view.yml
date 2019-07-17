@@ -1,0 +1,126 @@
+###############################################################################
+# 国際化設定:: 会員更新（会員情報の入力フォーム）
+# Copyright:: Copyright (c) 2011 仲観派
+# 作成日:2012/12/14 Nakanohito  (mailto:)
+# 更新日:
+###############################################################################
+
+ja:
+  views:
+    update:
+      form:
+        item_names:
+          page_titile: 仲観派（会員情報更新）
+          form_title: 会員情報の更新
+          current_values: 現在値
+          updated_values: 更新値
+          member_state: 会員状態
+          authority: 権限
+          open_id: OpenID
+          password: パスワード
+          retype_pw: パスワード確認
+          nickname: ニックネーム
+          name: お名前
+          yomigana: ヨミガナ
+          gender: 性別
+          birthday: 生年月日
+          country: 居住国
+          language: 言語
+          timezone: タイムゾーン
+          postcode: 郵便番号
+          email: メールアドレス
+          mobile_num: 携帯電話番号
+          mobile_email: 携帯メールアドレス
+          home_btn: 会員ホーム
+          check_btn: 入力値の確認
+        messages:
+          description_01: ※OpenIDは変更出来ません。
+          description_02: ※セキュリティに配慮して非表示
+          description_03: ※半角英数と記号で 12～64 文字
+          description_04: ※確認の為もう一度パスワードを入力してください。
+          description_05: ※20 文字以内
+          description_06: ※全角で入力してください。
+          description_07: ※全角カタカナで入力してください。
+          description_08: ※半角数字のハイフンなしで入力してください。
+          description_09: ※半角数字のハイフンなしで入力してください。
+          description_10: ※仮更新完了通知メールの送付先として使用されます。
+
+en:
+  views:
+    update:
+      form:
+        item_names:
+          page_titile: 仲観派（Update member information）
+          form_title: Update member information
+          current_values: Current value
+          updated_values: Updated values
+          member_state: Member state
+          authority: Authority
+          open_id: OpenID
+          password: Password
+          retype_pw: Retype Password
+          nickname: Nickname
+          name: Name
+          yomigana: Yomigana
+          gender: Gender
+          birthday: Birthday
+          country: Country
+          language: Language
+          timezone: Timezone
+          postcode: Postcode
+          email: E-mail address
+          mobile_num: Mobile number
+          mobile_email: Mobile email address
+          home_btn: Member home
+          check_btn: Input validation
+        messages:
+          description_01: ※Can not be changed OpenID.
+          description_02: ※I make non-indication in consideration for security
+          description_03: ※12-64 characters　in　Half size British number・Sign
+          description_04: ※Retype Password
+          description_05: ※20 characters or less
+          description_06: ※Please enter double-byte characters.
+          description_07: ※Please input in full size katakana.
+          description_08: ※Please enter the number without the hyphen characters.
+          description_09: ※Please enter the number without the hyphen characters.
+          description_10: ※It is used for the address of interim registration completion notice mail.
+
+en-US:
+  views:
+    update:
+      form:
+        item_names:
+          page_titile: 仲観派（Update member information）
+          form_title: Update member information
+          current_values: Current value
+          updated_values: Updated values
+          member_state: Member state
+          authority: Authority
+          open_id: OpenID
+          password: Password
+          retype_pw: Retype Password
+          nickname: Nickname
+          name: Name
+          yomigana: Yomigana
+          gender: Gender
+          birthday: Birthday
+          country: Country
+          language: Language
+          timezone: Timezone
+          postcode: Postcode
+          email: E-mail address
+          mobile_num: Mobile number
+          mobile_email: Mobile email address
+          home_btn: Member home
+          check_btn: Input validation
+        messages:
+          description_01: ※Can not be changed OpenID.
+          description_02: ※I make non-indication in consideration for security
+          description_03: ※12-64 characters　in　Half size British number・Sign
+          description_04: ※Retype Password
+          description_05: ※20 characters or less
+          description_06: ※Please enter double-byte characters.
+          description_07: ※Please input in full size katakana.
+          description_08: ※Please enter the number without the hyphen characters.
+          description_09: ※Please enter the number without the hyphen characters.
+          description_10: ※It is used for the address of interim registration completion notice mail.

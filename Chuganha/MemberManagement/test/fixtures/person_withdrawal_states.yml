@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  id: 1
+  person_withdrawal_state_cls: PRW
+  person_withdrawal_state: 退会済み
+  lock_version: 1
+
+two:
+  id: 2
+  person_withdrawal_state_cls: DPI
+  person_withdrawal_state: 個人情報削除済み
+  lock_version: 1

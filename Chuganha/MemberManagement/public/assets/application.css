@@ -1,0 +1,259 @@
+/* ============================================================================
+ * application.css
+ *
+ * @version   : 1.0.0
+ * @author    : 仲観派
+ * @copyright : 仲観派
+ * @license   : The MIT License
+ * @modified  : 2012-10-26 06:30
+
+
+ * ============================================================================
+ */
+
+a {
+	text-decoration: none;
+}
+
+body {
+	background-color:#b0c4de;
+}
+
+div.info_msg {
+	color: black;
+	background: #7abef4;
+	background-image: url("/assets/icon_info.png");
+}
+
+div.valid_msg {
+	color: black;
+	background: #a9ff52;
+	background-image: url("/assets/icon_valid.png");
+}
+
+div.warning_msg {
+	color: black;
+	background: #faca3c;
+	background-image: url("/assets/icon_warn.png");
+}
+
+div.error_msg {
+	color: black;
+	background: #ff6040;
+	background-image: url("/assets/icon_error.png");
+}
+
+div.info_msg, div.valid_msg, div.warning_msg, div.error_msg {
+	font-family: sans-serif;
+	font-size: small;
+	background-repeat: no-repeat;
+	background-position: 5px center;
+	display: block;
+	padding: 6px 40px;
+	position: relative;
+}
+
+form {
+	margin: 0;
+	padding: 0;
+	display: inline;
+}
+
+hr.dot {
+	border:none;
+	border-top:2px dotted gray;
+	height:1px;
+}
+
+img {
+	margin: 0;
+	padding: 0;
+	vertical-align:bottom;
+}
+
+input.button_01 {
+	width: 190px;
+	height: 50px;
+	color: blue;
+	font: normal normal bold 100% 'Ludica Sans Unicode';
+	border: 0px none;
+	background-image: url(/assets/button_01.png);
+	cursor:pointer;
+}
+
+input.button_02 {
+	width: 190px;
+	height: 50px;
+	color: blue;
+	font: normal normal bold 100% 'Ludica Sans Unicode';
+	border: 0px none;
+	background-image: url(/assets/button_02.png);
+	cursor:pointer;
+}
+
+input.button_03 {
+	width: 150px;
+	height: 40px;
+	font: normal normal bold 80% 'Ludica Sans Unicode';
+	border: 0px none;
+	background-image: url(/assets/button_03.png);
+	cursor:pointer;
+}
+
+input.button_04 {
+	width: 140px;
+	height: 30px;
+	font: normal normal bold 90% 'Ludica Sans Unicode';
+	border: 0px none;
+	background-image: url(/assets/button_04.png);
+	cursor:pointer;
+}
+
+
+input.button_05 {
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	font: normal normal bold 80%/100% 'Ludica Sans Unicode';
+	padding: 0.2em 0.5em 0.22em;
+	color: black;
+	border: 1px solid #202020;
+	background: #b0c4de;
+	background: -webkit-gradient(linear, top, bottom, from(#eeeeee), to(#b0c4de));
+	background: -moz-linear-gradient(top, #eeeeee, #b0c4de);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#b0c4de');
+}
+
+input.openid {
+	text-indent: 18px;
+	background-image: url("/assets/login-bg.png");
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+
+label.validation_error {
+	font-family: sans-serif;
+	font-size: small;
+	color: black;
+	background: #ff6040;
+	display: block;
+	padding: 6px 10px;
+	max-width: 24em;
+	position: relative;
+}
+
+span.check_ok {
+    color: #2f3f2f;
+    background-color: palegreen;
+    border: solid 1px #108010;
+}
+
+span.check_err {
+    color: #3f2f2f;
+    background-color: burlywood;
+    border: solid 1px #a52a2a;
+}
+
+span.check_ok, span.check_err {
+    border-radius: 4px;
+    padding: 3px 6px 3px 6px;
+	font: normal normal bold 110% 'Ludica Sans Unicode';
+    text-align: center;
+}
+
+table.base {
+	background-color:#ffffff;
+}
+
+table.base_01 {
+	background-color:#f4f4f4;
+}
+
+table.form_01 {
+	background-color:#3399cc;
+	border-top-color:#3399cc;
+	border-right-color:#3399cc;
+	border-bottom-color:#3399cc;
+	border-left-color:#3399cc;
+}
+
+td.back {
+	background-color:#dcdcdc;
+}
+
+td.cell_01 {
+	background-color:#b0c4de;
+}
+
+td.cell_02 {
+	background-image: url(/assets/cell_back1.jpg);
+}
+
+td.cell_03 {
+	background-image: url(/assets/cell_back2.jpg);
+}
+
+td.cell_04 {
+	background-image: url(/assets/cell_back3.jpg);
+}
+
+td.cell_05 {
+	background-image: url(/assets/cell_back4.jpg);
+}
+
+td.cell_06 {
+	background-image: url(/assets/cell_back5.jpg);
+}
+
+
+td.heading_01 {
+	width: 190px;
+	height: 50px;
+	color:#113366;
+	padding-left: 20px;
+	font: normal normal bold 100% 'Ludica Sans Unicode';
+	border: 0px none;
+	background-image: url(/assets/heading_01.png);
+	background-repeat: no-repeat;
+}
+
+td.heading_02 {
+	width: 190px;
+	height: 50px;
+	color:#113366;
+	padding-left: 20px;
+	font: normal normal bold 100% 'Ludica Sans Unicode';
+	border: 0px none;
+	background-image: url(/assets/heading_02.png);
+	background-repeat: no-repeat;
+}
+
+th.cell_01 {
+	background-color:#b0c4de;
+}
+
+th.cell_02 {
+	background-image: url(/assets/cell_back1.jpg);
+}
+
+th.cell_03 {
+	background-image: url(/assets/cell_back2.jpg);
+}
+
+th.cell_04 {
+	background-image: url(/assets/cell_back3.jpg);
+}
+
+th.cell_05 {
+	background-image: url(/assets/cell_back4.jpg);
+}
+
+th.cell_06 {
+	background-image: url(/assets/cell_back5.jpg);
+}
+
+textarea.confirmation {
+	font-size:12px;
+	resize:none;
+}

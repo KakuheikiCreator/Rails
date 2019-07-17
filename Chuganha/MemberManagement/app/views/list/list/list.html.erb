@@ -1,0 +1,412 @@
+<%= javascript_include_tag("list/list")%>
+<table border="0" cellspacing="0" cellpadding="0">
+<thead>
+<tr>
+	<td>
+	<!-- Search condition -->
+	<table border="1" cellspacing="0" cellpadding="0">
+	<tbody>
+	<tr>
+		<th align="center" class="cell_02">
+			<font size="3"><%=vt('list.item_names.cond_form_title')%></font>
+		</th>
+	</tr>
+	<tr>
+		<td width="1220">
+			<%= form_tag_with_params({:controller=>'list/list', :action=>'search'},
+					{:id=>'search_form', :name=>'search_form'}, :TRANS_PTN_NOW) do %>
+			<table border="1" cellspacing="0" cellpadding="1" class="base_01">
+			<tbody>
+			<tr>
+				<th width="130" class="cell_03">
+					<font size="2"><%=vt('list.item_names.user_id')%></font>
+				</th>
+				<td colspan="2">
+					<span id="cond_user_id_grp" name="cond_user_id_grp" class="chkgroup">
+					<%=text_field_tag('cond_user_id', @biz_obj.cond_user_id, {:size=>30, :maxlength=>32, :style=>"ime-mode: disabled;"})%>
+					<%=code_select_tag('cond_user_id_match', :MATCH_COND_CLS, @biz_obj.cond_user_id_match) %>
+					</span>
+					<%=svr_error_tag("sverr_cond_user_id", @err_hash[:cond_user_id])%>
+				</td>
+				<th width="130" class="cell_03">
+					<font size="2"><%=vt('list.item_names.member_state')%></font>
+				</th>
+				<td width="140">
+					<%=ent_select_tag('cond_member_state_cls', @biz_obj.member_state_list, :member_state_cls, :member_state, @biz_obj.cond_member_state_cls, {:include_blank=>true})%>
+					<%=svr_error_tag("sverr_cond_member_state_cls", @err_hash[:cond_member_state_cls])%>
+				</td>
+				<th width="130" class="cell_03">
+					<font size="2"><%=vt('list.item_names.authority')%></font>
+				</th>
+				<td width="220">
+					<%=ent_select_tag('cond_authority_cls', @biz_obj.authority_list, :authority_cls, :authority, @biz_obj.cond_authority_cls, {:include_blank=>true})%>
+					<%=svr_error_tag("sverr_cond_authority_cls", @err_hash[:cond_authority_cls])%>
+				</td>
+			</tr>
+			<tr>
+				<th class="cell_03">
+					<font size="2"><%=vt('list.item_names.nickname')%></font>
+				</th>
+				<td colspan="2">
+					<span id="cond_nickname_grp" name="cond_nickname_grp" class="chkgroup">
+					<%=text_field_tag('cond_nickname', @biz_obj.cond_nickname, {:size=>30, :maxlength=>40})%>
+					<%=code_select_tag('cond_nickname_match', :MATCH_COND_CLS, @biz_obj.cond_nickname_match) %>
+					</span>
+					<%=svr_error_tag("sverr_cond_nickname", @err_hash[:cond_nickname])%>
+				</td>
+				<th class="cell_03">
+					<font size="2"><%=vt('list.item_names.country')%></font>
+				</th>
+				<td colspan="3">
+					<%=ent_select_tag('cond_country_name_cd', @biz_obj.country_list, :country_name_cd, :country_name, @biz_obj.cond_country_name_cd, {:include_blank=>true})%>
+					<%=svr_error_tag("sverr_cond_country_name_cd", @err_hash[:cond_country_name_cd])%>
+				</td>
+			</tr>
+			<tr>
+				<th class="cell_03">
+					<font size="2"><%=vt('list.item_names.language')%></font>
+				</th>
+				<td width="310">
+					<%=ent_select_tag('cond_lang_name_cd', @biz_obj.language_list, :lang_name_cd, :lang_name, @biz_obj.cond_lang_name_cd, {:include_blank=>true})%>
+					<%=svr_error_tag("sverr_cond_lang_name_cd", @err_hash[:cond_lang_name_cd])%>
+				</td>
+				<th width="130" class="cell_03">
+					<font size="2"><%=vt('list.item_names.timezone')%></font>
+				</th>
+				<td colspan="4">
+					<%=ent_select_tag('cond_timezone', @biz_obj.timezone_list, :timezone_id, :timezone_id, @biz_obj.cond_timezone_id, {:include_blank=>true})%>
+					<%=svr_error_tag("sverr_cond_timezone", @err_hash[:cond_timezone])%>
+				</td>
+			</tr>
+			<tr>
+				<th class="cell_03">
+					<font size="2"><%=vt('list.item_names.name')%></font>
+				</th>
+				<td colspan="2">
+					<span id="cond_name" name="cond_name" class="chkgroup">
+					<%=text_field_tag('cond_last_name', @biz_obj.cond_last_name, {:size=>20, :maxlength=>20})%>
+					<%=text_field_tag('cond_first_name', @biz_obj.cond_first_name, {:size=>20, :maxlength=>20})%>
+					<%=code_select_tag('cond_name_match', :MATCH_COND_CLS, @biz_obj.cond_name_match) %>
+					</span>
+					<%=svr_error_tag("sverr_cond_name", @err_hash[:cond_name])%>
+				</td>
+				<th class="cell_03">
+					<font size="2"><%=vt('list.item_names.yomigana')%></font>
+				</th>
+				<td colspan="3">
+					<span id="cond_yomigana" name="cond_yomigana" class="chkgroup">
+					<%=text_field_tag('cond_yomigana_last', @biz_obj.cond_yomigana_last, {:size=>20, :maxlength=>30})%>
+					<%=text_field_tag('cond_yomigana_first', @biz_obj.cond_yomigana_first, {:size=>20, :maxlength=>30})%>
+					<%=code_select_tag('cond_yomigana_match', :MATCH_COND_CLS, @biz_obj.cond_yomigana_match) %>
+					</span>
+					<%=svr_error_tag("sverr_cond_yomigana", @err_hash[:cond_yomigana])%>
+				</td>
+			</tr>
+			<tr>
+				<th class="cell_03">
+					<font size="2"><%=vt('list.item_names.birthday')%></font>
+				</th>
+				<td colspan="2">
+					<font size="2">
+					<span id="cond_birth" name="cond_birth" class="chkgroup">
+						<%=select_date(@biz_obj.cond_birthday,
+								   {:prefix=>'cond_birth', :date_separator=>'/', :use_month_numbers=>true,
+								    :start_year=>1900, :end_year=>Date.today.year, :include_blank=>true})%>
+						&nbsp;<%=code_select_tag('cond_birthday_comp', :COMP_COND_CLS, @biz_obj.cond_birthday_comp) %>
+					</span>
+					<%=svr_error_tag("sverr_cond_birth", @err_hash[:cond_birth])%>
+					</font>
+				</td>
+				<th class="cell_03">
+					<font size="2"><%=vt('list.item_names.gender')%></font>
+				</th>
+				<td >
+					<%=ent_select_tag('cond_gender', @biz_obj.gender_list, :gender_cls, :gender, @biz_obj.cond_gender_cls, {:include_blank=>true})%>
+					<%=svr_error_tag("sverr_cond_gender", @err_hash[:cond_gender])%>
+				</td>
+				<th class="cell_03">
+					<font size="2"><%=vt('list.item_names.postcode')%></font>
+				</th>
+				<td>
+					<span id="cond_postcode_grp" name="cond_postcode_grp" class="chkgroup">
+					<%=text_field_tag('cond_postcode', @biz_obj.cond_postcode, {:size=>10, :maxlength=>11, :style=>"ime-mode: disabled;"})%>
+					<%=code_select_tag('cond_postcode_match', :MATCH_COND_CLS, @biz_obj.cond_postcode_match) %>
+					</span>
+					<%=svr_error_tag("sverr_cond_postcode", @err_hash[:cond_postcode])%>
+				</td>
+			</tr>
+			<tr>
+				<th class="cell_03">
+					<font size="2"><%=vt('list.item_names.email')%></font>
+				</th>
+				<td colspan="2">
+					<span id="cond_email_grp" name="cond_email_grp" class="chkgroup">
+					<%=text_field_tag('cond_email', @biz_obj.cond_email, {:size=>40, :maxlength=>255, :style=>"ime-mode: disabled;"})%>
+					<%=code_select_tag('cond_email_match', :MATCH_COND_CLS, @biz_obj.cond_email_match) %>
+					</span>
+					<%=svr_error_tag("sverr_cond_email", @err_hash[:cond_email])%>
+				</td>
+				<th class="cell_03">
+					<font size="2"><%=vt('list.item_names.mobile_carrier')%></font>
+				</th>
+				<td>
+					<%=code_select_tag('cond_mobile_carrier_cd', :MOBILE_CARRIER_CD, @biz_obj.cond_mobile_carrier_cd, {:include_blank=>''}) %>
+					<%=svr_error_tag("sverr_cond_mobile_carrier_cd", @err_hash[:cond_mobile_carrier_cd])%>
+				</td>
+				<th class="cell_03">
+					<font size="2"><%=vt('list.item_names.mobile_num')%></font>
+				</th>
+				<td>
+					<span id="cond_mobile_num" name="cond_mobile_num" class="chkgroup">
+					<%=text_field_tag('cond_mobile_phone_no', @biz_obj.cond_mobile_phone_no, {:size=>16, :maxlength=>11, :style=>"ime-mode: disabled;"})%>
+					<%=code_select_tag('cond_mbl_num_match', :MATCH_COND_CLS, @biz_obj.cond_mbl_num_match) %>
+					</span>
+					<%=svr_error_tag("sverr_cond_mobile_num", @err_hash[:cond_mobile_num])%>
+				</td>
+			</tr>
+			<tr>
+				<th class="cell_03">
+					<font size="2"><%=vt('list.item_names.mobile_id')%></font>
+				</th>
+				<td colspan="2">
+					<span id="cond_mobile_id" name="cond_mobile_id" class="chkgroup">
+					<%=text_field_tag('cond_mobile_id_no', @biz_obj.cond_mobile_id_no, {:size=>40, :maxlength=>255, :style=>"ime-mode: disabled;"})%>
+					<%=code_select_tag('cond_mbl_id_match', :MATCH_COND_CLS, @biz_obj.cond_mbl_id_match) %>
+					</span>
+					<%=svr_error_tag("sverr_cond_mobile_id_no", @err_hash[:cond_mobile_id_no])%>
+				</td>
+				<th class="cell_03">
+					<font size="2"><%=vt('list.item_names.mobile_email')%></font>
+				</th>
+				<td colspan="3">
+					<span id="cond_mobile_email_grp" name="cond_mobile_email_grp" class="chkgroup">
+					<%=text_field_tag('cond_mobile_email', @biz_obj.cond_mobile_email, {:size=>54, :maxlength=>255, :style=>"ime-mode: disabled;"})%>
+					<%=code_select_tag('cond_mbl_email_match', :MATCH_COND_CLS, @biz_obj.cond_mbl_email_match) %>
+					</span>
+					<%=svr_error_tag("sverr_cond_mobile_email", @err_hash[:cond_mobile_email])%>
+				</td>
+			</tr>
+			<tr>
+				<th class="cell_03">
+					<font size="2"><%=vt('list.item_names.join_date')%></font>
+				</th>
+				<td colspan="2">
+					<font size="2">
+					<span id="cond_join_date" name="cond_join_date" class="chkgroup">
+					<%=default_select_datetime(@biz_obj.cond_join_date, :cond_join,
+					 {:start_year=>Date.today.year-10, :end_year=>Date.today.year, :include_blank=>true})%>
+					<%=code_select_tag('cond_join_date_comp', :COMP_COND_CLS, @biz_obj.cond_join_date_comp) %>
+					</span>
+					<%=svr_error_tag("sverr_join_date", @err_hash[:cond_join_date])%>
+					</font>
+				</td>
+				<th class="cell_03">
+					<font size="2"><%=vt('list.item_names.last_auth_date')%></font>
+				</th>
+				<td colspan="3">
+					<font size="2">
+					<span id="cond_last_auth_date" name="cond_last_auth_date" class="chkgroup">
+					<%=default_select_datetime(@biz_obj.cond_last_auth_date, :cond_last_auth,
+					 {:start_year=>Date.today.year-10, :end_year=>Date.today.year, :include_blank=>true})%>
+					<%=code_select_tag('cond_last_auth_comp', :COMP_COND_CLS, @biz_obj.cond_last_auth_comp) %>
+					</span>
+					<%=svr_error_tag("sverr_last_auth_date", @err_hash[:cond_last_auth_date])%>
+					</font>
+				</td>
+			</tr>
+			<tr>
+				<th class="cell_03">
+					<font size="2"><%=vt('list.item_names.sort_items')%></font>
+				</th>
+				<td colspan="4">
+					<span id="sort_cond" name="sort_cond" class="chkgroup">
+					<%=code_select_tag('sort_field_1', :SORT_FIELDS, @biz_obj.sort_field_1, {:include_blank=>''}) %>
+					<%=code_select_tag('sort_order_1', :SORT_ORDER_CLS, @biz_obj.sort_order_1) %>
+					<%=code_select_tag('sort_field_2', :SORT_FIELDS, @biz_obj.sort_field_2, {:include_blank=>''}) %>
+					<%=code_select_tag('sort_order_2', :SORT_ORDER_CLS, @biz_obj.sort_order_2) %>
+					<%=code_select_tag('sort_field_3', :SORT_FIELDS, @biz_obj.sort_field_3, {:include_blank=>''}) %>
+					<%=code_select_tag('sort_order_3', :SORT_ORDER_CLS, @biz_obj.sort_order_3) %>
+					</span>
+					<%=svr_error_tag("sverr_sort_cond", @err_hash[:sort_cond])%>
+				</td>
+				<th class="cell_03">
+					<font size="2"><%=vt('list.item_names.display_number')%></font>
+				</th>
+				<td>
+					<%=code_select_tag('cond_display_count', :COUNT_L, @biz_obj.cond_display_count) %>
+					<%=svr_error_tag("sverr_display_count", @err_hash[:display_count])%>
+					<font size="2"><%=vt('list.messages.disp_cnt_msg')%></font>
+				</td>
+			</tr>
+			</tbody>
+			<tfoot>
+			<tr>
+				<td colspan="7" align="center">
+					<%=submit_tag(t('helpers.submit.search'), :class=>'button_04')%>
+					<%=clear_button(:class=>'button_04')%>
+				</td>
+			</tr>
+			</tfoot>
+			</table>
+			<% end %>
+		</td>
+	</tr>
+	</tbody>
+	</table>
+	</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>
+	<table border="1" cellspacing="0" cellpadding="0" class="base">
+	<thead>
+	<tr>
+		<th width="1220" class="cell_02">
+			<font size="3"><%=vt('list.item_names.list_title')%></font>
+		</th>
+	</tr>
+	</thead>
+	<tfoot>
+	<tr>
+		<td class="cell_02">
+			<%= form_tag_with_params({:controller=>'list/list', :action=>'search'},
+					{:id=>'search_form', :name=>'search_form'}, :TRANS_PTN_NOW) do %>
+			<%=hidden_field_tag("cond_user_id", @biz_obj.cond_user_id)%>
+			<%=hidden_field_tag("cond_user_id_match", @biz_obj.cond_user_id_match)%>
+			<%=hidden_field_tag("cond_member_state_cls", @biz_obj.cond_member_state_cls)%>
+			<%=hidden_field_tag("cond_authority_cls", @biz_obj.cond_authority_cls)%>
+			<%=time_hidden_tag("cond_join_date", @biz_obj.cond_join_date)%>
+			<%=hidden_field_tag("cond_join_date_comp", @biz_obj.cond_join_date_comp)%>
+			<%=hidden_field_tag("cond_nickname", @biz_obj.cond_nickname)%>
+			<%=hidden_field_tag("cond_nickname_match", @biz_obj.cond_nickname_match)%>
+			<%=hidden_field_tag("cond_last_name", @biz_obj.cond_last_name)%>
+			<%=hidden_field_tag("cond_first_name", @biz_obj.cond_first_name)%>
+			<%=hidden_field_tag("cond_name_match", @biz_obj.cond_name_match)%>
+			<%=hidden_field_tag("cond_yomigana_last", @biz_obj.cond_yomigana_last)%>
+			<%=hidden_field_tag("cond_yomigana_first", @biz_obj.cond_yomigana_first)%>
+			<%=hidden_field_tag("cond_yomigana_match", @biz_obj.cond_yomigana_match)%>
+			<%=hidden_field_tag("cond_gender_cls", @biz_obj.cond_gender_cls)%>
+			<%=hidden_field_tag("cond_birthday", @biz_obj.cond_birthday)%>
+			<%=hidden_field_tag("cond_birthday_comp", @biz_obj.cond_birthday_comp)%>
+			<%=hidden_field_tag("cond_country_name_cd", @biz_obj.cond_country_name_cd)%>
+			<%=hidden_field_tag("cond_lang_name_cd", @biz_obj.cond_lang_name_cd)%>
+			<%=hidden_field_tag("cond_timezone_id", @biz_obj.cond_timezone_id)%>
+			<%=hidden_field_tag("cond_postcode", @biz_obj.cond_postcode)%>
+			<%=hidden_field_tag("cond_postcode_match", @biz_obj.cond_postcode_match)%>
+			<%=hidden_field_tag("cond_email", @biz_obj.cond_email)%>
+			<%=hidden_field_tag("cond_email_match", @biz_obj.cond_email_match)%>
+			<%=hidden_field_tag("cond_mobile_phone_no", @biz_obj.cond_mobile_phone_no)%>
+			<%=hidden_field_tag("cond_mbl_num_match", @biz_obj.cond_mbl_num_match)%>
+			<%=hidden_field_tag("cond_mobile_carrier_cd", @biz_obj.cond_mobile_carrier_cd)%>
+			<%=hidden_field_tag("cond_mobile_email", @biz_obj.cond_mobile_email)%>
+			<%=hidden_field_tag("cond_mbl_email_match", @biz_obj.cond_mbl_email_match)%>
+			<%=hidden_field_tag("cond_mobile_id_no", @biz_obj.cond_mobile_id_no)%>
+			<%=hidden_field_tag("cond_mbl_id_match", @biz_obj.cond_mbl_id_match)%>
+			<%=time_hidden_tag("cond_last_auth_date", @biz_obj.cond_last_auth_date)%>
+			<%=hidden_field_tag("cond_last_auth_comp", @biz_obj.cond_last_auth_comp)%>
+			<%=hidden_field_tag("sort_field_1", @biz_obj.sort_field_1)%>
+			<%=hidden_field_tag("sort_field_2", @biz_obj.sort_field_2)%>
+			<%=hidden_field_tag("sort_field_3", @biz_obj.sort_field_3)%>
+			<%=hidden_field_tag("sort_order_1", @biz_obj.sort_order_1)%>
+			<%=hidden_field_tag("sort_order_2", @biz_obj.sort_order_2)%>
+			<%=hidden_field_tag("sort_order_3", @biz_obj.sort_order_3)%>
+			<%=hidden_field_tag("cond_display_count", @biz_obj.cond_display_count)%>
+			<%=hidden_field_tag("cond_page_num", @biz_obj.cond_page_num)%>
+			<table border="0" cellspacing="0" cellpadding="0">
+			<tbody>
+			<tr>
+				<td width="120" align="center" valign="middle">
+					<% if @biz_obj.prev_page_flg then%>
+					<%=submit_tag(vt('list.item_names.prev_page'), {:class=>'button_05'})%>
+					<% end %>
+				</td>
+				<td width="972" align="center">
+					<font size="2">
+						<strong><%=vt('list.item_names.page_number')%>：<%=@biz_obj.cond_page_num%></strong>
+					</font>
+				</td>
+				<td width="120" align="center" valign="middle">
+					<% if @biz_obj.next_page_flg then%>
+					<%=submit_tag(vt('list.item_names.next_page'), {:class=>'button_05'})%>
+					<% end %>
+				</td>
+			</tr>
+			</tbody>
+			</table>
+			<% end %>
+		</td>
+	</tr>
+	</tfoot>
+	<tbody>
+	<tr>
+		<td>
+			<%= form_tag_with_params({:controller=>'home/home', :action=>'home'},
+					{:id=>'list_form', :name=>'list_form', :target=>"_blank"}, :TRANS_PTN_OTH) do %>
+			<%=hidden_field_tag("user_id", @biz_obj.cond_user_id.to_s)%>
+			<% end %>
+			<table border="1" cellspacing="0" cellpadding="0" class="base_01">
+			<thead>
+			<tr>
+				<th width="40" class="cell_05">
+					<font size="2"><%=vt('list.item_names.member_state')%></font>
+				</th>
+				<th width="40" class="cell_05">
+					<font size="2"><%=vt('list.item_names.authority')%></font>
+				</th>
+				<th width="190" class="cell_05">
+					<font size="2"><%=vt('list.item_names.user_id')%></font>
+				</th>
+				<th width="170" class="cell_05">
+					<font size="2"><%=vt('list.item_names.nickname')%></font>
+				</th>
+				<th width="150" class="cell_05">
+					<font size="2"><%=vt('list.item_names.name')%></font>
+				</th>
+				<th width="150" class="cell_05">
+					<font size="2"><%=vt('list.item_names.yomigana')%></font>
+				</th>
+				<th width="40" class="cell_05">
+					<font size="2"><%=vt('list.item_names.gender')%></font>
+				</th>
+				<th width="84" class="cell_05">
+					<font size="2"><%=vt('list.item_names.postcode')%></font>
+				</th>
+				<th width="140" class="cell_05">
+					<font size="2"><%=vt('list.item_names.join_date')%></font>
+				</th>
+				<th width="140" class="cell_05">
+					<font size="2"><%=vt('list.item_names.last_auth_date')%></font>
+				</th>
+				<th width="52" class="cell_05">&nbsp;</th>
+			</tr>
+			</thead>
+			<tbody>
+			<% @rec_cnt = 1 %>
+			<% @biz_obj.member_list.each do |ent| %>
+			<% break if @rec_cnt > @biz_obj.cond_display_count.to_i %>
+			<tr>
+				<td align="center"><font size="2"><%=ent.member_state.member_state_simple%></font></td>
+				<td align="center"><font size="2"><%=ent.authority.authority_simple%></font></td>
+				<td>&nbsp;<font size="2"><%=ent.user_id%></font></td>
+				<td>&nbsp;<font size="2"><%=ent.dec_value(:enc_nickname)%></font></td>
+				<td>&nbsp;<font size="2"><%=ent.dec_value(:enc_last_name) + '　' + ent.dec_value(:enc_first_name)%></font></td>
+				<td>&nbsp;<font size="2"><%=ent.dec_value(:enc_yomigana_last) + '　' + ent.dec_value(:enc_yomigana_first)%></font></td>
+				<td align="center"><font size="2"><%=ent.gender.gender_simple%></font></td>
+				<td>&nbsp;<font size="2"><%=ent.dec_value(:enc_postcode)%></font></td>
+				<td>&nbsp;<font size="2"><%=default_time(ent.join_date)%></font></td>
+				<td>&nbsp;<font size="2"><%=default_time(ent.authentication_date)%></font></td>
+				<td align="center"><%=submit_tag(vt('list.item_names.detail_page'), {:onclick=>raw("submit_home('" + ent.user_id + "');"), :class=>'button_05'})%></td>
+			</tr>
+			<% @rec_cnt += 1 %>
+			<% end %>
+			</tbody>
+			</table>
+		</td>
+	</tr>
+	</tbody>
+	</table>
+	</td>
+</tr>
+</tbody>
+</table>

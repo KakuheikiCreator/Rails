@@ -1,0 +1,54 @@
+###############################################################################
+# 国際化設定:: セッション機能
+# Copyright:: Copyright (c) 2011 仲観派
+# 作成日:2012/11/17 Nakanohito  (mailto:)
+# 更新日:
+###############################################################################
+
+ja:
+  views:
+    session:
+      index:
+        item_names:
+          page_titile: 仲観派（ログイン）
+          header: アカウント情報の入力
+          open_id: OpenID
+          password: パスワード
+          login: ログイン
+          account: アカウント
+        messages:
+          explanation_1: ログインするには会員登録が必要です。
+          explanation_2: 既に会員登録されている方は、ご自身のOpenIDとパスワードを入力し
+          explanation_3: ログインボタンをクリックする事によってログイン出来ます。
+
+en:
+  views:
+    session:
+      index:
+        item_names:
+          page_titile: 仲観派（Login）
+          header: Enter your account information
+          open_id: OpenID
+          password: Password
+          login: Login
+          account: Account
+        messages:
+          explanation_1: To log in is required for registration.
+          explanation_2: If you are already registered member, enter your password and your own OpenID
+          explanation_3: You can login by clicking the Login button.
+
+en-US:
+  views:
+    session:
+      index:
+        item_names:
+          page_titile: 仲観派（Login）
+          header: Enter your account information
+          open_id: OpenID
+          password: Password
+          login: Login
+          account: Account
+        messages:
+          explanation_1: To log in is required for registration.
+          explanation_2: If you are already registered member, enter your password and your own OpenID
+          explanation_3: You can login by clicking the Login button.

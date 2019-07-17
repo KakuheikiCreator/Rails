@@ -1,0 +1,63 @@
+###############################################################################
+# 国際化設定:: 認証履歴
+# Copyright:: Copyright (c) 2011 仲観派
+# 作成日:2012/11/04 Nakanohito  (mailto:)
+# 更新日:
+###############################################################################
+
+ja:
+  activerecord:
+    models:
+      authentication_history: "認証履歴"
+    attributes:
+      authentication_history:
+        id: "ID"
+        account_id: "アカウントID"
+        seq_no: "連番"
+        server_url: "サーバーURL"
+        authentication_date: "認証日時"
+        ip_address: "IPアドレス"
+        referer: "リファラー"
+        cookie: "クッキー"
+        user_agent: "ユーザーエージェント"
+        lock_version: "ロックバージョン"
+        created_at: "作成日"
+        updated_at: "更新日"
+
+en:
+  activerecord:
+    models:
+      authentication_history: "Authentication History"
+    attributes:
+      authentication_history:
+        id: "ID"
+        account_id: "Account ID"
+        seq_no: "Sequential number"
+        server_url: "Server URL"
+        authentication_date: "Authentication Date"
+        ip_address: "IP Address"
+        referer: "Referer"
+        cookie: "Cookie"
+        user_agent: "User Agent"
+        lock_version: "Lock Version"
+        created_at: "Date created"
+        updated_at: "Date updated"
+
+en-US:
+  activerecord:
+    models:
+      authentication_history: "Authentication History"
+    attributes:
+      authentication_history:
+        id: "ID"
+        account_id: "Account ID"
+        seq_no: "Sequential number"
+        server_url: "Server URL"
+        authentication_date: "Authentication Date"
+        ip_address: "IP Address"
+        referer: "Referer"
+        cookie: "Cookie"
+        user_agent: "User Agent"
+        lock_version: "Lock Version"
+        created_at: "Date created"
+        updated_at: "Date updated"

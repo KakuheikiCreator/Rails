@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+data_1:
+  id: 1
+  withdrawal_reason_cls: PSC
+  withdrawal_reason: 本人からの依頼
+  lock_version: 1
+
+data_2:
+  id: 2
+  withdrawal_reason_cls: OTC
+  withdrawal_reason: 本人以外からの依頼
+  lock_version: 1
+
+data_3:
+  id: 3
+  withdrawal_reason_cls: AGV
+  withdrawal_reason: 会員規約違反の為
+  lock_version: 1
+
+data_4:
+  id: 4
+  withdrawal_reason_cls: LWV
+  withdrawal_reason: 法令違反の為
+  lock_version: 1
+
+data_5:
+  id: 5
+  withdrawal_reason_cls: OTH
+  withdrawal_reason: その他
+  lock_version: 1

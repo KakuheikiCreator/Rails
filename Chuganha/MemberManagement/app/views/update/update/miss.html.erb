@@ -1,0 +1,25 @@
+<% i18n_cache(:suffix=>'update_miss-1') do %>
+<div align="center">
+	<table border="0">
+	<tr>
+		<td>
+		<font size="2">
+			<p align="left">
+			ご連絡ありがとうございます。
+			</p>
+			<p align="left">
+			メールの誤配信が複数回行われる<br>
+			場合には、意図的に誤更新している<br>
+			者がいると思われますので<br>
+			下記のアドレスまでご連絡ください。
+			</p>
+			<a href="mailto:<%=@contact_mail.to_s%>"><%=@contact_mail.to_s%></a>
+			<p align="left">
+			ご協力有難うございました。
+			</p>
+		</font>
+		</td>
+	</tr>
+	</table>
+</div>
+<% end %>

@@ -1,0 +1,90 @@
+###############################################################################
+# 国際化設定:: RP情報送信確認フォーム
+# Copyright:: Copyright (c) 2011 仲観派
+# 作成日:2013/01/01 Nakanohito  (mailto:)
+# 更新日:
+###############################################################################
+
+ja:
+  views:
+    op:
+      confirmation_form:
+        item_names:
+          page_titile: 仲観派（OpenID 利用同意）
+          form_title: OpenID 利用同意
+          client_title: 外部サービスからの認証依頼
+          offer_title: 外部サービスへの提供情報
+          terms_title: 外部サービスへの情報提供規約
+          client_service: 認証依頼サービス
+          target_open_id: 対象OpenID
+          nickname: ニックネーム
+          email: メールアドレス
+          fullname: フルネーム
+          birthday: 生年月日
+          gender: 性別
+          postcode: 郵便番号
+          country: 居住国
+          language: 言語
+          timezone: タイムゾーン
+          agree_btn: 同意する
+          disagree_btn: 同意しない
+        messages:
+          explanation_1: 以下の外部サービスからユーザー認証のリクエストを受けています。
+          explanation_2: 注意事項と外部サービスに提供する情報をご確認いただき
+          explanation_3: ボタンにて同意の判断をしてください。
+
+en:
+  views:
+    op:
+      confirmation_form:
+        item_names:
+          page_titile: 仲観派（Member home）
+          form_title: Member information
+          client_title: Authentication request from the external service
+          offer_title: Information to offer
+          terms_title: Terms of provision of information
+          client_service: Client Services
+          target_open_id: Target OpenID
+          nickname: Nickname
+          email: Email
+          fullname: Full name
+          birthday: Birthday
+          gender: Gender
+          postcode: Postcode
+          country: Country
+          language: Language
+          timezone: Timezone
+          agree_btn: Agree
+          disagree_btn: Disagree
+        messages:
+          explanation_1: I have received a request for user authentication from an external service.
+          explanation_2: Please judge the agreement after identifying a content as an agreement.
+          explanation_3: 
+
+en-US:
+  views:
+    op:
+      confirmation_form:
+        item_names:
+          page_titile: 仲観派（Member home）
+          form_title: Member information
+          client_title: Authentication request from the external service
+          offer_title: Information to offer
+          terms_title: Terms of provision of information
+          client_service: Client Services
+          target_open_id: Target OpenID
+          nickname: Nickname
+          email: Email
+          fullname: Full name
+          birthday: Birthday
+          gender: Gender
+          postcode: Postcode
+          country: Country
+          language: Language
+          timezone: Timezone
+          agree_btn: Agree
+          disagree_btn: Disagree
+        messages:
+          explanation_1: I have received a request for user authentication from an external service.
+          explanation_2: Please judge the agreement after identifying a content as an agreement.
+          explanation_3: 

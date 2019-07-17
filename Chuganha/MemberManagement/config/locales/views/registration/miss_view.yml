@@ -1,0 +1,26 @@
+###############################################################################
+# 国際化設定:: 会員登録（会員情報の本登録完了通知画面）
+# Copyright:: Copyright (c) 2011 仲観派
+# 作成日:2012/12/10 Nakanohito  (mailto:)
+# 更新日:
+###############################################################################
+ja:
+  views:
+    registration:
+      miss:
+        item_names:
+          page_titile: ご連絡有難うございます。
+
+en:
+  views:
+    registration:
+      miss:
+        item_names:
+          page_titile: Thank you for your help.
+
+en-US:
+  views:
+    registration:
+      miss:
+        item_names:
+          page_titile: Thank you for your help.

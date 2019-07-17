@@ -1,0 +1,2 @@
+module Registration::RegistrationHelper
+end

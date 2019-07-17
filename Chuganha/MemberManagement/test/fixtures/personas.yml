@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  account_id: 1
+  seq_no: 1
+  enc_nickname: 
+  enc_country_name_cd: 
+  enc_lang_name_cd: 
+  enc_timezone_id: 
+  enc_postcode: 
+  enc_email: 
+  enc_mobile_phone_no: 
+  mobile_carrier_id: 1
+  enc_mobile_email: 
+  enc_mobile_id_no: 
+  enc_mobile_host: 
+  lock_version: 1
+
+two:
+  account_id: 1
+  seq_no: 1
+  enc_nickname: 
+  enc_country_name_cd: 
+  enc_lang_name_cd: 
+  enc_timezone_id: 
+  enc_postcode: 
+  enc_email: 
+  enc_mobile_phone_no: 
+  mobile_carrier_id: 1
+  enc_mobile_email: 
+  enc_mobile_id_no: 
+  enc_mobile_host: 
+  lock_version: 1

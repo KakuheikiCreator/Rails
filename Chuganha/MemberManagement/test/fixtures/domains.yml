@@ -1,0 +1,56 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+entry_1:
+  id: 1
+  domain_name: ne.jp
+  domain_class: 1
+  date_confirmed: 2011-08-09 09:00:00
+  remarks: none
+  delete_flg: false
+  lock_version: 0
+  created_at: 2011-08-09 00:00:00
+  updated_at: 2011-08-09 00:00:00
+
+entry_2:
+  id: 2
+  domain_name: co.jp
+  domain_class: 1
+  date_confirmed: 2011-08-09 09:00:00
+  remarks: none
+  delete_flg: false
+  lock_version: 0
+  created_at: 2011-08-09 00:00:00
+  updated_at: 2011-08-09 00:00:00
+
+entry_3:
+  id: 3
+  domain_name: test.jp
+  domain_class: 1
+  date_confirmed: 2011-08-09 09:00:00
+  remarks: none
+  delete_flg: false
+  lock_version: 0
+  created_at: 2011-08-09 00:00:00
+  updated_at: 2011-08-09 00:00:00
+
+entry_4:
+  id: 4
+  domain_name: logical.delete.ne.jp
+  domain_class: 1
+  date_confirmed: 2011-08-09 10:30:00
+  remarks: none
+  delete_flg: false
+  lock_version: 0
+  created_at: 2011-08-22 10:30:00
+  updated_at: 2011-08-22 10:30:00
+
+entry_5:
+  id: 5
+  domain_name: mixi.jp
+  domain_class: 1
+  date_confirmed: 2011-08-09 10:30:00
+  remarks: none
+  delete_flg: false
+  lock_version: 0
+  created_at: 2011-08-22 10:30:00
+  updated_at: 2011-08-22 10:30:00

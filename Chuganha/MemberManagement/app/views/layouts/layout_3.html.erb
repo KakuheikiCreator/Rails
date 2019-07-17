@@ -1,0 +1,77 @@
+<% i18n_cache(:suffix=>'layout_3-1') do %>
+<!DOCTYPE html>
+<html>
+<head>
+<% end %>
+<% if @page_title.nil? then %>
+  <title>仲観派</title>
+<% else %>
+  <title><%=@page_title.to_s%></title>
+<% end %>
+<% i18n_cache(:suffix=>'layout_3-2') do %>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <meta http-equiv="Content-Script-Type" content="text/javascript">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Cache-Control" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="robots" content="noindex,nofollow">
+  <%= favicon_link_tag 'favicon.ico', :type=>'image/png' %>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+<% end %>
+  <%= csrf_meta_tags %>
+<% i18n_cache(:suffix=>'layout_3-3') do %>
+</head>
+<body leftmargin="0" topmargin="0">
+	<table align="center" border="0" cellpadding="0" cellspacing="0">
+	<thead>
+	<tr>
+		<td>
+<% end %>
+			<table border="0" cellpadding="0" cellspacing="0">
+			<thead>
+			<tr>
+				<td>
+				<% if @page_title_image.nil? then %>
+					<%=image_tag("site_title.jpg", :size=>"750x60")%>
+				<% else %>
+					<%=image_tag(@page_title_image, :size=>"750x60")%>
+				<% end %>
+				</td>
+			</tr>
+			<tr>
+				<td><%= render('partials/top_link_wide')%></td>
+			</tr>
+			</thead>
+			</table>
+<% i18n_cache(:suffix=>'layout_3-4') do %>
+		</td>
+	</tr>
+	</thead>
+	<tfoot>
+	<tr>
+		<td align="right">
+			<font color="#ffffff" size="2"><strong>Copyright (C) 2011 仲観派 All Rights Reserved.</strong></font>
+		</td>
+	</tr>
+	</tfoot>
+	</tbody>
+	<tr>
+		<td>
+<% end %>
+
+<%= yield %>
+
+<% i18n_cache(:suffix=>'layout_3-5') do %>
+		</td>
+	</tr>
+	</tbody>
+	</table>
+</body>
+</html>
+<% end %>

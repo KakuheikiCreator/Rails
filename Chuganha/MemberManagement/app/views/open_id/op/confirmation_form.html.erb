@@ -1,0 +1,180 @@
+<% i18n_cache(:suffix=>'op_confirmation_form-1') do %>
+<table width="750" border="0" cellspacing="0" cellpadding="0" class="base">
+<tbody>
+<tr height="10"><td colspan="2">&nbsp;</td></tr>
+<tr>
+	<td width="200" align="left" valign="top">
+<% end %>
+	<%= render('partials/left_link')%>
+	</td>
+	<td width="550" valign="top">
+		<table border="0" cellspacing="0" cellpadding="0">
+		<tbody>
+		<tr>
+			<td align="center">
+			<%= form_tag({:controller=>'open_id/op', :action=>'confirmation'}, {:id=>'confirmation_form'}) do %>
+				<table border="1" cellpadding="3" cellspacing="0" class="base">
+				<tbody>
+				<tr height="30">
+					<th colspan="2" class="cell_02">
+						<font size="3"><%=vt('confirmation_form.item_names.form_title')%></font>
+					</th>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<font size="2">
+							<%=vt('confirmation_form.messages.explanation_1')%><br />
+							<%=vt('confirmation_form.messages.explanation_2')%><br />
+							<%=vt('confirmation_form.messages.explanation_3')%>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<th colspan="2" class="cell_02">
+						<font size="2"><%=vt('confirmation_form.item_names.client_title')%></font>
+					</th>
+				</tr>
+				<tr>
+					<th width="150" align="left" class="cell_03">
+						<font size="2"><%=vt('confirmation_form.item_names.client_service')%></font>
+					</th>
+					<td width="370">
+						<font size="2"><%=@biz_obj.trust_root.to_s %></font>
+					</td>
+				</tr>
+				<tr>
+					<th align="left" class="cell_03">
+						<font size="2"><%=vt('confirmation_form.item_names.target_open_id')%></font>
+					</th>
+					<td>
+						<font size="2"><%=@biz_obj.open_id.to_s %></font>
+					</td>
+				</tr>
+				<% unless @biz_obj.sreg_disp_hash.empty? then %>
+				<tr>
+					<th colspan="2" class="cell_02">
+						<font size="2"><%=vt('confirmation_form.item_names.offer_title')%></font>
+					</th>
+				</tr>
+				<% end %>
+				<% if @biz_obj.sreg_disp_hash.key?('email') then %>
+				<tr>
+					<th align="left" class="cell_03">
+						<font size="2"><%=vt('confirmation_form.item_names.email')%></font>
+					</th>
+					<td>
+						<font size="2"><%=@biz_obj.sreg_disp_hash['email'].to_s %></font>
+					</td>
+				</tr>
+				<% end %>
+				<% if @biz_obj.sreg_disp_hash.key?('nickname') then %>
+				<tr>
+					<th align="left" class="cell_03">
+						<font size="2"><%=vt('confirmation_form.item_names.nickname')%></font>
+					</th>
+					<td>
+						<font size="2"><%=@biz_obj.sreg_disp_hash['nickname'].to_s %></font>
+					</td>
+				</tr>
+				<% end %>
+				<% if @biz_obj.sreg_disp_hash.key?('fullname') then %>
+				<tr>
+					<th align="left" class="cell_03">
+						<font size="2"><%=vt('confirmation_form.item_names.fullname')%></font>
+					</th>
+					<td>
+						<font size="2"><%=@biz_obj.sreg_disp_hash['fullname'].to_s %></font>
+					</td>
+				</tr>
+				<% end %>
+				<% if @biz_obj.sreg_disp_hash.key?('dob') then %>
+				<tr>
+					<th align="left" class="cell_03">
+						<font size="2"><%=vt('confirmation_form.item_names.birthday')%></font>
+					</th>
+					<td>
+						<font size="2"><%=@biz_obj.sreg_disp_hash['dob'].to_s %></font>
+					</td>
+				</tr>
+				<% end %>
+				<% if @biz_obj.sreg_disp_hash.key?('gender') then %>
+				<tr>
+					<th align="left" class="cell_03">
+						<font size="2"><%=vt('confirmation_form.item_names.gender')%></font>
+					</th>
+					<td>
+						<font size="2"><%=@biz_obj.sreg_disp_hash['gender'].to_s %></font>
+					</td>
+				</tr>
+				<% end %>
+				<% if @biz_obj.sreg_disp_hash.key?('postcode') then %>
+				<tr>
+					<th align="left" class="cell_03">
+						<font size="2"><%=vt('confirmation_form.item_names.postcode')%></font>
+					</th>
+					<td>
+						<font size="2"><%=@biz_obj.sreg_disp_hash['postcode'].to_s %></font>
+					</td>
+				</tr>
+				<% end %>
+				<% if @biz_obj.sreg_disp_hash.key?('country') then %>
+				<tr>
+					<th align="left" class="cell_03">
+						<font size="2"><%=vt('confirmation_form.item_names.country')%></font>
+					</th>
+					<td>
+						<font size="2"><%=@biz_obj.sreg_disp_hash['country'].to_s %></font>
+					</td>
+				</tr>
+				<% end %>
+				<% if @biz_obj.sreg_disp_hash.key?('language') then %>
+				<tr>
+					<th align="left" class="cell_03">
+						<font size="2"><%=vt('confirmation_form.item_names.language')%></font>
+					</th>
+					<td>
+						<font size="2"><%=@biz_obj.sreg_disp_hash['language'].to_s %></font>
+					</td>
+				</tr>
+				<% end %>
+				<% if @biz_obj.sreg_disp_hash.key?('timezone') then %>
+				<tr>
+					<th align="left" class="cell_03">
+						<font size="2"><%=vt('confirmation_form.item_names.timezone')%></font>
+					</th>
+					<td>
+						<font size="2"><%=@biz_obj.sreg_disp_hash['timezone'].to_s %></font>
+					</td>
+				</tr>
+				<% end %>
+				<tr>
+					<th colspan="2" class="cell_02">
+						<font size="2"><%=vt('confirmation_form.item_names.terms_title')%></font>
+					</th>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<textarea cols="82" rows="26" readonly class="confirmation"><%=strip_tags(@biz_obj.terms_of_providing)%></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td align="center" colspan="2">
+						<%= submit_tag(vt('confirmation_form.item_names.agree_btn'), :id=>'agree_submit', :class=>'button_04')%>
+						<%= submit_tag(vt('confirmation_form.item_names.disagree_btn'), :id=>'disagree_submit', :class=>'button_04')%>
+					</td>
+				</tr>
+				</tbody>
+				</table>
+			<% end %>
+<% i18n_cache(:suffix=>'op_confirmation_form_2') do %>
+			</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+		</tr>
+		</tbody>
+		</table>
+	</td>
+</tr>
+</table>
+<% end %>

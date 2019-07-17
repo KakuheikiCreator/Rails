@@ -1,0 +1,58 @@
+# -*- coding: utf-8 -*-
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+entry_1:
+  id: 1
+  system_id: 1
+  request_analysis_schedule_id: 1
+  received_year: 2011
+  received_month: 8
+  received_day: 16
+  received_hour: 10
+  received_minute: 9
+  received_second: 0
+  function_id: 1
+  function_transition_no: 
+  login_id: 
+  client_id: 
+  browser_id: 1
+  browser_version_id: 1
+  accept_language: 
+  referrer: 
+  domain_id: 1
+  proxy_host: 
+  proxy_ip_address: 
+  remote_host: 
+  ip_address: 
+  request_count: 100
+  lock_version: 0
+  created_at: 2011-08-09 00:00:00
+  updated_at: 2011-08-09 00:00:00
+
+entry_2:
+  id: 2
+  system_id: 1
+  request_analysis_schedule_id: 1
+  received_year: 2011
+  received_month: 8
+  received_day: 16
+  received_hour: 10
+  received_minute: 9
+  received_second: 0
+  function_id: 1
+  function_transition_no: 
+  login_id: 
+  client_id: 
+  browser_id: 1
+  browser_version_id: 1
+  accept_language: 
+  referrer: 
+  domain_id: 4
+  proxy_host: 
+  proxy_ip_address: 
+  remote_host: 
+  ip_address: 
+  request_count: 10
+  lock_version: 0
+  created_at: 2011-08-09 00:00:00
+  updated_at: 2011-08-09 00:00:00

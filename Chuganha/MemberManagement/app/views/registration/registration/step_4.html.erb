@@ -1,0 +1,236 @@
+<% i18n_cache(:suffix=>'registration_step_4-1') do %>
+<table width="750" border="0" cellspacing="0" cellpadding="0" class="base">
+<tbody>
+<tr height="10"><td colspan="2">&nbsp;</td></tr>
+<tr>
+	<td width="200" align="left" valign="top">
+<% end %>
+	<%= render(:partial=>'left_part')%>
+	</td>
+	<td width="550" valign="top">
+		<%= form_tag_with_params({:controller=>'registration/registration', :action=>'step_5'},
+					{:id=>'step_4_form', :name=>'step_4_form'}, :TRANS_PTN_NOW) do %>
+		<%=hidden_field_tag("accept_terms_flg", @biz_obj.accept_terms_flg)%>
+		<%=hidden_field_tag("accept_policy_flg", @biz_obj.accept_policy_flg)%>
+<% i18n_cache(:suffix=>'registration_step_4-2') do %>
+		<table border="0" cellspacing="0" cellpadding="0">
+		<thead>
+		<tr>
+			<td>
+				<font size="3">
+				<strong><%=vt('step_4.item_names.heading')%></strong>
+				<p>
+				&nbsp;<%=vt('step_4.messages.explanation_1')%><br/>
+				&nbsp;<%=vt('step_4.messages.explanation_2')%><br/>
+				&nbsp;<%=vt('step_4.messages.explanation_3')%>
+				</p>
+				</font>
+			</td>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td align="center">
+				<table border="1" cellspacing="0" cellpadding="0" class="form_01">
+				<thead>
+				<tr height="30">
+					<th align="center" valign="middle">
+					<font size="3"><%=vt('step_4.item_names.confirmation')%></font>
+					</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td align="center">
+<% end %>
+						<table border="1" cellpadding="2" cellspacing="0" class="base">
+						<tbody>
+						<tr>
+							<th width="160" align="left" class="cell_01">
+								<font size="3">&nbsp;<%=vt('step_4.item_names.open_id')%></font>
+							</th>
+							<td width="360">
+								<font size="2">
+								&nbsp;<%=@biz_obj.open_id_header + @biz_obj.user_id %>
+								</font>
+								<%=hidden_field_tag("identifier", @biz_obj.user_id)%>
+							</td>
+						</tr>
+						<tr>
+							<th align="left" class="cell_01">
+								<font size="3">&nbsp;<%=vt('step_4.item_names.password')%></font>
+							</th>
+							<td>
+								<font size="2">
+								&nbsp;<%=vt('step_4.messages.description_01')%><br />
+								</font>
+								<font size="3">
+								&nbsp;<%=conv_asterisk(@biz_obj.password) %>
+								</font>
+								<%=hidden_field_tag("password", @biz_obj.password)%>
+								<%=hidden_field_tag("retype_pw", @biz_obj.retype_pw)%>
+							</td>
+						</tr>
+						<tr>
+							<th align="left" class="cell_01">
+								<font size="3">&nbsp;<%=vt('step_4.item_names.nickname')%></font>
+							</th>
+							<td>
+								<font size="3">
+								&nbsp;<%=@biz_obj.nickname %><br>
+								</font>
+								<%=hidden_field_tag("nickname", @biz_obj.nickname)%>
+							</td>
+						</tr>
+						<tr>
+							<th align="left" class="cell_01">
+								<font size="3">&nbsp;<%=vt('step_4.item_names.name')%></font>
+							</th>
+							<td>
+								<font size="3">
+								&nbsp;<%=@biz_obj.name_1 + '　' + @biz_obj.name_2 %>
+								</font>
+								<%=hidden_field_tag("name_1", @biz_obj.name_1)%>
+								<%=hidden_field_tag("name_2", @biz_obj.name_2)%>
+							</td>
+						</tr>
+						<tr>
+							<th align="left" class="cell_01">
+								<font size="3">&nbsp;<%=vt('step_4.item_names.yomigana')%></font>
+							</th>
+							<td>
+								<font size="3">
+								&nbsp;<%=@biz_obj.name_kana_1 + '　' + @biz_obj.name_kana_2 %>
+								</font>
+								<%=hidden_field_tag("name_kana_1", @biz_obj.name_kana_1)%>
+								<%=hidden_field_tag("name_kana_2", @biz_obj.name_kana_2)%>
+							</td>
+						</tr>
+						<tr>
+							<th align="left" class="cell_01">
+								<font size="3">&nbsp;<%=vt('step_4.item_names.gender')%></font>
+							</th>
+							<td>
+								<font size="3">
+								&nbsp;<%=@biz_helper.gender(@biz_obj.gender_cls) %>
+								</font>
+								<%=hidden_field_tag("gender", @biz_obj.gender_cls)%>
+							</td>
+						</tr>
+						<tr>
+							<th align="left" class="cell_01">
+								<font size="3">&nbsp;<%=vt('step_4.item_names.birthday')%></font>
+							</th>
+							<td>
+								<font size="3">
+								&nbsp;<%=default_date(@biz_obj.birth_day) %>
+								</font>
+								<%=hidden_field_tag("birth[year]", @biz_obj.birth_day.year.to_s)%>
+								<%=hidden_field_tag("birth[month]", @biz_obj.birth_day.month.to_s)%>
+								<%=hidden_field_tag("birth[day]", @biz_obj.birth_day.day.to_s)%>
+							</td>
+						</tr>
+						<tr>
+							<th align="left" class="cell_01">
+								<font size="3">&nbsp;<%=vt('step_4.item_names.country')%></font>
+							</th>
+							<td>
+								<font size="3">
+								&nbsp;<%=@biz_helper.country_name(@biz_obj.country_name_cd) %>
+								</font>
+								<%=hidden_field_tag("country", @biz_obj.country_name_cd)%>
+							</td>
+						</tr>
+						<tr>
+							<th align="left" class="cell_01">
+								<font size="3">&nbsp;<%=vt('step_4.item_names.language')%></font>
+							</th>
+							<td>
+								<font size="3">
+								&nbsp;<%=@biz_helper.lang_name(@biz_obj.lang_name_cd) %>
+								</font>
+								<%=hidden_field_tag("language", @biz_obj.lang_name_cd)%>
+							</td>
+						</tr>
+						<tr>
+							<th align="left" class="cell_01">
+								<font size="3">&nbsp;<%=vt('step_4.item_names.timezone')%></font>
+							</th>
+							<td>
+								<font size="3">
+								&nbsp;<%=@biz_obj.timezone_id %>
+								</font>
+								<%=hidden_field_tag("timezone", @biz_obj.timezone_id)%>
+							</td>
+						</tr>
+						<tr>
+							<th align="left" class="cell_01">
+								<font size="3">&nbsp;<%=vt('step_4.item_names.postcode')%></font>
+							</th>
+							<td>
+								<font size="3">
+								&nbsp;<%=@biz_obj.postcode %>
+								</font>
+								<%=hidden_field_tag("postcode", @biz_obj.postcode)%>
+							</td>
+						</tr>
+						<tr>
+							<th align="left" class="cell_01">
+								<font size="3">&nbsp;<%=vt('step_4.item_names.email')%></strong></font>
+							</th>
+							<td>
+								<font size="3">
+								&nbsp;<%=@biz_obj.email %>
+								</font>
+								<%=hidden_field_tag("email", @biz_obj.email)%>
+							</td>
+						</tr>
+						<tr>
+							<th align="left" class="cell_01">
+								<font size="3">&nbsp;<%=vt('step_4.item_names.mobile_num')%></font>
+							</th>
+							<td>
+								<font size="3">
+								&nbsp;<%=@biz_obj.mobile_phone_no %>
+								</font>
+								<%=hidden_field_tag("mobile_num", @biz_obj.mobile_phone_no)%>
+							</td>
+						</tr>
+						<tr>
+							<th align="left" class="cell_01">
+								<font size="3">&nbsp;<%=vt('step_4.item_names.mobile_email')%></font>
+							</th>
+							<td>
+								<font size="3">
+								&nbsp;<%=@biz_obj.mobile_email %>
+								</font>
+								<%=hidden_field_tag("mobile_email_local", @biz_obj.mobile_email_local)%>
+								<%=hidden_field_tag("mobile_email_domain", @biz_obj.mobile_carrier_id)%>
+							</td>
+						</tr>
+						</tbody>
+						</table>
+<% i18n_cache(:suffix=>'registration_step_4-3') do %>
+					</td>
+				</tr>
+				</tbody>
+				</table>
+			</td>
+		</tr>
+		<tr><td>&nbsp;</td></tr>
+		<tr>
+			<td align="center">
+				<%= submit_tag(vt('step_4.item_names.previous_step'), :class=>'button_04')%>
+				<%= submit_tag(vt('step_4.item_names.next_step'), :class=>'button_04')%>
+			</td>
+		</tr>
+		<tr><td>&nbsp;</td></tr>
+		</tbody>
+		</table>
+<% end %>
+		<% end %>
+<% i18n_cache(:suffix=>'registration_step_4-4') do %>
+	</td>
+</tr>
+</table>
+<% end %>

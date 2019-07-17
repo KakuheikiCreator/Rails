@@ -1,0 +1,252 @@
+<% i18n_cache(:suffix=>'home_home-1') do %>
+<%= javascript_include_tag("home/home")%>
+<table width="750" border="0" cellspacing="0" cellpadding="0" class="base">
+<tbody>
+<tr height="10"><td colspan="2">&nbsp;</td></tr>
+<tr>
+	<td width="200" align="left" valign="top">
+<% end %>
+	<%= render('partials/left_link')%>
+	</td>
+	<td width="550" valign="top">
+		<table border="0" cellspacing="0" cellpadding="0">
+		<tbody>
+		<tr>
+			<td height="20">
+				<hr width="98%" class="dot">
+			</td>
+		</tr>
+		<tr>
+			<td width="530" align="center">
+				<table border="1" cellpadding="5" cellspacing="0" class="base">
+				<tbody>
+				<tr height="30">
+					<th colspan="2" align="center" class="cell_02">
+						<font size="3"><%=vt('home.item_names.form_title')%></font>
+					</th>
+				</tr>
+				<tr>
+					<th width="155" align="left" class="cell_03">
+						<font size="3"><%=vt('home.item_names.open_id')%></font>
+					</th>
+					<td width="325">
+						<font size="2">
+							<%= @biz_obj.open_id_header.to_s + @biz_obj.user_id.to_s %>
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<th align="left" class="cell_03">
+						<font size="3"><%=vt('home.item_names.nickname')%></font>
+					</th>
+					<td>
+						<font size="3"><%= @biz_obj.nickname.to_s %></font>
+					</td>
+				</tr>
+				<tr>
+					<th align="left" class="cell_03">
+						<font size="3"><%=vt('home.item_names.name')%></font>
+					</th>
+					<td>
+						<font size="3"><%= @biz_obj.name_1.to_s + '　' + @biz_obj.name_2.to_s %></font>
+					</td>
+				</tr>
+				<tr>
+					<th align="left" class="cell_03">
+						<font size="3"><%=vt('home.item_names.yomigana')%></font>
+					</th>
+					<td>
+						<font size="3"><%= @biz_obj.name_kana_1.to_s + '　' + @biz_obj.name_kana_2.to_s %></font>
+					</td>
+				</tr>
+				<tr>
+					<th align="left" class="cell_03">
+						<font size="3"><%=vt('home.item_names.gender')%></font>
+					</th>
+					<td>
+						<font size="3"><%= @biz_obj.gender.to_s %></font>
+					</td>
+				</tr>
+				<tr>
+					<th align="left" class="cell_03">
+						<font size="3"><%=vt('home.item_names.birthday')%></font>
+					</th>
+					<td>
+						<font size="3"><%= @biz_obj.birthday %></font>
+					</td>
+				</tr>
+				<tr>
+					<th align="left" class="cell_03">
+						<font size="3"><%=vt('home.item_names.country')%></font>
+					</th>
+					<td>
+						<font size="3"><%= @biz_obj.country_name %></font>
+					</td>
+				</tr>
+				<tr>
+					<th align="left" class="cell_03">
+						<font size="3"><%=vt('home.item_names.language')%></font>
+					</th>
+					<td>
+						<font size="3"><%= @biz_obj.lang_name %></font>
+					</td>
+				</tr>
+				<tr>
+					<th align="left" class="cell_03">
+						<font size="3"><%=vt('home.item_names.timezone')%></font>
+					</th>
+					<td>
+						<font size="3"><%= @biz_obj.timezone_id %></font>
+					</td>
+				</tr>
+				<tr>
+					<th align="left" class="cell_03">
+						<font size="3"><%=vt('home.item_names.postcode')%></font>
+					</th>
+					<td>
+						<font size="3"><%= @biz_obj.postcode.to_s %></font>
+					</td>
+				</tr>
+				<tr>
+					<th align="left" class="cell_03">
+						<font size="3"><%=vt('home.item_names.email')%></font>
+					</th>
+					<td>
+						<font size="3"><%= @biz_obj.email.to_s %></font>
+					</td>
+				</tr>
+				<tr>
+					<th align="left" class="cell_03">
+						<font size="3"><%=vt('home.item_names.mobile_num')%></font>
+					</th>
+					<td>
+						<font size="3"><%= @biz_obj.mobile_phone_no.to_s %></font>
+					</td>
+				</tr>
+				<tr>
+					<th align="left" class="cell_03">
+						<font size="3"><%=vt('home.item_names.mobile_email')%></font>
+					</th>
+					<td>
+						<font size="3"><%= @biz_obj.mobile_email.to_s %></font>
+					</td>
+				</tr>
+				<% if @biz_obj.admin? then %>
+				<tr>
+					<th align="left" class="cell_03">
+						<font size="3"><%=vt('home.item_names.mobile_id_no')%></font>
+					</th>
+					<td>
+						<font size="3"><%= @biz_obj.mobile_id_no.to_s %></font>
+					</td>
+				</tr>
+				<tr>
+					<th align="left" class="cell_03">
+						<font size="3"><%=vt('home.item_names.mobile_host')%></font>
+					</th>
+					<td>
+						<font size="3"><%= @biz_obj.mobile_host.to_s %></font>
+					</td>
+				</tr>
+				<% end %>
+				<tr>
+					<th align="left" class="cell_03">
+						<font size="3"><%=vt('home.item_names.join_date')%></font>
+					</th>
+					<td>
+						<font size="3"><%= @biz_obj.join_date.to_s %></font>
+					</td>
+				</tr>
+				<tr>
+					<th align="left" class="cell_03">
+						<font size="3"><%=vt('home.item_names.last_auth_date')%></font>
+					</th>
+					<td>
+						<font size="3"><%= @biz_obj.last_auth_date.to_s %></font>
+					</td>
+				</tr>
+				<tr>
+					<td align="center" colspan="2">
+					<%= form_tag_with_params({:controller=>'update/update', :action=>'form'},
+									{:id=>'update_btn_form', :name=>'update_btn_form'}, :TRANS_PTN_NEW) do %>
+						<%=hidden_field_tag("user_id", @biz_obj.user_id.to_s)%>
+						<%= submit_tag(vt('home.item_names.update_btn'), :id=>'update_submit', :class=>'button_04')%>
+					<% end %>
+					<%= form_tag_with_params({:controller=>'withdrawal/withdrawal', :action=>'form'},
+									{:id=>'withdrawal_btn_form', :name=>'withdrawal_btn_form'}, :TRANS_PTN_NEW) do %>
+						<%=hidden_field_tag("user_id", @biz_obj.user_id.to_s)%>
+						<%= submit_tag(vt('home.item_names.withdrawal_btn'), :id=>'withdrawal_submit', :class=>'button_04')%>
+					<% end %>
+					</td>
+				</tr>
+				</tbody>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="20">
+				<hr width="98%" class="dot">
+			</td>
+		</tr>
+		<tr>
+			<td align="center">
+				<div id="accordion_head">
+				<table border="1" cellspacing="0" cellpadding="0" class="base">
+				<tbody>
+				<tr height="30">
+					<th width="500" colspan="3" class="cell_02">
+						<font size="3"><%=vt('home.item_names.auth_history')%></font>
+						<font size="2"><%=vt('home.messages.explanation_1')%></font>
+					</th>
+				</tr>
+				</tbody>
+				</table>
+				</div>
+				<table border="1" cellspacing="0" cellpadding="0" class="base">
+				<tbody>
+				<tr>
+					<th width="140" class="cell_03">
+						<font size="3"><%=vt('home.item_names.authentication_date')%></font>
+					</th>
+					<th width="334" class="cell_03">
+						<font size="3"><%=vt('home.item_names.authentication_server')%></font>
+					</th>
+					<th width="22" class="cell_03">&nbsp;
+					</th>
+				</tr>
+				<% @biz_obj.auth_histories.each do |ent| %>
+				<tr>
+					<td>
+						&nbsp;<font size="2"><%= ent.authentication_date.strftime("%Y/%m/%d %H:%M:%S") %></font>
+					</td>
+					<td>
+						&nbsp;<font size="2"><%= ent.server_url %></font>
+					</td>
+					<td align="center">
+						<% if ent.authentication_result then %>
+						<font size="2">○</font>
+						<% else %>
+						<font size="2">×</font>
+						<% end %>
+					</td>
+				</tr>
+				<% end %>
+				</tbody>
+				</table>
+<% i18n_cache(:suffix=>'home_home_2') do %>
+			</td>
+		</tr>
+		<tr>
+			<td height="20">
+				<hr width="98%" class="dot">
+			</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+		</tr>
+		</tbody>
+		</table>
+	</td>
+</tr>
+</table>
+<% end %>

@@ -1,0 +1,26 @@
+###############################################################################
+# 国際化設定:: 会員更新（会員情報の誤更新通知画面）
+# Copyright:: Copyright (c) 2011 仲観派
+# 作成日:2012/12/16 Nakanohito  (mailto:)
+# 更新日:
+###############################################################################
+ja:
+  views:
+    update:
+      miss:
+        item_names:
+          page_titile: ご連絡有難うございます。
+
+en:
+  views:
+    update:
+      miss:
+        item_names:
+          page_titile: Thank you for your help.
+
+en-US:
+  views:
+    update:
+      miss:
+        item_names:
+          page_titile: Thank you for your help.

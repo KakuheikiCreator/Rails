@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  id: 1
+  timezone_id: Asia/Tokyo
+  timezone_name: 東京
+  lock_version: 1
+
+two:
+  id: 2
+  timezone_id: Japan
+  timezone_name: 日本
+  lock_version: 1

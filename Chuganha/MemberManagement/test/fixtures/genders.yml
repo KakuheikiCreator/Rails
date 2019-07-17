@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  gender_cls: MyString
+  gender: MyString
+  gender_simple: MyString
+
+two:
+  gender_cls: MyString
+  gender: MyString
+  gender_simple: MyString

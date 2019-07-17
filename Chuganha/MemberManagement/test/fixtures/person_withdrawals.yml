@@ -1,0 +1,83 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_id: MyString
+  withdrawal_reason_id: 1
+  enc_withdrawal_reason_dtl: 
+  person_withdrawal_state_id: 1
+  join_date: 2012-12-31 15:09:05
+  withdrawal_date: 2012-12-31 15:09:05
+  member_state_id: 1
+  enc_authority_cls: 
+  hsh_password: 
+  hsh_temp_password: 
+  enc_nickname: 
+  enc_last_name: 
+  enc_first_name: 
+  enc_yomigana_last: 
+  enc_yomigana_first: 
+  enc_gender_cls: 
+  enc_birth_date: 
+  enc_country_name_cd: 
+  enc_lang_name_cd: 
+  enc_timezone_id: 
+  enc_postcode: 
+  enc_email: 
+  enc_mobile_phone_no: 
+  hsh_mobile_phone_no: 
+  mobile_carrier_id: 1
+  enc_mobile_email: 
+  hsh_mobile_email: 
+  enc_mobile_id_no: 
+  hsh_mobile_id_no: 
+  enc_mobile_host: 
+  hsh_mobile_host: 
+  last_authentication_date: 2012-12-31 15:09:05
+  last_authentication_result: false
+  last_authentication_ip_address: MyString
+  last_authentication_referer: MyString
+  last_authentication_user_agent: MyString
+  salt: MyString
+  delete_flg: false
+  lock_version: 1
+
+two:
+  user_id: MyString
+  withdrawal_reason_id: 1
+  enc_withdrawal_reason_dtl: 
+  person_withdrawal_state_id: 1
+  join_date: 2012-12-31 15:09:05
+  withdrawal_date: 2012-12-31 15:09:05
+  member_state_id: 1
+  enc_authority_cls: 
+  hsh_password: 
+  hsh_temp_password: 
+  enc_nickname: 
+  enc_last_name: 
+  enc_first_name: 
+  enc_yomigana_last: 
+  enc_yomigana_first: 
+  enc_gender_cls: 
+  enc_birth_date: 
+  enc_country_name_cd: 
+  enc_lang_name_cd: 
+  enc_timezone_id: 
+  enc_postcode: 
+  enc_email: 
+  enc_mobile_phone_no: 
+  hsh_mobile_phone_no: 
+  mobile_carrier_id: 1
+  enc_mobile_email: 
+  hsh_mobile_email: 
+  enc_mobile_id_no: 
+  hsh_mobile_id_no: 
+  enc_mobile_host: 
+  hsh_mobile_host: 
+  last_authentication_date: 2012-12-31 15:09:05
+  last_authentication_result: false
+  last_authentication_ip_address: MyString
+  last_authentication_referer: MyString
+  last_authentication_user_agent: MyString
+  salt: MyString
+  delete_flg: false
+  lock_version: 1

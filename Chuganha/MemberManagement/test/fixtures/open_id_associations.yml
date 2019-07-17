@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  server_url: http://open.id01.com
+  secret: secret01
+  handle: handle01
+  assoc_type: assoc01
+  issued: 1
+  lifetime: 1000
+  lock_version: 1
+  created_at: 2012-10-30 00:00:00
+  updated_at: 2012-10-30 00:00:00
+
+two:
+  server_url: http://open.id02.com
+  secret: secret02
+  handle: handle02
+  assoc_type: assoc02
+  issued: 1
+  lifetime: 2000
+  lock_version: 1
+  created_at: 2012-10-30 00:00:00
+  updated_at: 2012-10-30 00:00:00

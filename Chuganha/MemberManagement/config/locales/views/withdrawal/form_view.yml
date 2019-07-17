@@ -1,0 +1,48 @@
+###############################################################################
+# 国際化設定:: 退会処理
+# Copyright:: Copyright (c) 2011 仲観派
+# 作成日:2012/12/30 Nakanohito  (mailto:)
+# 更新日:
+###############################################################################
+
+ja:
+  views:
+    withdrawal:
+      form:
+        item_names:
+          page_titile: 仲観派（退会届）
+          form_title: 退会フォーム
+          reason: 退会理由
+          detail: 退会理由詳細（任意）
+          home_btn: 会員ホーム
+          next_btn: 次へ
+        messages:
+          caution_1: ※最大2000文字
+
+en:
+  views:
+    withdrawal:
+      form:
+        item_names:
+          page_titile: 仲観派（Notice of withdrawal）
+          form_title: Withdrawal form
+          reason: Withdrawal reason
+          detail: Detail why withdrawal(Arbitrary input)
+          home_btn: Member home
+          next_btn: Next
+        messages:
+          caution_1: ※ maximum 2000 characters
+
+en-US:
+  views:
+    withdrawal:
+      form:
+        item_names:
+          page_titile: 仲観派（Notice of withdrawal）
+          form_title: Withdrawal form
+          reason: Withdrawal reason
+          detail: Detail why withdrawal(Arbitrary input)
+          home_btn: Member home
+          next_btn: Next
+        messages:
+          caution_1: ※ maximum 2000 characters

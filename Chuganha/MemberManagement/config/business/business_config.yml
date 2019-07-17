@@ -1,0 +1,28 @@
+# -*- coding: utf-8 -*-
+###############################################################################
+# 業務設定情報
+# 概要：業務的な設定情報を記載
+# Copyright:: Copyright (c) 2011 仲観派
+# 作成日:2012/02/05 Nakanohito
+# 更新日:
+###############################################################################
+# システム情報
+system_name: 仲観派
+subsystem_name: Member Management
+root_path: 
+# 管理メールアドレス
+admin_mail: admin_mail@nakakan.jp
+# 最大リクエスト頻度（秒間）
+max_request_frequency: 10
+# 最大機能状態ハッシュサイズ
+max_function_state_hash_size: 30
+# 最大履歴数（認証履歴）
+max_history_number: 5
+# トップページ
+site_top: www.nakakan.jp
+# OpenIDヘッダー
+open_id_header: https://www.nakakan.jp/open_id/
+# 携帯認証タイムアウト
+mobile_auth_timeout_min: 30
+# 認証ロック閾値
+auth_lock_threshold: 5

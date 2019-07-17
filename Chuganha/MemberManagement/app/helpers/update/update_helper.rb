@@ -1,0 +1,2 @@
+module Update::UpdateHelper
+end

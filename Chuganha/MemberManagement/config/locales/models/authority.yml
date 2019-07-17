@@ -1,0 +1,48 @@
+###############################################################################
+# 国際化設定:: 権限
+# Copyright:: Copyright (c) 2011 仲観派
+# 作成日:2012/11/04 Nakanohito  (mailto:)
+# 更新日:
+###############################################################################
+
+ja:
+  activerecord:
+    models:
+      authority: "権限"
+    attributes:
+      authority:
+        id: "ID"
+        authority_cls: "権限区分"
+        authority: "権限"
+        authority_simple: "権限（簡略）"
+        lock_version: "ロックバージョン"
+        created_at: "作成日"
+        updated_at: "更新日"
+
+en:
+  activerecord:
+    models:
+      authority: "Authority"
+    attributes:
+      authority:
+        id: "ID"
+        authority_cls: "Authority Class"
+        authority: "Authority"
+        authority_simple: "Authority(Simple)"
+        lock_version: "Lock Version"
+        created_at: "Date created"
+        updated_at: "Date updated"
+
+en-US:
+  activerecord:
+    models:
+      authority: "Authority"
+    attributes:
+      authority:
+        id: "ID"
+        authority_cls: "Authority Class"
+        authority: "Authority"
+        authority_simple: "Authority(Simple)"
+        lock_version: "Lock Version"
+        created_at: "Date created"
+        updated_at: "Date updated"

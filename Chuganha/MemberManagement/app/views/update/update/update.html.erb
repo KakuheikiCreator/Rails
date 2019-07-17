@@ -1,0 +1,245 @@
+<% i18n_cache(:suffix=>'update_update-1') do %>
+<table border="1" cellpadding="0" cellspacing="0" class="form_01">
+<tbody>
+<tr>
+	<th height="30" class="cell_06">
+		<font size="3"><%=vt('update.item_names.form_title')%></font>
+	</th>
+</tr>
+<tr>
+	<td valign="top">
+<% end %>
+		<table border="1" cellspacing="0" cellpadding="2" class="base">
+		<thead>
+		<tr>
+			<td colspan="3">
+				<font size="2">
+				<p>
+				<%=vt('update.messages.explanation_1')%>
+				</p>
+				<% if @biz_obj.send_mail? then %>
+				<p>
+				<%=vt('update.messages.explanation_2')%><br />
+				<%=vt('update.messages.explanation_3')%>
+				</p>
+				<p>
+				<%=vt('update.messages.attention_1')%><br />
+				<%=vt('update.messages.attention_2')%><br />
+				<%=vt('update.messages.attention_3')%>
+				</p>
+				<% end %>
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<th width="140" class="cell_03">&nbsp;</th>
+			<th width="220" align="center" class="cell_03">
+				<font size="2"><%=vt('update.item_names.current_values')%></font>
+			</th>
+			<th width="366" align="center" class="cell_04">
+				<font size="2"><%=vt('update.item_names.updated_values')%></font>
+			</th>
+		</tr>
+		</thead>
+		<tbody>
+		<% if @biz_obj.admin? then %>
+		<tr>
+			<th align="left" class="cell_03">
+				&nbsp;<font size="2"><%=vt('update.item_names.member_state')%></font>
+			</th>
+			<td>
+				&nbsp;<font size="2"><%=@biz_obj.member_state %></font>
+			</td>
+			<td>
+				&nbsp;<font size="2"><%=@biz_obj.upd_member_state %></font>
+			</td>
+		</tr>
+		<tr>
+			<th align="left" class="cell_03">
+				&nbsp;<font size="2"><%=vt('update.item_names.authority')%></font>
+			</th>
+			<td>
+				&nbsp;<font size="2"><%=@biz_obj.authority %></font>
+			</td>
+			<td>
+				&nbsp;<font size="2"><%=@biz_obj.upd_authority %></font>
+			</td>
+		</tr>
+		<% end %>
+		<tr>
+			<th align="left" class="cell_03">
+				&nbsp;<font size="2"><%=vt('update.item_names.open_id')%></font>
+			</th>
+			<td colspan="2">
+				&nbsp;<font size="2"><%=@biz_obj.open_id %><br />
+				&nbsp;<%=vt('form.messages.description_01')%></font>
+			</td>
+		</tr>
+		<tr>
+			<th align="left" class="cell_03">
+				&nbsp;<font size="2"><%=vt('update.item_names.password')%></font>
+			</th>
+			<td rowspan="2">
+				&nbsp;<font size="2"><%=vt('form.messages.description_02')%></font>
+			</td>
+			<td>
+				<%=conv_asterisk(@biz_obj.upd_password.to_s)%>
+			</td>
+		</tr>
+		<tr>
+			<th align="left" class="cell_03">
+				&nbsp;<font size="2"><%=vt('update.item_names.retype_pw')%></font>
+			</th>
+			<td>
+				<%=conv_asterisk(@biz_obj.upd_retype_pw.to_s)%>
+			</td>
+		</tr>
+		<tr>
+			<th align="left" class="cell_03">
+				&nbsp;<font size="2"><%=vt('update.item_names.nickname')%></font>
+			</th>
+			<td>
+				&nbsp;<font size="2"><%=@biz_obj.nickname %></font>
+			</td>
+			<td>
+				&nbsp;<font size="2"><%=@biz_obj.upd_nickname %></font>
+			</td>
+		</tr>
+		<tr>
+			<th align="left" class="cell_03">
+				&nbsp;<font size="2"><%=vt('update.item_names.name')%></font>
+			</th>
+			<td>
+				&nbsp;<font size="2"><%=@biz_obj.name_1 %>&nbsp;<%=@biz_obj.name_2 %></font>
+			</td>
+			<td>
+				&nbsp;<font size="2"><%=@biz_obj.upd_name_1 %>&nbsp;<%=@biz_obj.upd_name_2 %></font>
+			</td>
+		</tr>
+		<tr>
+			<th align="left" class="cell_03">
+				&nbsp;<font size="2"><%=vt('update.item_names.yomigana')%></font>
+			</th>
+			<td>
+				&nbsp;<font size="2"><%=@biz_obj.name_kana_1 %>　<%=@biz_obj.name_kana_2 %></font>
+			</td>
+			<td>
+				&nbsp;<font size="2"><%=@biz_obj.upd_name_kana_1 %>&nbsp;<%=@biz_obj.upd_name_kana_2 %></font>
+			</td>
+		</tr>
+		<tr>
+			<th align="left" class="cell_03">
+				&nbsp;<font size="2"><%=vt('update.item_names.gender')%></font>
+			</th>
+			<td>
+				&nbsp;<font size="2"><%=@biz_obj.gender %></font>
+			</td>
+			<td>
+				&nbsp;<font size="2"><%=@biz_obj.upd_gender %></font>
+			</td>
+		</tr>
+		<tr>
+			<th align="left" class="cell_03">
+				&nbsp;<font size="2"><%=vt('update.item_names.birthday')%></font>
+			</th>
+			<td>
+				&nbsp;<font size="2"><%=default_date(@biz_obj.birthday) %></font>
+			</td>
+			<td>
+				&nbsp;<font size="2"><%=default_date(@biz_obj.upd_birthday) %></font>
+			</td>
+		</tr>
+		<tr>
+			<th align="left" class="cell_03">
+				&nbsp;<font size="2"><%=vt('update.item_names.country')%></font>
+			</th>
+			<td>
+				&nbsp;<font size="2"><%=@biz_obj.country_name %></font>
+			</td>
+			<td>
+				&nbsp;<font size="2"><%=@biz_obj.upd_country_name %></font>
+			</td>
+		</tr>
+		<tr>
+			<th align="left" class="cell_03">
+				&nbsp;<font size="2"><%=vt('update.item_names.language')%></font>
+			</th>
+			<td>
+				&nbsp;<font size="2"><%=@biz_obj.lang_name %></font>
+			</td>
+			<td>
+				&nbsp;<font size="2"><%=@biz_obj.upd_lang_name %></font>
+			</td>
+		</tr>
+		<tr>
+			<th align="left" class="cell_03">
+				&nbsp;<font size="2"><%=vt('update.item_names.timezone')%></font>
+			</th>
+			<td>
+				&nbsp;<font size="2"><%=@biz_obj.timezone_id %></font>
+			</td>
+			<td>
+				&nbsp;<font size="2"><%=@biz_obj.upd_timezone_id %></font>
+			</td>
+		</tr>
+		<tr>
+			<th align="left" class="cell_03">
+				&nbsp;<font size="2"><%=vt('update.item_names.postcode')%></font>
+			</th>
+			<td>
+				&nbsp;<font size="2"><%=@biz_obj.postcode %></font>
+			</td>
+			<td>
+				&nbsp;<font size="2"><%=@biz_obj.upd_postcode %></font>
+			</td>
+		</tr>
+		<tr>
+			<th align="left" class="cell_03">
+				&nbsp;<font size="2"><%=vt('update.item_names.email')%></strong></font>
+			</th>
+			<td>
+				&nbsp;<font size="2"><%=@biz_obj.email %></font>
+			</td>
+			<td>
+				&nbsp;<font size="2"><%=@biz_obj.upd_email %></font>
+			</td>
+		</tr>
+		<tr>
+			<th align="left" class="cell_03">
+				&nbsp;<font size="2"><%=vt('update.item_names.mobile_num')%></font>
+			</th>
+			<td>
+				&nbsp;<font size="2"><%=@biz_obj.mobile_phone_no %></font>
+			</td>
+			<td>
+				&nbsp;<font size="2"><%=@biz_obj.upd_mobile_phone_no %></font>
+			</td>
+		</tr>
+		<tr>
+			<th align="left" class="cell_03">
+				&nbsp;<font size="2"><%=vt('update.item_names.mobile_email')%></font>
+			</th>
+			<td>
+				&nbsp;<font size="2"><%=@biz_obj.mobile_email %></font>
+			</td>
+			<td>
+				&nbsp;<font size="2"><%=@biz_obj.upd_mobile_email %></font>
+			</td>
+		</tr>
+		<% if @biz_obj.admin? then %>
+		<tr>
+			<td colspan="3" align="center">
+				<%= form_tag_with_params({:controller=>'home/home', :action=>'home'},
+					{:id=>'home_btn_form', :name=>'home_btn_form'}, :TRANS_PTN_BACK) do %>
+				<%= submit_tag(vt('update.item_names.home_btn'), :class=>'button_04')%>
+				<% end %>
+			</td>
+		</tr>
+		<% end %>
+		</tbody>
+		</table>
+<% i18n_cache(:suffix=>'update_update-2') do %>
+	</td>
+</tr>
+</table>
+<% end %>

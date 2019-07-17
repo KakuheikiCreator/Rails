@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  mobile_carrier_cd: 00
+  mobile_domain_no: 1
+  mobile_carrier: docomo
+  domain: docomo.co.jp
+  lock_version: 1
+  created_at: 2012-10-30 00:00:00
+  updated_at: 2012-10-30 00:00:00
+
+two:
+  mobile_carrier_cd: 01
+  mobile_domain_no: 1
+  mobile_carrier: AU
+  domain: au.co.jp
+  lock_version: 1
+  created_at: 2012-10-30 00:00:00
+  updated_at: 2012-10-30 00:00:00

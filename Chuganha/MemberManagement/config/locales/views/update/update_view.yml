@@ -1,0 +1,118 @@
+###############################################################################
+# 国際化設定:: 会員情報更新完了画面
+# Copyright:: Copyright (c) 2011 仲観派
+# 作成日:2012/12/15 Nakanohito  (mailto:)
+# 更新日:
+###############################################################################
+
+ja:
+  views:
+    update:
+      update:
+        item_names:
+          page_titile: 仲観派（会員情報更新）
+          form_title: 会員情報の更新
+          current_values: 現在値
+          updated_values: 更新値
+          member_state: 会員状態
+          authority: 権限
+          open_id: OpenID
+          password: パスワード
+          retype_pw: パスワード確認
+          nickname: ニックネーム
+          name: お名前
+          yomigana: ヨミガナ
+          gender: 性別
+          birthday: 生年月日
+          country: 居住国
+          language: 言語
+          timezone: タイムゾーン
+          postcode: 郵便番号
+          email: メールアドレス
+          mobile_num: 携帯電話番号
+          mobile_email: 携帯メールアドレス
+          home_btn: 会員ホーム
+        messages:
+          explanation_1: 下記の内容で仮更新を行いました。
+          explanation_2: 携帯メール宛に通知メールを送信しましたので、内容をご確認いただいた上で
+          explanation_3: 記載されたアドレスにアクセスして更新を完了してください。
+          attention_1: ※セキュリティに配慮し、更新が完了されるまで本アカウントのご利用は出来ません。
+          attention_2: また、現在から30分以内に更新を完了していただけない場合には、アカウントが停止にされますのでご了承ください。
+          attention_3: ""
+          description_01: ※OpenIDは変更出来ません。
+          description_02: ※セキュリティに配慮して非表示
+
+en:
+  views:
+    update:
+      update:
+        item_names:
+          page_titile: 仲観派（Update member information）
+          form_title: Update member information
+          current_values: Current value
+          updated_values: Updated values
+          member_state: Member state
+          authority: Authority
+          open_id: OpenID
+          password: Password
+          retype_pw: Retype Password
+          nickname: Nickname
+          name: Name
+          yomigana: Yomigana
+          gender: Gender
+          birthday: Birthday
+          country: Country
+          language: Language
+          timezone: Timezone
+          postcode: Postcode
+          email: E-mail address
+          mobile_num: Mobile number
+          mobile_email: Mobile email address
+          home_btn: Member home
+        messages:
+          explanation_1: I update it by the following contents provisionally.
+          explanation_2: If temporary updating is performed, notice mail will be transmitted to mobile mail.
+          explanation_3: Please access the address which checked the contents and was indicated and complete updating.
+          explanation_4: ※This account will not be available until the update is completed.
+          attention_1: ※Use of this account is not possible until the update is complete.
+          attention_2: If the update is not completed within 30 minutes from now
+          attention_3: Please note that your account will be stopped.
+          description_01: ※Can not be changed OpenID.
+          description_02: ※I make non-indication in consideration for security
+
+en-US:
+  views:
+    update:
+      update:
+        item_names:
+          page_titile: 仲観派（Update member information）
+          form_title: Update member information
+          current_values: Current value
+          updated_values: Updated values
+          member_state: Member state
+          authority: Authority
+          open_id: OpenID
+          password: Password
+          retype_pw: Retype Password
+          nickname: Nickname
+          name: Name
+          yomigana: Yomigana
+          gender: Gender
+          birthday: Birthday
+          country: Country
+          language: Language
+          timezone: Timezone
+          postcode: Postcode
+          email: E-mail address
+          mobile_num: Mobile number
+          mobile_email: Mobile email address
+          home_btn: Member home
+        messages:
+          explanation_1: I update it by the following contents provisionally.
+          explanation_2: If temporary updating is performed, notice mail will be transmitted to mobile mail.
+          explanation_3: Please access the address which checked the contents and was indicated and complete updating.
+          attention_1: ※Use of this account is not possible until the update is complete.
+          attention_2: If the update is not completed within 30 minutes from now
+          attention_3: Please note that your account will be stopped.
+          description_01: ※Can not be changed OpenID.
+          description_02: ※I make non-indication in consideration for security

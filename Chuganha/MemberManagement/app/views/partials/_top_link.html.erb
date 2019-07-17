@@ -1,0 +1,33 @@
+<%= javascript_include_tag("partials/_top_link")%>
+<div class="contextMenu" id="context_menu">
+	<ul>
+		<li id="open"><%=image_tag("icon_new_window.png")%> <%=t('views.partial.item_names.new_window')%></li>
+	</ul>
+</div>
+<table border="0" cellspacing="0" cellpadding="0" class="base">
+<tbody>
+<tr>
+	<td width="150" height="40">
+		<%=button_to(t('views.partial.item_names.front_page'), '/index.html', {:id=>"front_btn", :method=>:get, :class=>"button_03"})%>
+	</td>
+	<td width="150">
+	<% if user_login? then %>
+		<%= form_tag({:controller=>'session/session', :action=>'logout'}, {:id=>'logout_form'}) do %>
+		<%=submit_tag(t('views.partial.item_names.logout'), {:id=>"logout_btn", :class=>"button_03"})%>
+		<% end %>
+	<% else %>
+		<%=button_to(t('views.partial.item_names.login'), '/session/index.html', {:id=>"login_btn", :method=>:get, :class=>"button_03"})%>
+	<% end %>
+	</td>
+	<td width="150">
+		<%=button_to(t('views.partial.item_names.usage_notice'), '/notes_on_use.html', {:id=>"usage_notice_btn", :method=>:get, :class=>"button_03"})%>
+	</td>
+	<td width="150">
+		<%=button_to(t('views.partial.item_names.agreement'), '/agreement.html', {:id=>"agreement_btn", :method=>:get, :class=>"button_03"})%>
+	</td>
+	<td width="150">
+		<%=button_to(t('views.partial.item_names.privacy_policy'), '/privacy_policy.html', {:id=>"privacy_policy_btn", :method=>:get, :class=>"button_03"})%>
+	</td>
+</tr>
+</tbody>
+</table>

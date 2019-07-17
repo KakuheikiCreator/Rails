@@ -1,0 +1,82 @@
+<% i18n_cache(:suffix=>'session_index_form-1') do %>
+<%= javascript_include_tag("session/login")%>
+<table width="750" border="0" cellspacing="0" cellpadding="0" class="base">
+<tbody>
+<tr height="10"><td colspan="2">&nbsp;</td></tr>
+<tr>
+	<td width="200" align="left" valign="top">
+<% end %>
+	<%= render('partials/left_link')%>
+	</td>
+	<td width="550" valign="top">
+		<%= form_tag({:controller=>'session/session', :action=>'login'}, {:id=>'login_form'}) do %>
+		<table border="0" cellspacing="0" cellpadding="0">
+		<tbody>
+		<tr>
+			<td>
+				<font size="3">
+				&nbsp;<%=vt('index.messages.explanation_1')%>
+				<p>
+				&nbsp;<%=vt('index.messages.explanation_2')%><br/>
+				&nbsp;<%=vt('index.messages.explanation_3')%>
+				</p>
+				</font>
+			</td>
+		</tr>
+		<tr>
+			<td align="center">
+				<table border="1" cellpadding="0" cellspacing="0" class="form_01">
+				<tbody>
+				<tr height="30">
+					<th align="center" valign="middle"><font size="3"><%=vt('index.item_names.header')%></font></th>
+				</tr>
+				<tr>
+					<td>
+						<table border="1" cellpadding="4" cellspacing="0" class="base">
+						<tbody>
+						<tr>
+							<th width="170" align="left" class="cell_01">
+								<font size="3"><%=vt('index.item_names.open_id')%></font>
+							</th>
+							<td width="340" align="left">
+								<%=text_field_tag('open_id', @biz_obj.open_id, {:size=>50, :maxlength=>255, :class=>"openid", :autocomplete=>'off', :style=>"ime-mode: disabled;"})%>
+								<%=svr_error_tag("sverr_open_id", @error_msg_hash[:open_id])%>
+							</td>
+						</tr>
+						<tr>
+							<th align="left" class="cell_01">
+								<font size="3"><%=vt('index.item_names.password')%></font>
+							</th>
+							<td align="left">
+								<%=password_field_tag('password', nil, {:size=>50, :maxlength=>64, :autocomplete=>'off', :style=>"ime-mode: disabled;"})%>
+								<%=svr_error_tag("sverr_password", @error_msg_hash[:password])%>
+							</td>
+						</tr>
+						<% unless @error_msg_hash[:account].nil? then%>
+						<tr>
+							<tr><td colspan="2"><%=error_msg(@error_msg_hash[:account]) %></td></tr>
+						</tr>
+						<% end %>
+						</tbody>
+						</table>
+					</td>
+				</tr>
+				</tbody>
+				</table>
+			</td>
+		</tr>
+		<tr><td>&nbsp;</td></tr>
+		<tr>
+			<td align="center">
+				<%= submit_tag(vt('index.item_names.login'), :id=>'login_form_submit', :class=>'button_04')%>
+			</td>
+		</tr>
+		</tbody>
+		</table>
+		<% end %>
+<% i18n_cache(:suffix=>'session_index_3') do %>
+	</td>
+</tr>
+</table>
+<% end %>
+

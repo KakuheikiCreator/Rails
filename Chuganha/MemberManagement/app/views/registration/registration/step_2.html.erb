@@ -1,0 +1,76 @@
+<% i18n_cache(:suffix=>'registration_step_2-1') do %>
+<table width="750" border="0" cellspacing="0" cellpadding="0" class="base">
+<tbody>
+<tr height="10"><td colspan="2">&nbsp;</td></tr>
+<tr>
+	<td width="200" align="left" valign="top">
+<% end %>
+	<%= render(:partial=>'left_part')%>
+<% i18n_cache(:suffix=>'registration_step_2-2') do %>
+	</td>
+	<td width="550" valign="top">
+		<table width="550" border="0" cellspacing="0" cellpadding="0">
+		<thead>
+		<tr>
+			<td>
+				<font size="3">
+				<strong><%=vt('step_2.item_names.heading')%></strong>
+				<p>
+				&nbsp;<%=vt('step_2.messages.explanation_1')%><br/>
+				&nbsp;<%=vt('step_2.messages.explanation_2')%>
+				</p>
+				</font>
+				<font size="2">
+				<p>
+				&nbsp;<%=vt('step_2.messages.explanation_3')%><br/>
+				&nbsp;<%=vt('step_2.messages.explanation_4')%>
+				<p/>
+				</font>
+			</td>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td align="center">
+				<table border="1" cellspacing="0" cellpadding="0" class="form_01">
+				<thead>
+				<tr height="30">
+					<th align="center" valign="middle">
+					<font size="3"><%=vt('step_2.item_names.privacy_policy')%></font>
+					</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td align="center">
+					<textarea cols="78" rows="26" readonly class="confirmation">
+<% end %>
+					<%=strip_tags(@privacy_policy)%>
+<% i18n_cache(:suffix=>'registration_step_2-3') do %>
+					</textarea>
+					</td>
+				</tr>
+				</tbody>
+				</table>
+			</td>
+		</tr>
+		<tr><td>&nbsp;</td></tr>
+		<tr>
+			<td align="center">
+<% end %>
+				<%= form_tag_with_params({:controller=>'registration/registration', :action => 'step_3'},
+							{:id => 'step_2_form', :name => 'step_2_form'}, :TRANS_PTN_NOW) do %>
+				<%=hidden_field_tag("accept_terms_flg", true)%>
+				<%= submit_tag(vt('step_2.item_names.disagree'), :name=>'disagree_policy', :class=>'button_04')%>
+				<%= submit_tag(vt('step_2.item_names.agree'), :name=>'agree_policy', :class=>'button_04')%>
+				<% end %>
+<% i18n_cache(:suffix=>'registration_step_2-4') do %>
+			</td>
+		</tr>
+		<tr><td>&nbsp;</td></tr>
+		</tbody>
+		</table>
+	</td>
+</tr>
+</table>
+<% end %>

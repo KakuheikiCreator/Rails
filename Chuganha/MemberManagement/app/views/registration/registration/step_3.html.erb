@@ -1,0 +1,255 @@
+<% i18n_cache(:suffix=>'registration_step_3-1') do %>
+<%= javascript_include_tag("password")%>
+<%= javascript_include_tag("registration/step_3")%>
+<table width="750" border="0" cellspacing="0" cellpadding="0" class="base">
+<tbody>
+<tr height="10"><td colspan="2">&nbsp;</td></tr>
+<tr>
+	<td width="200" align="left" valign="top">
+<% end %>
+	<%= render(:partial=>'left_part')%>
+	</td>
+	<td width="550" valign="top">
+		<% unless @err_hash.empty? then %>
+		<script type="text/javascript">
+		<!--
+		$(window).load(function () {
+			// バリデーションチェック実行
+			$("#step_3_form").valid();
+		});
+		// -->
+		</script>
+		<% end %>
+		<%= form_tag_with_params({:controller=>'registration/registration', :action=>'step_4'},
+					{:id=>'step_3_form', :name=>'step_3_form'}, :TRANS_PTN_NOW) do %>
+		<%=hidden_field_tag("accept_terms_flg", @biz_obj.accept_terms_flg)%>
+		<%=hidden_field_tag("accept_policy_flg", true)%>
+<% i18n_cache(:suffix=>'registration_step_3-2') do %>
+		<table border="0" cellspacing="0" cellpadding="0">
+		<thead>
+		<tr>
+			<td>
+				<font size="3">
+				<strong><%=vt('step_3.item_names.heading')%></strong>
+				<p>
+				&nbsp;<%=vt('step_3.messages.explanation_1')%><br/>
+				&nbsp;<%=vt('step_3.messages.explanation_2')%>
+				</p>
+				</font>
+				<p>
+				<font size="2">&nbsp;<%=vt('step_3.messages.explanation_3')%></font>
+				<p/>
+			</td>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td align="center">
+				<table border="1" cellspacing="0" cellpadding="0" class="form_01">
+				<thead>
+				<tr height="30">
+					<th align="center" valign="middle">
+					<font size="3"><%=vt('step_3.item_names.membership')%></font>
+					</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td align="center">
+<% end %>
+						<table border="1" cellpadding="2" cellspacing="0" class="base">
+						<tbody>
+						<tr>
+							<th width="160" align="left" class="cell_01">
+								<font size="3">&nbsp;<%=vt('step_3.item_names.open_id')%></font>
+							</th>
+							<td width="360">
+								<font size="2">
+								&nbsp;<%=@biz_obj.open_id_header%>
+								<%=text_field_tag('identifier', @biz_obj.user_id, {:size=>20, :maxlength=>32, :autocomplete=>'off', :style=>"ime-mode: disabled;"})%>
+								<%=svr_error_tag("sverr_identifier", @err_hash[:identifier])%><br />
+								&nbsp;<%=vt('step_3.messages.description_01')%><br />
+								<button id="check_id_btn"><%=vt('step_3.item_names.check_availability')%></button>
+								<span id="check_id_result"></span>
+								</font>
+							</td>
+						</tr>
+						<tr>
+							<th align="left" class="cell_01">
+								<font size="3">&nbsp;<%=vt('step_3.item_names.password')%></font>
+							</th>
+							<td>
+								&nbsp;<%=password_field_tag('password', @biz_obj.password, {:size=>40, :maxlength=>32, :autocomplete=>'off', :style=>"ime-mode: disabled;"})%><br>
+								<%=svr_error_tag("sverr_password", @err_hash[:password])%>
+								<font size="2">&nbsp;<%=vt('step_3.messages.description_02')%></font>
+							</td>
+						</tr>
+						<tr>
+							<th align="left" class="cell_01">
+								<font size="3">&nbsp;<%=vt('step_3.item_names.retype_pw')%></font>
+							</th>
+							<td>
+								&nbsp;<%=password_field_tag('retype_pw', @biz_obj.retype_pw, {:size=>40, :maxlength=>32, :autocomplete=>'off', :style=>"ime-mode: disabled;"})%><br>
+								<%=svr_error_tag("sverr_retype_pw", @err_hash[:re_enter])%>
+								<font size="2">&nbsp;<%=vt('step_3.messages.description_03')%></font>
+							</td>
+						</tr>
+						<tr>
+							<th align="left" class="cell_01">
+								<font size="3">&nbsp;<%=vt('step_3.item_names.nickname')%></font>
+							</th>
+							<td>
+								&nbsp;<%=text_field_tag('nickname', @biz_obj.nickname, {:size=>40, :maxlength=>20, :autocomplete=>'off', :style=>"ime-mode: active;"})%><br>
+								<%=svr_error_tag("sverr_nickname", @err_hash[:nickname])%>
+								<font size="2">&nbsp;<%=vt('step_3.messages.description_04')%></font>
+							</td>
+						</tr>
+						<tr>
+							<th align="left" class="cell_01">
+								<font size="3">&nbsp;<%=vt('step_3.item_names.name')%></font>
+							</th>
+							<td>
+								<font size="3">
+								<span id="name" name="name" class="chkgroup">
+								&nbsp;<%=text_field_tag('name_1', @biz_obj.name_1, {:size=>20, :maxlength=>20, :autocomplete=>'off'})%>
+								&nbsp;<%=text_field_tag('name_2', @biz_obj.name_2, {:size=>20, :maxlength=>20, :autocomplete=>'off'})%>
+								</span>
+								<%=svr_error_tag("sverr_name", @err_hash[:name])%>
+								</font>
+							</td>
+						</tr>
+						<tr>
+							<th align="left" class="cell_01">
+								<font size="3">&nbsp;<%=vt('step_3.item_names.yomigana')%></font>
+							</th>
+							<td>
+								<font size="3">
+								<span id="name_kana" name="name_kana" class="chkgroup">
+								&nbsp;<%=text_field_tag('name_kana_1', @biz_obj.name_kana_1, {:size=>20, :maxlength=>30, :autocomplete=>'off', :style=>"ime-mode: active;"})%>
+								&nbsp;<%=text_field_tag('name_kana_2', @biz_obj.name_kana_2, {:size=>20, :maxlength=>30, :autocomplete=>'off', :style=>"ime-mode: active;"})%>
+								</span>
+								<%=svr_error_tag("sverr_name_kana", @err_hash[:name_kana])%>
+								</font><br />
+								<font size="2">&nbsp;<%=vt('step_3.messages.description_05')%></font>
+							</td>
+						</tr>
+						<tr>
+							<th align="left" class="cell_01">
+								<font size="3">&nbsp;<%=vt('step_3.item_names.gender')%></font>
+							</th>
+							<td>
+								<font size="3">
+								<span id="gender" name="gender" class="chkgroup">
+								&nbsp;<%=ent_radio_tag('gender', @biz_obj.gender_list, :gender_cls, :gender, @biz_obj.gender_cls)%>
+								</span>
+								<%=svr_error_tag("sverr_gender", @err_hash[:gender])%>
+								</font>
+							</td>
+						</tr>
+						<tr>
+							<th align="left" class="cell_01">
+								<font size="3">&nbsp;<%=vt('step_3.item_names.birthday')%></font>
+							</th>
+							<td>
+								<span id="birth" name="birth" class="chkgroup">
+								&nbsp;<%=select_date(@biz_obj.birth_day,
+										   {:prefix=>'birth', :date_separator=>'/', :use_month_numbers=>true, 
+										    :start_year=>1900, :end_year=>Date.today.year})%>
+								</span>
+								<%=svr_error_tag("sverr_birth", @err_hash[:birth])%>
+							</td>
+						</tr>
+						<tr>
+							<th align="left" class="cell_01">
+								<font size="3">&nbsp;<%=vt('step_3.item_names.country')%></font>
+							</th>
+							<td>
+								&nbsp;<%=ent_select_tag('country', @biz_obj.country_list, :country_name_cd, :country_name, @biz_obj.country_name_cd)%>
+								<%=svr_error_tag("sverr_country", @err_hash[:country])%>
+							</td>
+						</tr>
+						<tr>
+							<th align="left" class="cell_01">
+								<font size="3">&nbsp;<%=vt('step_3.item_names.language')%></font>
+							</th>
+							<td>
+								&nbsp;<%=ent_select_tag('language', @biz_obj.language_list, :lang_name_cd, :lang_name, @biz_obj.lang_name_cd)%>
+								<%=svr_error_tag("sverr_language", @err_hash[:language])%>
+							</td>
+						</tr>
+						<tr>
+							<th align="left" class="cell_01">
+								<font size="3">&nbsp;<%=vt('step_3.item_names.timezone')%></font>
+							</th>
+							<td>
+								&nbsp;<%=ent_select_tag('timezone', @biz_obj.timezone_list, :timezone_id, :timezone_id, @biz_obj.timezone_id)%>
+								<%=svr_error_tag("sverr_timezone", @err_hash[:timezone])%>
+							</td>
+						</tr>
+						<tr>
+							<th align="left" class="cell_01">
+								<font size="3">&nbsp;<%=vt('step_3.item_names.postcode')%></font>
+							</th>
+							<td>
+								&nbsp;<%=text_field_tag('postcode', @biz_obj.postcode, {:size=>10, :maxlength=>9, :autocomplete=>'off', :style=>"ime-mode: disabled;"})%><br>
+								<%=svr_error_tag("sverr_postcode", @err_hash[:postcode])%>
+								<font size="2">&nbsp;<%=vt('step_3.messages.description_06')%></font>
+							</td>
+						</tr>
+						<tr>
+							<th align="left" class="cell_01">
+								<font size="3">&nbsp;<%=vt('step_3.item_names.email')%></strong></font>
+							</th>
+							<td>
+								&nbsp;<%=text_field_tag('email', @biz_obj.email, {:size=>50, :maxlength=>255, :autocomplete=>'off', :style=>"ime-mode: disabled;"})%>
+								<%=svr_error_tag("sverr_email", @err_hash[:email])%>
+							</td>
+						</tr>
+						<tr>
+							<th align="left" class="cell_01">
+								<font size="3">&nbsp;<%=vt('step_3.item_names.mobile_num')%></font>
+							</th>
+							<td>
+								&nbsp;<%=text_field_tag('mobile_num', @biz_obj.mobile_phone_no, {:size=>16, :maxlength=>11, :autocomplete=>'off', :style=>"ime-mode: disabled;"})%><br>
+								<%=svr_error_tag("sverr_mobile_num", @err_hash[:mobile_num])%>
+								<font size="2">&nbsp;<%=vt('step_3.messages.description_07')%></font>
+							</td>
+						</tr>
+						<tr>
+							<th align="left" class="cell_01">
+								<font size="3">&nbsp;<%=vt('step_3.item_names.mobile_email')%></font>
+							</th>
+							<td>
+								<span id="mobile_email" name="mobile_email" class="chkgroup">
+								&nbsp;<%=text_field_tag('mobile_email_local', @biz_obj.mobile_email_local, {:size=>20, :maxlength=>220, :autocomplete=>'off', :style=>"ime-mode: disabled;"})%>@
+								<%=ent_select_tag('mobile_email_domain', @biz_obj.mobile_carrier_list, :id, :domain, @biz_obj.mobile_carrier_id)%>
+								</span><br>
+								<%=svr_error_tag("sverr_mobile_email", @err_hash[:mobile_email])%>
+								<font size="2">&nbsp;<%=vt('step_3.messages.description_08')%></font>
+							</td>
+						</tr>
+						</tbody>
+						</table>
+<% i18n_cache(:suffix=>'registration_step_3-3') do %>
+					</td>
+				</tr>
+				</tbody>
+				</table>
+			</td>
+		</tr>
+		<tr><td>&nbsp;</td></tr>
+		<tr>
+			<td align="center">
+				<%= submit_tag(vt('step_3.item_names.next_step'), :class=>'button_04')%>
+			</td>
+		</tr>
+		<tr><td>&nbsp;</td></tr>
+		</tbody>
+		</table>
+<% end %>
+		<% end %>
+<% i18n_cache(:suffix=>'registration_step_3-4') do %>
+	</td>
+</tr>
+</table>
+<% end %>

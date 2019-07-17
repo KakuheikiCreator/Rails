@@ -1,0 +1,51 @@
+###############################################################################
+# 国際化設定:: 退会処理
+# Copyright:: Copyright (c) 2011 仲観派
+# 作成日:2012/12/31 Nakanohito  (mailto:)
+# 更新日:
+###############################################################################
+
+ja:
+  views:
+    withdrawal:
+      confirmation:
+        item_names:
+          page_titile: 仲観派（退会確認）
+          form_title: 退会確認
+          reason: 退会理由
+          detail: 退会理由詳細
+          home_btn: 会員ホーム
+          withdrawal_btn: 退会する
+        messages:
+          explanation_1: このボタンをクリックすると仲観派を退会します。
+          explanation_2: 退会すると半年間は再入会できません。
+
+en:
+  views:
+    withdrawal:
+      confirmation:
+        item_names:
+          page_titile: 仲観派（Withdrawal confirmation）
+          form_title: Withdrawal confirmation
+          reason: Withdrawal reason
+          detail: Detail why withdrawal
+          home_btn: Member home
+          withdrawal_btn: Withdraw
+        messages:
+          explanation_1: I want to withdrawal by clicking the button.
+          explanation_2: I cannot enroll again for half a year when I resign
+
+en-US:
+  views:
+    withdrawal:
+      confirmation:
+        item_names:
+          page_titile: 仲観派（Withdrawal confirmation）
+          form_title: Withdrawal confirmation
+          reason: Withdrawal reason
+          detail: Detail why withdrawal
+          home_btn: Member home
+          withdrawal_btn: Withdraw
+        messages:
+          explanation_1: I want to withdrawal by clicking the button.
+          explanation_2: I cannot enroll again for half a year when I resign

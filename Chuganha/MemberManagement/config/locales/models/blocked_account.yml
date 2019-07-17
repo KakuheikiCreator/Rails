@@ -1,0 +1,75 @@
+###############################################################################
+# 国際化設定:: 拒否アカウント
+# Copyright:: Copyright (c) 2011 仲観派
+# 作成日:2012/11/04 Nakanohito  (mailto:)
+# 更新日:
+###############################################################################
+
+ja:
+  activerecord:
+    models:
+      blocked_account: "拒否アカウント"
+    attributes:
+      blocked_account:
+        id: "ID"
+        account_id: "アカウントID"
+        seq_no: "連番"
+        enc_target_id_1: "対象者ID１"
+        enc_target_id_2: "対象者ID２"
+        enc_target_id_3: "対象者ID３"
+        enc_target_id_4: "対象者ID４"
+        enc_target_id_5: "対象者ID５"
+        enc_target_id_6: "対象者ID６"
+        enc_target_id_7: "対象者ID７"
+        enc_target_id_8: "対象者ID８"
+        enc_target_id_9: "対象者ID９"
+        enc_target_id_10: "対象者ID１０"
+        lock_version: "ロックバージョン"
+        created_at: "作成日"
+        updated_at: "更新日"
+
+en:
+  activerecord:
+    models:
+      blocked_account: "Blocked Account"
+    attributes:
+      blocked_account:
+        id: "ID"
+        account_id: "Account ID"
+        seq_no: "Sequential number"
+        enc_target_id_1: "Target ID 1"
+        enc_target_id_2: "Target ID 2"
+        enc_target_id_3: "Target ID 3"
+        enc_target_id_4: "Target ID 4"
+        enc_target_id_5: "Target ID 5"
+        enc_target_id_6: "Target ID 6"
+        enc_target_id_7: "Target ID 7"
+        enc_target_id_8: "Target ID 8"
+        enc_target_id_9: "Target ID 9"
+        enc_target_id_10: "Target ID 10"
+        lock_version: "Lock Version"
+        created_at: "Date created"
+        updated_at: "Date updated"
+
+en-US:
+  activerecord:
+    models:
+      blocked_account: "Blocked Account"
+    attributes:
+      blocked_account:
+        id: "ID"
+        account_id: "Account ID"
+        seq_no: "Sequential number"
+        enc_target_id_1: "Target ID 1"
+        enc_target_id_2: "Target ID 2"
+        enc_target_id_3: "Target ID 3"
+        enc_target_id_4: "Target ID 4"
+        enc_target_id_5: "Target ID 5"
+        enc_target_id_6: "Target ID 6"
+        enc_target_id_7: "Target ID 7"
+        enc_target_id_8: "Target ID 8"
+        enc_target_id_9: "Target ID 9"
+        enc_target_id_10: "Target ID 10"
+        lock_version: "Lock Version"
+        created_at: "Date created"
+        updated_at: "Date updated"

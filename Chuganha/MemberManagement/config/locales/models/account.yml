@@ -1,0 +1,87 @@
+###############################################################################
+# 国際化設定:: アカウント
+# Copyright:: Copyright (c) 2011 仲観派
+# 作成日:2012/11/04 Nakanohito  (mailto:)
+# 更新日:
+###############################################################################
+
+ja:
+  activerecord:
+    models:
+      account: "アカウント"
+    attributes:
+      account:
+        id: "ID"
+        open_id: "OpenID"
+        hsh_password: "パスワード"
+        member_state_id: "会員状態ID"
+        enc_authority_cls: "権限区分"
+        enc_email: "メールアドレス"
+        join_date: "入会日時"
+        hsh_password_reset_cd: "パスワードリセットコード"
+        last_seq_no: "最終履歴連番"
+        consecutive_failure_cnt: "連続失敗回数"
+        enc_last_name: "名前（姓）"
+        enc_first_name: "名前（名）"
+        enc_yomigana_last: "ヨミガナ（姓）"
+        enc_yomigana_first: "ヨミガナ（名）"
+        enc_gender_cls: "性別区分"
+        enc_birth_date: "生年月日"
+        salt: "ソルト"
+        lock_version: "ロックバージョン"
+        created_at: "作成日"
+        updated_at: "更新日"
+
+en:
+  activerecord:
+    models:
+      account: "Account"
+    attributes:
+      account:
+        id: "ID"
+        open_id: "OpenID"
+        hsh_password: "Password"
+        member_state_id: "Member State ID"
+        enc_authority_cls: "Authority Class"
+        enc_email: "E-mail address"
+        join_date: "Join Date"
+        hsh_password_reset_cd: "Password Reset Code"
+        last_seq_no: "Last number of history"
+        consecutive_failure_cnt: "Number of consecutive failed"
+        enc_last_name: "Last name"
+        enc_first_name: "First name"
+        enc_yomigana_last: "Yomigana Last Name"
+        enc_yomigana_first: "Yomigana First Name"
+        enc_gender_cls: "Gender division"
+        enc_birth_date: "Date of birth"
+        salt: "Salt"
+        lock_version: "Lock Version"
+        created_at: "Date created"
+        updated_at: "Date updated"
+
+en-US:
+  activerecord:
+    models:
+      account: "Account"
+    attributes:
+      account:
+        id: "ID"
+        open_id: "OpenID"
+        hsh_password: "Password"
+        member_state_id: "Member State ID"
+        enc_authority_cls: "Authority Class"
+        enc_email: "E-mail address"
+        join_date: "Join Date"
+        hsh_password_reset_cd: "Password Reset Code"
+        last_seq_no: "Last number of history"
+        consecutive_failure_cnt: "Number of consecutive failed"
+        enc_last_name: "Last name"
+        enc_first_name: "First name"
+        enc_yomigana_last: "Yomigana Last Name"
+        enc_yomigana_first: "Yomigana First Name"
+        enc_gender_cls: "Gender division"
+        enc_birth_date: "Date of birth"
+        salt: "Salt"
+        lock_version: "Lock Version"
+        created_at: "Date created"
+        updated_at: "Date updated"

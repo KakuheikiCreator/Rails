@@ -1,0 +1,52 @@
+###############################################################################
+# 国際化設定:: 会員登録（会員情報の仮登録完了通知画面）
+# Copyright:: Copyright (c) 2011 仲観派
+# 作成日:2012/12/01 Nakanohito  (mailto:)
+# 更新日:
+###############################################################################
+ja:
+  views:
+    registration:
+      step_5:
+        item_names:
+          page_titile: 新規会員登録（ステップ５）
+          heading: ステップ５：仮登録完了メールを受信
+          front_page: フロントページへ
+        messages:
+          explanation_1: 携帯メールアドレス宛に仮登録完了通知メールを送付しました。
+          explanation_2: 仮登録完了メールを受信して確認していただいた後
+          explanation_3: メールに記載された本登録アドレスにアクセスし、本登録を完了して下さい。
+          description_01: ※セキュリティに配慮し 、現在から30分以内に本登録を完了していただけない場合には
+          description_02: 　仮登録の取り消しが行われますのでご了承ください。
+
+en:
+  views:
+    registration:
+      step_5:
+        item_names:
+          page_titile: New Member Registration(Step 5)
+          heading: Step 5：Mail is received temporary registration completion
+          confirmation: Confirmation of membership information
+          front_page: To the front page
+        messages:
+          explanation_1: I sent a notice of temporary registration completion email to a text message address.
+          explanation_2: I receive a temporary registration completion email, and, please confirm it,
+          explanation_3: I access an address listed in an email, and, please complete this registration afterwards.
+          description_01: ※When it is not registered a book within 30 minutes from the present,
+          description_02: 　cancellation of the temporary registration is carried out.
+
+en-US:
+  views:
+    registration:
+      step_5:
+        item_names:
+          page_titile: New Member Registration(Step 5)
+          heading: Step 5：Mail is received temporary registration completion
+          confirmation: Confirmation of membership information
+          front_page: To the front page
+        messages:
+          explanation_1: I sent a notice of temporary registration completion email to a text message address.
+          explanation_2: I receive a temporary registration completion email, and, please confirm it,
+          explanation_3: I access an address listed in an email, and, please complete this registration afterwards.
+          description_01: ※When it is not registered a book within 30 minutes from the present,
+          description_02: 　cancellation of the temporary registration is carried out.

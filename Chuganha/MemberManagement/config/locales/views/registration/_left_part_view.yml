@@ -1,0 +1,68 @@
+###############################################################################
+# 国際化設定:: 会員登録（左部分）
+# Copyright:: Copyright (c) 2011 仲観派
+# 作成日:2012/11/18 Nakanohito  (mailto:)
+# 更新日:
+###############################################################################
+ja:
+  views:
+    registration:
+      left_part:
+        item_names:
+          title: 新規会員登録の手順
+          step_1: ステップ１
+          step_2: ステップ２
+          step_3: ステップ３
+          step_4: ステップ４
+          step_5: ステップ５
+          step_6: ステップ６
+          step_7: ステップ７
+          step_1_title: 会員規約の確認
+          step_2_title: 個人情報保護方針の確認
+          step_3_title: 会員情報の入力
+          step_4_title: 会員情報の確認
+          step_5_title: 仮登録完了メールを受信
+          step_6_title: 本登録アドレスにアクセス
+          step_7_title: 本登録完了
+
+en:
+  views:
+    registration:
+      left_part:
+        item_names:
+          title: How to register new members
+          step_1: Step 1
+          step_2: Step 2
+          step_3: Step 3
+          step_4: Step 4
+          step_5: Step 5
+          step_6: Step 6
+          step_7: Step 7
+          step_1_title: Agreement check
+          step_2_title: Privacy policy check
+          step_3_title: Member information input
+          step_4_title: Member information check
+          step_5_title: Registration mail reception 
+          step_6_title: Registration address access 
+          step_7_title: Completion
+
+en-US:
+  views:
+    registration:
+      left_part:
+        item_names:
+          title: How to register new members
+          step_1: Step 1
+          step_2: Step 2
+          step_3: Step 3
+          step_4: Step 4
+          step_5: Step 5
+          step_6: Step 6
+          step_7: Step 7
+          step_1_title: Agreement check
+          step_2_title: Privacy policy check
+          step_3_title: Member information input
+          step_4_title: Member information check
+          step_5_title: Registration mail reception 
+          step_6_title: Registration address access 
+          step_7_title: Completion

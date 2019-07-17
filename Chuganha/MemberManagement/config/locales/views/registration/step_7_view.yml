@@ -1,0 +1,26 @@
+###############################################################################
+# 国際化設定:: 会員登録（会員情報の本登録完了通知画面）
+# Copyright:: Copyright (c) 2011 仲観派
+# 作成日:2012/12/03 Nakanohito  (mailto:)
+# 更新日:
+###############################################################################
+ja:
+  views:
+    registration:
+      step_7:
+        item_names:
+          page_titile: 仲観派へようこそ
+
+en:
+  views:
+    registration:
+      step_7:
+        item_names:
+          page_titile: Welcome to　仲観派
+
+en-US:
+  views:
+    registration:
+      step_7:
+        item_names:
+          page_titile: Welcome to　仲観派

@@ -1,0 +1,53 @@
+###############################################################################
+# 国際化設定:: 会員登録（会員規約確認画面）
+# Copyright:: Copyright (c) 2011 仲観派
+# 作成日:2012/11/18 Nakanohito  (mailto:)
+# 更新日:
+###############################################################################
+ja:
+  views:
+    registration:
+      step_1:
+        item_names:
+          page_titile: 新規会員登録（ステップ１）
+          heading: ステップ１：会員規約の確認
+          terms: 会員規約
+          agree: 同意する
+          disagree: 同意しない
+        messages:
+          explanation_1: 以下の本サイトの会員規約をお読みいただき、ご承諾いただければ
+          explanation_2: 「同意する」ボタンを押して次のステップへお進みください。
+          explanation_3: ※以下の内容に同意いただけない場合には、入会いただけません。
+          explanation_4: 　ご了承ください。
+
+en:
+  views:
+    registration:
+      step_1:
+        item_names:
+          page_titile: New Member Registration(Step 1)
+          heading: Step 1：Confirmation of the member agreement
+          terms: Membership agreement
+          agree: Agree
+          disagree: Disagree
+        messages:
+          explanation_1: If you can consent to the following agreement,
+          explanation_2: you push the "ACCEPT" button, and, please advance to the next step.
+          explanation_3: ※When you cannot agree to the following contents, you cannot enroll.
+          explanation_4: 
+
+en-US:
+  views:
+    registration:
+      step_1:
+        item_names:
+          page_titile: New Member Registration(Step 1)
+          heading: Step 1：Confirmation of the member agreement
+          terms: Membership agreement
+          agree: Agree
+          disagree: Disagree
+        messages:
+          explanation_1: If you can consent to the following agreement,
+          explanation_2: you push the "ACCEPT" button, and, please advance to the next step.
+          explanation_3: ※When you cannot agree to the following contents, you cannot enroll.
+          explanation_4: 

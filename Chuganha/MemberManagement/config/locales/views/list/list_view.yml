@@ -1,0 +1,117 @@
+###############################################################################
+# 国際化設定:: 会員リスト
+# Copyright:: Copyright (c) 2011 仲観派
+# 作成日:2012/12/17 Nakanohito  (mailto:)
+# 更新日:
+###############################################################################
+
+ja:
+  views:
+    list:
+      list:
+        item_names:
+          page_titile: 仲観派（会員リスト）
+          cond_form_title: 検索条件
+          list_title: 会員情報一覧
+          user_id: UserID
+          member_state: 状態
+          authority: 権限
+          nickname: ニックネーム
+          country: 居住国
+          language: 言語
+          timezone: タイムゾーン
+          name: 名前
+          yomigana: ヨミガナ
+          birthday: 生年月日
+          gender: 性別
+          postcode: 郵便番号
+          email: メールアドレス
+          mobile_carrier: 携帯キャリア
+          mobile_num: 携帯電話番号
+          mobile_id: 個体識別番号
+          mobile_email: 携帯メールアドレス
+          join_date: 入会日時
+          last_auth_date: 最終認証日時
+          sort_items: 検索結果並び順
+          display_number: 表示件数
+          page_number: ページ番号
+          home_page: 会員ホーム
+          prev_page: 前頁
+          next_page: 次頁
+          detail_page: 詳
+        messages:
+          disp_cnt_msg: ずつ表示する
+
+en:
+  views:
+    list:
+      list:
+        item_names:
+          page_titile: 仲観派（Member List）
+          cond_form_title: Search condition
+          list_title: Member List
+          user_id: UserID
+          member_state: State
+          authority: Authority
+          nickname: Nickname
+          country: Country
+          language: Language
+          timezone: Timezone
+          name: Name
+          yomigana: Yomigana
+          birthday: Birthday
+          gender: Gender
+          postcode: Postcode
+          email: E-mail address
+          mobile_carrier: Mobile carriers
+          mobile_num: Mobile number
+          mobile_id: Mobile ID
+          mobile_email: Mobile email address
+          join_date: Join Date
+          last_auth_date: Last authentication date
+          sort_items: Sort Items
+          display_number: Display Number
+          page_number: Page Number
+          home_page: Member home
+          prev_page: Prev
+          next_page: Next
+          detail_page: Dtl
+        messages:
+          disp_cnt_msg: Display Units
+
+en-US:
+  views:
+    list:
+      list:
+        item_names:
+          page_titile: 仲観派（Member List）
+          cond_form_title: Search condition
+          list_title: Member List
+          user_id: UserID
+          member_state: State
+          authority: Authority
+          nickname: Nickname
+          country: Country
+          language: Language
+          timezone: Timezone
+          name: Name
+          yomigana: Yomigana
+          birthday: Birthday
+          gender: Gender
+          postcode: Postcode
+          email: E-mail address
+          mobile_carrier: Mobile carriers
+          mobile_num: Mobile number
+          mobile_id: Mobile ID
+          mobile_email: Mobile email address
+          join_date: Join Date
+          last_auth_date: Last authentication date
+          sort_items: Sort Items
+          display_number: Display Number
+          page_number: Page Number
+          home_page: Member home
+          prev_page: Prev
+          next_page: Next
+          detail_page: Dtl
+        messages:
+          disp_cnt_msg: Display Units

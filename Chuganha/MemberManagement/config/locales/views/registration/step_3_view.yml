@@ -1,0 +1,125 @@
+###############################################################################
+# 国際化設定:: 会員登録（会員情報入力画面）
+# Copyright:: Copyright (c) 2011 仲観派
+# 作成日:2012/11/18 Nakanohito  (mailto:)
+# 更新日:
+###############################################################################
+ja:
+  views:
+    registration:
+      step_3:
+        item_names:
+          page_titile: 新規会員登録（ステップ３）
+          heading: ステップ３：会員情報の入力
+          membership: 会員情報の入力
+          check_availability: 利用可能か確認
+          next_step: 会員情報の確認へ
+          accept_terms_flg: 会員規約受諾フラグ
+          accept_policy_flg: 個人情報保護方針受諾フラグ
+          open_id: OpenID
+          password: パスワード
+          retype_pw: パスワード確認
+          nickname: ニックネーム
+          name: お名前
+          yomigana: ヨミガナ
+          gender: 性別
+          birthday: 生年月日
+          country: 居住国
+          language: 言語
+          timezone: タイムゾーン
+          postcode: 郵便番号
+          email: メールアドレス
+          mobile_num: 携帯電話番号
+          mobile_email: 携帯メールアドレス
+        messages:
+          explanation_1: 以下にあなたの情報を入力して「会員情報の確認」ボタンを押し
+          explanation_2: 次のステップへお進みください。
+          explanation_3: ※下記の項目は全て必ず入力して下さい。
+          description_01: ※半角英数,"-","_"で 32 文字以内
+          description_02: ※半角英数と記号で 12～64 文字
+          description_03: ※確認の為もう一度パスワードを入力してください。
+          description_04: ※20 文字以内
+          description_05: ※全角カタカナで入力してください。
+          description_06: ※半角数字のハイフンなしで入力してください。
+          description_07: ※半角数字のハイフンなしで入力してください。
+          description_08: ※仮登録完了通知メールの送付先として使用されます。
+
+en:
+  views:
+    registration:
+      step_3:
+        item_names:
+          page_titile: New Member Registration(Step 3)
+          heading: Step 3：Enter member information
+          membership: Enter member information
+          check_availability: Check Availability
+          next_step: Next
+          accept_terms_flg: Terms of acceptance
+          accept_policy_flg: Acceptance of Privacy Policy
+          open_id: OpenID
+          password: Password
+          retype_pw: Retype Password
+          nickname: Nickname
+          name: Name
+          yomigana: Yomigana
+          gender: Gender
+          birthday: Birthday
+          country: Country
+          language: Language
+          timezone: Timezone
+          postcode: Postcode
+          email: E-mail address
+          mobile_num: Mobile number
+          mobile_email: Mobile email address
+        messages:
+          explanation_1: Please input your information,
+          explanation_2: push a button and move on to the following step.
+          explanation_3: ※Please input all the following items by all means.
+          description_01: ※Up to 32 characters in　Half size British number,"-","_"
+          description_02: ※12-64 characters　in　Half size British number・Sign
+          description_03: ※Retype Password
+          description_04: ※20 characters or less
+          description_05: ※Please input in full size katakana.
+          description_06: ※Please enter the number without the hyphen characters.
+          description_07: ※Please enter the number without the hyphen characters.
+          description_08: ※It is used for the address of interim registration completion notice mail.
+
+en-US:
+  views:
+    registration:
+      step_3:
+        item_names:
+          page_titile: New Member Registration(Step 3)
+          heading: Step 3：Enter member information
+          membership: Enter member information
+          check_availability: Check Availability
+          next_step: Next
+          accept_terms_flg: Terms of acceptance
+          accept_policy_flg: Acceptance of Privacy Policy
+          open_id: OpenID
+          password: Password
+          retype_pw: Retype Password
+          nickname: Nickname
+          name: Name
+          yomigana: Yomigana
+          gender: Gender
+          birthday: Birthday
+          country: Country
+          language: Language
+          timezone: Timezone
+          postcode: Postcode
+          email: E-mail address
+          mobile_num: Mobile number
+          mobile_email: Mobile email address
+        messages:
+          explanation_1: Please input your information,
+          explanation_2: push a button and move on to the following step.
+          explanation_3: ※Please input all the following items by all means.
+          description_01: ※Up to 32 characters in　Half size British number,"-","_"
+          description_02: ※12-64 characters　in　Half size British number・Sign
+          description_03: ※Retype Password
+          description_04: ※20 characters or less
+          description_05: ※Please input in full size katakana.
+          description_06: ※Please enter the number without the hyphen characters.
+          description_07: ※Please enter the number without the hyphen characters.
+          description_08: ※It is used for the address of interim registration completion notice mail.

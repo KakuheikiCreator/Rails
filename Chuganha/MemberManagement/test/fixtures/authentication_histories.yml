@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  account_id: 1
+  seq_no: 1
+  server_url: MyString
+  authentication_date: 2012-11-22 14:57:45
+  authentication_result: false
+  ip_address: MyString
+  referer: MyString
+  user_agent: MyString
+  lock_version: 1
+
+two:
+  account_id: 1
+  seq_no: 1
+  server_url: MyString
+  authentication_date: 2012-11-22 14:57:45
+  authentication_result: false
+  ip_address: MyString
+  referer: MyString
+  user_agent: MyString
+  lock_version: 1

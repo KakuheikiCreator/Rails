@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  postcode: 1000000
+  state: state1
+  city: city1
+  town_area: town_area1
+
+two:
+  postcode: 1010000
+  state: state2
+  city: city2
+  town_area: town_area2
