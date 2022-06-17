@@ -37,13 +37,15 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.3)
+    concurrent-ruby (1.1.10)
     docile (1.1.1)
     erubis (2.7.0)
     execjs (2.0.2)
     fattr (2.2.1)
     highline (1.6.20)
     hike (1.2.3)
-    i18n (0.6.9)
+    i18n (0.9.5)
+      concurrent-ruby (~> 1.0)
     igo-ruby (0.1.5)
     journey (1.0.4)
     jquery-rails (3.0.4)
@@ -57,6 +59,8 @@ GEM
     mini_portile (0.5.2)
     multi_json (1.8.2)
     mysql2 (0.3.14)
+    nokogiri (1.6.1)
+      mini_portile (~> 0.5.0)
     nokogiri (1.6.1-x86-mingw32)
       mini_portile (~> 0.5.0)
     options (2.3.0)
@@ -128,6 +132,7 @@ GEM
     whois (3.4.2)
 
 PLATFORMS
+  ruby
   x86-mingw32
 
 DEPENDENCIES
